@@ -1,0 +1,228 @@
+\documentclass[french]{report}
+\usepackage{babel}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[T1]{fontenc}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Théorème}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{compmes}{Proposition (Composition des fonctions mesurables)}
+
+\theoremstyle{definition}
+\newtheorem{defi}{Définiton}[section]
+\newtheorem{exemple}{Exemple}[section]
+
+\theoremstyle{remark}
+\newtheorem{rem}{Remarque}[section]
+
+\newcommand\itemb{\item[$\bullet$]}
+
+\begin{document}
+
+\title{Intégration et probabilités}
+\author{César Almecija
+\\ étudiant en première année aux MINES ParisTech
+\\ \href{mailto:cesar.almecija@mines-paristech.fr}{cesar.almecija@mines-paristech.fr}}
+
+\maketitle
+
+\chapter*{Avant-propos}
+Ce document vise à résumer les notions essentielles d'intégration et de probabilités.
+Son objectif est de retracer les cheminements de pensée qui mènent aux résultats essentiels, afin de mieux les retenir.
+Ainsi, il pourra être avantageusement utilisé pour se refamiliariser avec ces notions, au cas-où elles auraient été oubliées.
+Ce travail peut également servir de préambule à une étude plus approfondie du sujet, pour découvrir les fondements de ce domaine des mathématiques.
+
+Néanmoins, ce document ne saurait se substituer à un ouvrage de référence. En effet, par soucis de clarté et de concision, il ne détaille pas toutes les démonstrations.
+Celles-ci sont néanmoins nécessaires pour saisir l'entièreté des résultats énoncés ici. De cette manière, \textbf{il faut le lire comme un aide-mémoire ou un résumé, et non comme un cours}.
+
+\bigskip
+
+Ce travail se partage en trois grandes parties :
+\begin{itemize}
+  \itemb Une première partie commençant par une introduction à la théorie de la mesure, suivie de la construction rapide de l'intégrale de Lebesgue, et qui finit par s'attarder sur les résultats essentiels d'intégration
+  \itemb Une deuxième partie qui applique la partie précédente à la théorie des probabilités
+  \itemb Une troisième partie rapide qui explore la théorie des séries à l'aide des résultats précédents.
+\end{itemize}
+
+\bigskip
+
+Ce document s'est grandement inspiré du cours \href{https://github.com/boisgera/CDIS}{Calcul Différentiel, Intégral et Stochastique (CDIS)} de l'Ecole des MINES ParisTech.
+L'auteur recommande aux lecteurs intéressés de s'y référer régulièrement.
+
+\part{Théorie de la mesure et intégration}
+
+\chapter{Introduction à la théorie de la mesure}
+
+Pour comprendre cette notion, partons d'un constat évident. On sait mesurer la taille d'un segment : la manière de mesurer cette grandeur est d'utiliser la \textit{longueur}.
+Par exemple, la longueur du segment $\left[0,1\right]$ vaut $1$.
+Plus généralement, en notant $\lambda$ l'application qui à un segment $\left[a,b\right]$ associe sa longueur $b-a$ pourrait s'appeler dans le langage courant une \textit{mesure}, c'est-à-dire une fonction permettant d'obtenir la mesure (la taille) d'un objet.
+
+Se posent alors les questions suivantes :
+\begin{itemize}
+  \itemb dans $\mathbb{R}$, comment mesurer n'importe-quel ensemble ?
+  \itemb plus généralement, comment mesurer dans $\mathbb{R}^n$ ?
+  \itemb mais est-il possible de \textit{tout} mesurer ? Ou faut-il se restreindre à une catégorie d'ensembles \textit{mesurables} ?
+\end{itemize}
+
+On commencera par répondre à cette dernière question.
+
+\section{Ensembles mesurables}
+
+Il n'est pas possible de tout mesurer ainsi. Il faut introduire une classe d'ensembles, appelée \textbf{tribu}, qui va représenter l'ensemble des ensembles \textbf{mesurables}.
+
+Une tribu doit cependant garantir certaines propriétés de stabilité par opérations ensemblistes.
+En effet, si deux ensembles sont mesurables, on aimerait pouvoir donner un sens à la mesure de leur intersection ou de leur union.
+De même, si un ensemble est mesurable, il est légitime de demander que son complémentaire soit mesurable à son tour.
+Enfin, demander que l'ensemble vide soit mesurable est raisonnable, et on verra par la suite que la mesure du vide doit valoir $0$, conformément à l'intuition.
+
+Ces considérations étant faites, on définit alors une tribu comme suit :
+
+\begin{defi}
+  Une \textbf{tribu} (ou $\sigma\textbf{-algèbre}$) $\mathcal{A}$ d'un ensemble $E$ est une collection d'ensembles $\mathcal{A} \subset \mathcal{P}(E)$ vérifiant les hypothèses suivantes :
+  \begin{enumerate}
+    \item $\varnothing \in \mathcal{A}$
+    \item $\mathcal{A}$ est stable par passage au complémentaire
+    \item $\mathcal{A}$ est stable par union dénombrable
+  \end{enumerate}
+\end{defi}
+
+\begin{defi}
+  Un \textbf{espace mesurable} $\left(E, \mathcal{A}\right)$ est un ensemble $E$ muni d'une tribu $\mathcal{A}$.
+\end{defi}
+
+\begin{defi}
+  Soit $\left(E, \mathcal{A}\right)$ un espace mesurable. Un élément $X\in \mathcal{A}$ est dit $\mathcal{A}$-\textbf{mesurable}.
+\end{defi}
+
+\begin{rem}
+  Si le contexte est clair (\textit{ie} il n'y a qu'une seule tribu), on pourra omettre $\mathcal{A}$ et parler simplement d'ensemble mesurable
+\end{rem}
+
+\begin{defi}
+  Soit $E$ un ensemble, et $B$ une collection d'ensembles de $E$.
+  La \textbf{tribu engendrée par} $B$ est la plus petite tribu sur $E$ contenant $B$.
+  De manière équivalente, c'est l'intersection de toutes les tribus de $E$ contenant $B$.
+\end{defi}
+
+\begin{exemple}
+  \label{ex:borel}
+  Soit $E$ un ensemble muni d'une topologie.
+  La \textbf{tribu de Borel} est la tribu engendrée par les ouverts de $E$ (ou de manière équivalente, par les fermés de $E$).
+\end{exemple}
+
+\section{Définition de la mesure}
+
+Abordons désormais la notion de mesure.
+Un ensemble mesurable doit intuitivement admettre une mesure positive.
+De plus, si deux ensembles sont disjoints, il est légitime de demander que la mesure de leur union soit la somme des mesures.
+
+Cela nous amène à définir une mesure ainsi :
+
+\begin{defi}
+  Une \textbf{mesure} $\mu$ sur un espace mesurable $(E, \mathcal{A})$ est une application $\mu : \mathcal{A} \longrightarrow \mathbb{R}_+$ telle que :
+  \begin{enumerate}
+    \item $\mu(\varnothing) = 0$
+    \item Pour une famille au plus dénombrable d'ensembles mesurables $\left(A_i\right)_{i \in I}$,
+    $$\mu\left(\bigcup_{i \in I}A_i\right) = \sum_{i \in I} \mu\left(A_i\right)$$
+  \end{enumerate}
+\end{defi}
+
+\begin{rem}
+  Cette deuxième propriété porte le nom de $\sigma$\textbf{-additivité}.
+\end{rem}
+
+\begin{rem}
+  Si $\mu(\varnothing) \neq 0$, le lecteur pourra vérifier que la mesure de n'importe-quel ensemble mesurable (\textit{a fortiori} du vide) vaut $+\infty$.
+  On comprend alors pourquoi on impose que la mesure du vide soit nulle : si ce n'était pas le cas, mesurer n'aurait pour ainsi dire aucun intérêt.
+\end{rem}
+
+\begin{defi}
+  Un \textbf{espace mesuré} $\left(E, \mathcal{A}, \mu\right)$ est un espace mesurable $\left(E, \mathcal{A}\right)$ muni d'une mesure $\mu$
+\end{defi}
+
+\begin{exemple}
+  La \textbf{mesure de Lebesgue} sur $\mathbb{R}$ est la mesure qui prolonge la notion naturelle de longueur.
+  Elle est habituellement notée $\lambda$.
+
+  La tribu sur $\mathbb{R}$ permettant d'utiliser cette mesure est la \textbf{tribu de Lesbesgue}.
+  Sa construction est trop complexe pour être exposée ici.
+  Néanmoins, le lecteur pourra se souvenir que la tribu de Lebesgue est une complétion de la \textbf{tribu de Borel} (présentée dans l'exemple \ref{ex:borel}).
+  La notion de complétion de mesure est détaillée dans la remarque \ref{rem:completion}.
+
+  Cette définition s'adapte immédiatement si l'on se place dans $\mathbb{R}^n$.
+  La mesure de Lebesgue prolonge alors la notion d'aire si $n=2$, de volume si $n=3$, etc.
+\end{exemple}
+
+\begin{defi}
+  Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré.
+  Un ensemble $X \subset E$ est dit \textbf{négligeable} si :
+  $$\exists Y \in \mathcal{A}, 
+  \left\{
+    \begin{array}{c}
+      \mu(Y)=0\\
+      X \subset Y
+    \end{array}
+    \right.$$
+\end{defi}
+
+\begin{rem}
+  \label{rem:completion}
+  On remarque qu'un ensemble négligeable n'est pas forcément mesurable.
+  Il est cepedant commode d'imposer qu'un ensemble négligeable soit nécessairement mesurable.
+  Modifier une mesure et la tribu respective pour arriver à ce résultat porte le nom de \textbf{complétion d'une mesure}.
+
+  Ce processus ne sera pas détaillé ici, mais le lecteur peut néanmois retenir qu'une mesure complétée vérifie l'équivalence suivante : \textbf{un ensemble est négligeable ssi il est mesurable, de mesure nulle}
+\end{rem}
+
+\section{Fonctions mesurables}
+
+Lorsque deux espaces mesurables sont définis, il peut être utile de définir une classe de fonctions qui font bon ménage avec les tribus des espaces mis en jeu.
+
+\begin{defi}
+  Soit $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}\right)$ deux espaces mesurables.
+  Une \textbf{fonction } $\mathcal{A}$/$\mathcal{B}$\textbf{-mesurable} est une fonction $f : E \longrightarrow F$ telle que :
+  $$ \forall Y \in \mathcal{B}, f^{-1}(Y) \in \mathcal{A} $$
+\end{defi}
+
+\begin{rem}
+  Cette caractérisation des fonctions mesurables porte le nom de \textbf{critère de l'image réciproque}.
+\end{rem}
+
+\begin{defi}
+  \label{def:fctmes2}
+  Soit $\left(E, \mathcal{A}\right)$ un espace mesurable. Une fonction $\mathcal{A}$\textbf{-mesurable} est une fonction $f:E \longrightarrow \mathbb{R}^n$ telle que :
+  $$\forall Y \in \mathcal{B}, f^{-1}(Y) \in \mathcal{A}$$
+  où $\mathcal{B}$ est la tribu de Lebesgue sur $\mathbb{R}^n$.
+\end{defi}
+
+\begin{rem}
+  De cette manière, dans le cas où une fonction est à valeur dans l'espace mesurable $\mathbb{R}^n$ muni de la tribu de Lebesgue, on omettra la mention de la tribu de l'espace d'arrivée.
+  Cela permet d'alléger les énoncés, étant donné que, dans l'immense majorité des cas, les fonctions seront effectivement à valeurs dans $\mathbb{R}^n$ muni de la tribu de Lebesgue.
+\end{rem}
+
+\begin{rem}
+  Dans le même esprit de simplification, si :
+  \begin{itemize}
+    \itemb l'espace d'arrivée est $\mathbb{R}^n$, muni de la mesure de Lebesgue
+    \itemb à part la tribu de Lebesgue, il n'y a qu'une autre tribu en jeu
+  \end{itemize}
+
+  alors on dira simplement qu'une fonction vérifiant la définition \ref{def:fctmes2} est \textbf{mesurable}.
+\end{rem}
+
+Le résultat suivant peut sembler anodin mais sera important dans la partie concernant les probabilités
+
+\begin{compmes}
+  Soit $\left(E,\mathcal{A}\right)$, $\left(F,\mathcal{B}\right)$ et $\left(G,\mathcal{C}\right)$ trois espaces mesurables.
+  Soit $f : E \longrightarrow F$ une fonction $\mathcal{A}$/$\mathcal{B}$-mesurable et $g : F \longrightarrow G$ une fonction $\mathcal{B}$/$\mathcal{C}$-mesurable.
+  Alors $g \circ f : E \longrightarrow G$ est une fonction $\mathcal{A}$/$\mathcal{C}$-mesurable
+\end{compmes}
+
+\tableofcontents
+
+\end{document}
