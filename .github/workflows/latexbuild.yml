@@ -13,5 +13,5 @@ jobs:
       - name: Artifacts prod
         uses: actions/upload-artifact@v2
         with:
-          name: integ-proba
-          path: output/integ-proba.pdf
+          name: integ-proba.pdf
+          path: integ-proba/integ-proba.pdf
