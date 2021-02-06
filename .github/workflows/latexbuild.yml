@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Build
+      - name: Build integ-proba
         uses: dante-ev/latex-action@v0.2.0
         with:
           root_file: integ-proba.tex
@@ -16,10 +16,24 @@ jobs:
       #  with:
       #    name: integ-proba.pdf
       #    path: integ-proba/integ-proba.pdf
-      - name: Publication
+      - name: Publication integ-proba
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: integ-proba
+          TARGET_FOLDER: integ-proba-out
+          CLEAN: true
+      - name: Build git-reminder
+        uses: dante-ev/latex-action@v0.2.0
+        with:
+          root_file: git-reminder.tex
+          working_directory: git-reminder
+      - name: Publication git-reminder
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: git-reminder
+          TARGET_FOLDER: git-reminder-out
           CLEAN: true
