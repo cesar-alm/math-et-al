@@ -33,9 +33,15 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
     \itemb Une \textbf{branche} est un ensemble de commits successifs.
     \itemb Un \textbf{dépôt propre}, c'est un dépôt où les fichiers du dernier commit, les fichiers de l'index et les fichiers sur le disque sont identiques (\textit{ie} un dépôt qui n'a subi aucune modification locale depuis le dernier commit)
     \itemb Le \textbf{remote} correspond au dépôt distant. En général, c'est de là que le projet a été cloné au départ.
-    \itemb Un \textbf{merge} correspond à la fusion de deux versions du projet, \textit{ie} dans le cas où le serveur distant et les fichiers locaux sont à des commits différents.
+    \itemb Un \textbf{merge} correspond à la fusion de deux branches qui n'ont pas subi les mêmes commits, par exemple dans le cas où l'on met à jour les fichiers locaux par les commits situés sur le serveur distant.
     Dans ce cas, \texttt{git} opère une fusion, qui peut se matérialiser de trois manières différentes :
-    % TODO
+    \begin{itemize}
+        \item sous la forme d'un \textit{fast-forward} : le dernier commit d'une des branches est le fils du dernier commit de l'autre branche.
+        Aucun nouveau commit est créé, et la fusion se passe bien
+        \item sous la forme d'un véritable merge, lorsque les deux branches ont subi des commits (et donc que le cas précédent ne s'applique pas), mais qu'il n'y a aucun conflit (pas de fichier modifié en même temps par les deux branches).
+        Dans ce cas, il y a création d'un commit et la fusion se passe bien également
+        \item sous la forme d'un véritable merge lorsque les deux branches ont subi des commits, mais qu'il y a un conflit. On se reportera à \ref{sec:conflicts} pour plus d'informations.
+    \end{itemize}
 \end{itemize}
 
 \section{Les commandes de base}
@@ -54,7 +60,18 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
     \itemb \texttt{git add file} ajoute le fichier au stage.
     \itemb \texttt{git reset fichier} retire le fichier du stage.
     \itemb \texttt{git commit -m"Message"} fait un commit, avec le message spécifié.
+    \itemb \texttt{git reset ---hard} rend le dépôt propre en revenant au commit précédent.
+    Pour revenir à un commit qui ne soit pas le dernier, le spécifier sous forme d'argument avant \texttt{---hard}.
+\end{itemize}
+
+\subsection{Afficher les modifications}
+
+\begin{itemize}
     \itemb \texttt{git status} affiche un résumé de ce qui a été modifié depuis le dernier commit, en distinguant selon si les modifications font partie de l'index ou non.
+    \itemb \texttt{git diff file} affiche les différences d'un fichier entre sa version dans l'espace de travail et sa version sur le stage.
+    \textbf{Permet donc de voir les modifications qui n'ont pas encore été mises sur le stage}.
+    \itemb \texttt{git diff ---cached file} affiche les différences d'un fichier entre sa version dans le dernier commit et sa version sur le stage.
+    \textbf{Permet donc de voir les modifications qui seront apportées par le prochain commit, relativement au commit précédent}.
 \end{itemize}
 
 \subsection{Faire le lien avec le dépôt distant}
@@ -67,6 +84,23 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
     Si aucun changement n'a été effectué localement, \texttt{git} procède à un \textit{fast-forward}.
     Autrement, \texttt{git} procède à un merge et créé un nouveau commit
     \itemb \texttt{git fetch} récupère les commits effectués sur le dépôt distant, sans modifier les fichiers locaux (les modifications sont stockées dans un autre dossier)
+\end{itemize}
+
+\subsection{Faire des merge}
+
+\begin{itemize}
+    \itemb \texttt{git merge branch} fusionne la branche actuelle (\texttt{HEAD}) avec la branche spécifiée.
+    Pour cela, \textbf{le dépôt doit être propre}.
+    La fusion créé un nouveau commit, avec comme premier parent \texttt{HEAD} et comme deuxième parent le dernier commit de la branche spécifiée.
+    Si jamais la branche est un enfant de \texttt{HEAD}, le merge ne créé pas de commit car il s'agit d'un \textit{fast-forward}.
+\end{itemize}
+
+% TODO
+
+\subsection{Revenir à des versions antérieures}
+
+\begin{itemize}
+    \itemb 
 \end{itemize}
 
 \end{document}
