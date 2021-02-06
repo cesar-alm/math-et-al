@@ -30,15 +30,15 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
     \itemb Le \textbf{stage} ou \textbf{index} correspond à un ensemble de modifications effectuéees depuis le dernier commit.
     Par défaut, un fichier modifié n'est pas inclus dans le stage, il doit y être ajouté manuellement.
     Les fichiers dans le stage sont ceux qui sont ajoutés au commit suivant.
-    \itemb Une \textbf{branche} est un ensemble de commits successifs.
+    \itemb Une \textbf{branche} est un ensemble de commits successifs sur lequel on travaille.
     \itemb Un \textbf{dépôt propre}, c'est un dépôt où les fichiers du dernier commit, les fichiers de l'index et les fichiers sur le disque sont identiques (\textit{ie} un dépôt qui n'a subi aucune modification locale depuis le dernier commit)
     \itemb Le \textbf{remote} correspond au dépôt distant. En général, c'est de là que le projet a été cloné au départ.
-    \itemb Un \textbf{merge} correspond à la fusion de deux branches qui n'ont pas subi les mêmes commits, par exemple dans le cas où l'on met à jour les fichiers locaux par les commits situés sur le serveur distant.
+    \itemb Une \textbf{fusion} peut se faire sur deux branches qui n'ont pas subi les mêmes commits, par exemple dans le cas où l'on met à jour les fichiers locaux par des commits situés sur le serveur distant.
     Dans ce cas, \texttt{git} opère une fusion, qui peut se matérialiser de trois manières différentes :
     \begin{itemize}
-        \item sous la forme d'un \textit{fast-forward} : le dernier commit d'une des branches est le fils du dernier commit de l'autre branche.
-        Aucun nouveau commit est créé, et la fusion se passe bien
-        \item sous la forme d'un véritable merge, lorsque les deux branches ont subi des commits (et donc que le cas précédent ne s'applique pas), mais qu'il n'y a aucun conflit (pas de fichier modifié en même temps par les deux branches).
+        \item sous la forme d'un \textit{fast-forward} : la branche 1 pointe sur un commit, qui est fils du commit sur lequel pointe la branche 2.
+        Dans ce cas, aucun nouveau commit n'est créé et la branche 2 pointe désormais sur un commit plus récent.
+        \item sous la forme d'une véritable fusion, lorsque les deux branches ont subi des commits (et donc que le cas précédent ne s'applique pas), mais qu'il n'y a aucun conflit (pas de fichier modifié en même temps par les deux branches).
         Dans ce cas, il y a création d'un commit et la fusion se passe bien également
         \item sous la forme d'un véritable merge lorsque les deux branches ont subi des commits, mais qu'il y a un conflit. On se reportera à \ref{sec:conflicts} pour plus d'informations.
     \end{itemize}
@@ -62,6 +62,10 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
     \itemb \texttt{git commit -m"Message"} fait un commit, avec le message spécifié.
     \itemb \texttt{git reset ---hard} rend le dépôt propre en revenant au commit précédent.
     Pour revenir à un commit qui ne soit pas le dernier, le spécifier sous forme d'argument avant \texttt{---hard}.
+    \itemb \texttt{git checkout ---} supprime toutes les modifications qui ne sont pas présentes sur l'index.
+    \itemb \texttt{git stash} \label{cmd:stash} met les modifications de côté (espace de travail et index) pour rendre le dépôt propre.
+    Peut s'avérer utile lorsque vous devez changer de branche, sans que vos changements soient prêts à être inclus dans un commit.
+    \itemb \texttt{git stash apply} permet d'appliquer les modifications mises de côté.
 \end{itemize}
 
 \subsection{Afficher les modifications}
@@ -81,32 +85,63 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
 \subsection{Faire le lien avec le dépôt distant}
 
 \begin{itemize}
-    \itemb \texttt{git push} envoie les commits effectués en local au serveur distant.
+    \itemb \texttt{git remote} affiche l'ensemble des serveurs distants enregistrés.
+    Pour afficher les URL, ajouter le paramètre \texttt{-v}.
+    Si le dépôt a été cloné à partir d'un dépôt distant, il y a systématiquement une entrée \texttt{origin} correspondant à ce dépôt.
+    \itemb \texttt{git remote add name url} ajoute un serveur distant
+    \itemb \texttt{git remote rename oldname newname} renome un serveur distant.
+    Attention, cela modifie le nom des branches distantes.
+    \itemb \texttt{git remote rm name} supprime un serveur distant.
+    Attention, cela supprime les branches distantes.
+    \itemb \texttt{git push} envoie les commits effectués sur la branche locale actuelle à la branche sur le serveur distant correspondante.
     Si le dépôt distant possède des modifications qui ne sont pas sur le dépôt local, les modifications sont rejetées.
     Il faut alors effectuer un \texttt{git pull}, résoudre les conflits le cas échéant, pour pouvoir envoyer les commits au serveur distant.
-    \itemb \texttt{git pull} récupère les commits effectués sur le dépôt distant, et modifie donc les fichiers locaux.
+    \itemb \texttt{git pull} réalise un \texttt{git fetch} puis fusionne la branche distante avec la branche locale.
     Si aucun changement n'a été effectué localement, \texttt{git} procède à un \textit{fast-forward}.
     Autrement, \texttt{git} procède à un merge et créé un nouveau commit
-    \itemb \texttt{git fetch} récupère les commits effectués sur le dépôt distant, sans modifier les fichiers locaux (les modifications sont stockées dans un autre dossier)
-\end{itemize}
-
-\subsection{Faire des merge}
-
-\begin{itemize}
-    \itemb \texttt{git merge branch} fusionne la branche actuelle (\texttt{HEAD}) avec la branche spécifiée.
-    Pour cela, \textbf{le dépôt doit être propre}.
-    La fusion créé un nouveau commit, avec comme premier parent \texttt{HEAD} et comme deuxième parent le dernier commit de la branche spécifiée.
-    Si jamais la branche est un enfant de \texttt{HEAD}, le merge ne créé pas de commit car il s'agit d'un \textit{fast-forward}.
+    \itemb \texttt{git fetch name} récupère les commits effectués sur le serveur distant désigné par \texttt{name}.
+    Les branches distantes récupérées, de la forme \texttt{branch} sont stockées dans des branches locales de la forme \texttt{name/branch}.
+    Cette commande ne modifie pas l'espace de travail.
 \end{itemize}
 
 % TODO
 
 \subsection{Revenir à des versions antérieures}
 
+Commençons par voir comment cibler un commit particulier.
+Soit \texttt{X} un commit (qui peut être \texttt{HEAD} par exemple).
+
 \begin{itemize}
-    \itemb 
+    \itemb \texttt{X\textasciitilde} représente le premier parent de ce commit.
+    On peut itérer : \texttt{X\textasciitilde2} représente le premier parent du premier parent, etc.
+    \itemb \texttt{X\^{}} représente (aussi) le premier parent, \texttt{X\^{}2} le deuxième parent.
+    On peut itérer : \texttt{X\^{}2\^{}} représente le premier parent du deuxième parent, \texttt{X\^{}\^{}2} représente le deuxième parent du premier parent.
 \end{itemize}
 
 \subsection{Gérer des branches}
+
+\begin{itemize}
+    \itemb \texttt{git branch} affiche l'ensemble des branches, en indiquant la branche courante avec \texttt{*}
+    \itemb \texttt{git branch branchname} créé une nouvelle branche à partir du commit courant.
+    Attention, \texttt{HEAD} ne bascule pas sur la nouvelle branche.
+    \itemb \texttt{git checkout branch} change de branche.
+    Cette commande modifie l'espace de travail.
+    Ne peut se faire que si un dépôt est propre (au besoin, utiliser \texttt{git stash})
+    \itemb \texttt{git diff branch1 branch2} affiche les différences entre deux branches
+\end{itemize}
+
+\subsection{Fusionner des branches}
+
+\begin{itemize}
+    \itemb \texttt{git merge branch} fusionne la branche actuelle (\texttt{HEAD}) avec la branche spécifiée.
+    Pour cela, \textbf{le dépôt doit être propre}.
+    La fusion créé un nouveau commit, avec comme premier parent \texttt{HEAD} et comme deuxième parent le dernier commit de la branche spécifiée.
+    Si jamais la branche spécifiée est un enfant de \texttt{HEAD}, le merge ne créé pas de commit car il s'agit d'un \textit{fast-forward}.
+    \itemb \texttt{git rebase branch} ajoute un commit à la branche spécifiée \texttt{branch}, contenant les modifications introduite par la branche sur laquelle vous vous trouviez.
+    Le nouveau commit sur \texttt{branch} n'a qu'un parent.
+    Le \texttt{HEAD} de la branche spécifiée \texttt{branch} n'est pas avancé : il suffit de se placer sur la branche \texttt{branch} faire un \textit{fast-forward} pour finir la fusion.
+    L'intérêt de ce type de fusion est de garder en mémoire une évolution linéaire du projet.
+    Attention, ce type de fusion ne permet pas de témoigner de l'évolution exacte du projet au cours du temps.
+\end{itemize}
 
 \end{document}
