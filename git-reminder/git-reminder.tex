@@ -72,6 +72,10 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
     \textbf{Permet donc de voir les modifications qui n'ont pas encore été mises sur le stage}.
     \itemb \texttt{git diff ---cached file} affiche les différences d'un fichier entre sa version dans le dernier commit et sa version sur le stage.
     \textbf{Permet donc de voir les modifications qui seront apportées par le prochain commit, relativement au commit précédent}.
+    \itemb \texttt{git log} affiche l'historique des commits (les parents de celui-ci)
+    L'argument \texttt{---oneline} fait un affichage condensé des commits (recommandé).
+    L'argument \texttt{---graph} fait un affichage 2D pour expliciter la succession des commits
+    L'argument \texttt{---all} force l'affichage de tous les commits.
 \end{itemize}
 
 \subsection{Faire le lien avec le dépôt distant}
@@ -102,5 +106,7 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
 \begin{itemize}
     \itemb 
 \end{itemize}
+
+\subsection{Gérer des branches}
 
 \end{document}
