@@ -96,9 +96,9 @@ Voici quelques notions de base, nécessaires pour comprendre ce document, et plu
     \itemb \texttt{git push} envoie les commits effectués sur la branche locale actuelle à la branche sur le serveur distant correspondante.
     Si le dépôt distant possède des modifications qui ne sont pas sur le dépôt local, les modifications sont rejetées.
     Il faut alors effectuer un \texttt{git pull}, résoudre les conflits le cas échéant, pour pouvoir envoyer les commits au serveur distant.
-    \itemb \texttt{git pull} réalise un \texttt{git fetch} puis fusionne la branche distante avec la branche locale.
+    \itemb \texttt{git pull} réalise un \texttt{git fetch}, puis fusionne la branche locale actuelle avec la branche distante correspondante.
     Si aucun changement n'a été effectué localement, \texttt{git} procède à un \textit{fast-forward}.
-    Autrement, \texttt{git} procède à un merge et créé un nouveau commit
+    Autrement, \texttt{git} procède à un merge et créé un nouveau commit.
     \itemb \texttt{git fetch name} récupère les commits effectués sur le serveur distant désigné par \texttt{name}.
     Les branches distantes récupérées, de la forme \texttt{branch} sont stockées dans des branches locales de la forme \texttt{name/branch}.
     Cette commande ne modifie pas l'espace de travail.
