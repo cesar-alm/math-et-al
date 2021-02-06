@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.15)  6 FEB 2021 11:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.15)  6 FEB 2021 11:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -353,13 +353,13 @@ LaTeX Warning: Reference `sec:conflicts' on page 2 undefined on input line 43.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `git-reminder.out' has not changed.
-(rerunfilecheck)             Checksum: 9E12B0559E643408D9954A28EBDE74BC;710.
+(rerunfilecheck)             Checksum: EFFFC735B65CB90F5786A5AC5465543C;785.
  ) 
 Here is how much of TeX's memory you used:
- 6248 strings out of 479310
- 96413 string characters out of 5869900
- 415676 words of memory out of 5000000
- 23325 multiletter control sequences out of 15000+600000
+ 6250 strings out of 479310
+ 96447 string characters out of 5869900
+ 416676 words of memory out of 5000000
+ 23326 multiletter control sequences out of 15000+600000
  460464 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,6n,70p,298b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -371,10 +371,10 @@ xmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
 i10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on git-reminder.pdf (4 pages, 220829 bytes).
+Output written on git-reminder.pdf (4 pages, 221365 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
