@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.15)  6 FEB 2021 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.15)  9 FEB 2021 21:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -446,13 +446,13 @@ Chapitre 1.
 
 ] (./integ-proba.aux)
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: 3A650A373CB1976907A1DCA67E504BF6;365.
+(rerunfilecheck)             Checksum: 0846E75EFE0FFD0F7EEBB45D74DAF3CE;430.
  ) 
 Here is how much of TeX's memory you used:
- 7459 strings out of 479310
- 109570 string characters out of 5869900
+ 7463 strings out of 479310
+ 109609 string characters out of 5869900
  432036 words of memory out of 5000000
- 24471 multiletter control sequences out of 15000+600000
+ 24472 multiletter control sequences out of 15000+600000
  476956 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,7n,70p,296b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -468,10 +468,10 @@ ts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
 re/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on integ-proba.pdf (8 pages, 209939 bytes).
+Output written on integ-proba.pdf (8 pages, 211127 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 175 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -145,19 +145,6 @@ Cela nous amène à définir une mesure ainsi :
   Un \textbf{espace mesuré} $\left(E, \mathcal{A}, \mu\right)$ est un espace mesurable $\left(E, \mathcal{A}\right)$ muni d'une mesure $\mu$
 \end{defi}
 
-\begin{exemple}
-  La \textbf{mesure de Lebesgue} sur $\mathbb{R}$ est la mesure qui prolonge la notion naturelle de longueur.
-  Elle est habituellement notée $\lambda$.
-
-  La tribu sur $\mathbb{R}$ permettant d'utiliser cette mesure est la \textbf{tribu de Lesbesgue}.
-  Sa construction est trop complexe pour être exposée ici.
-  Néanmoins, le lecteur pourra se souvenir que la tribu de Lebesgue est une complétion de la \textbf{tribu de Borel} (présentée dans l'exemple \ref{ex:borel}).
-  La notion de complétion de mesure est détaillée dans la remarque \ref{rem:completion}.
-
-  Cette définition s'adapte immédiatement si l'on se place dans $\mathbb{R}^n$.
-  La mesure de Lebesgue prolonge alors la notion d'aire si $n=2$, de volume si $n=3$, etc.
-\end{exemple}
-
 \begin{defi}
   Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré.
   Un ensemble $X \subset E$ est dit \textbf{négligeable} si :
@@ -178,6 +165,31 @@ Cela nous amène à définir une mesure ainsi :
 
   Ce processus ne sera pas détaillé ici, mais le lecteur peut néanmois retenir qu'une mesure complétée vérifie l'équivalence suivante : \textbf{un ensemble est négligeable ssi il est mesurable, de mesure nulle}
 \end{rem}
+
+\section{Exemples importants}
+Il existe trois mesures importantes à connaître.
+
+\begin{defi}
+  La \textbf{mesure de Lebesgue} est l'unique mesure sur $\mathbb{R}^n$ qui prolonge la notion de volume.
+  Habituellement, sa tribu de définition est la \textbf{tribu de Lebesgue}.
+\end{defi}
+
+\begin{rem}
+  On peut définir la mesure de Lebesgue sur d'autres tribus, notamment la tribu de Borel (voir \ref{ex:borel}). Mais ce faisant, la mesure ne serait pas complète (voir \ref{rem:completion})
+  La tribu de Lebesgue est en fait la plus petite tribu de $\mathbb{R}^n$ permettant à cette mesure d'être complète.
+  
+  On ne retiendra pas plus de détails sur cette tribu, mais il est bon de retenir qu'\textbf{un élément Borel-mesurable est Lebesgue-mesurable} (la réciproque est fausse).
+\end{rem}
+
+\begin{rem}
+  On remarque immédiatement que :
+  \begin{itemize}
+    \itemb lorsque $n=1$, cette mesure prolonge la notion de longueur vue en introduction du chapitre.
+    \itemb lorsque $n=2$, cette mesure prolonge la notion de surface.
+    \itemb lorsque $n=3$, cette mesure prolonge la notion de volume.
+  \end{itemize}
+\end{rem}
+
 
 \section{Fonctions mesurables}
 
