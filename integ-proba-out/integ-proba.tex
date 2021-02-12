@@ -1,5 +1,6 @@
 \documentclass[french]{report}
 \usepackage{babel}
+\usepackage{dsfont}
 \usepackage{hyperref}
 \usepackage{lmodern}
 \usepackage{amsmath}
@@ -11,10 +12,9 @@
 \theoremstyle{plain}
 \newtheorem{thm}{Théorème}[section]
 \newtheorem{prop}{Proposition}[section]
-\newtheorem*{compmes}{Proposition (Composition des fonctions mesurables)}
 
 \theoremstyle{definition}
-\newtheorem{defi}{Définiton}[section]
+\newtheorem{defi}{Définition}[section]
 \newtheorem{exemple}{Exemple}[section]
 
 \theoremstyle{remark}
@@ -60,7 +60,7 @@ L'auteur recommande aux lecteurs intéressés de s'y référer régulièrement.
 
 Pour comprendre cette notion, partons d'un constat évident. On sait mesurer la taille d'un segment : la manière de mesurer cette grandeur est d'utiliser la \textit{longueur}.
 Par exemple, la longueur du segment $\left[0,1\right]$ vaut $1$.
-Plus généralement, en notant $\lambda$ l'application qui à un segment $\left[a,b\right]$ associe sa longueur $b-a$ pourrait s'appeler dans le langage courant une \textit{mesure}, c'est-à-dire une fonction permettant d'obtenir la mesure (la taille) d'un objet.
+Plus généralement, $\lambda$, l'application qui à un segment $\left[a,b\right]$ associe sa longueur $b-a$, pourrait s'appeler dans le langage courant une \textit{mesure}, c'est-à-dire une fonction permettant d'obtenir la mesure (la taille) d'un objet.
 
 Se posent alors les questions suivantes :
 \begin{itemize}
@@ -92,15 +92,21 @@ Ces considérations étant faites, on définit alors une tribu comme suit :
 \end{defi}
 
 \begin{defi}
+  \label{defi:espmes}
   Un \textbf{espace mesurable} $\left(E, \mathcal{A}\right)$ est un ensemble $E$ muni d'une tribu $\mathcal{A}$.
 \end{defi}
 
 \begin{defi}
-  Soit $\left(E, \mathcal{A}\right)$ un espace mesurable. Un élément $X\in \mathcal{A}$ est dit $\mathcal{A}$-\textbf{mesurable}.
+  \label{defi:ensmes}
+  Soit $\left(E, \mathcal{A}\right)$ un espace mesurable. Un ensemble $X\in \mathcal{A}$ est dit $\mathcal{A}$-\textbf{mesurable}.
 \end{defi}
 
 \begin{rem}
   Si le contexte est clair (\textit{ie} il n'y a qu'une seule tribu), on pourra omettre $\mathcal{A}$ et parler simplement d'ensemble mesurable
+\end{rem}
+
+\begin{rem}
+  On remarquera qu'il faut distinguer les \textit{espaces} mesurables (définition \ref{defi:espmes}) des \textit{ensembles} mesurables (définition \ref{defi:ensmes}).
 \end{rem}
 
 \begin{defi}
@@ -109,11 +115,11 @@ Ces considérations étant faites, on définit alors une tribu comme suit :
   De manière équivalente, c'est l'intersection de toutes les tribus de $E$ contenant $B$.
 \end{defi}
 
-\begin{exemple}
-  \label{ex:borel}
+\begin{defi}
+  \label{defi:Borel}
   Soit $E$ un ensemble muni d'une topologie.
   La \textbf{tribu de Borel} est la tribu engendrée par les ouverts de $E$ (ou de manière équivalente, par les fermés de $E$).
-\end{exemple}
+\end{defi}
 
 \section{Définition de la mesure}
 
@@ -142,7 +148,7 @@ Cela nous amène à définir une mesure ainsi :
 \end{rem}
 
 \begin{defi}
-  Un \textbf{espace mesuré} $\left(E, \mathcal{A}, \mu\right)$ est un espace mesurable $\left(E, \mathcal{A}\right)$ muni d'une mesure $\mu$
+  Un \textbf{espace mesuré} $\left(E, \mathcal{A}, \mu\right)$ est un espace mesurable $\left(E, \mathcal{A}\right)$ muni d'une mesure $\mu$.
 \end{defi}
 
 \begin{defi}
@@ -171,14 +177,14 @@ Il existe trois mesures importantes à connaître.
 
 \begin{defi}
   La \textbf{mesure de Lebesgue} est l'unique mesure sur $\mathbb{R}^n$ qui prolonge la notion de volume.
-  Habituellement, sa tribu de définition est la \textbf{tribu de Lebesgue}.
+  Habituellement, sa tribu de définition est la \textbf{tribu de Lebesgue} ou la \textbf{tribu de Borel}.
 \end{defi}
 
 \begin{rem}
-  On peut définir la mesure de Lebesgue sur d'autres tribus, notamment la tribu de Borel (voir \ref{ex:borel}). Mais ce faisant, la mesure ne serait pas complète (voir \ref{rem:completion})
-  La tribu de Lebesgue est en fait la plus petite tribu de $\mathbb{R}^n$ permettant à cette mesure d'être complète.
+  En définissant la mesure de Lebesgue sur la tribu de Borel, elle ne serait en fait pas complète (voir \ref{rem:completion}).
+  La tribu de Lebesgue est alors définie comme étant la plus petite tribu de $\mathbb{R}^n$ permettant à cette mesure d'être complète.
   
-  On ne retiendra pas plus de détails sur cette tribu, mais il est bon de retenir qu'\textbf{un élément Borel-mesurable est Lebesgue-mesurable} (la réciproque est fausse).
+  On ne retiendra pas plus de détails sur la tribu de Lebesgue, mais il est bon de retenir qu'\textbf{un élément Borel-mesurable est Lebesgue-mesurable} (la réciproque est fausse).
 \end{rem}
 
 \begin{rem}
@@ -188,8 +194,68 @@ Il existe trois mesures importantes à connaître.
     \itemb lorsque $n=2$, cette mesure prolonge la notion de surface.
     \itemb lorsque $n=3$, cette mesure prolonge la notion de volume.
   \end{itemize}
+
+  Par ailleurs, cette mesure sera centrale dans la partie \ref{part:int} concernant les intégrales.
 \end{rem}
 
+\begin{defi}
+  Soit $\left(E,\mathcal{A}\right)$ un espace mesurable.
+  La \textbf{mesure de comptage} $c$ est définie sur cette espace comme suit :
+  
+  $$
+    c : 
+  \left\{
+  \begin{array}{ccc}
+    \mathcal{A} & \longrightarrow & \mathbb{R}_+\cup\left\{+\infty\right\}\\
+    A &                                   \longmapsto    &  
+      \left\{
+      \begin{array}{rcl}
+        0 & \text{si} & A = \varnothing\\
+        n & \text{si} & A \text{ est fini de cardinal } n\\
+        +\infty & \text{si} & A \text{ est infini}
+      \end{array}
+      \right.
+  \end{array}
+  \right.
+  $$
+\end{defi}
+
+\begin{rem}
+  Comme son nom l'indique, cette mesure compte les éléments présents dans l'ensemble que l'on mesure.
+\end{rem}
+
+\begin{rem}
+  Bien que cette mesure soit définie pour un espace mesurable quelconque, elle sera particulièrement utile dans $\left(\mathbb{N},\mathcal{P}\left(\mathbb{N}\right)\right)$ (notamment pour la partie \ref{part:series} concernant les séries).
+\end{rem}
+
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A}\right)$ un espace mesurable.
+  La \textbf{mesure de Dirac en $x \in E$} $\delta_x$ est définie comme suit :
+
+  $$
+    \delta_x : 
+  \left\{
+  \begin{array}{ccc}
+    \mathcal{A} & \longrightarrow & \mathbb{R}_+\\
+    A &                                   \longmapsto    &  
+      \left\{
+      \begin{array}{rcl}
+        0 & \text{si} & x \in A\\
+        1 & \text{si} & x \notin A
+      \end{array}
+      \right.
+  \end{array}
+  \right.
+  $$
+\end{defi}
+
+\begin{rem}
+  La mesure de Dirac et la fonction indicatrice sont reliées de la manière suivante :
+  $$
+  \forall A \in \mathcal{A}, \forall x \in E, \delta_x(A)=\mathds{1}_A(x)
+  $$
+\end{rem}
 
 \section{Fonctions mesurables}
 
@@ -205,35 +271,47 @@ Lorsque deux espaces mesurables sont définis, il peut être utile de définir u
   Cette caractérisation des fonctions mesurables porte le nom de \textbf{critère de l'image réciproque}.
 \end{rem}
 
-\begin{defi}
-  \label{def:fctmes2}
-  Soit $\left(E, \mathcal{A}\right)$ un espace mesurable. Une fonction $\mathcal{A}$\textbf{-mesurable} est une fonction $f:E \longrightarrow \mathbb{R}^n$ telle que :
-  $$\forall Y \in \mathcal{B}, f^{-1}(Y) \in \mathcal{A}$$
-  où $\mathcal{B}$ est la tribu de Lebesgue sur $\mathbb{R}^n$.
-\end{defi}
-
 \begin{rem}
-  De cette manière, dans le cas où une fonction est à valeur dans l'espace mesurable $\mathbb{R}^n$ muni de la tribu de Lebesgue, on omettra la mention de la tribu de l'espace d'arrivée.
-  Cela permet d'alléger les énoncés, étant donné que, dans l'immense majorité des cas, les fonctions seront effectivement à valeurs dans $\mathbb{R}^n$ muni de la tribu de Lebesgue.
-\end{rem}
-
-\begin{rem}
-  Dans le même esprit de simplification, si :
+  Cette notation est lourde, et c'est pourquoi elle est souvent simplifiée.
   \begin{itemize}
-    \itemb l'espace d'arrivée est $\mathbb{R}^n$, muni de la mesure de Lebesgue
-    \itemb à part la tribu de Lebesgue, il n'y a qu'une autre tribu en jeu
+  \itemb dans le cas où $\mathcal{B}=\mathcal{B}\left(F\right)$ (la tribu d'arrivée est celle des boréliens), on pourra simplifier la notation et dire simplement que :
+  $$
+  f \text{ est } \mathcal{A}\text{-mesurable}
+  $$
+  \itemb si, de plus, la tribu de l'espace de départ n'est pas ambigüe, on pourra alors simplement écrire que :
+  $$
+  f \text{ est mesurable}
+  $$
   \end{itemize}
-
-  alors on dira simplement qu'une fonction vérifiant la définition \ref{def:fctmes2} est \textbf{mesurable}.
 \end{rem}
 
-Le résultat suivant peut sembler anodin mais sera important dans la partie concernant les probabilités
+\begin{rem}
+  On remarquera que la notion de fonction mesurable est \textbf{indépendante des mesures choisies}.
+  Elle ne dépend que des tribus de l'espace de départ et d'arrivée.
+\end{rem}
 
-\begin{compmes}
-  Soit $\left(E,\mathcal{A}\right)$, $\left(F,\mathcal{B}\right)$ et $\left(G,\mathcal{C}\right)$ trois espaces mesurables.
-  Soit $f : E \longrightarrow F$ une fonction $\mathcal{A}$/$\mathcal{B}$-mesurable et $g : F \longrightarrow G$ une fonction $\mathcal{B}$/$\mathcal{C}$-mesurable.
+La proposition suivante permet de simplifier considérablement la vérification de la mesurabilité d'une fonction, dans le cas où l'espace d'arrivée est muni de la tribu des boréliens.
+
+Elle découle directement du fait que la tribu des boréliens soit la tribu engendrée par les ouverts :
+pour vérifier que le résultat est vrai pour tout élément de la tribu, il suffit de le vérifier sur les éléments qui engendrent la tribu (en l'ocurrence, les ouverts).
+
+\begin{prop}
+  \label{prop:simp}
+  Soit $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}(F)\right)$ deux espaces mesurables.
+  $f$ est $\mathcal{A}$-mesurable ssi pour tout ouvert $U$ de $F$, $f^{-1}(U) \in \mathcal{A}$.
+\end{prop}
+
+\begin{rem}
+  En vertu de la définition \ref{defi:Borel}, on peut remplacer dans la proposition \ref{prop:simp} \og ouvert \fg par \og fermé \fg.
+\end{rem}
+
+Le résultat suivant est un résultat important concernant la composition des fonctions mesurables :
+
+\begin{prop}
+  Soit $\left(E,\mathcal{A}\right)$, $\left(F,\mathcal{B}\right)$ et $\left(G,\mathcal{C}\right)$ trois espaces mesurables,
+  $f : E \longrightarrow F$ une fonction $\mathcal{A}$/$\mathcal{B}$-mesurable et $g : F \longrightarrow G$ une fonction $\mathcal{B}$/$\mathcal{C}$-mesurable.
   Alors $g \circ f : E \longrightarrow G$ est une fonction $\mathcal{A}$/$\mathcal{C}$-mesurable
-\end{compmes}
+\end{prop}
 
 \tableofcontents
 
