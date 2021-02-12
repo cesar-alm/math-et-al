@@ -115,11 +115,11 @@ Ces considérations étant faites, on définit alors une tribu comme suit :
   De manière équivalente, c'est l'intersection de toutes les tribus de $E$ contenant $B$.
 \end{defi}
 
-\begin{exemple}
-  \label{ex:borel}
+\begin{defi}
+  \label{defi:Borel}
   Soit $E$ un ensemble muni d'une topologie.
   La \textbf{tribu de Borel} est la tribu engendrée par les ouverts de $E$ (ou de manière équivalente, par les fermés de $E$).
-\end{exemple}
+\end{defi}
 
 \section{Définition de la mesure}
 
@@ -177,14 +177,14 @@ Il existe trois mesures importantes à connaître.
 
 \begin{defi}
   La \textbf{mesure de Lebesgue} est l'unique mesure sur $\mathbb{R}^n$ qui prolonge la notion de volume.
-  Habituellement, sa tribu de définition est la \textbf{tribu de Lebesgue}.
+  Habituellement, sa tribu de définition est la \textbf{tribu de Lebesgue} ou la \textbf{tribu de Borel}.
 \end{defi}
 
 \begin{rem}
-  On peut définir la mesure de Lebesgue sur d'autres tribus, notamment la tribu de Borel (voir \ref{ex:borel}). Mais ce faisant, la mesure ne serait pas complète (voir \ref{rem:completion})
-  La tribu de Lebesgue est en fait la plus petite tribu de $\mathbb{R}^n$ permettant à cette mesure d'être complète.
+  En définissant la mesure de Lebesgue sur la tribu de Borel, elle ne serait en fait pas complète (voir \ref{rem:completion}).
+  La tribu de Lebesgue est alors définie comme étant la plus petite tribu de $\mathbb{R}^n$ permettant à cette mesure d'être complète.
   
-  On ne retiendra pas plus de détails sur cette tribu, mais il est bon de retenir qu'\textbf{un élément Borel-mesurable est Lebesgue-mesurable} (la réciproque est fausse).
+  On ne retiendra pas plus de détails sur la tribu de Lebesgue, mais il est bon de retenir qu'\textbf{un élément Borel-mesurable est Lebesgue-mesurable} (la réciproque est fausse).
 \end{rem}
 
 \begin{rem}
@@ -194,6 +194,8 @@ Il existe trois mesures importantes à connaître.
     \itemb lorsque $n=2$, cette mesure prolonge la notion de surface.
     \itemb lorsque $n=3$, cette mesure prolonge la notion de volume.
   \end{itemize}
+
+  Par ailleurs, cette mesure sera centrale dans la partie \ref{part:int} concernant les intégrales.
 \end{rem}
 
 
