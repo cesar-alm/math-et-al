@@ -12,7 +12,6 @@
 \theoremstyle{plain}
 \newtheorem{thm}{Théorème}[section]
 \newtheorem{prop}{Proposition}[section]
-\newtheorem*{compmes}{Proposition (Composition des fonctions mesurables)}
 
 \theoremstyle{definition}
 \newtheorem{defi}{Définition}[section]
@@ -228,13 +227,13 @@ Lorsque deux espaces mesurables sont définis, il peut être utile de définir u
   alors on dira simplement qu'une fonction vérifiant la définition \ref{def:fctmes2} est \textbf{mesurable}.
 \end{rem}
 
-Le résultat suivant peut sembler anodin mais sera important dans la partie concernant les probabilités
+Le résultat suivant est un résultat important concernant la composition des fonctions mesurables :
 
-\begin{compmes}
-  Soit $\left(E,\mathcal{A}\right)$, $\left(F,\mathcal{B}\right)$ et $\left(G,\mathcal{C}\right)$ trois espaces mesurables.
-  Soit $f : E \longrightarrow F$ une fonction $\mathcal{A}$/$\mathcal{B}$-mesurable et $g : F \longrightarrow G$ une fonction $\mathcal{B}$/$\mathcal{C}$-mesurable.
+\begin{prop}
+  Soit $\left(E,\mathcal{A}\right)$, $\left(F,\mathcal{B}\right)$ et $\left(G,\mathcal{C}\right)$ trois espaces mesurables,
+  $f : E \longrightarrow F$ une fonction $\mathcal{A}$/$\mathcal{B}$-mesurable et $g : F \longrightarrow G$ une fonction $\mathcal{B}$/$\mathcal{C}$-mesurable.
   Alors $g \circ f : E \longrightarrow G$ est une fonction $\mathcal{A}$/$\mathcal{C}$-mesurable
-\end{compmes}
+\end{prop}
 
 \tableofcontents
 
