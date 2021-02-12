@@ -271,26 +271,38 @@ Lorsque deux espaces mesurables sont définis, il peut être utile de définir u
   Cette caractérisation des fonctions mesurables porte le nom de \textbf{critère de l'image réciproque}.
 \end{rem}
 
-\begin{defi}
-  \label{def:fctmes2}
-  Soit $\left(E, \mathcal{A}\right)$ un espace mesurable. Une fonction $\mathcal{A}$\textbf{-mesurable} est une fonction $f:E \longrightarrow \mathbb{R}^n$ telle que :
-  $$\forall Y \in \mathcal{B}, f^{-1}(Y) \in \mathcal{A}$$
-  où $\mathcal{B}$ est la tribu de Lebesgue sur $\mathbb{R}^n$.
-\end{defi}
-
 \begin{rem}
-  De cette manière, dans le cas où une fonction est à valeur dans l'espace mesurable $\mathbb{R}^n$ muni de la tribu de Lebesgue, on omettra la mention de la tribu de l'espace d'arrivée.
-  Cela permet d'alléger les énoncés, étant donné que, dans l'immense majorité des cas, les fonctions seront effectivement à valeurs dans $\mathbb{R}^n$ muni de la tribu de Lebesgue.
+  Cette notation est lourde, et c'est pourquoi elle est souvent simplifiée.
+  \begin{itemize}
+  \itemb dans le cas où $\mathcal{B}=\mathcal{B}\left(F\right)$ (la tribu d'arrivée est celle des boréliens), on pourra simplifier la notation et dire simplement que :
+  $$
+  f \text{ est } \mathcal{A}\text{-mesurable}
+  $$
+  \itemb si, de plus, la tribu de l'espace de départ n'est pas ambigüe, on pourra alors simplement écrire que :
+  $$
+  f \text{ est mesurable}
+  $$
+  \end{itemize}
 \end{rem}
 
 \begin{rem}
-  Dans le même esprit de simplification, si :
-  \begin{itemize}
-    \itemb l'espace d'arrivée est $\mathbb{R}^n$, muni de la mesure de Lebesgue
-    \itemb à part la tribu de Lebesgue, il n'y a qu'une autre tribu en jeu
-  \end{itemize}
+  On remarquera que la notion de fonction mesurable est \textbf{indépendante des mesures choisies}.
+  Elle ne dépend que des tribus de l'espace de départ et d'arrivée.
+\end{rem}
 
-  alors on dira simplement qu'une fonction vérifiant la définition \ref{def:fctmes2} est \textbf{mesurable}.
+La proposition suivante permet de simplifier considérablement la vérification de la mesurabilité d'une fonction, dans le cas où l'espace d'arrivée est muni de la tribu des boréliens.
+
+Elle découle directement du fait que la tribu des boréliens soit la tribu engendrée par les ouverts :
+pour vérifier que le résultat est vrai pour tout élément de la tribu, il suffit de le vérifier sur les éléments qui engendrent la tribu (en l'ocurrence, les ouverts).
+
+\begin{prop}
+  \label{prop:simp}
+  Soit $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}(F)\right)$ deux espaces mesurables.
+  $f$ est $\mathcal{A}$-mesurable ssi pour tout ouvert $U$ de $F$, $f^{-1}(U) \in \mathcal{A}$.
+\end{prop}
+
+\begin{rem}
+  En vertu de la définition \ref{defi:Borel}, on peut remplacer dans la proposition \ref{prop:simp} \og ouvert \fg par \og fermé \fg.
 \end{rem}
 
 Le résultat suivant est un résultat important concernant la composition des fonctions mesurables :
