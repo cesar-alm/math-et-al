@@ -198,6 +198,64 @@ Il existe trois mesures importantes à connaître.
   Par ailleurs, cette mesure sera centrale dans la partie \ref{part:int} concernant les intégrales.
 \end{rem}
 
+\begin{defi}
+  Soit $\left(E,\mathcal{A}\right)$ un espace mesurable.
+  La \textbf{mesure de comptage} $c$ est définie sur cette espace comme suit :
+  
+  $$
+    c : 
+  \left\{
+  \begin{array}{ccc}
+    \mathcal{A} & \longrightarrow & \mathbb{R}_+\cup\left\{+\infty\right\}\\
+    A &                                   \longmapsto    &  
+      \left\{
+      \begin{array}{rcl}
+        0 & \text{si} & A = \varnothing\\
+        n & \text{si} & A \text{ est fini de cardinal } n\\
+        +\infty & \text{si} & A \text{ est infini}
+      \end{array}
+      \right.
+  \end{array}
+  \right.
+  $$
+\end{defi}
+
+\begin{rem}
+  Comme son nom l'indique, cette mesure compte les éléments présents dans l'ensemble que l'on mesure.
+\end{rem}
+
+\begin{rem}
+  Bien que cette mesure soit définie pour un espace mesurable quelconque, elle sera particulièrement utile dans $\left(\mathbb{N},\mathcal{P}\left(\mathbb{N}\right)\right)$ (notamment pour la partie \ref{part:series} concernant les séries).
+\end{rem}
+
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A}\right)$ un espace mesurable.
+  La \textbf{mesure de Dirac en $x \in E$} $\delta_x$ est définie comme suit :
+
+  $$
+    \delta_x : 
+  \left\{
+  \begin{array}{ccc}
+    \mathcal{A} & \longrightarrow & \mathbb{R}_+\\
+    A &                                   \longmapsto    &  
+      \left\{
+      \begin{array}{rcl}
+        0 & \text{si} & x \in A\\
+        1 & \text{si} & x \notin A
+      \end{array}
+      \right.
+  \end{array}
+  \right.
+  $$
+\end{defi}
+
+\begin{rem}
+  La mesure de Dirac et la fonction indicatrice sont reliées de la manière suivante :
+  $$
+  \forall A \in \mathcal{A}, \forall x \in E, \delta_x(A)=\mathds{1}_A(x)
+  $$
+\end{rem}
 
 \section{Fonctions mesurables}
 
