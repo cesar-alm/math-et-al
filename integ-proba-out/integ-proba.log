@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.15)  13 FEB 2021 14:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.15)  13 FEB 2021 22:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -463,25 +463,25 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 [8]
 Chapitre 2.
 
-LaTeX Warning: Reference `ex:ratneg' on page 9 undefined on input line 330.
+LaTeX Warning: Reference `ex:ratneg' on page 9 undefined on input line 333.
 
 [9
 
-] [10] (./integ-proba.aux)
+] [10] [11] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: 70AF45C211C2ED3A17428C10FE9986DF;695.
+(rerunfilecheck)             Checksum: 1F413C8DB3452E3C393DB9D382FCC696;844.
  ) 
 Here is how much of TeX's memory you used:
- 7514 strings out of 479310
- 110421 string characters out of 5869900
- 433240 words of memory out of 5000000
- 24499 multiletter control sequences out of 15000+600000
+ 7526 strings out of 479310
+ 110549 string characters out of 5869900
+ 433336 words of memory out of 5000000
+ 24503 multiletter control sequences out of 15000+600000
  477244 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,19n,70p,289b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,19n,70p,327b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/l
@@ -496,10 +496,10 @@ exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 msy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on integ-proba.pdf (11 pages, 230103 bytes).
+Output written on integ-proba.pdf (12 pages, 236514 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 55 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

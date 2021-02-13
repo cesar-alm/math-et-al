@@ -315,6 +315,9 @@ Le résultat suivant est un résultat important concernant la composition des fo
   Alors $g \circ f : E \longrightarrow G$ est une fonction $\mathcal{A}$/$\mathcal{C}$-mesurable
 \end{prop}
 
+%TODO : exemples de fonctions mesurables
+%approximation par les fonctions étagées
+
 \chapter{Construction de l'intégrale de Lebesgue}
 
 Maintenant que nous connaissons les notions de base concernant la théorie de la mesure, nous sommes en mesure de définir l'intégrale de Lebesgue.
@@ -347,7 +350,61 @@ En effet, si une mesure $\mu$ vérifie $\mu\left(\left[1,2\right]\right)=0$, alo
 Plus généralement, \textbf{on aimerait pouvoir intégrer dans n'importe-quel espace par n'importe-quelle mesure.}
 L'intégrale de Lebesgue répondra à ce besoin.
 
-\section{Définition de l'intégrale de Lebesgue}
+\section{Définition de l'intégrale de Lebesgue pour des fonctions positives}
+\label{sect:defintpos}
+Les fonctions positives ont une place privilégiée dans la théorie de l'intégration de Lebesgue.
+En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$) :
 
+\begin{defi}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
+  \textbf{La } $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
+  \begin{itemize}
+    \itemb \textbf{la relation mesure-intégrale} : pour tout ensemble $X$ $\mathcal{A}$-mesurable,
+    $$
+    \int_E\mathds{1}_X(x)\text{d}\mu(x)=\mu(X)
+    $$ 
+    \itemb \textbf{l'hypothèse de linéarité} : pour toute fonction mesurable $g:E\rightarrow\mathbb{R}_+$ et pour tous $\left(\alpha,\beta\right) \in \left(\mathbb{R}_+^*\right)^2$,
+    $$
+    \int_E (\alpha f + \beta g)(x) \text{d}\mu(x)=\alpha\int_Ef(x)\text{d}\mu(x) + \beta\int_Eg(x)\text{d}\mu(x)
+    $$
+    \itemb \textbf{l'hypothèse de convergence monotone} : pour toute suite croissante de fonctions mesurables $f_n:E\rightarrow\mathbb{R}_+$ convergeant simplement vers $f$,
+    $$
+    \lim_{n\rightarrow+\infty}\int_Ef_n(x)\text{d}\mu(x)=\int_Ef(x)\text{d}\mu(x)
+    $$
+  \end{itemize}
+\end{defi}
+
+\begin{rem}
+  L'intégrale d'une fonction mesurable positive vérifie immédiatement, par définition, ces trois hypothèses fondamentales, qui seront centrales dans la suite de ce document.
+  Attention cependant : les deux hypothèses de mesurabilité et de positivité sont absolument nécessaires.
+\end{rem}
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
+  $f$ est dite $\mu$\textbf{-intégrable} lorsque $\displaystyle\int_Ef(x)\text{d}\mu(x) < +\infty$.
+\end{defi}
+
+\begin{rem}
+  On fera donc bien attention au sens précis du mot \og intégrable \fg.
+  Il est plus fort de dire qu'une fonction est intégrable, que de dire que l'intégrale d'une fonction existe.
+  Par exemple, une fonction mesurable positive admet toujours une intégrale, mais elle n'est pas forcément intégrable.
+\end{rem}
+
+\begin{defi}
+  %intégrale sur un sous-ensemble par l'indicatrice
+\end{defi}
+
+%Montrer comment on peut utiliser ces résultats pour prouver qqchose (avec la convergence par des fonctions étagées)
+
+\section{Définition de l'intégrale de Lebesgue pour des fonctions signées}
+
+La définition de l'intégrale pour une fonction signée (\textit{ie} à valeurs réelles quelconques) arrive volontairement en fin de chapitre, pour éviter de confondre les résultats.
+En effet, comme cela a été souligné au début de la section \ref{sect:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue ; elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
+
+%TODO partie positive et partie négative
+
+\begin{defi}
+  % Définition pour une intégrale de signe quelconque
+\end{defi}
 
 \end{document}
