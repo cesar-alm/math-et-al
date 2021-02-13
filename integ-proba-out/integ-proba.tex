@@ -31,6 +31,8 @@
 
 \maketitle
 
+\tableofcontents
+
 \chapter*{Avant-propos}
 Ce document vise à résumer les notions essentielles d'intégration et de probabilités.
 Son objectif est de retracer les cheminements de pensée qui mènent aux résultats essentiels, afin de mieux les retenir.
@@ -176,7 +178,7 @@ Cela nous amène à définir une mesure ainsi :
 Il existe trois mesures importantes à connaître.
 
 \begin{defi}
-  La \textbf{mesure de Lebesgue} est l'unique mesure sur $\mathbb{R}^n$ qui prolonge la notion de volume.
+  La \textbf{mesure de Lebesgue} $\lambda$ est l'unique mesure sur $\mathbb{R}^n$ qui prolonge la notion de volume.
   Habituellement, sa tribu de définition est la \textbf{tribu de Lebesgue} ou la \textbf{tribu de Borel}.
 \end{defi}
 
@@ -313,6 +315,39 @@ Le résultat suivant est un résultat important concernant la composition des fo
   Alors $g \circ f : E \longrightarrow G$ est une fonction $\mathcal{A}$/$\mathcal{C}$-mesurable
 \end{prop}
 
-\tableofcontents
+\chapter{Construction de l'intégrale de Lebesgue}
+
+Maintenant que nous connaissons les notions de base concernant la théorie de la mesure, nous sommes en mesure de définir l'intégrale de Lebesgue.
+Cette intégrale est en quelque sorte une généralisation de l'intégrale de Riemann.
+
+\section{Pourquoi définir une nouvelle intégrale ?}
+
+Deux raisons principales peuvent nous amener à définir une nouvelle intégrale.
+
+D'une part, l'intégrale de Riemann ne permet de calculer l'intégrale que de fonctions \textbf{continues par morceaux}.
+Or, cela est très restrictif : par exemple, prenons la fonction $\mathds{1}_{\mathbb{Q}}$.
+Elle n'est pas continue par morceaux, donc n'est pas intégrable au sens de Riemann.
+Pourtant, pour la mesure de Lebesgue, $\mathbb{Q}$ est négligeable (voir l'exemple \ref{ex:ratneg}).
+Ainsi, $\mathds{1}_{\mathbb{Q}}$ est Lebesgue-presque-partout égale à $0$.
+On aurait donc envie de dire que \og l'influence de $\mathbb{Q}$ est si petite, qu'elle n'a aucun impact dans l'intégrale \fg.
+En disant cela, on veut en fait dire que l'intégrale de $\mathds{1}_{\mathbb{Q}}$ serait égale à l'intégrale de la fonction nulle, qui vaut zéro.
+Ce faisant, \textbf{on pourrait donner un sens à l'intégrale d'une fonction qui n'est pas continue par morceaux !}
+
+Plus généralement, l'intégrale de Lebesgue permettra de définir l'intégrale d'une fonction mesurable, et non plus d'une fonction continue par morceaux.
+
+D'autre part, l'intégrale de Riemann utilise la notion de longueur :
+par exemple, si $f$ est la fonction constante égale à 1, nous avons
+
+$$
+\int_0^1f(x)\text{d}x = 1 > 2 = \int_0^2f(x)\text{d}x
+$$
+
+Mais il est impossible de \og mesurer différemment \fg.
+En effet, si une mesure $\mu$ vérifie $\mu\left(\left[1,2\right]\right)=0$, alors on aimerait pouvoir dire que les deux intégrales ci-dessus, calculées avec $\mu$, seraient égales.
+Plus généralement, \textbf{on aimerait pouvoir intégrer dans n'importe-quel espace par n'importe-quelle mesure.}
+L'intégrale de Lebesgue répondra à ce besoin.
+
+\section{Définition de l'intégrale de Lebesgue}
+
 
 \end{document}
