@@ -132,7 +132,7 @@ De plus, si deux ensembles sont disjoints, il est légitime de demander que la m
 Cela nous amène à définir une mesure ainsi :
 
 \begin{defi}
-  Une \textbf{mesure} $\mu$ sur un espace mesurable $(E, \mathcal{A})$ est une application $\mu : \mathcal{A} \longrightarrow \mathbb{R}_+$ telle que :
+  Une \textbf{mesure} $\mu$ sur un espace mesurable $(E, \mathcal{A})$ est une application $\mu : \mathcal{A} \longrightarrow \mathbb{R}_+ \cup \{ +\infty \}$ telle que :
   \begin{enumerate}
     \item $\mu(\varnothing) = 0$
     \item Pour une famille au plus dénombrable d'ensembles mesurables $\left(A_i\right)_{i \in I}$,
@@ -155,7 +155,7 @@ Cela nous amène à définir une mesure ainsi :
 
 \begin{defi}
   Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré.
-  Un ensemble $X \subset E$ est dit \textbf{négligeable} si :
+  Un ensemble $X \subset E$ est dit $\mu$\textbf{-négligeable} si :
   $$\exists Y \in \mathcal{A}, 
   \left\{
     \begin{array}{c}
@@ -172,6 +172,11 @@ Cela nous amène à définir une mesure ainsi :
   Modifier une mesure et la tribu respective pour arriver à ce résultat porte le nom de \textbf{complétion d'une mesure}.
 
   Ce processus ne sera pas détaillé ici, mais le lecteur peut néanmois retenir qu'une mesure complétée vérifie l'équivalence suivante : \textbf{un ensemble est négligeable ssi il est mesurable, de mesure nulle}
+\end{rem}
+
+\begin{rem}
+  On notera que la notion d'ensemble négligeable dépend de la mesure choisie.
+  Un ensemble négligeable pour une certaine mesure peut très bien ne pas l'être pour une autre mesure.
 \end{rem}
 
 \section{Exemples importants}
@@ -292,6 +297,23 @@ Lorsque deux espaces mesurables sont définis, il peut être utile de définir u
   Elle ne dépend que des tribus de l'espace de départ et d'arrivée.
 \end{rem}
 
+Voici un lien bien utile entre ensembles et fonctions mesurables :
+
+\begin{prop}
+  \label{prop:lienensfctmes}
+  Soit $\left(E, \mathcal{A}\right)$ un espace mesurable.
+  Soit $A\subset E$.
+  Alors $A$ est mesurable ssi $\mathds{1}_A$ est mesurable.
+\end{prop}
+
+\begin{rem}
+  On remarquera que l'on a bien utilisé le formalisme de la remarque précédente :
+  \begin{itemize}
+    \itemb la tribu de l'espace d'arrivée est la tribu borélienne de $\mathbb{R}$.
+    \itemb la tribu de l'espace de départ est $\mathcal{A}$, non-ambigüe.
+  \end{itemize}
+\end{rem}
+
 La proposition suivante permet de simplifier considérablement la vérification de la mesurabilité d'une fonction, dans le cas où l'espace d'arrivée est muni de la tribu des boréliens.
 
 Elle découle directement du fait que la tribu des boréliens soit la tribu engendrée par les ouverts :
@@ -357,7 +379,7 @@ En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$)
 
 \begin{defi}
   Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
-  \textbf{La } $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
+  \textbf{La} $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
   \begin{itemize}
     \itemb \textbf{la relation mesure-intégrale} : pour tout ensemble $X$ $\mathcal{A}$-mesurable,
     $$
@@ -385,26 +407,111 @@ En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$)
 \end{defi}
 
 \begin{rem}
+  \label{rem:attint}
   On fera donc bien attention au sens précis du mot \og intégrable \fg.
   Il est plus fort de dire qu'une fonction est intégrable, que de dire que l'intégrale d'une fonction existe.
   Par exemple, une fonction mesurable positive admet toujours une intégrale, mais elle n'est pas forcément intégrable.
 \end{rem}
 
 \begin{defi}
-  %intégrale sur un sous-ensemble par l'indicatrice
+  Soit $f:E\longrightarrow\mathbb{R}$, et $F\subset E$.
+  On dit que $f$ est \textbf{intégrable sur le sous ensemble} $F$ lorsque $f\mathds{1}_F$ est intégrable.
 \end{defi}
+
+\begin{rem}
+  Pour avoir une chance que $f$ soit intégrable sur $F$, il est nécessaire que $f\mathds{1}_F$ soit mesurable.
+\end{rem}
 
 %Montrer comment on peut utiliser ces résultats pour prouver qqchose (avec la convergence par des fonctions étagées)
 
+\section{Propriétés de l'intégrale positive}
+
 \section{Définition de l'intégrale de Lebesgue pour des fonctions signées}
 
-La définition de l'intégrale pour une fonction signée (\textit{ie} à valeurs réelles quelconques) arrive volontairement en fin de chapitre, pour éviter de confondre les résultats.
-En effet, comme cela a été souligné au début de la section \ref{sect:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue ; elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
-
-%TODO partie positive et partie négative
+Commençons par des résultats préliminaires qui seront utiles par la suite :
 
 \begin{defi}
-  % Définition pour une intégrale de signe quelconque
+  \label{def:partieposneg}
+  Soit $E$ un ensemble.
+  Soit $f:E\longrightarrow\mathbb{R}$.
+  Les \textbf{partie positive} et \textbf{partie négative} de $f$, respectivement $f_+$ et $f_-$, sont définies comme suit :
+  $$
+  \left\{
+    \begin{array}{rcl}
+      f_+&:=&\max(0,f)\\
+      f_-&:=&\min(0,f)
+    \end{array}
+  \right.
+  $$
 \end{defi}
+
+\begin{prop}
+  Soit E un ensemble et $f:E\longrightarrow\mathbb{R}$.
+  Alors :
+  $$
+  f = f_+ - f_-
+  $$
+\end{prop}
+
+Le résultat suivant est une conséquence directe de la proposition $\ref{prop:compmes}$ :
+
+\begin{prop}
+  \label{prop:partiemes}
+  Soit $\left(E,\mathcal{A}\right)$ un espace mesurable et $f:E\longrightarrow\mathbb{R}$ une fonction mesurable.
+  Alors $f^+$ et $f_-$ sont mesurables
+\end{prop}
+
+Désormais, passons à la définition de l'intégrale d'une fonction signée. Celle-ci arrive volontairement dans une nouvelle section, pour souligner la différence avec l'intégrale d'une fonction positive.
+En effet, comme cela a été souligné au début de la section \ref{sect:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue : elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
+
+En général, tous les résultats pour les fonctions signées se déduiront des résultats pour les fonctions positives de la manière suivante :
+\begin{itemize}
+  \itemb On décompose une fonction signée mesurable $f:E\longrightarrow\mathbb{R}$ en sa partie positive $f^+$ et sa partie négative $f_-$ (voir la définition \ref{def:partieposneg}).
+  \itemb Ces deux fonctions étant positives (et encore mesurables par la proposition \ref{prop:partiemes}), on applique leur applique un résultat vrai pour les fonctions positives.
+  \itemb On utilise l'identité $f=f^++f_-$ pour obtenir le résultat final.
+\end{itemize}
+
+La définition de l'intégrale pour une fonction signée n'échappe pas à cette règle :
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
+  \textbf{La} $\mu$ \textbf{intégrale de Lebesgue} $\displaystyle\int_E f(x) \text{d}\mu(x)$ existe dès que $f_+$ ou $f_-$ est $\mu$-intégrable.
+  Dans ce cas, on a :
+  $$
+  \int_E f(x) \text{d}\mu(x)=\int_Ef_+\text{d}\mu(x) - \int_Ef_-(x)\text{d}\mu(x)
+  $$
+\end{defi}
+
+\begin{rem}
+  Contrairement au cas positif, \textbf{l'intégrale d'une fonction signée n'existe pas systématiquement !}
+\end{rem}
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}$ mesurable.
+  $f$ est dite $\mu$\textbf{-intégrable} lorsque $f_+$ et $f_-$ sont $\mu$-intégrables.
+\end{defi}
+
+\begin{rem}
+  On notera que, de manière équivalente, \textbf{une fonction signée est intégrable ssi l'intégrale de} $f$ \textbf{existe, et est finie.}
+\end{rem}
+
+\begin{rem}
+  Comme dans le cas positif (remarque \ref{rem:attint}), le mot \og intégrable\fg a un sens bien précis !
+\end{rem}
+
+\begin{thm}
+  Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré et $f:E\longrightarrow\mathbb{R}$ mesurable. $f$ est $\mu$-intégrable ssi $\left|f\right|$ est $\mu$-intégrable.
+  On dit que \textbf{l'intégrale de Lebesgue est absolue}.
+\end{thm}
+
+\begin{rem}
+  Pour vérifier qu'une fonction signée est intégrable, on vérifiera en pratique que sa valeur absolue est intégrable.
+\end{rem}
+
+Le théorème suivant assure que cette nouvelle intégrale vérifie bien les besoins que l'on avait exprimé en début de chapitre.
+
+\begin{thm}
+  L'intégrale de Lebesgue prolonge l'intégrale de Riemann.
+\end{thm}
 
 \end{document}
