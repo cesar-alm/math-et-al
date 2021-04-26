@@ -180,6 +180,8 @@ Cela nous amène à définir une mesure ainsi :
   Un ensemble négligeable pour une certaine mesure peut très bien ne pas l'être pour une autre mesure.
 \end{rem}
 
+%TODO ajouter la continuité monotone
+
 \section{Exemples importants}
 Il existe trois mesures importantes à connaître.
 
@@ -337,6 +339,21 @@ Le résultat suivant est un résultat important concernant la composition des fo
   $f : E \longrightarrow F$ une fonction $\mathcal{A}$/$\mathcal{B}$-mesurable et $g : F \longrightarrow G$ une fonction $\mathcal{B}$/$\mathcal{C}$-mesurable.
   Alors $g \circ f : E \longrightarrow G$ est une fonction $\mathcal{A}$/$\mathcal{C}$-mesurable
 \end{prop}
+
+Enfin, voici une dernière définition qui sera utile dans le chapitre concernant les probabilités :
+
+\begin{defi}
+  Une fonction $f:E\longrightarrow F$ est dite \textbf{borélienne} lorsqu'elle est $\mathcal{B}(X)$/$\mathcal{B}(Y)$-mesurable.
+\end{defi}
+
+\begin{prop}
+  Une fonction continue est borélienne.
+\end{prop}
+
+\begin{rem}
+  Cette proposition est une conséquence directe de la caractérisation de la continuité d'une fonction par l'image réciproque des ouverts.
+  Attention, la réciproque de ce résultat est fausse : il existe des fonctions boréliennes qui ne sont pas continues.
+\end{rem}
 
 %TODO : exemples de fonctions mesurables
 
