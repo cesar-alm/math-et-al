@@ -379,7 +379,7 @@ En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$)
 
 \begin{defi}
   Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
-  \textbf{La } $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
+  \textbf{La} $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
   \begin{itemize}
     \itemb \textbf{la relation mesure-intégrale} : pour tout ensemble $X$ $\mathcal{A}$-mesurable,
     $$
@@ -407,14 +407,20 @@ En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$)
 \end{defi}
 
 \begin{rem}
+  \label{rem:attint}
   On fera donc bien attention au sens précis du mot \og intégrable \fg.
   Il est plus fort de dire qu'une fonction est intégrable, que de dire que l'intégrale d'une fonction existe.
   Par exemple, une fonction mesurable positive admet toujours une intégrale, mais elle n'est pas forcément intégrable.
 \end{rem}
 
 \begin{defi}
-  %intégrale sur un sous-ensemble par l'indicatrice
+  Soit $f:E\longrightarrow\mathbb{R}$, et $F\subset E$.
+  On dit que $f$ est \textbf{intégrable sur le sous ensemble} $F$ lorsque $f\mathds{1}_F$ est intégrable.
 \end{defi}
+
+\begin{rem}
+  Pour avoir une chance que $f$ soit intégrable sur $F$, il est nécessaire que $f\mathds{1}_F$ soit mesurable.
+\end{rem}
 
 %Montrer comment on peut utiliser ces résultats pour prouver qqchose (avec la convergence par des fonctions étagées)
 
