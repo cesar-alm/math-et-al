@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  26 APR 2021 16:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  26 APR 2021 17:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -334,40 +334,41 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
 \c@thm=\count285
 \c@prop=\count286
-\c@defi=\count287
-\c@exemple=\count288
-\c@rem=\count289
+\c@cor=\count287
+\c@defi=\count288
+\c@exemple=\count289
+\c@rem=\count290
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count290
+\l__color_backend_stack_int=\count291
 \l__pdf_internal_box=\box49
 )
 (./integ-proba.aux)
 \openout1 = `integ-proba.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Info: Redefining \degres on input line 25.
-LaTeX Info: Redefining \dots on input line 25.
-LaTeX Info: Redefining \up on input line 25.
-Package hyperref Info: Link coloring OFF on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Info: Redefining \degres on input line 26.
+LaTeX Info: Redefining \dots on input line 26.
+LaTeX Info: Redefining \up on input line 26.
+Package hyperref Info: Link coloring OFF on input line 26.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -379,52 +380,52 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count291
+\c@section@level=\count292
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
  (./integ-proba.out) (./integ-proba.out)
 \@outlinefile=\write3
 \openout3 = `integ-proba.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-3.
+4.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-3.
+4.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-33.
+34.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-33.
+34.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 33.
+(Font)              <12> on input line 34.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 33.
+(Font)              <8> on input line 34.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 33.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
+(Font)              <6> on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -447,7 +448,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 \chapter
+l.37 \chapter
              *{Avant-propos} [1
 
 ] [2
@@ -460,67 +461,68 @@ Chapitre 1.
 
 ] [5]
 
-LaTeX Warning: Reference `part:int' on page 6 undefined on input line 205.
+LaTeX Warning: Reference `part:int' on page 6 undefined on input line 206.
 
 [6]
 
-LaTeX Warning: Reference `part:series' on page 7 undefined on input line 235.
+LaTeX Warning: Reference `part:series' on page 7 undefined on input line 236.
 
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 2
-63.
+64.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ) [7]
-[8]
+[8] [9]
 Chapitre 2.
 
-LaTeX Warning: Reference `ex:ratneg' on page 9 undefined on input line 355.
+LaTeX Warning: Reference `ex:ratneg' on page 10 undefined on input line 403.
 
-[9
+[10
 
-] [10]
+] [11]
 
-LaTeX Warning: Reference `prop:compmes' on page 11 undefined on input line 456.
+LaTeX Warning: Reference `prop:compmes' on page 12 undefined on input line 504.
 
 
-[11] [12] (./integ-proba.aux)
+[12] [13] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: 0E8E5F6D7FF4EE4F78A25F617A1614B5;2764.
+(rerunfilecheck)             Checksum: D1252D1A784C852EA5BD6F2E356D85C9;3018.
  ) 
 Here is how much of TeX's memory you used:
- 10151 strings out of 478994
- 146463 string characters out of 5858190
- 463374 words of memory out of 5000000
- 27405 multiletter control sequences out of 15000+600000
+ 10168 strings out of 478994
+ 146597 string characters out of 5858190
+ 463462 words of memory out of 5000000
+ 27413 multiletter control sequences out of 15000+600000
  481515 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,19n,74p,462b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,19n,74p,463b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/20
-21/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-d
-ist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
-dvips/lm/lm-mathit.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/d
+texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
+21/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2021/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-dist/fonts/
+enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/d
 oublestroke/dsrom10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
 lm/lmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.
 pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr
 /local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2021/
-texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2021/texmf-dist/
-fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
-/public/lm/lmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/
-lmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr7.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/
-texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/20
-21/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2021/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on integ-proba.pdf (13 pages, 257695 bytes).
+texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2021/texmf-dist/
+fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
+/public/lm/lmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/
+lmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/t
+exlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/202
+1/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2021/texmf-di
+st/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/font
+s/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on integ-proba.pdf (14 pages, 266900 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
- 79 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 297 PDF objects out of 1000 (max. 8388607)
+ 261 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

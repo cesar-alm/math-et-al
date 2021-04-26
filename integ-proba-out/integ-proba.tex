@@ -12,6 +12,7 @@
 \theoremstyle{plain}
 \newtheorem{thm}{Théorème}[section]
 \newtheorem{prop}{Proposition}[section]
+\newtheorem{cor}{Corollaire}[section]
 
 \theoremstyle{definition}
 \newtheorem{defi}{Définition}[section]
@@ -338,7 +339,54 @@ Le résultat suivant est un résultat important concernant la composition des fo
 \end{prop}
 
 %TODO : exemples de fonctions mesurables
-%approximation par les fonctions étagées
+
+\section{Approximation des fonctions mesurables}
+
+Les fonctions mesurables, en plus de faire bon ménage avec les ensembles mesurables, peuvent être approximées facilement par des fonctions dites \og étagées \fg.
+Nous allons commencer par définir cette classe de fonctions, puis nous verrons en quoi consiste cette approximation.
+
+\begin{defi}
+  Une \textbf{fonction étagée} est une fonction dont l'image est finie.
+\end{defi}
+
+La proposition suivante fournit une décomposition pratique des fonctions étagées :
+
+\begin{prop}
+  Soit $f$ une fonction étagée. Alors :
+  $$
+  \exists N \in \mathbb{N}, \exists \left(A_i\right)_{i \in [\![1,N]\!]} \subset \mathbb{R}^N, \exists \left(y_i\right)_{i \in [\![1,N]\!]} \in \mathbb{R}^N, f = \sum_{i=1}^{N}y_i\mathds{1}_{A_i}
+  $$
+\end{prop}
+
+\begin{rem}
+  Lorsque la fonction étagée que l'on manipule est mesurable, il existe toujours une décomposition de la forme précédente où les $\left(A_i\right)_{i\in[\![1,N]\!]}$ ont le bon goût d'être mesurables.
+
+  C'est une propriété essentielle des fonctions étagées mesurables, qui sera utile dans prochain chapitre.
+\end{rem}
+
+\begin{thm}
+  Toute fonction mesurable positive est limite simple d'une suite croissante de fonctions étagées mesurables positives.
+\end{thm}
+
+\begin{rem}
+  Ici, la croissance d'une suite de fonctions $\left(f_k\right)_{k\in \mathbb{N}}$ est à comprendre dans le sens suivant :
+  $$
+  \forall k \in \mathbb{N}, \forall x \in E, f_k(x) \leq f_{k+1}(x)
+  $$
+\end{rem}
+
+Un corollaire existe pour les fonctions mesurables signées, mais il est assez peu utile. Le voici à titre culturel seulement :
+
+\begin{cor}
+  Toute fonction mesurable est limite simple d'une suite absolument croissante de fonctions étagées mesurables.
+\end{cor}
+
+\begin{rem}
+  Ici, l'absolue croissance d'une suite de fonctions $\left(f_k\right)_{k\in \mathbb{N}}$ est à comprendre dans le sens suivant :
+  $$
+  \forall k \in \mathbb{N}, \forall x \in E, \left|f_k(x)\right| \leq \left|f_{k+1}(x)\right|
+  $$
+\end{rem}
 
 \chapter{Construction de l'intégrale de Lebesgue}
 
