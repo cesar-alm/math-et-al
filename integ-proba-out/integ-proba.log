@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  26 APR 2021 17:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  26 APR 2021 18:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -461,41 +461,45 @@ Chapitre 1.
 
 ] [5]
 
-LaTeX Warning: Reference `part:int' on page 6 undefined on input line 206.
+LaTeX Warning: Reference `part:int' on page 6 undefined on input line 208.
 
 [6]
 
-LaTeX Warning: Reference `part:series' on page 7 undefined on input line 236.
+LaTeX Warning: Reference `part:series' on page 7 undefined on input line 238.
 
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 2
-64.
+66.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ) [7]
 [8] [9]
 Chapitre 2.
 
-LaTeX Warning: Reference `ex:ratneg' on page 10 undefined on input line 403.
+LaTeX Warning: Reference `ex:ratneg' on page 10 undefined on input line 438.
 
 [10
 
 ] [11]
 
-LaTeX Warning: Reference `prop:compmes' on page 12 undefined on input line 504.
+LaTeX Warning: Reference `prop:compmes' on page 12 undefined on input line 539.
 
 
-[12] [13] (./integ-proba.aux)
+[12] [13]
+Chapitre 3.
+[14
+
+] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: D1252D1A784C852EA5BD6F2E356D85C9;3018.
+(rerunfilecheck)             Checksum: 8327229AD50E8B651A759D1AFE08E72C;3720.
  ) 
 Here is how much of TeX's memory you used:
- 10168 strings out of 478994
- 146597 string characters out of 5858190
- 463462 words of memory out of 5000000
- 27413 multiletter control sequences out of 15000+600000
+ 10177 strings out of 478994
+ 146692 string characters out of 5858190
+ 463487 words of memory out of 5000000
+ 27416 multiletter control sequences out of 15000+600000
  481515 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,19n,74p,463b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -519,10 +523,10 @@ exlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/202
 st/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/font
 s/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on integ-proba.pdf (14 pages, 266900 bytes).
+Output written on integ-proba.pdf (15 pages, 268628 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 261 compressed objects within 3 object streams
- 88 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 317 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

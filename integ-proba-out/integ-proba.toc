@@ -5,9 +5,11 @@
 \contentsline {section}{\numberline {1.2}Définition de la mesure}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Exemples importants}{6}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Fonctions mesurables}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Approximation des fonctions mesurables}{8}{section.1.5}%
+\contentsline {section}{\numberline {1.5}Approximation des fonctions mesurables}{9}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Construction de l'intégrale de Lebesgue}{10}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Pourquoi définir une nouvelle intégrale ?}{10}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Définition de l'intégrale de Lebesgue pour des fonctions positives}{11}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Propriétés de l'intégrale positive}{12}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Définition de l'intégrale de Lebesgue pour des fonctions signées}{12}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Démontrer en pratique des résultats sur les intégrales}{13}{section.2.5}%
+\contentsline {chapter}{\numberline {3}L'intégrale de Lebesgue munie de la mesure de Lebesgue}{14}{chapter.3}%
