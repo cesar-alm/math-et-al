@@ -132,7 +132,7 @@ De plus, si deux ensembles sont disjoints, il est légitime de demander que la m
 Cela nous amène à définir une mesure ainsi :
 
 \begin{defi}
-  Une \textbf{mesure} $\mu$ sur un espace mesurable $(E, \mathcal{A})$ est une application $\mu : \mathcal{A} \longrightarrow \mathbb{R}_+$ telle que :
+  Une \textbf{mesure} $\mu$ sur un espace mesurable $(E, \mathcal{A})$ est une application $\mu : \mathcal{A} \longrightarrow \mathbb{R}_+ \cup \{ +\infty \}$ telle que :
   \begin{enumerate}
     \item $\mu(\varnothing) = 0$
     \item Pour une famille au plus dénombrable d'ensembles mesurables $\left(A_i\right)_{i \in I}$,
@@ -155,7 +155,7 @@ Cela nous amène à définir une mesure ainsi :
 
 \begin{defi}
   Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré.
-  Un ensemble $X \subset E$ est dit \textbf{négligeable} si :
+  Un ensemble $X \subset E$ est dit $\mu$\textbf{-négligeable} si :
   $$\exists Y \in \mathcal{A}, 
   \left\{
     \begin{array}{c}
@@ -172,6 +172,11 @@ Cela nous amène à définir une mesure ainsi :
   Modifier une mesure et la tribu respective pour arriver à ce résultat porte le nom de \textbf{complétion d'une mesure}.
 
   Ce processus ne sera pas détaillé ici, mais le lecteur peut néanmois retenir qu'une mesure complétée vérifie l'équivalence suivante : \textbf{un ensemble est négligeable ssi il est mesurable, de mesure nulle}
+\end{rem}
+
+\begin{rem}
+  On notera que la notion d'ensemble négligeable dépend de la mesure choisie.
+  Un ensemble négligeable pour une certaine mesure peut très bien ne pas l'être pour une autre mesure.
 \end{rem}
 
 \section{Exemples importants}
@@ -290,6 +295,23 @@ Lorsque deux espaces mesurables sont définis, il peut être utile de définir u
 \begin{rem}
   On remarquera que la notion de fonction mesurable est \textbf{indépendante des mesures choisies}.
   Elle ne dépend que des tribus de l'espace de départ et d'arrivée.
+\end{rem}
+
+Voici un lien bien utile entre ensembles et fonctions mesurables :
+
+\begin{prop}
+  \label{prop:lienensfctmes}
+  Soit $\left(E, \mathcal{A}\right)$ un espace mesurable.
+  Soit $A\subset E$.
+  Alors $A$ est mesurable ssi $\mathds{1}_A$ est mesurable.
+\end{prop}
+
+\begin{rem}
+  On remarquera que l'on a bien utilisé le formalisme de la remarque précédente :
+  \begin{itemize}
+    \itemb la tribu de l'espace d'arrivée est la tribu borélienne de $\mathbb{R}$.
+    \itemb la tribu de l'espace de départ est $\mathcal{A}$, non-ambigüe.
+  \end{itemize}
 \end{rem}
 
 La proposition suivante permet de simplifier considérablement la vérification de la mesurabilité d'une fonction, dans le cas où l'espace d'arrivée est muni de la tribu des boréliens.
