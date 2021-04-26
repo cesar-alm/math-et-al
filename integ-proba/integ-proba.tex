@@ -382,6 +382,7 @@ La proposition suivante fournit une décomposition pratique des fonctions étag�
 \end{rem}
 
 \begin{thm}
+  \label{thm:decompmes}
   Toute fonction mesurable positive est limite simple d'une suite croissante de fonctions étagées mesurables positives.
 \end{thm}
 
@@ -404,6 +405,23 @@ Un corollaire existe pour les fonctions mesurables signées, mais il est assez p
   \forall k \in \mathbb{N}, \forall x \in E, \left|f_k(x)\right| \leq \left|f_{k+1}(x)\right|
   $$
 \end{rem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{Construction de l'intégrale de Lebesgue}
 
@@ -454,7 +472,7 @@ En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$)
     $$
     \int_E (\alpha f + \beta g)(x) \text{d}\mu(x)=\alpha\int_Ef(x)\text{d}\mu(x) + \beta\int_Eg(x)\text{d}\mu(x)
     $$
-    \itemb \textbf{l'hypothèse de convergence monotone} : pour toute suite croissante de fonctions mesurables $f_n:E\rightarrow\mathbb{R}_+$ convergeant simplement vers $f$,
+    \itemb \textbf{l'hypothèse de convergence monotone} : pour toute suite croissante de fonctions mesurables positives $f_n:E\rightarrow\mathbb{R}_+$ convergeant simplement vers $f$,
     $$
     \lim_{n\rightarrow+\infty}\int_Ef_n(x)\text{d}\mu(x)=\int_Ef(x)\text{d}\mu(x)
     $$
@@ -487,9 +505,9 @@ En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$)
   Pour avoir une chance que $f$ soit intégrable sur $F$, il est nécessaire que $f\mathds{1}_F$ soit mesurable.
 \end{rem}
 
-%Montrer comment on peut utiliser ces résultats pour prouver qqchose (avec la convergence par des fonctions étagées)
-
 \section{Propriétés de l'intégrale positive}
+
+% TODO changement de mesures
 
 \section{Définition de l'intégrale de Lebesgue pour des fonctions signées}
 
@@ -529,14 +547,7 @@ Le résultat suivant est une conséquence directe de la proposition $\ref{prop:c
 Désormais, passons à la définition de l'intégrale d'une fonction signée. Celle-ci arrive volontairement dans une nouvelle section, pour souligner la différence avec l'intégrale d'une fonction positive.
 En effet, comme cela a été souligné au début de la section \ref{sect:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue : elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
 
-En général, tous les résultats pour les fonctions signées se déduiront des résultats pour les fonctions positives de la manière suivante :
-\begin{itemize}
-  \itemb On décompose une fonction signée mesurable $f:E\longrightarrow\mathbb{R}$ en sa partie positive $f^+$ et sa partie négative $f_-$ (voir la définition \ref{def:partieposneg}).
-  \itemb Ces deux fonctions étant positives (et encore mesurables par la proposition \ref{prop:partiemes}), on applique leur applique un résultat vrai pour les fonctions positives.
-  \itemb On utilise l'identité $f=f^++f_-$ pour obtenir le résultat final.
-\end{itemize}
-
-La définition de l'intégrale pour une fonction signée n'échappe pas à cette règle :
+La définition de l'intégrale pour une fonction signée est un premier exemple soulignant cette différence :
 
 \begin{defi}
   Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
@@ -578,5 +589,48 @@ Le théorème suivant assure que cette nouvelle intégrale vérifie bien les bes
 \begin{thm}
   L'intégrale de Lebesgue prolonge l'intégrale de Riemann.
 \end{thm}
+
+\section{Démontrer en pratique des résultats sur les intégrales}
+
+Pour montrer des résultats sur des fonctions mesurables positives, on utilise la décomposition vue au théorème \ref{thm:decompmes}.
+\begin{itemize}
+  \itemb On montre le résultat sur des fonctions indicatrices mesurables.
+  \itemb Puis on le montre sur une somme de fonctions indicatrices mesurables. On a donc montré le résultat pour les fonctions étagées mesurables.
+  \itemb En vertu de l'hypothèse de convergence monotone de l'intégrale et de la décomposition fournie par le théorème \ref{thm:decompmes}, on passe à la limite.
+  Le résultat est alors démontré pour n'importe-quelle fonction mesurable positive.
+\end{itemize}
+
+En général, les résultats pour les fonctions signées se déduiront des résultats pour les fonctions positives de la manière suivante :
+\begin{itemize}
+  \itemb On décompose une fonction signée mesurable $f:E\longrightarrow\mathbb{R}$ en sa partie positive $f^+$ et sa partie négative $f_-$ (voir la définition \ref{def:partieposneg}).
+  \itemb Ces deux fonctions étant positives (et encore mesurables par la proposition \ref{prop:partiemes}), on applique leur applique un résultat vrai pour les fonctions positives.
+  \itemb On utilise l'identité $f=f^++f_-$ pour obtenir le résultat final.
+\end{itemize}
+
+On rappelle toutefois qu'un certain nombre de résultats vrais pour les fonctions positives ne le sont pas pour les fonctions signées.
+
+%TODO Exemple
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{L'intégrale de Lebesgue munie de la mesure de Lebesgue}
+
+%TODO Fubini Tonelli
+%TODO Changement de variables
+%TODO IPP
 
 \end{document}
