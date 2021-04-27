@@ -188,4 +188,38 @@ On rappelle toutefois qu'un certain nombre de résultats vrais pour les fonction
 
 %TODO Exemple
 
+\section{Généralisation aux fonctions à valeurs dans $\mathbb{R}^m$}
+
+Nos fonctions étaient jusqu'ici à valeurs dans $\mathbb{R}$. Qu'en est-il si elle sont à valeurs dans $\mathbb{R}^m$ ?
+
+Soit $f:E\longrightarrow \mathbb{R}^m$. Décomposons $f$ :
+
+$$
+f = \sum_{i=1}^{m}f_ie_i
+$$
+
+où :
+\begin{itemize}
+  \itemb $\left(f_i\right)_{i\in[\![1,m]\!]}$ sont les \textbf{composantes} de $f$.
+  \itemb $\left(e_i\right)_{i\in[\![1,m]\!]}$ est la base canonique de $\mathbb{R}^m$.
+\end{itemize}
+
+Posons alors les définitions suivantes :
+
+\begin{defi}
+  L'intégrale de $f$ existe lorsque les $m$ intégrales des $f_i$ existent.
+  Lorsqu'elle existe, l'intégrale de $f$ vaut :
+  $$
+  \int_Ef = \sum_{i=1}^{m}\int_Ef_i
+  $$
+  (on peut permuter vecteurs et intégrale)
+\end{defi}
+
+\begin{defi}
+  $f$ est dite \textbf{intégrable} lorsque les $m$ fonctions $f_i$ sont intégrables.
+\end{defi}
+
+Avec ces deux définitions, nous avons très facilement généralisé la notion d'intégrale lorsque les fonctions sont à valeurs dans $\mathbb{R}^m$.
+Tous les résultats d'intégrations valables pour des fonctions à valeurs dans $\mathbb{R}$ pourront ainsi se transposer très facilement dans le cas général.
+
 \end{document}
