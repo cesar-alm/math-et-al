@@ -670,6 +670,12 @@ INPUT ./chapitres/construction_integrale.tex
 INPUT ./chapitres/construction_integrale.tex
 INPUT chapitres/construction_integrale.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/doublestroke/dsrom12.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT ./chapitres/integrale_avec_mesure_lebesgue.tex
 INPUT ./chapitres/integrale_avec_mesure_lebesgue.tex
 INPUT ./chapitres/integrale_avec_mesure_lebesgue.tex
