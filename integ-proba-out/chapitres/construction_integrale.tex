@@ -1,0 +1,191 @@
+\documentclass[../integ-proba.tex]{subfiles}
+
+\begin{document}
+
+Maintenant que nous connaissons les notions de base concernant la théorie de la mesure, nous sommes en mesure de définir l'intégrale de Lebesgue.
+Cette intégrale est en quelque sorte une généralisation de l'intégrale de Riemann.
+
+\section{Pourquoi définir une nouvelle intégrale ?}
+
+Deux raisons principales peuvent nous amener à définir une nouvelle intégrale.
+
+D'une part, l'intégrale de Riemann ne permet de calculer l'intégrale que de fonctions \textbf{continues par morceaux}.
+Or, cela est très restrictif : par exemple, prenons la fonction $\mathds{1}_{\mathbb{Q}}$.
+Elle n'est pas continue par morceaux, donc n'est pas intégrable au sens de Riemann.
+Pourtant, pour la mesure de Lebesgue, $\mathbb{Q}$ est négligeable (voir l'exemple \ref{ex:ratneg}).
+Ainsi, $\mathds{1}_{\mathbb{Q}}$ est Lebesgue-presque-partout égale à $0$.
+On aurait donc envie de dire que \og l'influence de $\mathbb{Q}$ est si petite, qu'elle n'a aucun impact dans l'intégrale \fg.
+En disant cela, on veut en fait dire que l'intégrale de $\mathds{1}_{\mathbb{Q}}$ serait égale à l'intégrale de la fonction nulle, qui vaut zéro.
+Ce faisant, \textbf{on pourrait donner un sens à l'intégrale d'une fonction qui n'est pas continue par morceaux !}
+
+Plus généralement, l'intégrale de Lebesgue permettra de définir l'intégrale d'une fonction mesurable, et non plus d'une fonction continue par morceaux.
+
+D'autre part, l'intégrale de Riemann utilise la notion de longueur :
+par exemple, si $f$ est la fonction constante égale à 1, nous avons
+
+$$
+\int_0^1f(x)\text{d}x = 1 > 2 = \int_0^2f(x)\text{d}x
+$$
+
+Mais il est impossible de \og mesurer différemment \fg.
+En effet, si une mesure $\mu$ vérifie $\mu\left(\left[1,2\right]\right)=0$, alors on aimerait pouvoir dire que les deux intégrales ci-dessus, calculées avec $\mu$, seraient égales.
+Plus généralement, \textbf{on aimerait pouvoir intégrer dans n'importe-quel espace par n'importe-quelle mesure.}
+L'intégrale de Lebesgue répondra à ce besoin.
+
+\section{Définition de l'intégrale de Lebesgue pour des fonctions positives}
+\label{sect:defintpos}
+Les fonctions positives ont une place privilégiée dans la théorie de l'intégration de Lebesgue.
+En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$) :
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
+  \textbf{La} $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
+  \begin{itemize}
+    \itemb \textbf{la relation mesure-intégrale} : pour tout ensemble $X$ $\mathcal{A}$-mesurable,
+    $$
+    \int_E\mathds{1}_X(x)\text{d}\mu(x)=\mu(X)
+    $$ 
+    \itemb \textbf{l'hypothèse de linéarité} : pour toute fonction mesurable $g:E\rightarrow\mathbb{R}_+$ et pour tous $\left(\alpha,\beta\right) \in \left(\mathbb{R}_+^*\right)^2$,
+    $$
+    \int_E (\alpha f + \beta g)(x) \text{d}\mu(x)=\alpha\int_Ef(x)\text{d}\mu(x) + \beta\int_Eg(x)\text{d}\mu(x)
+    $$
+    \itemb \textbf{l'hypothèse de convergence monotone} : pour toute suite croissante de fonctions mesurables positives $f_n:E\rightarrow\mathbb{R}_+$ convergeant simplement vers $f$,
+    $$
+    \lim_{n\rightarrow+\infty}\int_Ef_n(x)\text{d}\mu(x)=\int_Ef(x)\text{d}\mu(x)
+    $$
+  \end{itemize}
+\end{defi}
+
+\begin{rem}
+  L'intégrale d'une fonction mesurable positive vérifie immédiatement, par définition, ces trois hypothèses fondamentales, qui seront centrales dans la suite de ce document.
+  Attention cependant : les deux hypothèses de mesurabilité et de positivité sont absolument nécessaires.
+\end{rem}
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
+  $f$ est dite $\mu$\textbf{-intégrable} lorsque $\displaystyle\int_Ef(x)\text{d}\mu(x) < +\infty$.
+\end{defi}
+
+\begin{rem}
+  \label{rem:attint}
+  On fera donc bien attention au sens précis du mot \og intégrable \fg.
+  Il est plus fort de dire qu'une fonction est intégrable, que de dire que l'intégrale d'une fonction existe.
+  Par exemple, une fonction mesurable positive admet toujours une intégrale, mais elle n'est pas forcément intégrable.
+\end{rem}
+
+\begin{defi}
+  Soit $f:E\longrightarrow\mathbb{R}$, et $F\subset E$.
+  On dit que $f$ est \textbf{intégrable sur le sous ensemble} $F$ lorsque $f\mathds{1}_F$ est intégrable.
+\end{defi}
+
+\begin{rem}
+  Pour avoir une chance que $f$ soit intégrable sur $F$, il est nécessaire que $f\mathds{1}_F$ soit mesurable.
+\end{rem}
+
+\section{Propriétés de l'intégrale positive}
+
+% TODO changement de mesures
+
+\section{Définition de l'intégrale de Lebesgue pour des fonctions signées}
+
+Commençons par des résultats préliminaires qui seront utiles par la suite :
+
+\begin{defi}
+  \label{def:partieposneg}
+  Soit $E$ un ensemble.
+  Soit $f:E\longrightarrow\mathbb{R}$.
+  Les \textbf{partie positive} et \textbf{partie négative} de $f$, respectivement $f_+$ et $f_-$, sont définies comme suit :
+  $$
+  \left\{
+    \begin{array}{rcl}
+      f_+&:=&\max(0,f)\\
+      f_-&:=&\min(0,f)
+    \end{array}
+  \right.
+  $$
+\end{defi}
+
+\begin{prop}
+  Soit E un ensemble et $f:E\longrightarrow\mathbb{R}$.
+  Alors :
+  $$
+  f = f_+ - f_-
+  $$
+\end{prop}
+
+Le résultat suivant est une conséquence directe de la proposition $\ref{prop:compmes}$ :
+
+\begin{prop}
+  \label{prop:partiemes}
+  Soit $\left(E,\mathcal{A}\right)$ un espace mesurable et $f:E\longrightarrow\mathbb{R}$ une fonction mesurable.
+  Alors $f^+$ et $f_-$ sont mesurables
+\end{prop}
+
+Désormais, passons à la définition de l'intégrale d'une fonction signée. Celle-ci arrive volontairement dans une nouvelle section, pour souligner la différence avec l'intégrale d'une fonction positive.
+En effet, comme cela a été souligné au début de la section \ref{sect:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue : elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
+
+La définition de l'intégrale pour une fonction signée est un premier exemple soulignant cette différence :
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
+  \textbf{La} $\mu$ \textbf{intégrale de Lebesgue} $\displaystyle\int_E f(x) \text{d}\mu(x)$ existe dès que $f_+$ ou $f_-$ est $\mu$-intégrable.
+  Dans ce cas, on a :
+  $$
+  \int_E f(x) \text{d}\mu(x)=\int_Ef_+\text{d}\mu(x) - \int_Ef_-(x)\text{d}\mu(x)
+  $$
+\end{defi}
+
+\begin{rem}
+  Contrairement au cas positif, \textbf{l'intégrale d'une fonction signée n'existe pas systématiquement !}
+\end{rem}
+
+\begin{defi}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}$ mesurable.
+  $f$ est dite $\mu$\textbf{-intégrable} lorsque $f_+$ et $f_-$ sont $\mu$-intégrables.
+\end{defi}
+
+\begin{rem}
+  On notera que, de manière équivalente, \textbf{une fonction signée est intégrable ssi l'intégrale de} $f$ \textbf{existe, et est finie.}
+\end{rem}
+
+\begin{rem}
+  Comme dans le cas positif (remarque \ref{rem:attint}), le mot \og intégrable\fg a un sens bien précis !
+\end{rem}
+
+\begin{thm}
+  Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré et $f:E\longrightarrow\mathbb{R}$ mesurable. $f$ est $\mu$-intégrable ssi $\left|f\right|$ est $\mu$-intégrable.
+  On dit que \textbf{l'intégrale de Lebesgue est absolue}.
+\end{thm}
+
+\begin{rem}
+  Pour vérifier qu'une fonction signée est intégrable, on vérifiera en pratique que sa valeur absolue est intégrable.
+\end{rem}
+
+Le théorème suivant assure que cette nouvelle intégrale vérifie bien les besoins que l'on avait exprimé en début de chapitre.
+
+\begin{thm}
+  L'intégrale de Lebesgue prolonge l'intégrale de Riemann.
+\end{thm}
+
+\section{Démontrer en pratique des résultats sur les intégrales}
+
+Pour montrer des résultats sur des fonctions mesurables positives, on utilise la décomposition vue au théorème \ref{thm:decompmes}.
+\begin{itemize}
+  \itemb On montre le résultat sur des fonctions indicatrices mesurables.
+  \itemb Puis on le montre sur une somme de fonctions indicatrices mesurables. On a donc montré le résultat pour les fonctions étagées mesurables.
+  \itemb En vertu de l'hypothèse de convergence monotone de l'intégrale et de la décomposition fournie par le théorème \ref{thm:decompmes}, on passe à la limite.
+  Le résultat est alors démontré pour n'importe-quelle fonction mesurable positive.
+\end{itemize}
+
+En général, les résultats pour les fonctions signées se déduiront des résultats pour les fonctions positives de la manière suivante :
+\begin{itemize}
+  \itemb On décompose une fonction signée mesurable $f:E\longrightarrow\mathbb{R}$ en sa partie positive $f^+$ et sa partie négative $f_-$ (voir la définition \ref{def:partieposneg}).
+  \itemb Ces deux fonctions étant positives (et encore mesurables par la proposition \ref{prop:partiemes}), on applique leur applique un résultat vrai pour les fonctions positives.
+  \itemb On utilise l'identité $f=f^++f_-$ pour obtenir le résultat final.
+\end{itemize}
+
+On rappelle toutefois qu'un certain nombre de résultats vrais pour les fonctions positives ne le sont pas pour les fonctions signées.
+
+%TODO Exemple
+
+\end{document}
