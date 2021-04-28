@@ -112,9 +112,11 @@ Cependant, on ne pourra pas donner de sens à ces notions dans le cas général 
 \end{rem}
 
 \begin{defi}
-    On dit que $X$ \textbf{admet une espérance} lorsqu'elle admet un moment d'ordre 1.
+    On dit que $X$ \textbf{admet une espérance} lorsqu'elle admet un moment d'ordre 1 (\textit{ie} lorsque $\omega \mapsto X\left(\omega\right)$ est $\mathbb{P}$-intégrable).
     Son \textbf{espérance} est alors définie comme son moment d'ordre 1.
     Elle est notée $\mathbb{E}(X)$.
+
+    On note $\mathcal{L}^1\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ l'ensemble des variables aléatoires qui admettent une espérance (\textit{ie} l'ensemble des variables aléatoires $\mathbb{P}$-intégrables).
 \end{defi}
 
 \begin{rem}
@@ -137,23 +139,28 @@ Cependant, on ne pourra pas donner de sens à ces notions dans le cas général 
 \begin{prop}
     \label{prop:moments_cascade}
     Soit $r\in\mathbb{N}$. Si $X$ admet un moment d'ordre $r$, alors elle admet un moment d'ordre $k$ pour tout $k\in[\![0,r]\!]$.
+    Autrement dit, si $X^r$ est $\mathbb{P}$-intégrable, alors $X^k$ est $\mathbb{P}$-intégrable pour tout $k\in[\![0,r]\!]$.
 \end{prop}
 
 \begin{defi}
-    On dit que $X$ \textbf{admet une variance} lorsqu'elle admet un moment d'ordre 2.
+    On dit que $X$ \textbf{admet une variance} lorsqu'elle admet un moment d'ordre 2 (\textit{ie} lorsque $\omega \mapsto X^2\left(\omega\right)$ est $\mathbb{P}$-intégrable).
     Sa \textbf{variance} est alors définie comme :
     $$
     \mathbb{V}(X):=\mathbb{E}\left(\left(X - \mathbb{E}\left(X\right)\right)^2\right)=\mathbb{E}\left(X^2\right) - \mathbb{E}\left(X\right)^2
     $$
+    
+    On note $\mathcal{L}^2\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ l'ensemble des variables aléatoires qui admettent une variance (\textit{ie} l'ensemble des variables aléatoires qui sont de carré $\mathbb{P}$-intégrables).
 \end{defi}
 
 \begin{rem}
-    Cette définition impose de faire deux remarques :
+    Cette définition impose de faire trois remarques :
     \begin{itemize}
         \itemb le théorème qui fournit l'égalité de ces deux expressions s'appelle \textbf{le théorème de König-Huygens}. Sa démonstration est immédiate par linéarité de l'intégrale.
         \itemb d'après la deuxième expression, l'existence de $\mathbb{V}(X)$ est assurée dès que $X$ admet un moment d'ordre 1 et 2.
         Cependant, bien que la définition demande que $X$ admette un moment d'ordre 2, elle ne demande pas qu'elle admette un moment d'ordre 1.
         Nous sommes en fait sauvés par la proposition \ref{prop:moments_cascade} !
+        \itemb d'après la proposition \ref{prop:moments_cascade}, $\mathcal{L}^2\left(\Omega, \mathcal{A}, \mathbb{P}\right) \subset \mathcal{L}^1\left(\Omega, \mathcal{A}, \mathbb{P}\right)$.
+        A nouveau, on rappelle que ceci n'est vrai que parce que $\mathbb{P}$ est une mesure de probabilité (voir la remarque \ref{rem:warning_moments})
     \end{itemize}
 \end{rem}
 
@@ -172,8 +179,10 @@ Ces définitions peuvent être données pour des variables aléatoires quelconqu
     $$
     \mathbb{P}_X=\mathbb{P} \circ X^{-1}
     $$
+    C'est la mesure image de $\mathbb{P}$ par $X$.
     Il s'agit d'une loi de probabilité sur $\left(E, \mathcal{B} \right)$
 \end{defi}
+% todo parler de mesure image quelque part d'autre
 
 \begin{defi}
     Soit $\mathbb{Q}$ une loi de probabilité sur $\left(E, \mathcal{B} \right)$.
