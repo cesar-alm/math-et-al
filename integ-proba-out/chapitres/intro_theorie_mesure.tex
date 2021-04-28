@@ -61,10 +61,27 @@ Ces considérations étant faites, on définit alors une tribu comme suit :
 
 \begin{defi}
   \label{defi:Borel}
-  Soit $E$ un ensemble muni d'une topologie.
+  Soit $E$ un espace topologique.
   La \textbf{tribu de Borel} (ou plus simplement, les \textbf{boréliens}) est la tribu engendrée par les ouverts de $E$ (ou de manière équivalente, par les fermés de $E$).
   Elle est notée $\mathcal{B}(E)$.
 \end{defi}
+
+\begin{exemple}
+  \label{exemple:boreliens_et_topologie_discrete}
+  Considérons $\mathbb{N}$ muni de sa topologie usuelle, la topologie discrète.
+  Par définition, dans la topologie discrète, l'ensemble des ouverts $T$ est $\mathcal{P}(\mathbb{N})$.
+
+  Or, une tribu est par définition une partie de $\mathcal{P}(\mathbb{N})$.
+  Ainsi, $\mathcal{P}(\mathbb{N}) = T \subset \mathcal{B}(\mathbb{N}) \subset \mathcal{P}(\mathbb{N})$.
+  Par double inclusion, \textbf{les boréliens de} $\mathbb{N}$ \textbf{sont exactement les parties de} $\mathbb{N}$ :
+  $$
+  \mathcal{B}(\mathbb{N}) = \mathcal{P}(\mathbb{N})
+  $$
+
+  On peut généraliser ce résultat à tout espace topologique muni de la topologie discrète.
+
+  Soit dit en passant, à titre de petit exercice, on peut vérifier que toute partie d'un espace topologique muni de la topologie discrète est à la fois ouverte et fermée.
+\end{exemple}
 
 \section{Définition de la mesure}
 
@@ -224,6 +241,7 @@ Lorsque deux espaces mesurables sont définis, il peut être utile de définir u
 \end{rem}
 
 \begin{rem}
+  \label{rem:simplification_notation_fonctions_mesurables}
   Cette notation est lourde, et c'est pourquoi elle est souvent simplifiée.
   \begin{itemize}
   \itemb dans le cas où $\mathcal{B}=\mathcal{B}\left(F\right)$ (la tribu d'arrivée est celle des boréliens), on pourra simplifier la notation et dire simplement que :
@@ -289,6 +307,7 @@ Enfin, voici une dernière définition qui sera utile dans le chapitre concernan
 \end{defi}
 
 \begin{prop}
+  \label{prop:continue_implique_borelienne}
   Une fonction continue est borélienne.
 \end{prop}
 
