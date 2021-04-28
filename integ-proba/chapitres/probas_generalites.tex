@@ -142,6 +142,28 @@ Cependant, on ne pourra pas donner de sens à ces notions dans le cas général 
     Autrement dit, si $X^r$ est $\mathbb{P}$-intégrable, alors $X^k$ est $\mathbb{P}$-intégrable pour tout $k\in[\![0,r]\!]$.
 \end{prop}
 
+\begin{proof}
+    Soit $k\in[\![0,r]\!]$. Nous avons $\left|X\right|^k \leq \left|X\right|^r+1$, donc par croissance et linéarité de l'intégrale :
+    $$
+    \int_\Omega \left|X(\omega)\right|^k \text{d}\mathbb{P}(\omega) \leq \int_\Omega \left|X(\omega)\right|^r \text{d}\mathbb{P}(\omega) + \int_\Omega \text{d}\mathbb{P}(\omega)
+    $$
+
+    Comme $X$ admet un moment d'ordre $r$, le premier terme de la somme et fini.
+    Puis, d'après la relation mesure-intégrale, le deuxième terme de la somme vaut 1 ($\mathbb{P}$ est une mesure de probabilité).
+    
+    Le terme de gauche est donc fini, donc $X$ admet un moment d'ordre $k$.
+\end{proof}
+
+\begin{rem}
+    \label{rem:warning_moments}
+    Attention, on remarquera que ceci n'est vrai que parce que $\mathbb{P}$ est une mesure de probabilité !
+    Dans le cas d'une mesure quelconque (par exemple, la mesure de Lebesgue), cette démonstration ne permet pas de conclure (car $\lambda(\mathbb{R}) = +\infty$)... et heureusement, car ce résultat est faux !
+
+    Voici un contre-exemple :
+    $$x \mapsto \mathds{1}_{\mathbb{R}_+^*}(x)\frac{1}{x}$$
+    n'est pas intégrable sur $\mathbb{R}$, alors que son carré l'est.
+\end{rem}
+
 \begin{defi}
     On dit que $X$ \textbf{admet une variance} lorsqu'elle admet un moment d'ordre 2 (\textit{ie} lorsque $\omega \mapsto X^2\left(\omega\right)$ est $\mathbb{P}$-intégrable).
     Sa \textbf{variance} est alors définie comme :
