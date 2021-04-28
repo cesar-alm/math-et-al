@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  27 APR 2021 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  28 APR 2021 10:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -511,18 +511,36 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Chapitre 3.
 (./chapitres/integrale_avec_mesure_lebesgue.tex) [15
 
-] (./integ-proba.aux)
+] [16
+
+]
+Chapitre 4.
+(./chapitres/probas_generalites.tex [17
+
+]
+
+LaTeX Warning: Reference `sect:generalisation_integrale_rn' on page 18 undefine
+d on input line 63.
+
+[18] [19]
+Overfull \hbox (7.66528pt too wide) in paragraph at lines 196--198
+[]\T1/lmr/m/n/10 Considérons main-te-nant l'es-pace pro-ba-bi-lisé $\OT1/lmr/m/
+n/10 
+[] := \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
+ []
+
+) [20] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: 7D5AA4A85AA7FBB25E5BEF55291A2580;4032.
+(rerunfilecheck)             Checksum: 9468150D13293796E85957F4F1F597E8;5164.
  ) 
 Here is how much of TeX's memory you used:
- 10286 strings out of 478994
- 148941 string characters out of 5858190
- 464324 words of memory out of 5000000
- 27498 multiletter control sequences out of 15000+600000
+ 10335 strings out of 478994
+ 149567 string characters out of 5858190
+ 464397 words of memory out of 5000000
+ 27510 multiletter control sequences out of 15000+600000
  485628 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,19n,74p,463b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -546,10 +564,10 @@ exlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/202
 st/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/font
 s/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on integ-proba.pdf (16 pages, 273319 bytes).
+Output written on integ-proba.pdf (21 pages, 289810 bytes).
 PDF statistics:
- 329 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
- 98 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 412 PDF objects out of 1000 (max. 8388607)
+ 368 compressed objects within 4 object streams
+ 132 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
