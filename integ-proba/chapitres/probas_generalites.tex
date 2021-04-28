@@ -40,6 +40,7 @@ On rappelle que $\mathcal{B}(E)$ désigne la tribu des boréliens de l'espace to
 \end{defi}
 
 \begin{defi}
+    \label{defi:variables_aleatoires_discretes}
     Une \textbf{variable aléatoire discrète} est une fonction mesurable
     $$X:\left(\Omega, \mathcal{A}, \mathbb{P}\right) \longrightarrow \left(\mathbb{N}, \mathcal{P}(\mathbb{N})\right)$$
 \end{defi}
@@ -52,7 +53,8 @@ On peut également introduire la définition suivante, qui ne sera pas utile en 
 \end{defi}
 
 \begin{rem}
-    On remarquera que, exceptés l'espace d'arrivée et la tribu de l'espace d'arrivée, ces définitions sont identiques.
+    On remarquera que, exceptés l'espace d'arrivée, ces définitions sont identiques : dans tous les cas, on choisit des fonctions mesurables, et conformément à la simplification expliquée à la remarque $\ref{rem:simplification_notation_fonctions_mesurables}$, on choisit la tribu borélienne sur l'espace d'arrivée.
+    Cela peut ne pas sembler évident pour la définition \ref{defi:variables_aleatoires_discretes} concernant les variables aléatoires discrètes : on rappelle donc que les boréliens de $\mathbb{N}$ (muni de la topologie discrète) sont exactement les parties de $\mathbb{N}$ (pour plus de détails, se référer à l'exemple \ref{exemple:boreliens_et_topologie_discrete}).
 \end{rem}
 
 \begin{rem}
@@ -98,12 +100,12 @@ Ces définitions peuvent être données pour des variables aléatoires quelconqu
     \mathbb{P}_X=\mathbb{P} \circ X^{-1}
     $$
     C'est la mesure image de $\mathbb{P}$ par $X$.
-    Il s'agit d'une loi de probabilité sur $\left(E, \mathcal{B} \right)$
+    Il s'agit d'une loi de probabilité sur $\left(E, \mathcal{B}(E) \right)$
 \end{defi}
 % todo parler de mesure image quelque part d'autre
 
 \begin{defi}
-    Soit $\mathbb{Q}$ une loi de probabilité sur $\left(E, \mathcal{B} \right)$.
+    Soit $\mathbb{Q}$ une loi de probabilité sur $\left(E, \mathcal{B}(E) \right)$.
     On dit que $X$ \textbf{suit la loi} $\mathbb{Q}$ lorsque $\mathbb{P}_X = \mathbb{Q}$.
 \end{defi}
 
@@ -270,7 +272,7 @@ On pourrait les exprimer en un seul théorème, mais les séparer en deux permet
     On sait donc donner un sens à son espérance.
 
     La variable aléatoire discrète $g \circ X$ sur $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire discrète $g$ sur $\left(E, \mathcal{B}(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
-
+    
     Si c'est le cas, alors on a la \textbf{formule de transfert} :
     $$
     \mathbb{E}(g \circ X) = \int_E g(x)\textnormal{d}\mathbb{P}_X(x)
