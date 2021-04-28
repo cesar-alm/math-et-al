@@ -18,5 +18,7 @@
 \contentsline {chapter}{\numberline {4}Généralités sur les probabilités}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Premières définitions}{17}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Variables aléatoires}{17}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Moments d'une variable aléatoire}{18}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Loi d'une variable aléatoire}{20}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.1}Loi d'une variable aléatoire}{18}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Moments d'une variable aléatoire réelle ou discrète}{19}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Formule de transfert}{21}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Moments d'un vecteur aléatoire}{22}{subsection.4.2.4}%
