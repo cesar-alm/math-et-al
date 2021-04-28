@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  28 APR 2021 15:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  28 APR 2021 15:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -517,13 +517,8 @@ Chapitre 3.
 Chapitre 4.
 (./chapitres/probas_generalites.tex [17
 
-]
-
-LaTeX Warning: Reference `sect:generalisation_integrale_rn' on page 18 undefine
-d on input line 63.
-
-[18]
-Overfull \hbox (7.66528pt too wide) in paragraph at lines 131--133
+] [18]
+Overfull \hbox (7.66528pt too wide) in paragraph at lines 123--125
 []\T1/lmr/m/n/10 Considérons main-te-nant l'es-pace pro-ba-bi-lisé $\OT1/lmr/m/
 n/10 
 [] := \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
@@ -537,10 +532,10 @@ Package rerunfilecheck Info: File `integ-proba.out' has not changed.
 (rerunfilecheck)             Checksum: 9C7845153882B47CE4D7929A33A465B0;5666.
  ) 
 Here is how much of TeX's memory you used:
- 10356 strings out of 478994
- 149838 string characters out of 5858190
- 464456 words of memory out of 5000000
- 27517 multiletter control sequences out of 15000+600000
+ 10353 strings out of 478994
+ 149770 string characters out of 5858190
+ 464426 words of memory out of 5000000
+ 27515 multiletter control sequences out of 15000+600000
  494164 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,19n,74p,463b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -566,10 +561,10 @@ e1/public/lm/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/l
 m/lmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm7.pfb>
-Output written on integ-proba.pdf (23 pages, 320564 bytes).
+Output written on integ-proba.pdf (23 pages, 320191 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 406 compressed objects within 5 object streams
- 145 named destinations out of 1000 (max. 500000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 403 compressed objects within 5 object streams
+ 144 named destinations out of 1000 (max. 500000)
  185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
