@@ -78,6 +78,18 @@ On peut également introduire la définition suivante, qui ne sera pas utile en 
     \end{itemize}
 \end{rem}
 
+\begin{prop}
+    \label{prop:composition_var_bor}
+    Soit $E$ et $F$ deux espaces topologiques.
+    Soit $X:\Omega \longrightarrow E$ une variable aléatoire à valeurs dans $E$.
+    Soit $g:E \longrightarrow F$ une fonction borélienne.
+    Alors $g \circ X$ est une variable aléatoire à valeurs dans $F$.
+\end{prop}
+
+\begin{rem}
+    Cette proposition est une conséquence immédiate du résultat de composition de fonctions mesurables.
+\end{rem}
+
 \subsection{Loi d'une variable aléatoire}
 
 Dans toute cette section, on se donne
@@ -235,54 +247,89 @@ Nous verrons néanmoins par la suite comment généraliser ces notions aux vecte
     \end{itemize}
 \end{rem}
 
-\subsection{Loi d'une variable aléatoire}
+\subsection{Formule de transfert}
 
 Dans toute cette section, on se donne
 \begin{itemize}
-    \itemb un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$
-    \itemb une variable aléatoire quelconque $X$ à valeurs dans $\left(E, \mathcal{B}\right)$
+    \itemb un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ ;
+    \itemb un espace topologique quelconque $E$ ;
+    \itemb une variable aléatoire quelconque $X:\Omega \longrightarrow E$.
 \end{itemize}
 
-Ces définitions peuvent être données pour des variables aléatoires quelconques, mais seront utiles en pratique pour les trois types de variables aléatoires que nous avons vues.
+La formule de transfert peut s'exprimer de deux manières (selon si l'on fait face à des variables aléatoires réelles ou discrètes).
+On pourrait les exprimer en un seul théorème, mais les séparer en deux permet de bien repérer dans quels cas le théorème peut s'appliquer.
 
-\begin{defi}
-    La \textbf{loi de probabilité de} $X$ $\mathbb{P}_X$ est définie comme :
-    $$
-    \mathbb{P}_X=\mathbb{P} \circ X^{-1}
-    $$
-    C'est la mesure image de $\mathbb{P}$ par $X$.
-    Il s'agit d'une loi de probabilité sur $\left(E, \mathcal{B} \right)$
-\end{defi}
-% todo parler de mesure image quelque part d'autre
+\begin{thm}
+    Soit $g:E \longrightarrow \mathbb{R}$ une fonction borélienne.
+    Par la proposition \ref{prop:composition_var_bor}, $g \circ X$ est encore une variable aléatoire ; c'est d'ailleurs une variable aléatoire réelle.
+    On sait donc donner un sens à son espérance.
 
-\begin{defi}
-    Soit $\mathbb{Q}$ une loi de probabilité sur $\left(E, \mathcal{B} \right)$.
-    On dit que $X$ \textbf{suit la loi} $\mathbb{Q}$ lorsque $\mathbb{P}_X = \mathbb{Q}$.
-\end{defi}
+    La variable aléatoire réelle $g \circ X$ sur $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire réelle $g$ sur $\left(E, \mathcal{B}(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
+    
+    Si c'est le cas, alors on a la \textbf{formule de transfert} :
+    $$
+    \mathbb{E}(g \circ X) = \int_E g(x)\textnormal{d}\mathbb{P}_X(x)
+    $$
+\end{thm}
+
+\begin{thm}
+    Soit $g:E \longrightarrow \mathbb{N}$ une fonction borélienne.
+    Par la proposition \ref{prop:composition_var_bor}, $g \circ X$ est encore une variable aléatoire ; c'est d'ailleurs une variable aléatoire discrète.
+    On sait donc donner un sens à son espérance.
+
+    La variable aléatoire discrète $g \circ X$ sur $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire discrète $g$ sur $\left(E, \mathcal{B}(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
+
+    Si c'est le cas, alors on a la \textbf{formule de transfert} :
+    $$
+    \mathbb{E}(g \circ X) = \int_E g(x)\textnormal{d}\mathbb{P}_X(x)
+    $$
+\end{thm}
 
 \begin{rem}
-    Attention, ce n'est pas parce que deux variables aléatoires ont la même loi qu'elles sont égales !
-    Voici un contre-exemple. Il utilise cependant des notions qui n'ont pas encore été abordées à ce stade.
-    
-    Considérons l'espace probabilisé $\Omega := \{\text{beau temps}, \text{mauvais temps}\}$ muni de l'ensemble de ses parties, et de la mesure de probabilité $\mathbb{P}$ uniforme.
-    On a donc :
+    On comprend pourquoi cette formule porte ce nom, lorsque l'on remplace l'espérance par sa définition, dans les expressions précédentes :
     $$
-    \mathbb{P}(\{\text{beau temps}\}) = \mathbb{P}(\{\text{mauvais temps}\}) = \frac{1}{2}
+    \int_\Omega (g \circ X)(\omega) \text{d} \mathbb{P}(\omega) = \int_E g(x) \text{d} \mathbb{P}_X(x)
     $$
-    Puis posons la variable aléatoire discrète $X$ à valeurs dans $\{0,1\}$, telle que $X(\{\text{beau temps}\})=1$ et $X(\{\text{mauvais temps}\})=0$.
-    
-    $X$ suit alors la loi uniforme sur l'espace $\{0,1\}$.
-
-    Considérons maintenant l'espace probabilisé $\Omega' := \{\text{temps chaud}, \text{temps froid}\}$ muni de l'ensemble de ses parties, et de la mesure de probabilité $\mathbb{P}'$ uniforme.
-    On a donc :
-    $$
-    \mathbb{P}(\{\text{temps chaud}\}) = \mathbb{P}(\{\text{temps froid}\}) = \frac{1}{2}
-    $$
-    Puis posons la variable aléatoire discrète $Y$ à valeurs dans $\{0,1\}$, telle que $Y(\{\text{temps chaud}\})=1$ et $Y(\{\text{temps froid}\})=0$.
-
-    $Y$ suit également la loi uniforme sur l'espace $\{0,1\}$.
-
-    Nous avons donc explicité deux variables aléatoires qui ont même loi, mais qui ne sont pas égales (elles n'ont pas le même espace de départ).
+    Cette formule transfère le calcul sur un autre espace, muni d'une autre mesure.
+    Pour peu que la mesure $\mathbb{P}_X$ soit facile à utiliser, on a intérêt à utiliser cette nouvelle formulation.
+    % faire ref au changement de mesure du chap de la construction de l'intégrale.
 \end{rem}
+
+Voici quelques applications de ces théorèmes :
+
+\begin{exemple}
+    Soit $X:\Omega \longrightarrow \mathbb{R}$ une variable aléatoire réelle.
+    La fonction identité $\text{Id}:\mathbb{R} \longrightarrow \mathbb{R}$ est continue donc borélienne.
+
+    En appliquant le théorème précédent, $X$ admet une espérance ssi $\text{Id}$ est $\mathbb{P}_X$-intégrable.
+    Dans ce cas, on aura :
+    $$
+    \mathbb{E}(X) = \mathbb{E}(\text{Id} \circ X) = \int_\mathbb{R} x\textnormal{d}\mathbb{P}_X(x)
+    $$
+
+    Pour peu que l'on sache expliciter $\mathbb{P}_X$, cette nouvelle l'expression de l'espérance nous simplifie grandement le calcul.
+\end{exemple}
+
+\begin{exemple}
+    On obtient le même résultat avec une variable aléatoire discrète.
+\end{exemple}
+
+\begin{exemple}
+    De même, en choisissant la fonction carrée pour $g$ on obtient (si l'espérance de $X^2$ existe) :
+    $$
+    \mathbb{E}(X^2) = \int_\mathbb{R} x^2\textnormal{d}\mathbb{P}_X(x)
+    $$
+
+    Notons qu'en choisissant l'identité pour $g$, mais la variable aléatoire $X^2$, on obtient (à nouveau sous réserve d'existence) :
+    $$
+    \mathbb{E}(X^2) = \int_\mathbb{R} x\textnormal{d}\mathbb{P}_{X^2}(x)
+    $$
+\end{exemple}
+
+\subsection{Moments d'un vecteur aléatoire}
+
+
+
+
 
 \end{document}
