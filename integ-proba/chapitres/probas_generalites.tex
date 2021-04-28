@@ -27,7 +27,7 @@ En réalité, il s'agit simplement d'une fonction qui possède certaines propri�
 Nous nous limitons ici à l'étude des variables aléatoire réelles, des vecteurs aléatoires et des variables aléatoires discrètes.
 
 Dans toute cette section, on se donne un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$.
-On rappelle que $\mathcal{B}(E)$ désigne la tribu des boréliens de l'espace $E$.
+On rappelle que $\mathcal{B}(E)$ désigne la tribu des boréliens de l'espace topologique $E$.
 
 \begin{defi}
     Une \textbf{variable aléatoire réelle} est une fonction mesurable
@@ -47,7 +47,7 @@ On rappelle que $\mathcal{B}(E)$ désigne la tribu des boréliens de l'espace $E
 On peut également introduire la définition suivante, qui ne sera pas utile en pratique, mais qui a le mérite d'unifier les trois définitions précédentes :
 
 \begin{defi}
-    Plus généralement, si $E$ est un espace quelconque, une \textbf{variable aléatoire} est une fonction mesurable
+    Plus généralement, si $E$ est un espace topologique quelconque, une \textbf{variable aléatoire} est une fonction mesurable
     $$X:\left(\Omega, \mathcal{A}, \mathbb{P}\right) \longrightarrow \left(E, \mathcal{B}(E)\right)$$
 \end{defi}
 
@@ -82,13 +82,14 @@ On peut également introduire la définition suivante, qui ne sera pas utile en 
 
 Dans toute cette section, on se donne
 \begin{itemize}
-    \itemb un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$
-    \itemb une variable aléatoire réelle ou discrète
+    \itemb un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ ;
+    \itemb une variable aléatoire quelconque $X$ à valeurs dans un espace topologique $\left(E, \mathcal{B}\right)$.
 \end{itemize}
 
 Conformément à la remarque \ref{rem:vect_alea_idem_var}, ces définitions s'étendent immédiatement pour des vecteurs aléatoires.
 
-Cependant, on ne pourra pas donner de sens à ces notions dans le cas général d'une variable aléatoire quelconque (pour la simple et bonne raison que l'on va avoir à faire à l'intégrale de $X$ ; et que celle-ci n'a de sens que si l'espace d'arrivée de $X$ est contenu dans $\mathbb{R}^n$)
+On ne pourra pas donner de sens à ces notions dans le cas général d'une variable aléatoire quelconque.
+Nous verrons néanmoins par la suite comment généraliser ces notions aux vecteurs aléatoires.
 
 \begin{defi}
     Soit $r\in\mathbb{N}$. On dit que $X$ \textbf{admet un moment d'ordre} $r$ lorsque $\omega \mapsto X^r(\omega)$ est $\mathbb{P}$-intégrable.
