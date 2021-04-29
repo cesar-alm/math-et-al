@@ -1,0 +1,294 @@
+\documentclass[../integ-proba.tex]{subfiles}
+
+\begin{document}
+
+Voyons maintenant ce qu'est une variable aléatoire.
+C'est une appellation étrange, puisqu'une variable aléatoire n'est en fait ni une variable, ni quelque-chose d'aléatoire.
+En réalité, il s'agit simplement d'une fonction qui possède certaines propriétés (notamment la mesurabilité).
+En général, nous nous limiterons ici à l'étude des variables aléatoire réelles, des vecteurs aléatoires et des variables aléatoires discrètes.
+
+\section{Définitions}
+
+Dans toute cette section, on se donne un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$.
+On rappelle que $\mathcal{B}(E)$ désigne la tribu des boréliens de l'espace topologique $E$.
+
+\begin{defi}
+    Une \textbf{variable aléatoire réelle} est une fonction mesurable
+    $$X:\left(\Omega, \mathcal{A}, \mathbb{P}\right) \longrightarrow \left(\mathbb{R}, \mathcal{B}(\mathbb{R})\right)$$
+\end{defi}
+
+\begin{defi}
+    Un \textbf{vecteur aléatoire} est une fonction mesurable
+    $$X:\left(\Omega, \mathcal{A}, \mathbb{P}\right) \longrightarrow \left(\mathbb{R}^n, \mathcal{B}(\mathbb{R}^n)\right)$$
+\end{defi}
+
+\begin{defi}
+    \label{defi:variables_aleatoires_discretes}
+    Une \textbf{variable aléatoire discrète} est une fonction mesurable
+    $$X:\left(\Omega, \mathcal{A}, \mathbb{P}\right) \longrightarrow \left(\mathbb{N}, \mathcal{P}(\mathbb{N})\right)$$
+\end{defi}
+
+On peut également introduire la définition suivante, qui ne sera pas utile en pratique, mais qui a le mérite d'unifier les trois définitions précédentes :
+
+\begin{defi}
+    Plus généralement, si $E$ est un espace topologique quelconque, une \textbf{variable aléatoire} est une fonction mesurable
+    $$X:\left(\Omega, \mathcal{A}, \mathbb{P}\right) \longrightarrow \left(E, \mathcal{B}(E)\right)$$
+\end{defi}
+
+\begin{rem}
+    On remarquera que, exceptés l'espace d'arrivée, ces définitions sont identiques : dans tous les cas, on choisit des fonctions mesurables, et conformément à la simplification expliquée à la remarque $\ref{rem:simplification_notation_fonctions_mesurables}$, on choisit la tribu borélienne sur l'espace d'arrivée.
+    Cela peut ne pas sembler évident pour la définition \ref{defi:variables_aleatoires_discretes} concernant les variables aléatoires discrètes : on rappelle donc que les boréliens de $\mathbb{N}$ (muni de la topologie discrète) sont exactement les parties de $\mathbb{N}$ (pour plus de détails, se référer à l'exemple \ref{exemple:boreliens_et_topologie_discrete}).
+\end{rem}
+
+\begin{rem}
+    On fera attention au fait que :
+    \begin{itemize}
+        \itemb une variable aléatoire est une fonction qui prend ses valeurs dans $\Omega$ ;
+        \itemb une mesure de probabilité est une fonction qui prend ses valeurs dans $\mathcal{A}$.
+    \end{itemize}
+    Ainsi, si $\omega \in \Omega$ :
+    \begin{itemize}
+        \itemb écrire $X(\omega)$ a du sens.
+        \itemb écrire $\mathbb{P}(\omega)$ n'a pas de sens ($\omega$ n'a aucune chance d'être dans $\mathcal{A}$, puisque ce n'est même pas une partie de $\Omega$).
+        \itemb écrire $\mathbb{P}(\{\omega\})$ a du sens dès que $\{\omega\}\in \mathcal{A}$ (\textit{ie} dès que $\{\omega\}$ est mesurable).
+        \itemb écrire $X(\{\omega\})$ n'a pas de sens.
+    \end{itemize}
+\end{rem}
+
+\begin{prop}
+    \label{prop:composition_var_bor}
+    Soit $E$ et $F$ deux espaces topologiques.
+    Soit $X:\Omega \longrightarrow E$ une variable aléatoire à valeurs dans $E$.
+    Soit $g:E \longrightarrow F$ une fonction borélienne.
+    Alors $g \circ X$ est une variable aléatoire à valeurs dans $F$.
+\end{prop}
+
+\begin{rem}
+    Cette proposition est une conséquence immédiate du résultat de composition de fonctions mesurables.
+\end{rem}
+
+\section{Loi d'une variable aléatoire}
+
+Dans toute cette section, on se donne
+\begin{itemize}
+    \itemb un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ ;
+    \itemb une variable aléatoire quelconque $X$ à valeurs dans un espace topologique $\left(E, \mathcal{B}(E)\right)$.
+\end{itemize}
+
+Ces définitions peuvent être données pour des variables aléatoires quelconques, mais seront utiles en pratique pour les trois types de variables aléatoires que nous avons vues.
+
+\begin{defi}
+    La \textbf{loi de probabilité de} $X$ $\mathbb{P}_X$ est définie comme :
+    $$
+    \mathbb{P}_X=\mathbb{P} \circ X^{-1}
+    $$
+    C'est la mesure image de $\mathbb{P}$ par $X$.
+    Il s'agit d'une loi de probabilité sur $\left(E, \mathcal{B}(E) \right)$
+\end{defi}
+% todo parler de mesure image quelque part d'autre
+
+\begin{defi}
+    Soit $\mathbb{Q}$ une loi de probabilité sur $\left(E, \mathcal{B}(E) \right)$.
+    On dit que $X$ \textbf{suit la loi} $\mathbb{Q}$ lorsque $\mathbb{P}_X = \mathbb{Q}$.
+\end{defi}
+
+\begin{rem}
+    Attention, ce n'est pas parce que deux variables aléatoires ont la même loi qu'elles sont égales !
+    Voici un contre-exemple. Il utilise cependant des notions qui n'ont pas encore été abordées à ce stade.
+    
+    Considérons l'espace probabilisé $\Omega := \{\text{beau temps}, \text{mauvais temps}\}$ muni de l'ensemble de ses parties, et de la mesure de probabilité $\mathbb{P}$ uniforme.
+    On a donc :
+    $$
+    \mathbb{P}(\{\text{beau temps}\}) = \mathbb{P}(\{\text{mauvais temps}\}) = \frac{1}{2}
+    $$
+    Puis posons la variable aléatoire discrète $X$ à valeurs dans $\{0,1\}$, telle que $X(\{\text{beau temps}\})=1$ et $X(\{\text{mauvais temps}\})=0$.
+    
+    $X$ suit alors la loi uniforme sur l'espace $\{0,1\}$.
+
+    Considérons maintenant l'espace probabilisé $\Omega' := \{\text{temps chaud}, \text{temps froid}\}$ muni de l'ensemble de ses parties, et de la mesure de probabilité $\mathbb{P}'$ uniforme.
+    On a donc :
+    $$
+    \mathbb{P}(\{\text{temps chaud}\}) = \mathbb{P}(\{\text{temps froid}\}) = \frac{1}{2}
+    $$
+    Puis posons la variable aléatoire discrète $Y$ à valeurs dans $\{0,1\}$, telle que $Y(\{\text{temps chaud}\})=1$ et $Y(\{\text{temps froid}\})=0$.
+
+    $Y$ suit également la loi uniforme sur l'espace $\{0,1\}$.
+
+    Nous avons donc explicité deux variables aléatoires qui ont même loi, mais qui ne sont pas égales (elles n'ont pas le même espace de départ).
+\end{rem}
+
+\section{Moments d'une variable aléatoire réelle ou discrète}
+
+Dans toute cette section, on se donne
+\begin{itemize}
+    \itemb un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ ;
+    \itemb une variable aléatoire réelle ou discrète.
+\end{itemize}
+
+On ne pourra pas donner de sens à ces notions dans le cas général d'une variable aléatoire quelconque.
+Nous verrons néanmoins par la suite comment généraliser ces notions aux vecteurs aléatoires.
+
+\begin{defi}
+    Soit $r\in\mathbb{N}$. On dit que $X$ \textbf{admet un moment d'ordre} $r$ lorsque $\omega \mapsto X^r(\omega)$ est $\mathbb{P}$-intégrable.
+\end{defi}
+
+\begin{rem}
+    On rappelle que l'intégrale de Lebesgue est absolue. Ainsi, cette définition et les assertions suivantes sont équivalentes :
+    \begin{itemize}
+        \itemb $\omega \mapsto \left|X(\omega)\right|^r$ est intégrable.
+        \itemb $\displaystyle \int_\Omega\left|X(\omega)\right|^r\text{d}\mathbb{P}(\omega) < +\infty$
+    \end{itemize}
+\end{rem}
+
+\begin{defi}
+    Soit $r\in\mathbb{N}$. Lorsque $X$ admet un moment d'ordre $r$, on définit son \textbf{moment d'ordre } $r$ comme
+    $$m_r := \int_\Omega X^r(\omega)\text{d}\mathbb{P}(\omega)$$
+\end{defi}
+
+\begin{rem}
+    On vérifie aisément, par la relation mesure-intégrale, que toute variable aléatoire admet un moment d'ordre 0, et que celui-ci vaut toujours 1.
+\end{rem}
+
+\begin{defi}
+    On dit que $X$ \textbf{admet une espérance} lorsqu'elle admet un moment d'ordre 1 (\textit{ie} lorsque $\omega \mapsto X\left(\omega\right)$ est $\mathbb{P}$-intégrable).
+    Son \textbf{espérance} est alors définie comme son moment d'ordre 1.
+    Elle est notée $\mathbb{E}(X)$.
+
+    On note $\mathcal{L}^1\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ l'ensemble des variables aléatoires qui admettent une espérance (\textit{ie} l'ensemble des variables aléatoires $\mathbb{P}$-intégrables).
+\end{defi}
+
+\begin{rem}
+    Par abus de notation, on pourra écrire $\mathbb{E}(X)=+\infty$ lorsque $X$ n'admet pas d'espérance et qu'elle est positive.
+    Ainsi, on pourra écrire $\mathbb{E}(X)$ dès que $X$ est positive, qu'elle admette une espérance ou non.
+    Vue la place privilégiée qu'occupent les fonctions positives dans la théorie d'intégration de Lebesgue, cette notation ne surprend pas.
+    
+    Attention cependant, si $X$ n'admet pas d'espérance et n'est pas positive, on s'interdira formellement d'écrire $\mathbb{E}(X)$ (car l'intégrale sous-jacente n'existe peut-être même pas !).
+\end{rem}
+
+\begin{rem}
+    Ces considérations étant faites, on remarque que :
+    \begin{itemize}
+        \itemb $X$ admet une espérance ssi $\mathbb{E}(\left| X \right|) < +\infty$ ;
+        \itemb $X$ admet un moment d'ordre $r$ ssi $\mathbb{E}(\left| X \right|^r) < +\infty$ ;
+        \itemb si $X$ admet un moment d'ordre $r$, alors $m_r = \mathbb{E}(X^r)$.
+    \end{itemize}
+\end{rem}
+
+\begin{prop}
+    \label{prop:moments_cascade}
+    Soit $r\in\mathbb{N}$. Si $X$ admet un moment d'ordre $r$, alors elle admet un moment d'ordre $k$ pour tout $k\in[\![0,r]\!]$.
+    Autrement dit, si $X^r$ est $\mathbb{P}$-intégrable, alors $X^k$ est $\mathbb{P}$-intégrable pour tout $k\in[\![0,r]\!]$.
+\end{prop}
+
+\begin{proof}
+    Soit $k\in[\![0,r]\!]$. Nous avons $\left|X\right|^k \leq \left|X\right|^r+1$, donc par croissance et linéarité de l'intégrale :
+    $$
+    \int_\Omega \left|X(\omega)\right|^k \text{d}\mathbb{P}(\omega) \leq \int_\Omega \left|X(\omega)\right|^r \text{d}\mathbb{P}(\omega) + \int_\Omega \text{d}\mathbb{P}(\omega)
+    $$
+
+    Comme $X$ admet un moment d'ordre $r$, le premier terme de la somme et fini.
+    Puis, d'après la relation mesure-intégrale, le deuxième terme de la somme vaut 1 ($\mathbb{P}$ est une mesure de probabilité).
+    
+    Le terme de gauche est donc fini, donc $X$ admet un moment d'ordre $k$.
+\end{proof}
+
+\begin{rem}
+    \label{rem:warning_moments}
+    Attention, on remarquera que ceci n'est vrai que parce que $\mathbb{P}$ est une mesure de probabilité !
+    Dans le cas d'une mesure quelconque (par exemple, la mesure de Lebesgue), cette démonstration ne permet pas de conclure (car $\lambda(\mathbb{R}) = +\infty$)... et heureusement, car ce résultat est faux !
+
+    Voici un contre-exemple :
+    $$x \mapsto \mathds{1}_{\mathbb{R}_+^*}(x)\frac{1}{x}$$
+    n'est pas intégrable sur $\mathbb{R}$, alors que son carré l'est.
+\end{rem}
+
+\begin{defi}
+    On dit que $X$ \textbf{admet une variance} lorsqu'elle admet un moment d'ordre 2 (\textit{ie} lorsque $\omega \mapsto X^2\left(\omega\right)$ est $\mathbb{P}$-intégrable).
+    Sa \textbf{variance} est alors définie comme :
+    $$
+    \mathbb{V}(X):=\mathbb{E}\left(\left(X - \mathbb{E}\left(X\right)\right)^2\right)=\mathbb{E}\left(X^2\right) - \mathbb{E}\left(X\right)^2
+    $$
+    
+    On note $\mathcal{L}^2\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ l'ensemble des variables aléatoires qui admettent une variance (\textit{ie} l'ensemble des variables aléatoires qui sont de carré $\mathbb{P}$-intégrables).
+\end{defi}
+
+\begin{rem}
+    Cette définition impose de faire trois remarques :
+    \begin{itemize}
+        \itemb le théorème qui fournit l'égalité de ces deux expressions s'appelle \textbf{le théorème de König-Huygens}. Sa démonstration est immédiate par linéarité de l'intégrale.
+        \itemb d'après la deuxième expression, l'existence de $\mathbb{V}(X)$ est assurée dès que $X$ admet un moment d'ordre 1 et 2.
+        Cependant, bien que la définition demande que $X$ admette un moment d'ordre 2, elle ne demande pas qu'elle admette un moment d'ordre 1.
+        Nous sommes en fait sauvés par la proposition \ref{prop:moments_cascade} !
+        \itemb d'après la proposition \ref{prop:moments_cascade}, $\mathcal{L}^2\left(\Omega, \mathcal{A}, \mathbb{P}\right) \subset \mathcal{L}^1\left(\Omega, \mathcal{A}, \mathbb{P}\right)$.
+        A nouveau, on rappelle que ceci n'est vrai que parce que $\mathbb{P}$ est une mesure de probabilité (voir la remarque \ref{rem:warning_moments})
+    \end{itemize}
+\end{rem}
+
+\section{Formule de transfert}
+
+Dans toute cette section, on se donne
+\begin{itemize}
+    \itemb un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ ;
+    \itemb un espace topologique quelconque $E$ ;
+    \itemb une variable aléatoire quelconque $X:\Omega \longrightarrow E$.
+\end{itemize}
+
+\begin{thm}
+    Soit $g:E \longrightarrow \mathbb{R}$ (resp. $g:E \longrightarrow \mathbb{N}$) une fonction borélienne.
+    Par la proposition \ref{prop:composition_var_bor}, $g \circ X$ est encore une variable aléatoire ; c'est d'ailleurs une variable aléatoire réelle (resp. une variable aléatoire discrète).
+    On sait donc donner un sens à son espérance.
+
+    La variable aléatoire réelle (resp. discrète) $g \circ X$ sur $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire réelle (resp. discrète) $g$ sur $\left(E, \mathcal{B}(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
+    
+    Si c'est le cas, alors on a la \textbf{formule de transfert} :
+    $$
+    \mathbb{E}(g \circ X) = \int_E g(x)\textnormal{d}\mathbb{P}_X(x)
+    $$
+\end{thm}
+
+\begin{rem}
+    On comprend pourquoi cette formule porte ce nom, lorsque l'on remplace l'espérance par sa définition, dans les expressions précédentes :
+    $$
+    \int_\Omega (g \circ X)(\omega) \text{d} \mathbb{P}(\omega) = \int_E g(x) \text{d} \mathbb{P}_X(x)
+    $$
+    Cette formule transfère le calcul sur un autre espace, muni d'une autre mesure.
+    Pour peu que la mesure $\mathbb{P}_X$ soit facile à utiliser, on a intérêt à utiliser cette nouvelle formulation.
+    % faire ref au changement de mesure du chap de la construction de l'intégrale.
+\end{rem}
+
+Voici quelques applications de ce théorème :
+
+\begin{exemple}
+    Soit $X:\Omega \longrightarrow \mathbb{R}$ une variable aléatoire réelle.
+    La fonction identité $\text{Id}:\mathbb{R} \longrightarrow \mathbb{R}$ est continue donc borélienne (voir la proposition \ref{prop:continue_implique_borelienne}).
+
+    En appliquant le théorème précédent, $X$ admet une espérance ssi $\text{Id}$ est $\mathbb{P}_X$-intégrable.
+    Dans ce cas, on aura :
+    $$
+    \mathbb{E}(X) = \mathbb{E}(\text{Id} \circ X) = \int_\mathbb{R} x\textnormal{d}\mathbb{P}_X(x)
+    $$
+
+    Pour peu que l'on sache expliciter $\mathbb{P}_X$, cette nouvelle l'expression de l'espérance nous simplifie grandement le calcul.
+
+    Il est évident que l'on obtient le même résultat avec une variable aléatoire discrète.
+\end{exemple}
+
+\begin{exemple}
+    De même, en choisissant la fonction carrée pour $g$ on obtient (si l'espérance de $X^2$ existe) :
+    $$
+    \mathbb{E}(X^2) = \int_\mathbb{R} x^2\textnormal{d}\mathbb{P}_X(x)
+    $$
+
+    Notons qu'en choisissant l'identité pour $g$, mais la variable aléatoire $X^2$, on obtient (à nouveau sous réserve d'existence) :
+    $$
+    \mathbb{E}(X^2) = \int_\mathbb{R} x\textnormal{d}\mathbb{P}_{X^2}(x)
+    $$
+\end{exemple}
+
+\section{Moments d'un vecteur aléatoire}
+
+
+
+
+
+\end{document}
