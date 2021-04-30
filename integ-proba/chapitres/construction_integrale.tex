@@ -167,6 +167,30 @@ Le théorème suivant assure que cette nouvelle intégrale vérifie bien les bes
   L'intégrale de Lebesgue prolonge l'intégrale de Riemann.
 \end{thm}
 
+\section{Propriétés de l'intégrale}
+
+Nous énonçons ici quelques résultats importants concernant les intégrales, que les fonctions soient positives ou non.
+
+\begin{thm}[\textbf{de convergence dominée}]
+  \label{thm:convergence_dominee}
+  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré.
+  Soit $\left(f_n\right)_{n \in \mathbb{N}}$ une suite de fonctions mesurables de $E$ dans $\mathbb{R}$, qui converge simplement vers une fonction $f$ (qui est donc mesurable par la proposition \ref{prop:limite_simple_mesurables}).
+
+  Supposons qu'il existe $g:E \longrightarrow \mathbb{R}$ $\mu$-intégrable qui \textbf{domine} les $f_n$ :
+  $$
+  \forall n \in \mathbb{N}, \forall x \in E, \left|f_n(x)\right| \leq g(x)
+  $$
+
+  Alors les $f_n$ et $f$ sont $\mu$-intégrables, et :
+  $$
+  \lim_{n \to + \infty} \int_E f_n(x) \textnormal{d}\mu(x) = \int_E f(x) \textnormal{d}\mu(x)
+  $$
+\end{thm}
+
+\begin{rem}
+  Ce théorème permet donc d'échanger limite et intégrale (ce qui n'est pas vrai dans le cas général).
+\end{rem}
+
 \section{Démontrer en pratique des résultats sur les intégrales}
 
 Pour montrer des résultats sur des fonctions mesurables positives, on utilise la décomposition vue au théorème \ref{thm:decompmes}.
