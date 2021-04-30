@@ -83,6 +83,24 @@ Ces considérations étant faites, on définit alors une tribu comme suit :
   Soit dit en passant, à titre de petit exercice, on peut vérifier que toute partie d'un espace topologique muni de la topologie discrète est à la fois ouverte et fermée.
 \end{exemple}
 
+\begin{defi}
+  Soit $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}\right)$ deux espaces mesurables.
+  On appelle \textbf{tribu produit de} $\mathcal{A}$ \textbf{et} $\mathcal{B}$ la tribu sur $E \times F$ engendrée par :
+  $$
+  \left\{A \times B, \left(A, B\right) \in \mathcal{A} \times \mathcal{B}\right\}
+  $$
+  On la note $\mathcal{A} \otimes \mathcal{B}$.
+  
+  On appelle \textbf{espace produit} des espaces mesurables $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}\right)$ l'espace mesurable $\left(E \times F, \mathcal{A} \otimes \mathcal{B}\right)$.
+\end{defi}
+
+\begin{exemple}
+  On a $\mathcal{B}(\mathbb{R}^n) \otimes \mathcal{B}(\mathbb{R}^m) = \mathcal{B}(\mathbb{R}^{m+n})$.
+
+  Notons cependant que ce résultat n'est pas vrai en général.
+  En effet, nous verrons dans la suite de ce chapitre la tribu de Lebesgue $\mathcal{L}(\mathbb{R}^n)$ : le résultat est faux pour cette tribu.
+\end{exemple}
+
 \section{Définition de la mesure}
 
 Abordons désormais la notion de mesure.
@@ -138,6 +156,26 @@ Cela nous amène à définir une mesure ainsi :
   On notera que la notion d'ensemble négligeable dépend de la mesure choisie.
   Un ensemble négligeable pour une certaine mesure peut très bien ne pas l'être pour une autre mesure.
 \end{rem}
+
+\begin{defi}
+  Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré.
+  On dit que $\mu$ est une mesure $\sigma$\textbf{-finie} lorsqu'il existe une collections dénombrables d'ensembles mesurables $\left(X_n\right)_{n \in \mathbb{N}}$, tels que :
+  \begin{itemize}
+    \itemb $\displaystyle \bigcup_{n \in \mathbb{N}} X_n = E$ (on dit que les $X_n$ recouvrent $E$) ;
+    \itemb $\forall n \in \mathbb{N}, \mu(X_n) < + \infty$ (on dit que les $X_n$ sont de mesure finie).
+  \end{itemize}
+\end{defi}
+
+\begin{defi}
+  Soit $\left(E, \mathcal{A}, \mu_1\right)$ et $\left(F, \mathcal{B}, \mu_2\right)$ deux espaces mesurés.
+  Une \textbf{mesure produit} $\mu_1 \otimes \mu_2$ sur l'espace produit $\left(E \times F, \mathcal{A} \otimes \mathcal{B}\right)$ est une mesure cet espace produit vérifiant :
+  $$
+  \forall \left(A, B\right) \in \left(\mathcal{A}, \mathcal{B}\right), (\mu_1 \otimes \mu_2)(A \times B) = \mu_1(A)\mu_2(B)
+  $$
+
+  Une telle mesure existe toujours.
+  Si $\mu_1$ et $\mu_2$ sont $\sigma$-finies, alors elle est unique.
+\end{defi}
 
 %TODO ajouter la continuité monotone
 

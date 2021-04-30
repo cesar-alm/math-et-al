@@ -670,6 +670,8 @@ INPUT ./chapitres/construction_integrale.tex
 INPUT ./chapitres/construction_integrale.tex
 INPUT chapitres/construction_integrale.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
@@ -720,8 +722,6 @@ INPUT ./chapitres/probas_va.tex
 INPUT ./chapitres/probas_va.tex
 INPUT ./chapitres/probas_va.tex
 INPUT chapitres/probas_va.tex
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
 INPUT integ-proba.aux
 INPUT ./integ-proba.out
 INPUT ./integ-proba.out
