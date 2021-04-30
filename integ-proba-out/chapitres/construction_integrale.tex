@@ -171,6 +171,8 @@ Le théorème suivant assure que cette nouvelle intégrale vérifie bien les bes
 
 Nous énonçons ici quelques résultats importants concernant les intégrales, que les fonctions soient positives ou non.
 
+\subsection{Le théorème de convergence dominée}
+
 \begin{thm}[\textbf{de convergence dominée}]
   \label{thm:convergence_dominee}
   Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré.
@@ -189,6 +191,116 @@ Nous énonçons ici quelques résultats importants concernant les intégrales, q
 
 \begin{rem}
   Ce théorème permet donc d'échanger limite et intégrale (ce qui n'est pas vrai dans le cas général).
+\end{rem}
+
+\subsection{Les théorèmes de Fubini-Tonelli}
+
+Les théorèmes suivants sont connus sous le nom des \textbf{théorèmes de Fubini-Tonelli}.
+Il s'agit en fait de deux théorèmes \textit{a priori} totalement indépendants, mais qui sont souvent utilisés ensemble.
+
+En effet, si l'on se donne $\left(E, \mathcal{A}, \mu_1\right)$ et $\left(F, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, et $f:E \times F \rightarrow \mathbb{R}$, on peut résumer grossièrement ces deux théorèmes ainsi :
+\begin{itemize}
+  \itemb le théorème de Fubini permettent de calculer l'intégrale de $f$ en calculant d'abord l'intégrale par rapport à $E$, puis par rapport à $F$, sous réserve d'intégrabilité ;
+  \itemb le théorème de Tonelli permet de prouver cette intégrabilité, en calculant d'abord l'intégrale de $\left|f\right|$ par rapport à $E$, puis par rapport à $F$.
+\end{itemize}
+
+\begin{thm}[\textbf{de Fubini pour des fonctions positives}]
+  \label{thm:fubini_positif}
+  Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
+  On considère l'espace produit $X \times Y$ muni de la mesure produit.
+  Soit $f:X \times Y \rightarrow \mathbb{R}_+$ $\mathcal{A} \otimes \mathcal{B}$-mesurable.
+  Alors :
+  \begin{itemize}
+    \itemb $\displaystyle x \mapsto \int_Y f(x,y) \textnormal{d}\mu_2(y)$ existe pour tout $x \in X$ et est $\mathcal{A}$-mesurable.
+    \itemb $\displaystyle y \mapsto \int_X f(x,y) \textnormal{d}\mu_1(x)$ existe pour tout $y \in Y$ et est $\mathcal{B}$-mesurable.
+  \end{itemize}
+
+  De plus, on a:
+  $$
+  {
+  \everymath={\displaystyle}
+  \begin{array}{rcl}
+    \int_{X \times Y} f(x,y) \textnormal{d} \left(\mu_1 \otimes \mu_2 \right) (x,y) & = & \int_X \left( \int_Y f(x,y) \textnormal{d} \mu_2(y) \right) \textnormal{d} \mu_1(x)\\
+                                                                                    & = & \int_Y \left( \int_X f(x,y) \textnormal{d} \mu_1(x) \right) \textnormal{d} \mu_2(y)\\
+  \end{array}
+  }
+  $$
+\end{thm}
+
+\begin{rem}
+  Lorsque la fonction est positive, on peut donc \textbf{toujours} calculer l'intégrale variables par variables (quitte à ce que le résultat vaille $+\infty$).
+  Attention, cela n'est pas vrai forcément vrai si $f$ n'est pas positive, comme nous le verrons ci-après.
+\end{rem}
+
+Voici l'énoncé du théorème dans le cas général :
+
+\begin{thm}[\textbf{de Fubini}]
+  \label{thm:fubini}
+  Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
+  On considère l'espace produit $X \times Y$ muni de la mesure produit.
+  Soit $f:X \times Y \rightarrow \mathbb{R}$ $\mu_1 \otimes \mu_2$-\textbf{intégrable}.
+  Alors :
+  \begin{itemize}
+    \itemb pour $\mu_1$-presque tout $x$, $y \mapsto f(x,y)$ est $\mu_2$-intégrable, et la fonction définie $\mu_1$-presque partout $\displaystyle x \mapsto \int_Y f(x,y) \textnormal{d}\mu_2(y)$ est intégrable.
+    \itemb pour $\mu_2$-presque tout $y$, $x \mapsto f(x,y)$ est $\mu_1$-intégrable, et la fonction définie $\mu_2$-presque partout $\displaystyle y \mapsto \int_X f(x,y) \textnormal{d}\mu_1(x)$ est intégrable.
+  \end{itemize}
+
+  De plus, on a:
+  $$
+  {
+  \everymath={\displaystyle}
+  \begin{array}{rcl}
+    \int_{X \times Y} f(x,y) \textnormal{d} \left(\mu_1 \otimes \mu_2 \right) (x,y) & = & \int_X \left( \int_Y f(x,y) \textnormal{d} \mu_2(y) \right) \textnormal{d} \mu_1(x)\\
+                                                                                    & = & \int_Y \left( \int_X f(x,y) \textnormal{d} \mu_1(x) \right) \textnormal{d} \mu_2(y)\\
+  \end{array}
+  }
+  $$
+\end{thm}
+
+\begin{rem}
+  Lorsque la fonction est signée, le théorème n'est vrai que si la fonction est intégrable pour la mesure produit !
+  De plus, le résultat est un peu plus faible : on ne peut définir les intégrales partielles que presque partout.
+  En pratique, ce n'est pas un problème : il suffit par exemple de faire valoir $0$ aux endroits où une telle fonction n'est pas définie (comme c'est uniquement sur un ensemble négligeable, le choix de la valeur n'a pas d'importance car il ne change pas la valeur de l'intégrale).
+\end{rem}
+
+Voici le théorème de Tonelli, qui permet de prouver l'intégrabilité de telles fonctions :
+
+\begin{thm}[\textbf{de Tonelli}]
+  \label{thm:tonelli}
+  Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
+  On considère l'espace produit $X \times Y$ muni de la mesure produit.
+  Soit $f:X \times Y \rightarrow \mathbb{R}_+$ $\mathcal{A} \otimes \mathcal{B}$-mesurable.
+
+  Pour $\mu_2$-presque tout $y$, $x \mapsto f(x,y)$ est $\mathcal{A}$-mesurable.
+
+  Puis $f$ est $\mu_1 \otimes \mu_2$\textbf{-intégrable} ssi $x \mapsto f(x,y)$ est $\mu_1$-intégrable pour $\mu_2$-presque tout $y \in Y$,
+  et que la fonction alors définie pour $\mu_2$-presque tout $y \in Y$ (qui est alors $\mathcal{B}$-mesurable) est $\mu_2$-intégrable.
+\end{thm}
+
+\begin{rem}
+  Il est évident que l'on peut échanger $x$ et $y$, $\mathcal{A}$ et $\mathcal{B}$, $X$ et $Y$ et $\mu_1$ et $\mu_2$ dans la dernière phrase du théorème.
+\end{rem}
+
+\begin{rem}
+  On remarque que, dans le théorème de Tonelli, la fonction doit être positive.
+  Qu'à cela ne tienne, par le caractère absolu de l'intégrale de Lebesgue, il suffit d'appliquer le théorème à $\left|f\right|$ pour avoir l'intégrabilité de $\left|f\right|$, \textit{ie} celle de $f$.
+\end{rem}
+
+\begin{rem}
+  A présent, voyons comment bien utiliser ces deux théorèmes pour intégrer variables par variables.
+  On se donne $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
+
+  Soit $f:X \times Y \rightarrow \mathbb{R}$.
+  \begin{itemize}
+    \itemb si $f$ est positive, on applique le \textbf{théorème de Fubini, cas positif} \ref{thm:fubini_positif} : on peut toujours intégrer variable par variable, que $f$ soit intégrable ou non.
+    \itemb si $f$ n'est pas positive, on doit commencer par prouver l'intégrabilité de $f$.
+    Pour cela, on applique le \textbf{théorème de Tonelli} \ref{thm:tonelli} à $\left|f\right|$, qui nous fait calculer l'intégrale de $\left|f\right|$ par rapport à une variable, puis l'intégrale de la fonction obtenue par rapport à l'autre variable.
+    Si le résultat obtenu existe et est fini, alors on peut conclure par ce théorème que $f$ est intégrable.
+    
+    On peut alors utiliser le \textbf{théorème de Fubini, cas général} \ref{thm:fubini} qui nous permet de calculer l'intégrale de $f$ variable par variable.
+    
+    Notons que le calcul effectué pour utiliser le théorème de Tonelli peut servir à nouveau pour intégrer variable par variable (si $f$ et $\left|f\right|$ se ressemblent).
+  \end{itemize}
 \end{rem}
 
 \section{Démontrer en pratique des résultats sur les intégrales}

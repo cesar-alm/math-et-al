@@ -12,20 +12,22 @@
 \contentsline {section}{\numberline {2.3}Propriétés de l'intégrale positive}{14}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Définition de l'intégrale de Lebesgue pour des fonctions signées}{14}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Propriétés de l'intégrale}{15}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Démontrer en pratique des résultats sur les intégrales}{15}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Généralisation aux fonctions à valeurs dans $\mathbb {R}^m$}{16}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Cas particulier : l'intégrale de Lebesgue munie de la mesure de Lebesgue}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Que deviennent les résultats généraux dans ce cas particulier ?}{17}{section.3.1}%
-\contentsline {section}{\numberline {3.2}L'intégrale indéterminée}{17}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Cas particulier : l'intégrale de Lebesgue munie de la mesure de comptage}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Lien avec les séries}{18}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Que deviennent les propriétés de l'intégrale dans ce cas particulier ?}{20}{section.4.2}%
-\contentsline {part}{II\hspace {1em}Probabilités}{21}{part.2}%
-\contentsline {chapter}{\numberline {5}Généralités sur les probabilités}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Premières définitions}{22}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Variables aléatoires}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Définitions}{23}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Loi d'une variable aléatoire}{24}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Moments d'une variable aléatoire réelle ou discrète}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Formule de transfert}{27}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Moments d'un vecteur aléatoire}{28}{section.6.5}%
+\contentsline {subsection}{\numberline {2.5.1}Le théorème de convergence dominée}{15}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Les théorèmes de Fubini-Tonelli}{15}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Démontrer en pratique des résultats sur les intégrales}{17}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Généralisation aux fonctions à valeurs dans $\mathbb {R}^m$}{18}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Cas particulier : l'intégrale de Lebesgue munie de la mesure de Lebesgue}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Que deviennent les résultats généraux dans ce cas particulier ?}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}L'intégrale indéterminée}{19}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Cas particulier : l'intégrale de Lebesgue munie de la mesure de comptage}{20}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Lien avec les séries}{20}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Que deviennent les propriétés de l'intégrale dans ce cas particulier ?}{22}{section.4.2}%
+\contentsline {part}{II\hspace {1em}Probabilités}{23}{part.2}%
+\contentsline {chapter}{\numberline {5}Généralités sur les probabilités}{24}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Premières définitions}{24}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Variables aléatoires}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Définitions}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Loi d'une variable aléatoire}{26}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Moments d'une variable aléatoire réelle ou discrète}{27}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Formule de transfert}{29}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Moments d'un vecteur aléatoire}{30}{section.6.5}%
