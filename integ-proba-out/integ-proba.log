@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  30 APR 2021 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.16)  18 MAY 2021 17:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **integ-proba.tex
 (./integ-proba.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
+L3 programming layer <2021-05-07>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo
@@ -26,13 +26,13 @@ File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \bibindent=\dimen138
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/04/07 3.57 The Babel package
+Package: babel 2021/04/26 3.58 The Babel package
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2021/04/07 3.57 Babel common definitions
+File: babel.def 2021/04/26 3.58 Babel common definitions
 \babel@savecnt=\count188
 \U@D=\dimen139
-\l@babelnohyphens=\language87
+\l@unhyphenated=\language87
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -41,10 +41,10 @@ File: babel.def 2021/04/07 3.57 Babel common definitions
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2020/10/10 v3.5l French support from the babel system
-Package babel Info: \l@acadian = using hyphenrules for french
-(babel)             (\language29) on input line 91.
-Package babel Info: \l@canadien = using hyphenrules for french
-(babel)             (\language29) on input line 92.
+Package babel Info: Hyphen rules for 'acadian' set to \l@french
+(babel)             (\language29). Reported on input line 91.
+Package babel Info: Hyphen rules for 'canadien' set to \l@french
+(babel)             (\language29). Reported on input line 92.
 \FB@nonchar=\count190
 Package babel Info: Making : an active character on input line 430.
 Package babel Info: Making ; an active character on input line 431.
@@ -346,7 +346,7 @@ Package: import 2020/04/01  v 6.2
 \c@rem=\count290
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count291
 \l__pdf_internal_box=\box49
 )
@@ -549,25 +549,65 @@ n/10
 [] := \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
  []
 
-[27] [28] [29]) [30] (./integ-proba.aux)
+[27] [28] [29]) [30]
+Chapitre 7.
+(./chapitres/probas_conv.tex
+Overfull \hbox (15.59627pt too wide) in paragraph at lines 31--32
+[]\T1/lmr/m/n/10 les $[][]$ sont dé-fi-nies sur une suite d'es-pace pro-ba-bi-l
+i-sés $[][]$ ; 
+ []
+
+[31
+
+]
+
+LaTeX Warning: Reference `thm:tcl' on page 32 undefined on input line 52.
+
+
+LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 32 undefined on input
+ line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 90.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 90.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 90.
+
+[32]
+
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 33 undefined on input 
+line 134.
+
+[33]
+
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 34 undefined on input 
+line 177.
+
+) [34] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: 6A13C232271816C2B2C87DA5537C9E04;8175.
+(rerunfilecheck)             Checksum: 785F06709D96FDED53BFFD3631031916;9523.
  ) 
 Here is how much of TeX's memory you used:
- 10417 strings out of 478994
- 150634 string characters out of 5858190
- 465752 words of memory out of 5000000
- 27537 multiletter control sequences out of 15000+600000
- 494164 words of font info for 86 fonts, out of 8000000 for 9000
+ 10554 strings out of 478846
+ 153591 string characters out of 5855774
+ 469673 words of memory out of 5000000
+ 27785 multiletter control sequences out of 15000+600000
+ 494452 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,19n,74p,492b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
-21/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2021/texmf-dist/
-fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
+ 60i,19n,63p,492b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
+21/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-dist/
+fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
 dvips/lm/lm-mathex.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/d
 oublestroke/dsrom10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
 lm/lmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.
@@ -576,20 +616,21 @@ pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr
 live/2021/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2021/
 texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2021/texmf-dist/
 fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
-/public/lm/lmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/
-lmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb><
-/usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/t
-exlive/2021/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2021/
-texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2021/texmf-dist
-/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
-e1/public/lm/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/l
-m/lmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm7.pfb>
-Output written on integ-proba.pdf (31 pages, 344932 bytes).
+/public/lm/lmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/
+lmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr12.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/
+texlive/2021/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2021
+/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2021/texmf-dist/
+fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type
+1/public/lm/lmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/l
+m/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm7.pfb>
+Output written on integ-proba.pdf (35 pages, 362310 bytes).
 PDF statistics:
- 566 PDF objects out of 1000 (max. 8388607)
- 508 compressed objects within 6 object streams
- 180 named destinations out of 1000 (max. 500000)
- 257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 649 PDF objects out of 1000 (max. 8388607)
+ 586 compressed objects within 6 object streams
+ 214 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
