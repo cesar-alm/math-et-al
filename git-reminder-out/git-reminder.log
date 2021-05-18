@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  30 APR 2021 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.16)  18 MAY 2021 17:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **git-reminder.tex
 (./git-reminder.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
+L3 programming layer <2021-05-07>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo
@@ -26,13 +26,13 @@ File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \bibindent=\dimen138
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/04/07 3.57 The Babel package
+Package: babel 2021/04/26 3.58 The Babel package
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2021/04/07 3.57 Babel common definitions
+File: babel.def 2021/04/26 3.58 Babel common definitions
 \babel@savecnt=\count188
 \U@D=\dimen139
-\l@babelnohyphens=\language87
+\l@unhyphenated=\language87
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -41,10 +41,10 @@ File: babel.def 2021/04/07 3.57 Babel common definitions
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2020/10/10 v3.5l French support from the babel system
-Package babel Info: \l@acadian = using hyphenrules for french
-(babel)             (\language29) on input line 91.
-Package babel Info: \l@canadien = using hyphenrules for french
-(babel)             (\language29) on input line 92.
+Package babel Info: Hyphen rules for 'acadian' set to \l@french
+(babel)             (\language29). Reported on input line 91.
+Package babel Info: Hyphen rules for 'canadien' set to \l@french
+(babel)             (\language29). Reported on input line 92.
 \FB@nonchar=\count190
 Package babel Info: Making : an active character on input line 430.
 Package babel Info: Making ; an active character on input line 431.
@@ -249,7 +249,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count273
 \l__pdf_internal_box=\box47
 )
@@ -366,13 +366,13 @@ Package rerunfilecheck Info: File `git-reminder.out' has not changed.
 (rerunfilecheck)             Checksum: C1507D48C7C4C1F5CDF7245842B6D0F8;2011.
  ) 
 Here is how much of TeX's memory you used:
- 8856 strings out of 478994
- 132043 string characters out of 5858190
- 446875 words of memory out of 5000000
- 26225 multiletter control sequences out of 15000+600000
+ 8912 strings out of 478846
+ 133404 string characters out of 5855774
+ 450786 words of memory out of 5000000
+ 26429 multiletter control sequences out of 15000+600000
  460464 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,6n,74p,314b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,63p,314b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/20
 21/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2021/texmf-d
@@ -384,7 +384,7 @@ local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texl
 ive/2021/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2021/t
 exmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2021/texmf-dist/
 fonts/type1/public/lm/lmtt12.pfb>
-Output written on git-reminder.pdf (5 pages, 227250 bytes).
+Output written on git-reminder.pdf (5 pages, 227021 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  97 compressed objects within 1 object stream
