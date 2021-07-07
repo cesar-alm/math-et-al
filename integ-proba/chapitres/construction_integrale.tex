@@ -326,6 +326,46 @@
 
   %TODO Exemple
 
+  \section{Mesures définies par une intégrale}
+  \label{sec:mes_defi_int}
+
+  Ces mesures ont une place très importante dans la théorie de la mesure et en probabilités.
+  Dans toute cette section, on se donne un espace mesuré $\left(E, \mathcal{A}\right, \mu)$.
+
+  \begin{defi}
+    Soit $\nu$ une mesure sur $\left(E, \mathcal{A}\right)$.
+    On dit que $\nu$ est définie par une intégrale lorsqu'il existe $f:E \rightarrow \mathbb{R}$, positive et $\mu$-mesurable telle que :
+
+    \begin{displaymath}
+      \forall A \in \mathcal{A}, \nu(A)=\int_E f(x) \text{d} \mu(x)
+    \end{displaymath}
+
+    Dans ce cas, on notera $\nu = f \mu$.
+  \end{defi}
+
+  On montre le résultat important suivant qui donne toute son importance à ce type de mesures :
+
+  \begin{thm}
+        Soit $\left( E, \mathcal{A}, \mu \right)$ un espace mesuré et $f:E \rightarrow \mathbb{R}$, positive et $\mu$-mesurable.
+        Soit $\nu:=f \mu$.
+        Soit $g: E \rightarrow \mathbb{R}$, $\nu$-mesurable et dont la $\nu$-intégrale existe.
+
+        Alors :
+        \begin{displaymath}
+          \int_E g(x) \textnormal{d} \nu(x) = \int_E g(x) f(x) \textnormal{d} \mu(x)
+        \end{displaymath}
+    \end{thm}
+
+    \begin{rem}
+        En fin de compte, utiliser une mesure définie par une intégrale revient simplement à changer dans l'intégrale $\text{d}\nu(x)$ par $f(x) \text{d}\mu(x)$.
+        C'est de là que vient la notation introduite.
+
+        Lorsque la mesure $\mu$ est bien connue (par exemple lorsqu'il s'agit de la mesure de Lebesgue ou de comptage), ce théorème permet d'avantageusement remplacer un calcul fastidieux à l'aide de $\nu$ avec un calcul plus simple à l'aide de $\mu$ et d'une multiplication par $f$.
+    \end{rem}
+
+  Il existe deux cas particuliers important concernant ce type de mesures, utiles pour les probabilités.
+  Ils seront abordés dans le chapitre \ref{chap:va}.
+
   \section{Généralisation aux fonctions à valeurs dans $\mathbb{R}^m$}
 
   Nos fonctions étaient jusqu'ici à valeurs dans $\mathbb{R}$. Qu'en est-il si elle sont à valeurs dans $\mathbb{R}^m$ ?
