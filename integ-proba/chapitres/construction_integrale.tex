@@ -2,360 +2,362 @@
 
 \begin{document}
 
-Maintenant que nous connaissons les notions de base concernant la théorie de la mesure, nous sommes en mesure de définir l'intégrale de Lebesgue.
-Cette intégrale est en quelque sorte une généralisation de l'intégrale de Riemann.
+  \chapter{Construction de l'intégrale de Lebesgue}
 
-\section{Pourquoi définir une nouvelle intégrale ?}
+  Maintenant que nous connaissons les notions de base concernant la théorie de la mesure, nous sommes en mesure de définir l'intégrale de Lebesgue.
+  Cette intégrale est en quelque sorte une généralisation de l'intégrale de Riemann.
 
-Deux raisons principales peuvent nous amener à définir une nouvelle intégrale.
+  \section{Pourquoi définir une nouvelle intégrale ?}
 
-D'une part, l'intégrale de Riemann ne permet de calculer l'intégrale que de fonctions \textbf{continues par morceaux}.
-Or, cela est très restrictif : par exemple, prenons la fonction $\mathds{1}_{\mathbb{Q}}$.
-Elle n'est pas continue par morceaux, donc n'est pas intégrable au sens de Riemann.
-Pourtant, pour la mesure de Lebesgue, $\mathbb{Q}$ est négligeable (voir l'exemple \ref{ex:ratneg}).
-Ainsi, $\mathds{1}_{\mathbb{Q}}$ est Lebesgue-presque-partout égale à $0$.
-On aurait donc envie de dire que \og l'influence de $\mathbb{Q}$ est si petite, qu'elle n'a aucun impact dans l'intégrale \fg.
-En disant cela, on veut en fait dire que l'intégrale de $\mathds{1}_{\mathbb{Q}}$ serait égale à l'intégrale de la fonction nulle, qui vaut zéro.
-Ce faisant, \textbf{on pourrait donner un sens à l'intégrale d'une fonction qui n'est pas continue par morceaux !}
+  Deux raisons principales peuvent nous amener à définir une nouvelle intégrale.
 
-Plus généralement, l'intégrale de Lebesgue permettra de définir l'intégrale d'une fonction mesurable, et non plus d'une fonction continue par morceaux.
+  D'une part, l'intégrale de Riemann ne permet de calculer l'intégrale que de fonctions \textbf{continues par morceaux}.
+  Or, cela est très restrictif : par exemple, prenons la fonction $\mathds{1}_{\mathbb{Q}}$.
+  Elle n'est pas continue par morceaux, donc n'est pas intégrable au sens de Riemann.
+  Pourtant, pour la mesure de Lebesgue, $\mathbb{Q}$ est négligeable (voir l'exemple \ref{ex:ratneg}).
+  Ainsi, $\mathds{1}_{\mathbb{Q}}$ est Lebesgue-presque-partout égale à $0$.
+  On aurait donc envie de dire que \og l'influence de $\mathbb{Q}$ est si petite, qu'elle n'a aucun impact dans l'intégrale \fg.
+  En disant cela, on veut en fait dire que l'intégrale de $\mathds{1}_{\mathbb{Q}}$ serait égale à l'intégrale de la fonction nulle, qui vaut zéro.
+  Ce faisant, \textbf{on pourrait donner un sens à l'intégrale d'une fonction qui n'est pas continue par morceaux !}
 
-D'autre part, l'intégrale de Riemann utilise la notion de longueur :
-par exemple, si $f$ est la fonction constante égale à 1, nous avons
+  Plus généralement, l'intégrale de Lebesgue permettra de définir l'intégrale d'une fonction mesurable, et non plus d'une fonction continue par morceaux.
 
-$$
-\int_0^1f(x)\text{d}x = 1 > 2 = \int_0^2f(x)\text{d}x
-$$
+  D'autre part, l'intégrale de Riemann utilise la notion de longueur :
+  par exemple, si $f$ est la fonction constante égale à 1, nous avons
 
-Mais il est impossible de \og mesurer différemment \fg.
-En effet, si une mesure $\mu$ vérifie $\mu\left(\left[1,2\right]\right)=0$, alors on aimerait pouvoir dire que les deux intégrales ci-dessus, calculées avec $\mu$, seraient égales.
-Plus généralement, \textbf{on aimerait pouvoir intégrer dans n'importe-quel espace par n'importe-quelle mesure.}
-L'intégrale de Lebesgue répondra à ce besoin.
-
-\section{Définition de l'intégrale de Lebesgue pour des fonctions positives}
-\label{sect:defintpos}
-Les fonctions positives ont une place privilégiée dans la théorie de l'intégration de Lebesgue.
-En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$) :
-
-\begin{defi}
-  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
-  \textbf{La} $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
-  \begin{itemize}
-    \itemb \textbf{la relation mesure-intégrale} : pour tout ensemble $X$ $\mathcal{A}$-mesurable,
-    $$
-    \int_E\mathds{1}_X(x)\text{d}\mu(x)=\mu(X)
-    $$ 
-    \itemb \textbf{l'hypothèse de linéarité} : pour toute fonction mesurable $g:E\rightarrow\mathbb{R}_+$ et pour tous $\left(\alpha,\beta\right) \in \left(\mathbb{R}_+^*\right)^2$,
-    $$
-    \int_E (\alpha f + \beta g)(x) \text{d}\mu(x)=\alpha\int_Ef(x)\text{d}\mu(x) + \beta\int_Eg(x)\text{d}\mu(x)
-    $$
-    \itemb \textbf{l'hypothèse de convergence monotone} : pour toute suite croissante de fonctions mesurables positives $f_n:E\rightarrow\mathbb{R}_+$ convergeant simplement vers $f$,
-    $$
-    \lim_{n\rightarrow+\infty}\int_Ef_n(x)\text{d}\mu(x)=\int_Ef(x)\text{d}\mu(x)
-    $$
-  \end{itemize}
-\end{defi}
-
-\begin{rem}
-  L'intégrale d'une fonction mesurable positive vérifie immédiatement, par définition, ces trois hypothèses fondamentales, qui seront centrales dans la suite de ce document.
-  Attention cependant : les deux hypothèses de mesurabilité et de positivité sont absolument nécessaires.
-\end{rem}
-
-\begin{defi}
-  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
-  $f$ est dite $\mu$\textbf{-intégrable} lorsque $\displaystyle\int_Ef(x)\text{d}\mu(x) < +\infty$.
-\end{defi}
-
-\begin{rem}
-  \label{rem:attint}
-  On fera donc bien attention au sens précis du mot \og intégrable \fg.
-  Il est plus fort de dire qu'une fonction est intégrable, que de dire que l'intégrale d'une fonction existe.
-  Par exemple, une fonction mesurable positive admet toujours une intégrale, mais elle n'est pas forcément intégrable.
-\end{rem}
-
-\begin{defi}
-  Soit $f:E\longrightarrow\mathbb{R}$, et $F\subset E$.
-  On dit que $f$ est \textbf{intégrable sur le sous ensemble} $F$ lorsque $f\mathds{1}_F$ est intégrable.
-\end{defi}
-
-\begin{rem}
-  Pour avoir une chance que $f$ soit intégrable sur $F$, il est nécessaire que $f\mathds{1}_F$ soit mesurable.
-\end{rem}
-
-\section{Propriétés de l'intégrale positive}
-
-% TODO changement de mesures
-
-\section{Définition de l'intégrale de Lebesgue pour des fonctions signées}
-
-Commençons par des résultats préliminaires qui seront utiles par la suite :
-
-\begin{defi}
-  \label{def:partieposneg}
-  Soit $E$ un ensemble.
-  Soit $f:E\longrightarrow\mathbb{R}$.
-  Les \textbf{partie positive} et \textbf{partie négative} de $f$, respectivement $f_+$ et $f_-$, sont définies comme suit :
   $$
-  \left\{
+  \int_0^1f(x)\text{d}x = 1 > 2 = \int_0^2f(x)\text{d}x
+  $$
+
+  Mais il est impossible de \og mesurer différemment \fg.
+  En effet, si une mesure $\mu$ vérifie $\mu\left(\left[1,2\right]\right)=0$, alors on aimerait pouvoir dire que les deux intégrales ci-dessus, calculées avec $\mu$, seraient égales.
+  Plus généralement, \textbf{on aimerait pouvoir intégrer dans n'importe-quel espace par n'importe-quelle mesure.}
+  L'intégrale de Lebesgue répondra à ce besoin.
+
+  \section{Définition de l'intégrale de Lebesgue pour des fonctions positives}
+  \label{sect:defintpos}
+  Les fonctions positives ont une place privilégiée dans la théorie de l'intégration de Lebesgue.
+  En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$) :
+
+  \begin{defi}
+    Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
+    \textbf{La} $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
+    \begin{itemize}
+      \itemb \textbf{la relation mesure-intégrale} : pour tout ensemble $X$ $\mathcal{A}$-mesurable,
+      $$
+      \int_E\mathds{1}_X(x)\text{d}\mu(x)=\mu(X)
+      $$
+      \itemb \textbf{l'hypothèse de linéarité} : pour toute fonction mesurable $g:E\rightarrow\mathbb{R}_+$ et pour tous $\left(\alpha,\beta\right) \in \left(\mathbb{R}_+^*\right)^2$,
+      $$
+      \int_E (\alpha f + \beta g)(x) \text{d}\mu(x)=\alpha\int_Ef(x)\text{d}\mu(x) + \beta\int_Eg(x)\text{d}\mu(x)
+      $$
+      \itemb \textbf{l'hypothèse de convergence monotone} : pour toute suite croissante de fonctions mesurables positives $f_n:E\rightarrow\mathbb{R}_+$ convergeant simplement vers $f$,
+      $$
+      \lim_{n\rightarrow+\infty}\int_Ef_n(x)\text{d}\mu(x)=\int_Ef(x)\text{d}\mu(x)
+      $$
+    \end{itemize}
+  \end{defi}
+
+  \begin{rem}
+    L'intégrale d'une fonction mesurable positive vérifie immédiatement, par définition, ces trois hypothèses fondamentales, qui seront centrales dans la suite de ce document.
+    Attention cependant : les deux hypothèses de mesurabilité et de positivité sont absolument nécessaires.
+  \end{rem}
+
+  \begin{defi}
+    Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
+    $f$ est dite $\mu$\textbf{-intégrable} lorsque $\displaystyle\int_Ef(x)\text{d}\mu(x) < +\infty$.
+  \end{defi}
+
+  \begin{rem}
+    \label{rem:attint}
+    On fera donc bien attention au sens précis du mot \og intégrable \fg.
+    Il est plus fort de dire qu'une fonction est intégrable, que de dire que l'intégrale d'une fonction existe.
+    Par exemple, une fonction mesurable positive admet toujours une intégrale, mais elle n'est pas forcément intégrable.
+  \end{rem}
+
+  \begin{defi}
+    Soit $f:E\longrightarrow\mathbb{R}$, et $F\subset E$.
+    On dit que $f$ est \textbf{intégrable sur le sous ensemble} $F$ lorsque $f\mathds{1}_F$ est intégrable.
+  \end{defi}
+
+  \begin{rem}
+    Pour avoir une chance que $f$ soit intégrable sur $F$, il est nécessaire que $f\mathds{1}_F$ soit mesurable.
+  \end{rem}
+
+  \section{Propriétés de l'intégrale positive}
+
+  % TODO changement de mesures
+
+  \section{Définition de l'intégrale de Lebesgue pour des fonctions signées}
+
+  Commençons par des résultats préliminaires qui seront utiles par la suite :
+
+  \begin{defi}
+    \label{def:partieposneg}
+    Soit $E$ un ensemble.
+    Soit $f:E\longrightarrow\mathbb{R}$.
+    Les \textbf{partie positive} et \textbf{partie négative} de $f$, respectivement $f_+$ et $f_-$, sont définies comme suit :
+    $$
+    \left\{
+      \begin{array}{rcl}
+        f_+&:=&\max(0,f)\\
+        f_-&:=&\min(0,f)
+      \end{array}
+    \right.
+    $$
+  \end{defi}
+
+  \begin{prop}
+    Soit E un ensemble et $f:E\longrightarrow\mathbb{R}$.
+    Alors :
+    $$
+    f = f_+ - f_-
+    $$
+  \end{prop}
+
+  Le résultat suivant est une conséquence directe de la proposition $\ref{prop:compmes}$ :
+
+  \begin{prop}
+    \label{prop:partiemes}
+    Soit $\left(E,\mathcal{A}\right)$ un espace mesurable et $f:E\longrightarrow\mathbb{R}$ une fonction mesurable.
+    Alors $f^+$ et $f_-$ sont mesurables
+  \end{prop}
+
+  Désormais, passons à la définition de l'intégrale d'une fonction signée. Celle-ci arrive volontairement dans une nouvelle section, pour souligner la différence avec l'intégrale d'une fonction positive.
+  En effet, comme cela a été souligné au début de la section \ref{sect:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue : elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
+
+  La définition de l'intégrale pour une fonction signée est un premier exemple soulignant cette différence :
+
+  \begin{defi}
+    Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}$ mesurable.
+    \textbf{La} $\mu$ \textbf{intégrale de Lebesgue} $\displaystyle\int_E f(x) \text{d}\mu(x)$ existe dès que $f_+$ ou $f_-$ est $\mu$-intégrable.
+    Dans ce cas, on a :
+    $$
+    \int_E f(x) \text{d}\mu(x)=\int_Ef_+\text{d}\mu(x) - \int_Ef_-(x)\text{d}\mu(x)
+    $$
+  \end{defi}
+
+  \begin{rem}
+    Contrairement au cas positif, \textbf{l'intégrale d'une fonction signée n'existe pas systématiquement !}
+  \end{rem}
+
+  \begin{defi}
+    Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}$ mesurable.
+    $f$ est dite $\mu$\textbf{-intégrable} lorsque $f_+$ et $f_-$ sont $\mu$-intégrables.
+  \end{defi}
+
+  \begin{rem}
+    On notera que, de manière équivalente, \textbf{une fonction signée est intégrable ssi l'intégrale de} $f$ \textbf{existe, et est finie.}
+  \end{rem}
+
+  \begin{rem}
+    Comme dans le cas positif (remarque \ref{rem:attint}), le mot \og intégrable\fg a un sens bien précis !
+  \end{rem}
+
+  \begin{thm}
+    Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré et $f:E\longrightarrow\mathbb{R}$ mesurable. $f$ est $\mu$-intégrable ssi $\left|f\right|$ est $\mu$-intégrable.
+    On dit que \textbf{l'intégrale de Lebesgue est absolue}.
+  \end{thm}
+
+  \begin{rem}
+    Pour vérifier qu'une fonction signée est intégrable, on vérifiera en pratique que sa valeur absolue est intégrable.
+  \end{rem}
+
+  Le théorème suivant assure que cette nouvelle intégrale vérifie bien les besoins que l'on avait exprimé en début de chapitre.
+
+  \begin{thm}
+    L'intégrale de Lebesgue prolonge l'intégrale de Riemann.
+  \end{thm}
+
+  \section{Propriétés de l'intégrale}
+
+  Nous énonçons ici quelques résultats importants concernant les intégrales, que les fonctions soient positives ou non.
+
+  \subsection{Le théorème de convergence dominée}
+
+  \begin{thm}[\textbf{de convergence dominée}]
+    \label{thm:convergence_dominee}
+    Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré.
+    Soit $\left(f_n\right)_{n \in \mathbb{N}}$ une suite de fonctions mesurables de $E$ dans $\mathbb{R}$, qui converge simplement vers une fonction $f$ (qui est donc mesurable par la proposition \ref{prop:limite_simple_mesurables}).
+
+    Supposons qu'il existe $g:E \longrightarrow \mathbb{R}$ $\mu$-intégrable qui \textbf{domine} les $f_n$ :
+    $$
+    \forall n \in \mathbb{N}, \forall x \in E, \left|f_n(x)\right| \leq g(x)
+    $$
+
+    Alors les $f_n$ et $f$ sont $\mu$-intégrables, et :
+    $$
+    \lim_{n \to + \infty} \int_E f_n(x) \textnormal{d}\mu(x) = \int_E f(x) \textnormal{d}\mu(x)
+    $$
+  \end{thm}
+
+  \begin{rem}
+    Ce théorème permet donc d'échanger limite et intégrale (ce qui n'est pas vrai dans le cas général).
+  \end{rem}
+
+  \subsection{Les théorèmes de Fubini-Tonelli}
+
+  Les théorèmes suivants sont connus sous le nom des \textbf{théorèmes de Fubini-Tonelli}.
+  Il s'agit en fait de deux théorèmes \textit{a priori} totalement indépendants, mais qui sont souvent utilisés ensemble.
+
+  En effet, si l'on se donne $\left(E, \mathcal{A}, \mu_1\right)$ et $\left(F, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, et $f:E \times F \rightarrow \mathbb{R}$, on peut résumer grossièrement ces deux théorèmes ainsi :
+  \begin{itemize}
+    \itemb le théorème de Fubini permettent de calculer l'intégrale de $f$ en calculant d'abord l'intégrale par rapport à $E$, puis par rapport à $F$, sous réserve d'intégrabilité ;
+    \itemb le théorème de Tonelli permet de prouver cette intégrabilité, en calculant d'abord l'intégrale de $\left|f\right|$ par rapport à $E$, puis par rapport à $F$.
+  \end{itemize}
+
+  \begin{thm}[\textbf{de Fubini pour des fonctions positives}]
+    \label{thm:fubini_positif}
+    Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
+    On considère l'espace produit $X \times Y$ muni de la mesure produit.
+    Soit $f:X \times Y \rightarrow \mathbb{R}_+$ $\mathcal{A} \otimes \mathcal{B}$-mesurable.
+    Alors :
+    \begin{itemize}
+      \itemb $\displaystyle x \mapsto \int_Y f(x,y) \textnormal{d}\mu_2(y)$ existe pour tout $x \in X$ et est $\mathcal{A}$-mesurable.
+      \itemb $\displaystyle y \mapsto \int_X f(x,y) \textnormal{d}\mu_1(x)$ existe pour tout $y \in Y$ et est $\mathcal{B}$-mesurable.
+    \end{itemize}
+
+    De plus, on a:
+    $$
+    {
+    \everymath={\displaystyle}
     \begin{array}{rcl}
-      f_+&:=&\max(0,f)\\
-      f_-&:=&\min(0,f)
+      \int_{X \times Y} f(x,y) \textnormal{d} \left(\mu_1 \otimes \mu_2 \right) (x,y) & = & \int_X \left( \int_Y f(x,y) \textnormal{d} \mu_2(y) \right) \textnormal{d} \mu_1(x)\\
+                                                                                      & = & \int_Y \left( \int_X f(x,y) \textnormal{d} \mu_1(x) \right) \textnormal{d} \mu_2(y)\\
     \end{array}
-  \right.
-  $$
-\end{defi}
+    }
+    $$
+  \end{thm}
 
-\begin{prop}
-  Soit E un ensemble et $f:E\longrightarrow\mathbb{R}$.
-  Alors :
-  $$
-  f = f_+ - f_-
-  $$
-\end{prop}
+  \begin{rem}
+    Lorsque la fonction est positive, on peut donc \textbf{toujours} calculer l'intégrale variables par variables (quitte à ce que le résultat vaille $+\infty$).
+    Attention, cela n'est pas vrai forcément vrai si $f$ n'est pas positive, comme nous le verrons ci-après.
+  \end{rem}
 
-Le résultat suivant est une conséquence directe de la proposition $\ref{prop:compmes}$ :
+  Voici l'énoncé du théorème dans le cas général :
 
-\begin{prop}
-  \label{prop:partiemes}
-  Soit $\left(E,\mathcal{A}\right)$ un espace mesurable et $f:E\longrightarrow\mathbb{R}$ une fonction mesurable.
-  Alors $f^+$ et $f_-$ sont mesurables
-\end{prop}
+  \begin{thm}[\textbf{de Fubini}]
+    \label{thm:fubini}
+    Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
+    On considère l'espace produit $X \times Y$ muni de la mesure produit.
+    Soit $f:X \times Y \rightarrow \mathbb{R}$ $\mu_1 \otimes \mu_2$-\textbf{intégrable}.
+    Alors :
+    \begin{itemize}
+      \itemb pour $\mu_1$-presque tout $x$, $y \mapsto f(x,y)$ est $\mu_2$-intégrable, et la fonction définie $\mu_1$-presque partout $\displaystyle x \mapsto \int_Y f(x,y) \textnormal{d}\mu_2(y)$ est intégrable.
+      \itemb pour $\mu_2$-presque tout $y$, $x \mapsto f(x,y)$ est $\mu_1$-intégrable, et la fonction définie $\mu_2$-presque partout $\displaystyle y \mapsto \int_X f(x,y) \textnormal{d}\mu_1(x)$ est intégrable.
+    \end{itemize}
 
-Désormais, passons à la définition de l'intégrale d'une fonction signée. Celle-ci arrive volontairement dans une nouvelle section, pour souligner la différence avec l'intégrale d'une fonction positive.
-En effet, comme cela a été souligné au début de la section \ref{sect:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue : elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
+    De plus, on a:
+    $$
+    {
+    \everymath={\displaystyle}
+    \begin{array}{rcl}
+      \int_{X \times Y} f(x,y) \textnormal{d} \left(\mu_1 \otimes \mu_2 \right) (x,y) & = & \int_X \left( \int_Y f(x,y) \textnormal{d} \mu_2(y) \right) \textnormal{d} \mu_1(x)\\
+                                                                                      & = & \int_Y \left( \int_X f(x,y) \textnormal{d} \mu_1(x) \right) \textnormal{d} \mu_2(y)\\
+    \end{array}
+    }
+    $$
+  \end{thm}
 
-La définition de l'intégrale pour une fonction signée est un premier exemple soulignant cette différence :
+  \begin{rem}
+    Lorsque la fonction est signée, le théorème n'est vrai que si la fonction est intégrable pour la mesure produit !
+    De plus, le résultat est un peu plus faible : on ne peut définir les intégrales partielles que presque partout.
+    En pratique, ce n'est pas un problème : il suffit par exemple de faire valoir $0$ aux endroits où une telle fonction n'est pas définie (comme c'est uniquement sur un ensemble négligeable, le choix de la valeur n'a pas d'importance car il ne change pas la valeur de l'intégrale).
+  \end{rem}
 
-\begin{defi}
-  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}$ mesurable.
-  \textbf{La} $\mu$ \textbf{intégrale de Lebesgue} $\displaystyle\int_E f(x) \text{d}\mu(x)$ existe dès que $f_+$ ou $f_-$ est $\mu$-intégrable.
-  Dans ce cas, on a :
-  $$
-  \int_E f(x) \text{d}\mu(x)=\int_Ef_+\text{d}\mu(x) - \int_Ef_-(x)\text{d}\mu(x)
-  $$
-\end{defi}
+  Voici le théorème de Tonelli, qui permet de prouver l'intégrabilité de telles fonctions :
 
-\begin{rem}
-  Contrairement au cas positif, \textbf{l'intégrale d'une fonction signée n'existe pas systématiquement !}
-\end{rem}
+  \begin{thm}[\textbf{de Tonelli}]
+    \label{thm:tonelli}
+    Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
+    On considère l'espace produit $X \times Y$ muni de la mesure produit.
+    Soit $f:X \times Y \rightarrow \mathbb{R}_+$ $\mathcal{A} \otimes \mathcal{B}$-mesurable.
 
-\begin{defi}
-  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}$ mesurable.
-  $f$ est dite $\mu$\textbf{-intégrable} lorsque $f_+$ et $f_-$ sont $\mu$-intégrables.
-\end{defi}
+    Pour $\mu_2$-presque tout $y$, $x \mapsto f(x,y)$ est $\mathcal{A}$-mesurable.
 
-\begin{rem}
-  On notera que, de manière équivalente, \textbf{une fonction signée est intégrable ssi l'intégrale de} $f$ \textbf{existe, et est finie.}
-\end{rem}
+    Puis $f$ est $\mu_1 \otimes \mu_2$\textbf{-intégrable} ssi $x \mapsto f(x,y)$ est $\mu_1$-intégrable pour $\mu_2$-presque tout $y \in Y$,
+    et que la fonction alors définie pour $\mu_2$-presque tout $y \in Y$ (qui est alors $\mathcal{B}$-mesurable) est $\mu_2$-intégrable.
+  \end{thm}
 
-\begin{rem}
-  Comme dans le cas positif (remarque \ref{rem:attint}), le mot \og intégrable\fg a un sens bien précis !
-\end{rem}
+  \begin{rem}
+    Il est évident que l'on peut échanger $x$ et $y$, $\mathcal{A}$ et $\mathcal{B}$, $X$ et $Y$ et $\mu_1$ et $\mu_2$ dans la dernière phrase du théorème.
+  \end{rem}
 
-\begin{thm}
-  Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré et $f:E\longrightarrow\mathbb{R}$ mesurable. $f$ est $\mu$-intégrable ssi $\left|f\right|$ est $\mu$-intégrable.
-  On dit que \textbf{l'intégrale de Lebesgue est absolue}.
-\end{thm}
+  \begin{rem}
+    On remarque que, dans le théorème de Tonelli, la fonction doit être positive.
+    Qu'à cela ne tienne, par le caractère absolu de l'intégrale de Lebesgue, il suffit d'appliquer le théorème à $\left|f\right|$ pour avoir l'intégrabilité de $\left|f\right|$, \textit{ie} celle de $f$.
+  \end{rem}
 
-\begin{rem}
-  Pour vérifier qu'une fonction signée est intégrable, on vérifiera en pratique que sa valeur absolue est intégrable.
-\end{rem}
+  \begin{rem}
+    A présent, voyons comment bien utiliser ces deux théorèmes pour intégrer variables par variables.
+    On se donne $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
 
-Le théorème suivant assure que cette nouvelle intégrale vérifie bien les besoins que l'on avait exprimé en début de chapitre.
+    Soit $f:X \times Y \rightarrow \mathbb{R}$.
+    \begin{itemize}
+      \itemb si $f$ est positive, on applique le \textbf{théorème de Fubini, cas positif} \ref{thm:fubini_positif} : on peut toujours intégrer variable par variable, que $f$ soit intégrable ou non.
+      \itemb si $f$ n'est pas positive, on doit commencer par prouver l'intégrabilité de $f$.
+      Pour cela, on applique le \textbf{théorème de Tonelli} \ref{thm:tonelli} à $\left|f\right|$, qui nous fait calculer l'intégrale de $\left|f\right|$ par rapport à une variable, puis l'intégrale de la fonction obtenue par rapport à l'autre variable.
+      Si le résultat obtenu existe et est fini, alors on peut conclure par ce théorème que $f$ est intégrable.
 
-\begin{thm}
-  L'intégrale de Lebesgue prolonge l'intégrale de Riemann.
-\end{thm}
+      On peut alors utiliser le \textbf{théorème de Fubini, cas général} \ref{thm:fubini} qui nous permet de calculer l'intégrale de $f$ variable par variable.
 
-\section{Propriétés de l'intégrale}
+      Notons que le calcul effectué pour utiliser le théorème de Tonelli peut servir à nouveau pour intégrer variable par variable (si $f$ et $\left|f\right|$ se ressemblent).
+    \end{itemize}
+  \end{rem}
 
-Nous énonçons ici quelques résultats importants concernant les intégrales, que les fonctions soient positives ou non.
+  \section{Démontrer en pratique des résultats sur les intégrales}
 
-\subsection{Le théorème de convergence dominée}
-
-\begin{thm}[\textbf{de convergence dominée}]
-  \label{thm:convergence_dominee}
-  Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré.
-  Soit $\left(f_n\right)_{n \in \mathbb{N}}$ une suite de fonctions mesurables de $E$ dans $\mathbb{R}$, qui converge simplement vers une fonction $f$ (qui est donc mesurable par la proposition \ref{prop:limite_simple_mesurables}).
-
-  Supposons qu'il existe $g:E \longrightarrow \mathbb{R}$ $\mu$-intégrable qui \textbf{domine} les $f_n$ :
-  $$
-  \forall n \in \mathbb{N}, \forall x \in E, \left|f_n(x)\right| \leq g(x)
-  $$
-
-  Alors les $f_n$ et $f$ sont $\mu$-intégrables, et :
-  $$
-  \lim_{n \to + \infty} \int_E f_n(x) \textnormal{d}\mu(x) = \int_E f(x) \textnormal{d}\mu(x)
-  $$
-\end{thm}
-
-\begin{rem}
-  Ce théorème permet donc d'échanger limite et intégrale (ce qui n'est pas vrai dans le cas général).
-\end{rem}
-
-\subsection{Les théorèmes de Fubini-Tonelli}
-
-Les théorèmes suivants sont connus sous le nom des \textbf{théorèmes de Fubini-Tonelli}.
-Il s'agit en fait de deux théorèmes \textit{a priori} totalement indépendants, mais qui sont souvent utilisés ensemble.
-
-En effet, si l'on se donne $\left(E, \mathcal{A}, \mu_1\right)$ et $\left(F, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, et $f:E \times F \rightarrow \mathbb{R}$, on peut résumer grossièrement ces deux théorèmes ainsi :
-\begin{itemize}
-  \itemb le théorème de Fubini permettent de calculer l'intégrale de $f$ en calculant d'abord l'intégrale par rapport à $E$, puis par rapport à $F$, sous réserve d'intégrabilité ;
-  \itemb le théorème de Tonelli permet de prouver cette intégrabilité, en calculant d'abord l'intégrale de $\left|f\right|$ par rapport à $E$, puis par rapport à $F$.
-\end{itemize}
-
-\begin{thm}[\textbf{de Fubini pour des fonctions positives}]
-  \label{thm:fubini_positif}
-  Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
-  On considère l'espace produit $X \times Y$ muni de la mesure produit.
-  Soit $f:X \times Y \rightarrow \mathbb{R}_+$ $\mathcal{A} \otimes \mathcal{B}$-mesurable.
-  Alors :
+  Pour montrer des résultats sur des fonctions mesurables positives, on utilise la décomposition vue au théorème \ref{thm:decompmes}.
   \begin{itemize}
-    \itemb $\displaystyle x \mapsto \int_Y f(x,y) \textnormal{d}\mu_2(y)$ existe pour tout $x \in X$ et est $\mathcal{A}$-mesurable.
-    \itemb $\displaystyle y \mapsto \int_X f(x,y) \textnormal{d}\mu_1(x)$ existe pour tout $y \in Y$ et est $\mathcal{B}$-mesurable.
+    \itemb On montre le résultat sur des fonctions indicatrices mesurables.
+    \itemb Puis on le montre sur une somme de fonctions indicatrices mesurables. On a donc montré le résultat pour les fonctions étagées mesurables.
+    \itemb En vertu de l'hypothèse de convergence monotone de l'intégrale et de la décomposition fournie par le théorème \ref{thm:decompmes}, on passe à la limite.
+    Le résultat est alors démontré pour n'importe-quelle fonction mesurable positive.
   \end{itemize}
 
-  De plus, on a:
-  $$
-  {
-  \everymath={\displaystyle}
-  \begin{array}{rcl}
-    \int_{X \times Y} f(x,y) \textnormal{d} \left(\mu_1 \otimes \mu_2 \right) (x,y) & = & \int_X \left( \int_Y f(x,y) \textnormal{d} \mu_2(y) \right) \textnormal{d} \mu_1(x)\\
-                                                                                    & = & \int_Y \left( \int_X f(x,y) \textnormal{d} \mu_1(x) \right) \textnormal{d} \mu_2(y)\\
-  \end{array}
-  }
-  $$
-\end{thm}
-
-\begin{rem}
-  Lorsque la fonction est positive, on peut donc \textbf{toujours} calculer l'intégrale variables par variables (quitte à ce que le résultat vaille $+\infty$).
-  Attention, cela n'est pas vrai forcément vrai si $f$ n'est pas positive, comme nous le verrons ci-après.
-\end{rem}
-
-Voici l'énoncé du théorème dans le cas général :
-
-\begin{thm}[\textbf{de Fubini}]
-  \label{thm:fubini}
-  Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
-  On considère l'espace produit $X \times Y$ muni de la mesure produit.
-  Soit $f:X \times Y \rightarrow \mathbb{R}$ $\mu_1 \otimes \mu_2$-\textbf{intégrable}.
-  Alors :
+  En général, les résultats pour les fonctions signées se déduiront des résultats pour les fonctions positives de la manière suivante :
   \begin{itemize}
-    \itemb pour $\mu_1$-presque tout $x$, $y \mapsto f(x,y)$ est $\mu_2$-intégrable, et la fonction définie $\mu_1$-presque partout $\displaystyle x \mapsto \int_Y f(x,y) \textnormal{d}\mu_2(y)$ est intégrable.
-    \itemb pour $\mu_2$-presque tout $y$, $x \mapsto f(x,y)$ est $\mu_1$-intégrable, et la fonction définie $\mu_2$-presque partout $\displaystyle y \mapsto \int_X f(x,y) \textnormal{d}\mu_1(x)$ est intégrable.
+    \itemb On décompose une fonction signée mesurable $f:E\longrightarrow\mathbb{R}$ en sa partie positive $f^+$ et sa partie négative $f_-$ (voir la définition \ref{def:partieposneg}).
+    \itemb Ces deux fonctions étant positives (et encore mesurables par la proposition \ref{prop:partiemes}), on applique leur applique un résultat vrai pour les fonctions positives.
+    \itemb On utilise l'identité $f=f^++f_-$ pour obtenir le résultat final.
   \end{itemize}
 
-  De plus, on a:
+  On rappelle toutefois qu'un certain nombre de résultats vrais pour les fonctions positives ne le sont pas pour les fonctions signées.
+
+  %TODO Exemple
+
+  \section{Généralisation aux fonctions à valeurs dans $\mathbb{R}^m$}
+
+  Nos fonctions étaient jusqu'ici à valeurs dans $\mathbb{R}$. Qu'en est-il si elle sont à valeurs dans $\mathbb{R}^m$ ?
+
+  Soit $f:E\longrightarrow \mathbb{R}^m$. Décomposons $f$ :
+
   $$
-  {
-  \everymath={\displaystyle}
-  \begin{array}{rcl}
-    \int_{X \times Y} f(x,y) \textnormal{d} \left(\mu_1 \otimes \mu_2 \right) (x,y) & = & \int_X \left( \int_Y f(x,y) \textnormal{d} \mu_2(y) \right) \textnormal{d} \mu_1(x)\\
-                                                                                    & = & \int_Y \left( \int_X f(x,y) \textnormal{d} \mu_1(x) \right) \textnormal{d} \mu_2(y)\\
-  \end{array}
-  }
+  f = \sum_{i=1}^{m}f_ie_i
   $$
-\end{thm}
 
-\begin{rem}
-  Lorsque la fonction est signée, le théorème n'est vrai que si la fonction est intégrable pour la mesure produit !
-  De plus, le résultat est un peu plus faible : on ne peut définir les intégrales partielles que presque partout.
-  En pratique, ce n'est pas un problème : il suffit par exemple de faire valoir $0$ aux endroits où une telle fonction n'est pas définie (comme c'est uniquement sur un ensemble négligeable, le choix de la valeur n'a pas d'importance car il ne change pas la valeur de l'intégrale).
-\end{rem}
-
-Voici le théorème de Tonelli, qui permet de prouver l'intégrabilité de telles fonctions :
-
-\begin{thm}[\textbf{de Tonelli}]
-  \label{thm:tonelli}
-  Soit $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
-  On considère l'espace produit $X \times Y$ muni de la mesure produit.
-  Soit $f:X \times Y \rightarrow \mathbb{R}_+$ $\mathcal{A} \otimes \mathcal{B}$-mesurable.
-
-  Pour $\mu_2$-presque tout $y$, $x \mapsto f(x,y)$ est $\mathcal{A}$-mesurable.
-
-  Puis $f$ est $\mu_1 \otimes \mu_2$\textbf{-intégrable} ssi $x \mapsto f(x,y)$ est $\mu_1$-intégrable pour $\mu_2$-presque tout $y \in Y$,
-  et que la fonction alors définie pour $\mu_2$-presque tout $y \in Y$ (qui est alors $\mathcal{B}$-mesurable) est $\mu_2$-intégrable.
-\end{thm}
-
-\begin{rem}
-  Il est évident que l'on peut échanger $x$ et $y$, $\mathcal{A}$ et $\mathcal{B}$, $X$ et $Y$ et $\mu_1$ et $\mu_2$ dans la dernière phrase du théorème.
-\end{rem}
-
-\begin{rem}
-  On remarque que, dans le théorème de Tonelli, la fonction doit être positive.
-  Qu'à cela ne tienne, par le caractère absolu de l'intégrale de Lebesgue, il suffit d'appliquer le théorème à $\left|f\right|$ pour avoir l'intégrabilité de $\left|f\right|$, \textit{ie} celle de $f$.
-\end{rem}
-
-\begin{rem}
-  A présent, voyons comment bien utiliser ces deux théorèmes pour intégrer variables par variables.
-  On se donne $\left(X, \mathcal{A}, \mu_1\right)$ et $\left(Y, \mathcal{B}, \mu_2\right)$ deux espaces mesurés, tels que $\mu_1$ et $\mu_2$ soient $\sigma$-finies.
-
-  Soit $f:X \times Y \rightarrow \mathbb{R}$.
+  où :
   \begin{itemize}
-    \itemb si $f$ est positive, on applique le \textbf{théorème de Fubini, cas positif} \ref{thm:fubini_positif} : on peut toujours intégrer variable par variable, que $f$ soit intégrable ou non.
-    \itemb si $f$ n'est pas positive, on doit commencer par prouver l'intégrabilité de $f$.
-    Pour cela, on applique le \textbf{théorème de Tonelli} \ref{thm:tonelli} à $\left|f\right|$, qui nous fait calculer l'intégrale de $\left|f\right|$ par rapport à une variable, puis l'intégrale de la fonction obtenue par rapport à l'autre variable.
-    Si le résultat obtenu existe et est fini, alors on peut conclure par ce théorème que $f$ est intégrable.
-    
-    On peut alors utiliser le \textbf{théorème de Fubini, cas général} \ref{thm:fubini} qui nous permet de calculer l'intégrale de $f$ variable par variable.
-    
-    Notons que le calcul effectué pour utiliser le théorème de Tonelli peut servir à nouveau pour intégrer variable par variable (si $f$ et $\left|f\right|$ se ressemblent).
+    \itemb $\left(f_i\right)_{i\in[\![1,m]\!]}$ sont les \textbf{composantes} de $f$.
+    \itemb $\left(e_i\right)_{i\in[\![1,m]\!]}$ est la base canonique de $\mathbb{R}^m$.
   \end{itemize}
-\end{rem}
 
-\section{Démontrer en pratique des résultats sur les intégrales}
+  Posons alors les définitions suivantes :
 
-Pour montrer des résultats sur des fonctions mesurables positives, on utilise la décomposition vue au théorème \ref{thm:decompmes}.
-\begin{itemize}
-  \itemb On montre le résultat sur des fonctions indicatrices mesurables.
-  \itemb Puis on le montre sur une somme de fonctions indicatrices mesurables. On a donc montré le résultat pour les fonctions étagées mesurables.
-  \itemb En vertu de l'hypothèse de convergence monotone de l'intégrale et de la décomposition fournie par le théorème \ref{thm:decompmes}, on passe à la limite.
-  Le résultat est alors démontré pour n'importe-quelle fonction mesurable positive.
-\end{itemize}
+  \begin{defi}
+    L'intégrale de $f$ existe lorsque les $m$ intégrales des $f_i$ existent.
+    Lorsqu'elle existe, l'intégrale de $f$ vaut :
+    $$
+    \int_Ef = \sum_{i=1}^{m}\int_Ef_i
+    $$
+    (on peut permuter vecteurs et intégrale)
+  \end{defi}
 
-En général, les résultats pour les fonctions signées se déduiront des résultats pour les fonctions positives de la manière suivante :
-\begin{itemize}
-  \itemb On décompose une fonction signée mesurable $f:E\longrightarrow\mathbb{R}$ en sa partie positive $f^+$ et sa partie négative $f_-$ (voir la définition \ref{def:partieposneg}).
-  \itemb Ces deux fonctions étant positives (et encore mesurables par la proposition \ref{prop:partiemes}), on applique leur applique un résultat vrai pour les fonctions positives.
-  \itemb On utilise l'identité $f=f^++f_-$ pour obtenir le résultat final.
-\end{itemize}
+  \begin{defi}
+    $f$ est dite \textbf{intégrable} lorsque les $m$ fonctions $f_i$ sont intégrables.
+  \end{defi}
 
-On rappelle toutefois qu'un certain nombre de résultats vrais pour les fonctions positives ne le sont pas pour les fonctions signées.
-
-%TODO Exemple
-
-\section{Généralisation aux fonctions à valeurs dans $\mathbb{R}^m$}
-
-Nos fonctions étaient jusqu'ici à valeurs dans $\mathbb{R}$. Qu'en est-il si elle sont à valeurs dans $\mathbb{R}^m$ ?
-
-Soit $f:E\longrightarrow \mathbb{R}^m$. Décomposons $f$ :
-
-$$
-f = \sum_{i=1}^{m}f_ie_i
-$$
-
-où :
-\begin{itemize}
-  \itemb $\left(f_i\right)_{i\in[\![1,m]\!]}$ sont les \textbf{composantes} de $f$.
-  \itemb $\left(e_i\right)_{i\in[\![1,m]\!]}$ est la base canonique de $\mathbb{R}^m$.
-\end{itemize}
-
-Posons alors les définitions suivantes :
-
-\begin{defi}
-  L'intégrale de $f$ existe lorsque les $m$ intégrales des $f_i$ existent.
-  Lorsqu'elle existe, l'intégrale de $f$ vaut :
-  $$
-  \int_Ef = \sum_{i=1}^{m}\int_Ef_i
-  $$
-  (on peut permuter vecteurs et intégrale)
-\end{defi}
-
-\begin{defi}
-  $f$ est dite \textbf{intégrable} lorsque les $m$ fonctions $f_i$ sont intégrables.
-\end{defi}
-
-Avec ces deux définitions, nous avons très facilement généralisé la notion d'intégrale lorsque les fonctions sont à valeurs dans $\mathbb{R}^m$.
-Tous les résultats d'intégrations valables pour des fonctions à valeurs dans $\mathbb{R}$ pourront ainsi se transposer très facilement dans le cas général.
+  Avec ces deux définitions, nous avons très facilement généralisé la notion d'intégrale lorsque les fonctions sont à valeurs dans $\mathbb{R}^m$.
+  Tous les résultats d'intégrations valables pour des fonctions à valeurs dans $\mathbb{R}$ pourront ainsi se transposer très facilement dans le cas général.
 
 \end{document}
