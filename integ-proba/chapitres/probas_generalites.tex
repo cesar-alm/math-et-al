@@ -51,8 +51,12 @@
             On commence par énoncer le résultat important suivant :
 
             \begin{thm}
-                Soit $\left(\mathbb{N}, \mathcal{P}(\mathbb{N}), \mu \right)$ un espace probabilisé.
-                Il existe une unique suite $f:\mathbb{N} \rightarrow \mathbb{R}$ positive et sommable de somme 1 telle que $\mu = f c$, où $c$ est la mesure de comptage.
+                Soit $\left(\mathbb{N}, \mathcal{P}(\mathbb{N}), \mathbb{P} \right)$ un espace probabilisé.
+                Il existe une unique suite $f:\mathbb{N} \rightarrow \mathbb{R}$ positive et sommable de somme 1 telle que $\mathbb{P} = f c$, où $c$ est la mesure de comptage.
+                De plus, $\forall n \in \mathbb{N}, f(n)=\mathbb{P}(\left\{n\right\})$, \textit{ie} :
+                \begin{displaymath}
+                    \forall A \subset \mathbb{N}, \mathbb{P}(A) = \sum_{a \in A} \mathbb{P}(\left\{ a \right\})
+                \end{displaymath}
             \end{thm}
 
             \begin{rem}
