@@ -1,15 +1,23 @@
 \documentclass[french]{report}
-\usepackage{babel}
-\usepackage{dsfont}
-\usepackage{hyperref}
+
+% always there : font encoding
+\usepackage[T1]{fontenc}
+% always there : vectorial fonts
 \usepackage{lmodern}
+% always there : french compatibility
+\usepackage{babel}
+
+\usepackage{dsfont}
+
+% hyperref to access external refs; xurl so they cut properly at the end of line
+\usepackage{hyperref}
+\usepackage{xurl}
+
+% math stuff : necessary
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{amsthm}
-\usepackage[T1]{fontenc}
-
-\usepackage{subfiles}
 
 \theoremstyle{plain}
 \newtheorem{thm}{Théorème}[section]
@@ -23,6 +31,10 @@
 \theoremstyle{remark}
 \newtheorem{rem}{Remarque}[section]
 
+% large projet management
+\usepackage{subfiles}
+
+% bullets for lists
 \newcommand\itemb{\item[$\bullet$]}
 
 \begin{document}
@@ -30,46 +42,30 @@
 \title{Intégration et probabilités}
 
 \author{César Almecija
-\\ étudiant en première année aux MINES ParisTech
+\\ étudiant à l'école des MINES ParisTech
 \\ \href{mailto:cesar.almecija@mines-paristech.fr}{cesar.almecija@mines-paristech.fr}}
 
 \maketitle
 
 \tableofcontents
 
-\chapter*{Avant-propos}
-
 \subfile{chapitres/avant_propos}
 
 \part{Théorie de la mesure et intégration}
 
-\chapter{Introduction à la théorie de la mesure}
-
 \subfile{chapitres/intro_theorie_mesure}
-
-\chapter{Construction de l'intégrale de Lebesgue}
 
 \subfile{chapitres/construction_integrale}
 
-\chapter{Cas particulier : l'intégrale de Lebesgue munie de la mesure de Lebesgue}
-
 \subfile{chapitres/integrale_avec_mesure_lebesgue}
-
-\chapter{Cas particulier : l'intégrale de Lebesgue munie de la mesure de comptage}
 
 \subfile{chapitres/series}
 
 \part{Probabilités}
 
-\chapter{Généralités sur les probabilités}
-
 \subfile{chapitres/probas_generalites}
 
-\chapter{Variables aléatoires}
-
 \subfile{chapitres/probas_va}
-
-\chapter{Convergence des suites de variables aléatoires}
 
 \subfile{chapitres/probas_conv}
 
