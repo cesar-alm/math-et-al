@@ -14,7 +14,7 @@
   D'une part, l'intégrale de Riemann ne permet de calculer l'intégrale que de fonctions \textbf{continues par morceaux}.
   Or, cela est très restrictif : par exemple, prenons la fonction $\mathds{1}_{\mathbb{Q}}$.
   Elle n'est pas continue par morceaux, donc n'est pas intégrable au sens de Riemann.
-  Pourtant, pour la mesure de Lebesgue, $\mathbb{Q}$ est négligeable (voir l'exemple \ref{ex:ratneg}).
+  Pourtant, pour la mesure de Lebesgue, $\mathbb{Q}$ est négligeable (voir l'exemple~\ref{ex:ratneg}).
   Ainsi, $\mathds{1}_{\mathbb{Q}}$ est Lebesgue-presque-partout égale à $0$.
   On aurait donc envie de dire que \og l'influence de $\mathbb{Q}$ est si petite, qu'elle n'a aucun impact dans l'intégrale \fg.
   En disant cela, on veut en fait dire que l'intégrale de $\mathds{1}_{\mathbb{Q}}$ serait égale à l'intégrale de la fonction nulle, qui vaut zéro.
@@ -25,9 +25,10 @@
   D'autre part, l'intégrale de Riemann utilise la notion de longueur :
   par exemple, si $f$ est la fonction constante égale à 1, nous avons
 
-  $$
-  \int_0^1f(x)\text{d}x = 1 > 2 = \int_0^2f(x)\text{d}x
-  $$
+  \begin{displaymath}
+    \int_0^1 f(x)\text{d}x = 1 > 2 = \int_0^2 f(x)\text{d}x
+  \end{displaymath}
+
 
   Mais il est impossible de \og mesurer différemment \fg.
   En effet, si une mesure $\mu$ vérifie $\mu\left(\left[1,2\right]\right)=0$, alors on aimerait pouvoir dire que les deux intégrales ci-dessus, calculées avec $\mu$, seraient égales.
@@ -35,26 +36,26 @@
   L'intégrale de Lebesgue répondra à ce besoin.
 
   \section{Définition de l'intégrale de Lebesgue pour des fonctions positives}
-  \label{sect:defintpos}
+  \label{sec:defintpos}
   Les fonctions positives ont une place privilégiée dans la théorie de l'intégration de Lebesgue.
   En effet, leurs intégrales sont toujours définies (quitte à valoir $+\infty$) :
 
   \begin{defi}
     Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
-    \textbf{La} $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_Ef(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
+    \textbf{La} $\mu $\textbf{ intégrale de Lebesgue } $\displaystyle\int_E f(x)\text{d}\mu(x)$ existe toujours et est l'unique élément de $\mathbb{R}_+\cup\{+\infty\}$ vérifiant :
     \begin{itemize}
       \itemb \textbf{la relation mesure-intégrale} : pour tout ensemble $X$ $\mathcal{A}$-mesurable,
-      $$
-      \int_E\mathds{1}_X(x)\text{d}\mu(x)=\mu(X)
-      $$
+      \begin{displaymath}
+        \int_E\mathds{1}_X(x)\text{d}\mu(x)=\mu(X)
+      \end{displaymath}
       \itemb \textbf{l'hypothèse de linéarité} : pour toute fonction mesurable $g:E\rightarrow\mathbb{R}_+$ et pour tous $\left(\alpha,\beta\right) \in \left(\mathbb{R}_+^*\right)^2$,
-      $$
-      \int_E (\alpha f + \beta g)(x) \text{d}\mu(x)=\alpha\int_Ef(x)\text{d}\mu(x) + \beta\int_Eg(x)\text{d}\mu(x)
-      $$
+      \begin{displaymath}
+        \int_E (\alpha f + \beta g)(x) \text{d}\mu(x)=\alpha\int_E f(x)\text{d}\mu(x) + \beta\int_E g(x)\text{d}\mu(x)
+      \end{displaymath}
       \itemb \textbf{l'hypothèse de convergence monotone} : pour toute suite croissante de fonctions mesurables positives $f_n:E\rightarrow\mathbb{R}_+$ convergeant simplement vers $f$,
-      $$
-      \lim_{n\rightarrow+\infty}\int_Ef_n(x)\text{d}\mu(x)=\int_Ef(x)\text{d}\mu(x)
-      $$
+      \begin{displaymath}
+        \lim_{n\rightarrow+\infty}\int_E f_n(x)\text{d}\mu(x)=\int_E f(x)\text{d}\mu(x)
+      \end{displaymath}
     \end{itemize}
   \end{defi}
 
@@ -65,7 +66,7 @@
 
   \begin{defi}
     Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}_+$ mesurable.
-    $f$ est dite $\mu$\textbf{-intégrable} lorsque $\displaystyle\int_Ef(x)\text{d}\mu(x) < +\infty$.
+    $f$ est dite $\mu$\textbf{-intégrable} lorsque $\displaystyle\int_E f(x)\text{d}\mu(x) < +\infty$.
   \end{defi}
 
   \begin{rem}
@@ -97,22 +98,22 @@
     Soit $E$ un ensemble.
     Soit $f:E\longrightarrow\mathbb{R}$.
     Les \textbf{partie positive} et \textbf{partie négative} de $f$, respectivement $f_+$ et $f_-$, sont définies comme suit :
-    $$
-    \left\{
+    \begin{displaymath}
+      \left\{
       \begin{array}{rcl}
-        f_+&:=&\max(0,f)\\
+        f_+ &:=&\max(0,f)\\
         f_-&:=&\min(0,f)
       \end{array}
     \right.
-    $$
+    \end{displaymath}
   \end{defi}
 
   \begin{prop}
     Soit E un ensemble et $f:E\longrightarrow\mathbb{R}$.
     Alors :
-    $$
-    f = f_+ - f_-
-    $$
+    \begin{displaymath}
+      f = f_+ - f_-
+    \end{displaymath}
   \end{prop}
 
   Le résultat suivant est une conséquence directe de la proposition $\ref{prop:compmes}$ :
@@ -123,8 +124,9 @@
     Alors $f^+$ et $f_-$ sont mesurables
   \end{prop}
 
-  Désormais, passons à la définition de l'intégrale d'une fonction signée. Celle-ci arrive volontairement dans une nouvelle section, pour souligner la différence avec l'intégrale d'une fonction positive.
-  En effet, comme cela a été souligné au début de la section \ref{sect:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue : elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
+  Désormais, passons à la définition de l'intégrale d'une fonction signée.
+  Celle-ci arrive volontairement dans une nouvelle section, pour souligner la différence avec l'intégrale d'une fonction positive.
+  En effet, comme cela a été souligné au début de la section~\ref{sec:defintpos}, les fonctions positives occupent une place privilégiée dans la théorie de l'intégration de Lebesgue : elles vérifient des résultats qui ne sont pas sytématiquement vrais pour les fonctions signées.
 
   La définition de l'intégrale pour une fonction signée est un premier exemple soulignant cette différence :
 
@@ -132,9 +134,9 @@
     Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré et $f:E\rightarrow\mathbb{R}$ mesurable.
     \textbf{La} $\mu$ \textbf{intégrale de Lebesgue} $\displaystyle\int_E f(x) \text{d}\mu(x)$ existe dès que $f_+$ ou $f_-$ est $\mu$-intégrable.
     Dans ce cas, on a :
-    $$
-    \int_E f(x) \text{d}\mu(x)=\int_Ef_+\text{d}\mu(x) - \int_Ef_-(x)\text{d}\mu(x)
-    $$
+    \begin{displaymath}
+      \int_E f(x) \text{d}\mu(x)=\int_E f_+\text{d}\mu(x) - \int_E f_-(x)\text{d}\mu(x)
+    \end{displaymath}
   \end{defi}
 
   \begin{rem}
@@ -151,7 +153,7 @@
   \end{rem}
 
   \begin{rem}
-    Comme dans le cas positif (remarque \ref{rem:attint}), le mot \og intégrable\fg a un sens bien précis !
+    Comme dans le cas positif (remarque~\ref{rem:attint}), le mot \og intégrable\fg a un sens bien précis !
   \end{rem}
 
   \begin{thm}
@@ -178,17 +180,17 @@
   \begin{thm}[\textbf{de convergence dominée}]
     \label{thm:convergence_dominee}
     Soit $\left(E,\mathcal{A},\mu\right)$ un espace mesuré.
-    Soit $\left(f_n\right)_{n \in \mathbb{N}}$ une suite de fonctions mesurables de $E$ dans $\mathbb{R}$, qui converge simplement vers une fonction $f$ (qui est donc mesurable par la proposition \ref{prop:limite_simple_mesurables}).
+    Soit $\left(f_n\right)_{n \in \mathbb{N}}$ une suite de fonctions mesurables de $E$ dans $\mathbb{R}$, qui converge simplement vers une fonction $f$ (qui est donc mesurable par la proposition~\ref{prop:limite_simple_mesurables}).
 
     Supposons qu'il existe $g:E \longrightarrow \mathbb{R}$ $\mu$-intégrable qui \textbf{domine} les $f_n$ :
-    $$
-    \forall n \in \mathbb{N}, \forall x \in E, \left|f_n(x)\right| \leq g(x)
-    $$
+    \begin{displaymath}
+      \forall n \in \mathbb{N}, \forall x \in E, \left|f_n(x)\right| \leq g(x)
+    \end{displaymath}
 
     Alors les $f_n$ et $f$ sont $\mu$-intégrables, et :
-    $$
-    \lim_{n \to + \infty} \int_E f_n(x) \textnormal{d}\mu(x) = \int_E f(x) \textnormal{d}\mu(x)
-    $$
+    \begin{displaymath}
+      \lim_{n \to + \infty} \int_E f_n(x) \textnormal{d}\mu(x) = \int_E f(x) \textnormal{d}\mu(x)
+    \end{displaymath}
   \end{thm}
 
   \begin{rem}
@@ -218,15 +220,15 @@
     \end{itemize}
 
     De plus, on a:
-    $$
-    {
+    \begin{displaymath}
+      {
     \everymath={\displaystyle}
     \begin{array}{rcl}
       \int_{X \times Y} f(x,y) \textnormal{d} \left(\mu_1 \otimes \mu_2 \right) (x,y) & = & \int_X \left( \int_Y f(x,y) \textnormal{d} \mu_2(y) \right) \textnormal{d} \mu_1(x)\\
                                                                                       & = & \int_Y \left( \int_X f(x,y) \textnormal{d} \mu_1(x) \right) \textnormal{d} \mu_2(y)\\
     \end{array}
     }
-    $$
+    \end{displaymath}
   \end{thm}
 
   \begin{rem}
@@ -248,15 +250,15 @@
     \end{itemize}
 
     De plus, on a:
-    $$
-    {
+    \begin{displaymath}
+      {
     \everymath={\displaystyle}
     \begin{array}{rcl}
       \int_{X \times Y} f(x,y) \textnormal{d} \left(\mu_1 \otimes \mu_2 \right) (x,y) & = & \int_X \left( \int_Y f(x,y) \textnormal{d} \mu_2(y) \right) \textnormal{d} \mu_1(x)\\
                                                                                       & = & \int_Y \left( \int_X f(x,y) \textnormal{d} \mu_1(x) \right) \textnormal{d} \mu_2(y)\\
     \end{array}
     }
-    $$
+    \end{displaymath}
   \end{thm}
 
   \begin{rem}
@@ -294,12 +296,12 @@
 
     Soit $f:X \times Y \rightarrow \mathbb{R}$.
     \begin{itemize}
-      \itemb si $f$ est positive, on applique le \textbf{théorème de Fubini, cas positif} \ref{thm:fubini_positif} : on peut toujours intégrer variable par variable, que $f$ soit intégrable ou non.
+      \itemb si $f$ est positive, on applique le \textbf{théorème de Fubini, cas positif}~\ref{thm:fubini_positif} : on peut toujours intégrer variable par variable, que $f$ soit intégrable ou non.
       \itemb si $f$ n'est pas positive, on doit commencer par prouver l'intégrabilité de $f$.
-      Pour cela, on applique le \textbf{théorème de Tonelli} \ref{thm:tonelli} à $\left|f\right|$, qui nous fait calculer l'intégrale de $\left|f\right|$ par rapport à une variable, puis l'intégrale de la fonction obtenue par rapport à l'autre variable.
+      Pour cela, on applique le \textbf{théorème de Tonelli}~\ref{thm:tonelli} à $\left|f\right|$, qui nous fait calculer l'intégrale de $\left|f\right|$ par rapport à une variable, puis l'intégrale de la fonction obtenue par rapport à l'autre variable.
       Si le résultat obtenu existe et est fini, alors on peut conclure par ce théorème que $f$ est intégrable.
 
-      On peut alors utiliser le \textbf{théorème de Fubini, cas général} \ref{thm:fubini} qui nous permet de calculer l'intégrale de $f$ variable par variable.
+      On peut alors utiliser le \textbf{théorème de Fubini, cas général}~\ref{thm:fubini} qui nous permet de calculer l'intégrale de $f$ variable par variable.
 
       Notons que le calcul effectué pour utiliser le théorème de Tonelli peut servir à nouveau pour intégrer variable par variable (si $f$ et $\left|f\right|$ se ressemblent).
     \end{itemize}
@@ -307,18 +309,19 @@
 
   \section{Démontrer en pratique des résultats sur les intégrales}
 
-  Pour montrer des résultats sur des fonctions mesurables positives, on utilise la décomposition vue au théorème \ref{thm:decompmes}.
+  Pour montrer des résultats sur des fonctions mesurables positives, on utilise la décomposition vue au théorème~\ref{thm:decompmes}.
   \begin{itemize}
     \itemb On montre le résultat sur des fonctions indicatrices mesurables.
-    \itemb Puis on le montre sur une somme de fonctions indicatrices mesurables. On a donc montré le résultat pour les fonctions étagées mesurables.
-    \itemb En vertu de l'hypothèse de convergence monotone de l'intégrale et de la décomposition fournie par le théorème \ref{thm:decompmes}, on passe à la limite.
+    \itemb Puis on le montre sur une somme de fonctions indicatrices mesurables.
+    On a donc montré le résultat pour les fonctions étagées mesurables.
+    \itemb En vertu de l'hypothèse de convergence monotone de l'intégrale et de la décomposition fournie par le théorème~\ref{thm:decompmes}, on passe à la limite.
     Le résultat est alors démontré pour n'importe-quelle fonction mesurable positive.
   \end{itemize}
 
   En général, les résultats pour les fonctions signées se déduiront des résultats pour les fonctions positives de la manière suivante :
   \begin{itemize}
-    \itemb On décompose une fonction signée mesurable $f:E\longrightarrow\mathbb{R}$ en sa partie positive $f^+$ et sa partie négative $f_-$ (voir la définition \ref{def:partieposneg}).
-    \itemb Ces deux fonctions étant positives (et encore mesurables par la proposition \ref{prop:partiemes}), on applique leur applique un résultat vrai pour les fonctions positives.
+    \itemb On décompose une fonction signée mesurable $f:E\longrightarrow\mathbb{R}$ en sa partie positive $f^+$ et sa partie négative $f_-$ (voir la définition~\ref{def:partieposneg}).
+    \itemb Ces deux fonctions étant positives (et encore mesurables par la proposition~\ref{prop:partiemes}), on applique leur applique un résultat vrai pour les fonctions positives.
     \itemb On utilise l'identité $f=f^++f_-$ pour obtenir le résultat final.
   \end{itemize}
 
@@ -364,17 +367,19 @@
     \end{rem}
 
   Il existe deux cas particuliers important concernant ce type de mesures, utiles pour les probabilités.
-  Ils seront abordés dans le chapitre \ref{chap:va}.
+  Ils seront abordés dans le chapitre~\ref{chap:va}.
 
   \section{Généralisation aux fonctions à valeurs dans $\mathbb{R}^m$}
 
-  Nos fonctions étaient jusqu'ici à valeurs dans $\mathbb{R}$. Qu'en est-il si elle sont à valeurs dans $\mathbb{R}^m$ ?
+  Nos fonctions étaient jusqu'ici à valeurs dans $\mathbb{R}$.
+  Qu'en est-il si elle sont à valeurs dans $\mathbb{R}^m$ ?
 
-  Soit $f:E\longrightarrow \mathbb{R}^m$. Décomposons $f$ :
+  Soit $f:E\longrightarrow \mathbb{R}^m$.
+  Décomposons $f$ :
 
-  $$
-  f = \sum_{i=1}^{m}f_ie_i
-  $$
+  \begin{displaymath}
+    f = \sum_{i=1}^{m}f_i e_i
+  \end{displaymath}
 
   où :
   \begin{itemize}
@@ -387,9 +392,9 @@
   \begin{defi}
     L'intégrale de $f$ existe lorsque les $m$ intégrales des $f_i$ existent.
     Lorsqu'elle existe, l'intégrale de $f$ vaut :
-    $$
-    \int_Ef = \sum_{i=1}^{m}\int_Ef_i
-    $$
+    \begin{displaymath}
+      \int_E f = \sum_{i=1}^{m}\int_E f_i
+    \end{displaymath}
     (on peut permuter vecteurs et intégrale)
   \end{defi}
 

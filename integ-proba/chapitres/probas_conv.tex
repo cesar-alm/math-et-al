@@ -17,9 +17,9 @@
 
     \begin{defi}
         On dit que $\left(X_n\right)_{n\in\mathbb{N}}$ \textbf{converge en loi} vers $X$, et on note $X_n \xrightarrow[]{\mathcal{L}} X$ lorsque pour toute fontion $f:E \rightarrow \mathbb{R}$ continue et bornée,
-        $$
-        \lim_{n \to +\infty} \mathbb{E}\left(f \circ X_n\right) = \mathbb{E}\left(f \circ X\right)
-        $$
+        \begin{displaymath}
+            \lim_{n \to +\infty} \mathbb{E}\left(f \circ X_n\right) = \mathbb{E}\left(f \circ X\right)
+        \end{displaymath}
     \end{defi}
 
     \begin{rem}
@@ -41,9 +41,9 @@
 
     \begin{prop}
         $\left(X_n\right)_{n\in\mathbb{N}}$ converge en loi vers $X$ ssi pour tout $x \in \mathbb{R}$ où la fonction de répartition $F_X$ est continue,
-        $$
-        \lim_{n \to +\infty} F_{X_n}(x) = F_X(x)
-        $$
+        \begin{displaymath}
+            \lim_{n \to +\infty} F_{X_n}(x) = F_X(x)
+        \end{displaymath}
     \end{prop}
 
     \begin{rem}
@@ -51,7 +51,7 @@
     \end{rem}
 
     \begin{rem}
-        Enfin, ce mode de convergence sera celui impliqué dans le théorème $\ref{thm:tcl}$ (théorème centrale limite).
+        Enfin, ce mode de convergence sera celui impliqué dans le théorème~\ref{thm:tcl} (théorème centrale limite).
     \end{rem}
 
     \subsection{La convergence en probabilité}
@@ -62,9 +62,9 @@
 
     \begin{defi}
         On dit que $\left(X_n\right)_{n\in\mathbb{N}}$ \textbf{converge en probabilité} vers $X$, et on note $X_n \xrightarrow[]{\mathbb{P}} X$ lorsque :
-        $$
-        \forall \delta > 0, \lim_{n \to +\infty} \mathbb{P}\left(\left|X_n - X\right| \geq \delta\right) = 0
-        $$
+        \begin{displaymath}
+            \forall \delta > 0, \lim_{n \to +\infty} \mathbb{P}\left(\left|X_n - X\right| \geq \delta\right) = 0
+        \end{displaymath}
     \end{defi}
 
     \begin{rem}
@@ -86,7 +86,7 @@
     \end{prop}
 
     \begin{rem}
-        Enfin, ce mode de convergence sera celui impliqué dans le théorème $\ref{thm:loi_faible_gds_nbs}$ (loi faible des grands nombres).
+        Enfin, ce mode de convergence sera celui impliqué dans le théorème~\ref{thm:loi_faible_gds_nbs} (loi faible des grands nombres)
     \end{rem}
 
     \subsection{La convergence en norme $\mathcal{L}^r$}
@@ -97,9 +97,9 @@
 
     \begin{defi}
         On dit que $\left(X_n\right)_{n\in\mathbb{N}}$ \textbf{converge en norme} $\mathcal{L}^r$ vers $X$, et on note $X_n \xrightarrow[]{\mathcal{L}^r} X$ lorsque :
-        $$
-        \lim_{n \to +\infty}\mathcal{E}\left(\left|X_n - X\right|^r\right) = 0
-        $$
+        \begin{displaymath}
+            \lim_{n \to +\infty}\mathcal{E}\left(\left|X_n - X\right|^r\right) = 0
+        \end{displaymath}
     \end{defi}
 
     \begin{rem}
@@ -133,7 +133,7 @@
     \end{prop}
 
     \begin{rem}
-        Enfin, ce mode de convergence sera un des modes de convergence impliqué dans le théorème $\ref{thm:loi_forte_gds_nbs}$ (loi forte des grands nombres).
+        Enfin, ce mode de convergence sera un des modes de convergence impliqué dans le théorème~\ref{thm:loi_forte_gds_nbs} (loi forte des grands nombres).
     \end{rem}
 
     \subsection{La convergence presque-sûre}
@@ -147,9 +147,9 @@
 
     \begin{defi}
         On dit que $\left(X_n\right)_{n\in\mathbb{N}}$ \textbf{converge presque-sûrement} vers $X$, et on note $X_n \xrightarrow[]{\text{p.s.}} X$ lorsque pour $\mathbb{P}$-presque-tout $\omega \in \Omega$,
-        $$
-        \lim_{n \to +\infty} X_n(\omega) = X(\omega)
-        $$
+        \begin{displaymath}
+            \lim_{n \to +\infty} X_n(\omega) = X(\omega)
+        \end{displaymath}
     \end{defi}
 
     \begin{rem}
@@ -176,7 +176,7 @@
     % todo qqes résultats intéressant d'implications avec des hypothèses supplémentaires.
 
     \begin{rem}
-        Enfin, ce mode de convergence sera l'autre mode de convergence impliqué dans le théorème $\ref{thm:loi_forte_gds_nbs}$ (loi forte des grands nombres).
+        Enfin, ce mode de convergence sera l'autre mode de convergence impliqué dans le théorème~\ref{thm:loi_forte_gds_nbs} (loi forte des grands nombres).
     \end{rem}
 
 \end{document}

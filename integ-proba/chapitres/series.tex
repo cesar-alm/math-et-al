@@ -15,7 +15,8 @@
 
     Dans toute cette section, on se donne une fonction $f:\left(\mathbb{N}, \mathcal{P}(\mathbb{N}), c\right) \rightarrow \mathbb{R}$ (c'est-à-dire une suite numérique).
 
-    On commence par énoncer le résultat suivant. Il permet de nous affranchir de vérifier la mesurabilité dans notre cas :
+    On commence par énoncer le résultat suivant.
+    Il permet de nous affranchir de vérifier la mesurabilité dans notre cas :
 
     \begin{prop}
         $f:\left(\mathbb{N}, \mathcal{P}(\mathbb{N}), c\right) \rightarrow \mathbb{R}$ est mesurable.
@@ -33,37 +34,37 @@
     \begin{thm}
         Supposons que l'intégrale de $f$ existe.
         Alors
-        $$
-        \int_\mathbb{N} f(n)\textnormal{d}c(n) = \sum_{n=0}^{+\infty} f(n)
-        $$
+        \begin{displaymath}
+            \int_\mathbb{N} f(n)\textnormal{d}c(n) = \sum_{n=0}^{+\infty} f(n)
+        \end{displaymath}
     \end{thm}
 
     \begin{proof}
         Commençons par montrer le résultat dans le cas où $f$ est positive.
         Dans ce cas, la suite de fonctions suivante $\left(f_n\right)_{n\in\mathbb{N}}$ est croissante et converge simplement vers $f$ :
-        $$
-        \forall n \in \mathbb{N}, \forall k \in \mathbb{N}, f_n(k) :=
+        \begin{displaymath}
+            \forall n \in \mathbb{N}, \forall k \in \mathbb{N}, f_n(k) :=
         \left\{
             \begin{array}{cl}
                 f(k) & \textnormal{si } k \leq n\\
                 0    & \textnormal{sinon}
             \end{array}
         \right.
-        $$
+        \end{displaymath}
 
         Notons que l'on peut réecrire cette suite sous la forme :
-        $$
-        \forall n \in \mathbb{N}, \forall k \in \mathbb{N}, f_n(k) = \sum_{i=0}^n f(i) \mathds{1}_{i}(k)
-        $$
+        \begin{displaymath}
+            \forall n \in \mathbb{N}, \forall k \in \mathbb{N}, f_n(k) = \sum_{i=0}^n f(i) \mathds{1}_{i}(k)
+        \end{displaymath}
 
         Et remarquons que, d'après la relation mesure-intégrale, pour $A \subset \mathbb{N}$ :
-        $$
-        \int_\mathbb{N} \mathds{1}_{A}(k) \text{d} c(k) = c(A)
-        $$
+        \begin{displaymath}
+            \int_\mathbb{N} \mathds{1}_{A}(k) \text{d} c(k) = c(A)
+        \end{displaymath}
 
         Nous pouvons alors écrire que, pour tout $n \in \mathbb{N}$ :
-        $$
-        {
+        \begin{displaymath}
+            {
         \everymath={\displaystyle}
         \begin{array}{rcl}
             \int_\mathbb{N} f_n(k)\text{d}c(k) & = & \int_\mathbb{N} \sum_{i=0}^n f(i) \mathds{1}_{\{i\}}(k) \text{d}c(k)\\
@@ -72,24 +73,26 @@
                                                & = & \sum_{i=0}^n f(i)
         \end{array}
         }
-        $$
+        \end{displaymath}
 
-        Or, $f_n$ est une suite croissante de fonctions mesurables positives. On peut donc appliquer l'hypothèse de convergence monotone :
-        $$
-        \int_\mathbb{N} f_n(k)\text{d}c(k) \xrightarrow[n \to + \infty]{} \int_\mathbb{N} f(k)\text{d}c(k)
-        $$
+        Or, $f_n$ est une suite croissante de fonctions mesurables positives.
+        On peut donc appliquer l'hypothèse de convergence monotone :
+        \begin{displaymath}
+            \int_\mathbb{N} f_n(k)\text{d}c(k) \xrightarrow[n \to + \infty]{} \int_\mathbb{N} f(k)\text{d}c(k)
+        \end{displaymath}
 
         De plus, la théorie des séries nous fournit (quitte à ce que la série vaille $+\infty$) :
-        $$
-        \sum_{i=0}^n f(i) \xrightarrow[n \to + \infty]{} \sum_{i=0}^{+\infty} f(i)
-        $$
+        \begin{displaymath}
+            \sum_{i=0}^n f(i) \xrightarrow[n \to + \infty]{} \sum_{i=0}^{+\infty} f(i)
+        \end{displaymath}
 
         Ainsi, par unicité de la limite, si $f$ est positive :
-        $$
-        \int_\mathbb{N} f(k)\text{d}c(k) = \sum_{i=0}^{+\infty} f(i)
-        $$
+        \begin{displaymath}
+            \int_\mathbb{N} f(k)\text{d}c(k) = \sum_{i=0}^{+\infty} f(i)
+        \end{displaymath}
 
-        Supposons désormais que $f$ soit signée. On décompose $f$ en ses parties positive et négative.
+        Supposons désormais que $f$ soit signée.
+        On décompose $f$ en ses parties positive et négative.
         Ces deux fonctions étant positives, on peut leur appliquer le résultat que l'on vient d'établir.
         En faisant la différence des deux, on obtient le résultat désiré.
     \end{proof}
@@ -97,8 +100,8 @@
     \begin{rem}
         Notons que, par hypothèse, l'intégrale de $f$ existe, mais $f$ n'est pas forcément intégrable : on autorise donc la série et l'intégrale à valoir éventuellement $+\infty$ ou $-\infty$.
         On peut aisément vérifier par ailleurs que :
-        $$
-        {
+        \begin{displaymath}
+            {
         \everymath={\displaystyle}
         \begin{array}{rcl}
             \int_\mathbb{N} f(n) \text{d} c(n) \in \mathbb{R} & \text{ssi} & f \text{ est intégrable } \\
@@ -108,7 +111,7 @@
                                                               & \text{ssi} & \sum_{n=0}^{+ \infty} f(n) \in \mathbb{R}
         \end{array}
         }
-        $$
+        \end{displaymath}
     \end{rem}
 
     \begin{defi}
@@ -118,7 +121,7 @@
     \end{defi}
 
     Nous avons vu tout au long de cette section que l'intégrale de Lebesgue est intrinsèquement liée à la théorie des séries.
-    Tous les résultats que nous avons énoncés dans le chapitre \ref{chap:def_integrale} sont vrais dans ce cas particulier, et s'expriment assez simplement.
+    Tous les résultats que nous avons énoncés dans le chapitre~\ref{chap:def_integrale} sont vrais dans ce cas particulier, et s'expriment assez simplement.
     L'objet de la section suivante est justement d'expliciter ces propriétés.
 
     \section{Que deviennent les propriétés de l'intégrale dans ce cas particulier ?}
@@ -127,14 +130,14 @@
       Soit $\left(f_n\right)_{n \in \mathbb{N}}$ une suite de fonctions de $\mathbb{N}$ dans $\mathbb{R}$, qui converge simplement vers une fonction $f$.
 
       Supposons qu'il existe $g:\mathbb{N} \longrightarrow \mathbb{R}$, telle que $\sum g(n)$ converge absolument, et qui \textbf{domine} les $f_n$ :
-      $$
-      \forall n \in \mathbb{N}, \forall x \in E, \left|f_n(x)\right| \leq g(x)
-      $$
+      \begin{displaymath}
+          \forall n \in \mathbb{N}, \forall x \in E, \left|f_n(x)\right| \leq g(x)
+      \end{displaymath}
 
       Alors les $f_n$ et $f$ sont $\mu$-intégrables, et :
-      $$
-      \lim_{n \to + \infty} \sum_{k=0}^{+\infty} f_n(k) = \sum_{k=0}^{+\infty} f(k)
-      $$
+      \begin{displaymath}
+          \lim_{n \to + \infty} \sum_{k=0}^{+\infty} f_n(k) = \sum_{k=0}^{+\infty} f(k)
+      \end{displaymath}
     \end{thm}
 
 \end{document}
