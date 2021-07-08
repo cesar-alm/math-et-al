@@ -212,8 +212,13 @@
       \itemb lorsque $n=3$, cette mesure prolonge la notion de volume.
     \end{itemize}
 
-    Par ailleurs, cette mesure sera centrale dans la partie~\ref{part:int} concernant les intégrales.
+    Par ailleurs, cette mesure sera centrale dans le chapitre~\ref{ch:int_lebesgue} concernant les intégrales.
   \end{rem}
+
+  \begin{exemple}[$\mathbb{Q}$ est $\lambda$-négligeable]
+    \label{ex:ratneg}
+
+  \end{exemple}
 
   \begin{defi}
     Soit $\left(E,\mathcal{A}\right)$ un espace mesurable.
@@ -242,7 +247,7 @@
   \end{rem}
 
   \begin{rem}
-    Bien que cette mesure soit définie pour un espace mesurable quelconque, elle sera particulièrement utile dans $\left(\mathbb{N},\mathcal{P}\left(\mathbb{N}\right)\right)$ (notamment pour la partie~\ref{part:series} concernant les séries).
+    Bien que cette mesure soit définie pour un espace mesurable quelconque, elle sera particulièrement utile dans $\left(\mathbb{N},\mathcal{P}\left(\mathbb{N}\right)\right)$ (notamment pour le chapitre~\ref{ch:series} concernant les séries).
   \end{rem}
 
 
@@ -345,9 +350,18 @@
   Le résultat suivant est un résultat important concernant la composition des fonctions mesurables :
 
   \begin{prop}
+    \label{prop:compmes}
     Soit $\left(E,\mathcal{A}\right)$, $\left(F,\mathcal{B}\right)$ et $\left(G,\mathcal{C}\right)$ trois espaces mesurables,
     $f : E \longrightarrow F$ une fonction $\mathcal{A}$/$\mathcal{B}$-mesurable et $g : F \longrightarrow G$ une fonction $\mathcal{B}$/$\mathcal{C}$-mesurable.
     Alors $g \circ f : E \longrightarrow G$ est une fonction $\mathcal{A}$/$\mathcal{C}$-mesurable
+  \end{prop}
+
+  Voici un résultat concernant les limites de fonctions mesurables :
+
+  \begin{prop}
+    \label{prop:limite_simple_mesurables}
+    Soit $\left( E, \mathcal{A}, \mu_1 \right)$ et $\left( F, \mathcal{B}, \mu_2 \right)$ deux espaces mesurés et $\left( f_n \right)$ une suite de fonctions mesurables de $E$ dans $F$ qui converge simplement vers $f$.
+    Alors $f$ est mesurable.
   \end{prop}
 
   Enfin, voici une dernière définition qui sera utile dans le chapitre concernant les probabilités :
