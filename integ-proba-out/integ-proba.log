@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  8 JUL 2021 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  9 JUL 2021 15:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -453,7 +453,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...mesures de probabilitÃ©s}{25}{section.5.2}
+l.29 ...Fonction de rÃ©partition}{25}{section.5.2}
                                                   % [1
 
 ])
@@ -522,18 +522,18 @@ e 125.
 Chapitre 5.
 [25
 
-]) (./chapitres/probas_va.tex [26]
+] [26]) (./chapitres/probas_va.tex [27]
 Chapitre 6.
-[27
+[28
 
-] [28]
+] [29]
 Overfull \hbox (7.66528pt too wide) in paragraph at lines 119--121
 []\T1/lmr/m/n/10 Considérons main-te-nant l'es-pace pro-ba-bi-lisé $\OT1/lmr/m/
 n/10 
 [] := \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
  []
 
-[29] [30] [31]) (./chapitres/probas_conv.tex [32]
+[30] [31] [32]) (./chapitres/probas_conv.tex [33]
 Chapitre 7.
 
 Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
@@ -541,38 +541,38 @@ Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
 i-sés $[][]$ ; 
  []
 
-[33
+[34
 
 ]
 
-LaTeX Warning: Reference `thm:tcl' on page 34 undefined on input line 54.
+LaTeX Warning: Reference `thm:tcl' on page 35 undefined on input line 54.
 
 
-LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 34 undefined on input
+LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 35 undefined on input
  line 89.
-
-[34]
-
-LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 35 undefined on input 
-line 136.
 
 [35]
 
 LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 36 undefined on input 
+line 136.
+
+[36]
+
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 37 undefined on input 
 line 179.
 
-) [36] (./integ-proba.aux)
+) [37] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: 861F7B96818C1CAA830E576600D71F32;10557.
+(rerunfilecheck)             Checksum: B9BDA6FD77CC082FF4635CCF55DDADB6;10736.
  ) 
 Here is how much of TeX's memory you used:
- 10646 strings out of 478557
- 155329 string characters out of 5850911
- 477273 words of memory out of 5000000
- 28149 multiletter control sequences out of 15000+600000
+ 10659 strings out of 478557
+ 155462 string characters out of 5850911
+ 477397 words of memory out of 5000000
+ 28151 multiletter control sequences out of 15000+600000
  495215 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,19n,66p,492b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -599,10 +599,10 @@ m/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm7.pfb>
-Output written on integ-proba.pdf (37 pages, 389229 bytes).
+Output written on integ-proba.pdf (38 pages, 393872 bytes).
 PDF statistics:
- 725 PDF objects out of 1000 (max. 8388607)
- 637 compressed objects within 7 object streams
- 229 named destinations out of 1000 (max. 500000)
- 337 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 745 PDF objects out of 1000 (max. 8388607)
+ 656 compressed objects within 7 object streams
+ 240 named destinations out of 1000 (max. 500000)
+ 345 words of extra memory for PDF output out of 10000 (max. 10000000)
 
