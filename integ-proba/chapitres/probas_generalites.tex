@@ -21,6 +21,67 @@
         On appelle \textbf{espace probabilisé} un espace probabilisable muni d'une mesure de probabilité.
     \end{defi}
 
+    \section{Fonction de répartition}
+
+    La fonction de répartition est une notion qui ne concerne que les mesures de probabilités sur $\mathbb{R}$.
+    La notion existe sur $\mathbb{R}^n$, mais est peu utilisée.
+    Dans cette section, on se place donc sur un espace probabilisé $\left( \mathbb{R}, \mathcal{B}(\mathbb{R}), \mathbb{P} \right)$.
+
+    \begin{defi}
+        La \textbf{fonction de répartition} de $\mathbb{P}$ est :
+        \begin{displaymath}
+            F_{\mathbb{P}}:
+            \left\{
+            \begin{array}{rcl}
+                \mathbb{R} & \longrightarrow & [0,1] \\
+                x          & \longmapsto     & \mathbb{P}(]- \infty, x])
+            \end{array}
+            \right.
+        \end{displaymath}
+    \end{defi}
+
+    \begin{thm}
+        La fonction de répartition de $\mathbb{P}$ caractérise $\mathbb{P}$.
+    \end{thm}
+
+    \begin{rem}
+        En particulier, cela implique que si deux mesures de probabilité ont la même fonction de répartition, alors elles sont égales.
+    \end{rem}
+
+    \begin{thm}[\textbf{Conditions nécessaires et suffisantes pour qu'une fonction soit une fonction de répartition}]
+        \label{thm:carac_fdrep}
+        Soit $F:\mathbb{R} \rightarrow \mathbb{R}$.
+        $F$ est la fonction de répartition d'une mesure de probabilité $\mathbb{Q}$ sur $\left( \mathbb{R}, \mathcal{B}(\mathbb{R}) \right)$ si et seulement si les quatre conditions suivantes sont remplies :
+        \begin{itemize}
+            \itemb $F$ est croissante ;
+            \itemb $F$ est continue à droite ;
+            \itemb $\lim_{x \to -\infty} F(x) = 0$ ;
+            \itemb $\lim_{x \to +\infty} F(x) = 1$.
+        \end{itemize}
+    \end{thm}
+
+    \begin{prop}[\textbf{Propriétés des fonctions de répartition}]
+        La fonction de répartition vérifie les résultats suivants :
+        \begin{itemize}
+            \itemb $F_\mathbb{P}$ admet une limite à gauche en tout $x \in \mathbb{R}$, notée $F_\mathbb{P}(x^-)$ ;
+            \itemb $\mathbb{P}(]x,y]) = F_\mathbb{P}(y) - F_\mathbb{P}(x)$ ;
+            \itemb $\mathbb{P}(]x,y[) = F_\mathbb{P}(y^-) - F_\mathbb{P}(x)$ ;
+            \itemb $\mathbb{P}([x,y]) = F_\mathbb{P}(y) - F_\mathbb{P}(x^-)$ ;
+            \itemb $\mathbb{P}([x,y[) = F_\mathbb{P}(y^-) - F_\mathbb{P}(x^-)$.
+        \end{itemize}
+    \end{prop}
+
+    \begin{rem}
+        En vertu du théorème~\ref{thm:carac_fdrep}, on a bien $F_\mathbb{P}(x) = F_\mathbb{P}(x^+)$, mais nous n'avons aucun résultat équivalent sur la limite à gauche (\textit{ie} sur la continuité à gauche).
+        Le corollaire suivant permet néanmoins de caractériser la continuité à gauche.
+    \end{rem}
+
+    \begin{cor}[\textbf{Caractérisation de la continuité de la fonction de répartition}]
+        Soit $x \in \mathbb{R}$.
+        On a $\mathbb{P}(\left\{x\right\}) = F_\mathbb{P}(x) - F_\mathbb{P}(x^-)$.
+        En particulier, $\mathbb{P}(\left\{x\right\}) = 0$ ssi $F_\mathbb{P}$ est continue en $x$.
+    \end{cor}
+
     \section{Deux cas particuliers de mesures de probabilités}
     \label{sec:probas_mes_particulieres}
 
@@ -41,7 +102,18 @@
                 Notons que la réciproque est fausse : il existe des mesures sur $\mathbb{R}$ qui n'admettent pas de densité.
             \end{rem}
 
-            % TODO examples
+    \begin{prop}[\textbf{Propriétés de la fonction de répartition d'une mesure admettant une densité}]
+        Soit $\mathbb{P}$ une mesure de probabilité sur $\mathbb{R}$ muni de la tribu borélienne admettant une densité $f$.
+        Alors la fonction de répartition $F_\mathbb{P}$ de $\mathbb{P}$ est \textbf{continue}, \textit{ie} $\forall x \in \mathbb{R}, \mathbb{P}(\left\{ x \right\}) = 0$.
+        De plus, $F_\mathbb{P}$ est dérivable en tout point $x$ où $f$ est continue, et le cas échéant $F'_\mathbb{P}(x) = f(x)$.
+    \end{prop}
+
+    \begin{prop}[\textbf{Une condition suffisante pour admettre une densité (à l'aide de la fonction de répartition)}]
+        Soit $\mathbb{P}$ une mesure de probabilité sur $\mathbb{R}$ muni de la tribu borélienne.
+        Si $F_\mathbb{P}$ est dérivable, alors $\mathbb{P}$ admet une densité, donnée par $F'$.
+    \end{prop}
+
+    % TODO examples
 
 
         \subsection{Mesure de probabilité discrètes}
