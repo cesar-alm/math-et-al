@@ -12,11 +12,11 @@
 
     \subsection{La convergence en loi}
 
-    Dans cette section, on se donne une suite de variables aléatoires $\left(X_n\right)_{n\in\mathbb{N}}$ quelconques à valeurs dans $E$.
+    Dans cette section, on se donne une suite de variables aléatoires $\left(X_n\right)_{n\in\N}$ quelconques à valeurs dans $E$.
     On se donne également une autre variable aléatoire $X$ à valeurs dans $E$.
 
     \begin{defi}
-        On dit que $\left(X_n\right)_{n\in\mathbb{N}}$ \textbf{converge en loi} vers $X$, et on note $X_n \xrightarrow[]{\mathcal{L}} X$ lorsque pour toute fontion $f:E \rightarrow \mathbb{R}$ continue et bornée,
+        On dit que $\left(X_n\right)_{n\in\N}$ \textbf{converge en loi} vers $X$, et on note $X_n \xrightarrow[]{\mathcal{L}} X$ lorsque pour toute fontion $f:E \rightarrow \R$ continue et bornée,
         \begin{displaymath}
             \lim_{n \to +\infty} \mathbb{E}\left(f \circ X_n\right) = \mathbb{E}\left(f \circ X\right)
         \end{displaymath}
@@ -27,20 +27,20 @@
     \end{rem}
 
     \begin{rem}
-        Pour ce mode de convergence, il n'est pas nécessaire que les $\left(X_n\right)_{n\in\mathbb{N}}$ et $X$ soient définies sur le même espace probabilisé.
+        Pour ce mode de convergence, il n'est pas nécessaire que les $\left(X_n\right)_{n\in\N}$ et $X$ soient définies sur le même espace probabilisé.
         En effet, la définition a encore du sens même si :
         \begin{itemize}
-        \itemb les $\left(X_n\right)_{n\in\mathbb{N}}$ sont définies sur une suite d'espace probabilisés $\left(\Omega_n, \mathcal{A}_n, \mathbb{P}_n\right)_{n \in \mathbb{N}}$ ;
-        \itemb $X$ est défini sur un espace probabilisé $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$
+        \itemb les $\left(X_n\right)_{n\in\N}$ sont définies sur une suite d'espace probabilisés $\left(\Omega_n, \A_n, \Pb_n\right)_{n \in \N}$ ;
+        \itemb $X$ est défini sur un espace probabilisé $\left(\Omega, \A, \Pb\right)$
         \end{itemize}
 
-        En réalité, et comme le suggère la propriété suivante, la convergence en loi ne concerne que la convergence des lois $\mathbb{P}_{X_n}$ vers $\mathbb{P}_X$.
+        En réalité, et comme le suggère la propriété suivante, la convergence en loi ne concerne que la convergence des lois $\Pb_{X_n}$ vers $\Pb_X$.
     \end{rem}
 
-    Pour cette proposition uniquement, on considère que les $\left(X_n\right)_{n\in\mathbb{N}}$ et que $X$ sont des variables aléatoires réelles ou discrètes (de manière à ce que la fonction de répartition ait un sens).
+    Pour cette proposition uniquement, on considère que les $\left(X_n\right)_{n\in\N}$ et que $X$ sont des variables aléatoires réelles ou discrètes (de manière à ce que la fonction de répartition ait un sens).
 
     \begin{prop}
-        $\left(X_n\right)_{n\in\mathbb{N}}$ converge en loi vers $X$ ssi pour tout $x \in \mathbb{R}$ où la fonction de répartition $F_X$ est continue,
+        $\left(X_n\right)_{n\in\N}$ converge en loi vers $X$ ssi pour tout $x \in \R$ où la fonction de répartition $F_X$ est continue,
         \begin{displaymath}
             \lim_{n \to +\infty} F_{X_n}(x) = F_X(x)
         \end{displaymath}
@@ -56,24 +56,24 @@
 
     \subsection{La convergence en probabilité}
 
-    Dans cette section, on se donne une suite de variables aléatoires $\left(X_n\right)_{n\in\mathbb{N}}$ réelles ou discrètes.
+    Dans cette section, on se donne une suite de variables aléatoires $\left(X_n\right)_{n\in\N}$ réelles ou discrètes.
     On se donne également une autre variable aléatoire $X$ réelle ou discrète.
     On suppose que toutes ces variables aléatoires sont définies sur le même espace probabilisé.
 
     \begin{defi}
-        On dit que $\left(X_n\right)_{n\in\mathbb{N}}$ \textbf{converge en probabilité} vers $X$, et on note $X_n \xrightarrow[]{\mathbb{P}} X$ lorsque :
+        On dit que $\left(X_n\right)_{n\in\N}$ \textbf{converge en probabilité} vers $X$, et on note $X_n \xrightarrow[]{\Pb} X$ lorsque :
         \begin{displaymath}
-            \forall \delta > 0, \lim_{n \to +\infty} \mathbb{P}\left(\left|X_n - X\right| \geq \delta\right) = 0
+            \forall \delta > 0, \lim_{n \to +\infty} \Pb\left(\left|X_n - X\right| \geq \delta\right) = 0
         \end{displaymath}
     \end{defi}
 
     \begin{rem}
-        Remarquons qu'il est nécessaire que les variables aléatoires soient réelles ou discrètes : on doit en effet pouvoir utiliser la relation d'ordre habituelle sur $\mathbb{R}$.
+        Remarquons qu'il est nécessaire que les variables aléatoires soient réelles ou discrètes : on doit en effet pouvoir utiliser la relation d'ordre habituelle sur $\R$.
     \end{rem}
 
     \begin{rem}
-        Pour ce mode de convergence, il est absolument nécessaire que les $\left(X_n\right)_{n\in\mathbb{N}}$ et $X$ soient définies sur le même espace probabilisé.
-        En effet, soit $n \in \mathbb{N}$ : nous sommes alors amenés à considérer la variable aléatoire $X_n - X$.
+        Pour ce mode de convergence, il est absolument nécessaire que les $\left(X_n\right)_{n\in\N}$ et $X$ soient définies sur le même espace probabilisé.
+        En effet, soit $n \in \N$ : nous sommes alors amenés à considérer la variable aléatoire $X_n - X$.
         Pour que cette fonction ait du sens, il faut en particulier que l'espace de départ soit le même.
         De plus, on doit utiliser la loi de $\left|X_n - X\right|$ : pour que celle-ci existe et ait du sens, il faut que la tribu et la mesure de probabilité de l'espace de départ soient identiques.
     \end{rem}
@@ -81,8 +81,8 @@
     Ce mode de convergence est plus fort que la convergence en loi :
 
     \begin{prop}
-        Supposons que $\left(X_n\right)_{n\in\mathbb{N}}$ converge en probabilité vers $X$.
-        Alors $\left(X_n\right)_{n\in\mathbb{N}}$ converge en loi vers $X$.
+        Supposons que $\left(X_n\right)_{n\in\N}$ converge en probabilité vers $X$.
+        Alors $\left(X_n\right)_{n\in\N}$ converge en loi vers $X$.
     \end{prop}
 
     \begin{rem}
@@ -91,12 +91,12 @@
 
     \subsection{La convergence en norme \texorpdfstring{$\mathcal{L}^r$}{Lr}}
 
-    Dans cette section, on se donne une suite de variables aléatoires $\left(X_n\right)_{n\in\mathbb{N}}$ réelles ou discrètes.
+    Dans cette section, on se donne une suite de variables aléatoires $\left(X_n\right)_{n\in\N}$ réelles ou discrètes.
     On se donne également une autre variable aléatoire $X$ réelle ou discrète.
     On suppose que toutes ces variables aléatoires sont définies sur le même espace probabilisé.
 
     \begin{defi}
-        On dit que $\left(X_n\right)_{n\in\mathbb{N}}$ \textbf{converge en norme} $\mathcal{L}^r$ vers $X$, et on note $X_n \xrightarrow[]{\mathcal{L}^r} X$ lorsque :
+        On dit que $\left(X_n\right)_{n\in\N}$ \textbf{converge en norme} $\mathcal{L}^r$ vers $X$, et on note $X_n \xrightarrow[]{\mathcal{L}^r} X$ lorsque :
         \begin{displaymath}
             \lim_{n \to +\infty}\mathcal{E}\left(\left|X_n - X\right|^r\right) = 0
         \end{displaymath}
@@ -113,23 +113,23 @@
     \end{rem}
 
     \begin{rem}
-        Pour ce mode de convergence, tout comme pour la convergence en probabilité, il est absolument nécessaire que les $\left(X_n\right)_{n\in\mathbb{N}}$ et $X$ soient définies sur le même espace probabilisé.
+        Pour ce mode de convergence, tout comme pour la convergence en probabilité, il est absolument nécessaire que les $\left(X_n\right)_{n\in\N}$ et $X$ soient définies sur le même espace probabilisé.
         La justification d'ailleurs sensiblement la même que pour la convergence en probabilité : pour calculer l'espérance, on est amenés à considérer la loi de probabilités de $X_n - X$.
     \end{rem}
 
     Ce mode de convergence est plus fort que la convergence en probabilité, et \textit{a fortiori} plus fort que la convergence en loi :
 
     \begin{prop}
-        Supposons que $\left(X_n\right)_{n\in\mathbb{N}}$ converge en norme $\mathcal{L}^r$ vers $X$.
-        Alors $\left(X_n\right)_{n\in\mathbb{N}}$ converge en probabilité vers $X$.
+        Supposons que $\left(X_n\right)_{n\in\N}$ converge en norme $\mathcal{L}^r$ vers $X$.
+        Alors $\left(X_n\right)_{n\in\N}$ converge en probabilité vers $X$.
     \end{prop}
 
     Par ailleurs, on a également l'implication suivante :
 
     \begin{prop}
-        Supposons que $\left(X_n\right)_{n\in\mathbb{N}}$ converge en norme $\mathcal{L}^r$ vers $X$.
+        Supposons que $\left(X_n\right)_{n\in\N}$ converge en norme $\mathcal{L}^r$ vers $X$.
         Soit $s$ tel que $1 \leq s \leq r$.
-        Alors $\left(X_n\right)_{n\in\mathbb{N}}$ converge en norme $\mathcal{L}^s$ vers $X$.
+        Alors $\left(X_n\right)_{n\in\N}$ converge en norme $\mathcal{L}^s$ vers $X$.
     \end{prop}
 
     \begin{rem}
@@ -141,12 +141,12 @@
     Ce mode de convergence est celui qui se rapproche le plus de la converence simple.
     Il faut cependant garder à l'esprit que c'est loin d'être le seul mode de convergence existant.
 
-    Dans cette section, on se donne une suite de variables aléatoires $\left(X_n\right)_{n\in\mathbb{N}}$ quelconques à valeurs dans $E$.
+    Dans cette section, on se donne une suite de variables aléatoires $\left(X_n\right)_{n\in\N}$ quelconques à valeurs dans $E$.
     On se donne également une autre variable aléatoire $X$ à valeurs dans $E$.
     On suppose que toutes ces variables aléatoires sont définies sur le même espace probabilisé.
 
     \begin{defi}
-        On dit que $\left(X_n\right)_{n\in\mathbb{N}}$ \textbf{converge presque-sûrement} vers $X$, et on note $X_n \xrightarrow[]{\text{p.s.}} X$ lorsque pour $\mathbb{P}$-presque-tout $\omega \in \Omega$,
+        On dit que $\left(X_n\right)_{n\in\N}$ \textbf{converge presque-sûrement} vers $X$, et on note $X_n \xrightarrow[]{\text{p.s.}} X$ lorsque pour $\Pb$-presque-tout $\omega \in \Omega$,
         \begin{displaymath}
             \lim_{n \to +\infty} X_n(\omega) = X(\omega)
         \end{displaymath}
@@ -158,14 +158,14 @@
     \end{rem}
 
     \begin{rem}
-        Pour ce mode de convergence, il nécessaire que les $\left(X_n\right)_{n\in\mathbb{N}}$ et $X$ soient définies sur le même espace probabilisé, puisqu'on ne considère que la loi $\mathbb{P}$ dans le \og $\mathbb{P}$-presque-partout \fg.
+        Pour ce mode de convergence, il nécessaire que les $\left(X_n\right)_{n\in\N}$ et $X$ soient définies sur le même espace probabilisé, puisqu'on ne considère que la loi $\Pb$ dans le \og $\Pb$-presque-partout \fg.
     \end{rem}
 
     Ce mode de convergence est plus fort que la convergence en probabilité, et \textit{a fortiori} plus fort que la convergence en loi :
 
     \begin{prop}
-        Supposons que $\left(X_n\right)_{n\in\mathbb{N}}$ converge presque-sûrement vers $X$.
-        Alors $\left(X_n\right)_{n\in\mathbb{N}}$ converge en probabilité vers $X$.
+        Supposons que $\left(X_n\right)_{n\in\N}$ converge presque-sûrement vers $X$.
+        Alors $\left(X_n\right)_{n\in\N}$ converge en probabilité vers $X$.
     \end{prop}
 
     \begin{rem}
