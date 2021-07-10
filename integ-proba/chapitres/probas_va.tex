@@ -230,7 +230,7 @@
             \end{displaymath}
             Si c'est le cas, alors :
             \begin{displaymath}
-                \mathbb{E}(X) = \int_\R x^r f(x) \textnormal{d}x
+                \esp(X) = \int_\R x^r f(x) \textnormal{d}x
             \end{displaymath}
             La démonstrtion est immédiate à l'aide du théorème~\ref{thm:avantage_densite}.
             \itemb \textbf{si $X$ est une variable aléatoire discrète, alors $X$ admet un moment d'ordre $r$ ssi}
@@ -239,7 +239,7 @@
             \end{displaymath}
             Si c'est le cas, alors :
             \begin{displaymath}
-                \mathbb{E}(X) = \sum_{k=0}^{+\infty} k^r \Pb(X=k)
+                \esp(X) = \sum_{k=0}^{+\infty} k^r \Pb(X=k)
             \end{displaymath}
             En effet, dans le cas discret, $\Pb_X = fc$, où $f(k) = \Pb_X(\left\{ k \right\}) = \Pb(X = k)$ (cf.\ théorème~\ref{thm:avantage_discret}).
             Puis le théorème~\ref{thm:avantage_densite} fournit l'équivalence et l'égalité.
@@ -252,25 +252,25 @@
     \begin{defi}
         On dit que $X$ \textbf{admet une espérance} lorsqu'elle admet un moment d'ordre 1 (\textit{ie} lorsque $\omega \mapsto X\left(\omega\right)$ est $\Pb$-intégrable).
         Son \textbf{espérance} est alors définie comme son moment d'ordre 1.
-        Elle est notée $\mathbb{E}(X)$.
+        Elle est notée $\esp(X)$.
 
         On note $\mathcal{L}^1\left(\Omega, \A, \Pb\right)$ l'ensemble des variables aléatoires qui admettent une espérance (\textit{ie} l'ensemble des variables aléatoires $\Pb$-intégrables).
     \end{defi}
 
     \begin{rem}
-        Par abus de notation, on pourra écrire $\mathbb{E}(X)=+\infty$ lorsque $X$ n'admet pas d'espérance et qu'elle est positive.
-        Ainsi, on pourra écrire $\mathbb{E}(X)$ dès que $X$ est positive, qu'elle admette une espérance ou non.
+        Par abus de notation, on pourra écrire $\esp(X)=+\infty$ lorsque $X$ n'admet pas d'espérance et qu'elle est positive.
+        Ainsi, on pourra écrire $\esp(X)$ dès que $X$ est positive, qu'elle admette une espérance ou non.
         Vue la place privilégiée qu'occupent les fonctions positives dans la théorie d'intégration de Lebesgue, cette notation ne surprend pas.
 
-        Attention cependant, si $X$ n'admet pas d'espérance et n'est pas positive, on s'interdira formellement d'écrire $\mathbb{E}(X)$ (car l'intégrale sous-jacente n'existe peut-être même pas !).
+        Attention cependant, si $X$ n'admet pas d'espérance et n'est pas positive, on s'interdira formellement d'écrire $\esp(X)$ (car l'intégrale sous-jacente n'existe peut-être même pas !).
     \end{rem}
 
     \begin{rem}
         Ces considérations étant faites, on remarque que :
         \begin{itemize}
-            \itemb $X$ admet une espérance ssi $\mathbb{E}(\left| X \right|) < +\infty$ ;
-            \itemb $X$ admet un moment d'ordre $r$ ssi $\mathbb{E}(\left| X \right|^r) < +\infty$ ;
-            \itemb si $X$ admet un moment d'ordre $r$, alors $m_r = \mathbb{E}(X^r)$.
+            \itemb $X$ admet une espérance ssi $\esp(\left| X \right|) < +\infty$ ;
+            \itemb $X$ admet un moment d'ordre $r$ ssi $\esp(\left| X \right|^r) < +\infty$ ;
+            \itemb si $X$ admet un moment d'ordre $r$, alors $m_r = \esp(X^r)$.
         \end{itemize}
     \end{rem}
 
@@ -310,7 +310,7 @@
         On dit que $X$ \textbf{admet une variance} lorsqu'elle admet un moment d'ordre 2 (\textit{ie} lorsque $\omega \mapsto X^2\left(\omega\right)$ est $\Pb$-intégrable).
         Sa \textbf{variance} est alors définie comme :
         \begin{displaymath}
-            \mathbb{V}(X):=\mathbb{E}\left(\left(X - \mathbb{E}\left(X\right)\right)^2\right)=\mathbb{E}\left(X^2\right) - \mathbb{E}\left(X\right)^2
+            \var(X):=\esp\left(\left(X - \esp\left(X\right)\right)^2\right)=\esp\left(X^2\right) - \esp\left(X\right)^2
         \end{displaymath}
 
         On note $\mathcal{L}^2\left(\Omega, \A, \Pb\right)$ l'ensemble des variables aléatoires qui admettent une variance (\textit{ie} l'ensemble des variables aléatoires qui sont de carré $\Pb$-intégrables).
@@ -321,7 +321,7 @@
         \begin{itemize}
             \itemb le théorème qui fournit l'égalité de ces deux expressions s'appelle \textbf{le théorème de König-Huygens}.
             Sa démonstration est immédiate par linéarité de l'intégrale.
-            \itemb d'après la deuxième expression, l'existence de $\mathbb{V}(X)$ est assurée dès que $X$ admet un moment d'ordre 1 et 2.
+            \itemb d'après la deuxième expression, l'existence de $\var(X)$ est assurée dès que $X$ admet un moment d'ordre 1 et 2.
             Cependant, bien que la définition demande que $X$ admette un moment d'ordre 2, elle ne demande pas qu'elle admette un moment d'ordre 1.
             Nous sommes en fait sauvés par la proposition~\ref{prop:moments_cascade} !
             \itemb d'après la proposition~\ref{prop:moments_cascade}, $\mathcal{L}^2\left(\Omega, \A, \mathbb{P}\right) \subset \mathcal{L}^1\left(\Omega, \A, \mathbb{P}\right)$.
@@ -348,7 +348,7 @@
 
         Si c'est le cas, alors on a la \textbf{formule de transfert} :
         \begin{displaymath}
-            \mathbb{E}(g \circ X) = \int_E g(x)\textnormal{d}\mathbb{P}_X(x)
+            \esp(g \circ X) = \int_E g(x)\textnormal{d}\mathbb{P}_X(x)
         \end{displaymath}
     \end{thm}
 
@@ -371,7 +371,7 @@
         En appliquant le théorème précédent, $X$ admet une espérance ssi $\text{Id}$ est $\mathbb{P}_X$-intégrable.
         Dans ce cas, on aura :
         \begin{displaymath}
-            \mathbb{E}(X) = \mathbb{E}(\text{Id} \circ X) = \int_\R x\textnormal{d}\mathbb{P}_X(x)
+            \esp(X) = \esp(\text{Id} \circ X) = \int_\R x\textnormal{d}\mathbb{P}_X(x)
         \end{displaymath}
 
         Pour peu que l'on sache expliciter $\mathbb{P}_X$, cette nouvelle l'expression de l'espérance nous simplifie grandement le calcul.
@@ -382,12 +382,12 @@
     \begin{exemple}
         De même, en choisissant la fonction carrée pour $g$ on obtient (si l'espérance de $X^2$ existe) :
         \begin{displaymath}
-            \mathbb{E}(X^2) = \int_\R x^2\textnormal{d}\mathbb{P}_X(x)
+            \esp(X^2) = \int_\R x^2\textnormal{d}\mathbb{P}_X(x)
         \end{displaymath}
 
         Notons qu'en choisissant l'identité pour $g$, mais la variable aléatoire $X^2$, on obtient (à nouveau sous réserve d'existence) :
         \begin{displaymath}
-            \mathbb{E}(X^2) = \int_\mathbb{R} x\textnormal{d}\mathbb{P}_{X^2}(x)
+            \esp(X^2) = \int_\mathbb{R} x\textnormal{d}\mathbb{P}_{X^2}(x)
         \end{displaymath}
     \end{exemple}
 
@@ -396,11 +396,11 @@
         \begin{itemize}
             \itemb si $X$ est une variable aléatoire réelle de densité $f$, alors la formule de transfert (lorsqu'elle s'applique) donne l'égalité suivante :
             \begin{displaymath}
-                \mathbb{E}(g \circ X) = \int_E g(x)f(x)\textnormal{d}x
+                \esp(g \circ X) = \int_E g(x)f(x)\textnormal{d}x
             \end{displaymath}
             \itemb si $X$ est une variable aléatoire discrète, alors la formule de transfert (lorsqu'elle s'applique) donne l'égalité suivante (donnée ici dans le cas de $\N$, mais qui s'énonce de même dans les autres cas):
             \begin{displaymath}
-                \mathbb{E}(g \circ X) = \sum_{k=0}^{+\infty} g(k) \Pb(X = k)
+                \esp(g \circ X) = \sum_{k=0}^{+\infty} g(k) \Pb(X = k)
             \end{displaymath}
         \end{itemize}
     \end{rem}
