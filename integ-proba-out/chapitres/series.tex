@@ -8,23 +8,23 @@
     Dans ce chapitre, nous allons voir les principaux résultats d'intégration, lorsque l'on muni l'intégrale de Lebesgue de la mesure de comptage.
     Nous allons voir que cela nous permet d'explorer la théorie des séries.
 
-    Dans tout ce chapitre, on considère l'espace mesuré $\left(\mathbb{N}^n, \mathcal{P}(\mathbb{N}^n), c\right)$, où $c$ est la mesure de comptage.
-    Nos fonctions prendront donc leurs valeurs dans $\mathbb{N}^n$.
+    Dans tout ce chapitre, on considère l'espace mesuré $\left(\N^n, \mathcal{P}(\N^n), c\right)$, où $c$ est la mesure de comptage.
+    Nos fonctions prendront donc leurs valeurs dans $\N^n$.
     On énoncera souvent les résultats pour $n=1$, mais ils se généralisent sans peine dans le cas général.
 
     \section{Lien avec les séries}
 
-    Dans toute cette section, on se donne une fonction $f:\left(\mathbb{N}, \mathcal{P}(\mathbb{N}), c\right) \rightarrow \mathbb{R}$ (c'est-à-dire une suite numérique).
+    Dans toute cette section, on se donne une fonction $f:\left(\N, \mathcal{P}(\N), c\right) \rightarrow \R$ (c'est-à-dire une suite numérique).
 
     On commence par énoncer le résultat suivant.
     Il permet de nous affranchir de vérifier la mesurabilité dans notre cas :
 
     \begin{prop}
-        $f:\left(\mathbb{N}, \mathcal{P}(\mathbb{N}), c\right) \rightarrow \mathbb{R}$ est mesurable.
+        $f:\left(\N, \mathcal{P}(\N), c\right) \rightarrow \R$ est mesurable.
     \end{prop}
 
     \begin{proof}
-        Pour toute partie $A$ de $\mathbb{R}$, $f^{-1}\left(A\right) \in \mathcal{P}\left(\mathbb{N}\right)$.
+        Pour toute partie $A$ de $\R$, $f^{-1}\left(A\right) \in \mathcal{P}\left(\N\right)$.
         A fortiori, cela est vrai pour tout borélien.
     \end{proof}
 
@@ -36,15 +36,15 @@
         Supposons que l'intégrale de $f$ existe.
         Alors
         \begin{displaymath}
-            \int_\mathbb{N} f(n)\textnormal{d}c(n) = \sum_{n=0}^{+\infty} f(n)
+            \int_\N f(n)\textnormal{d}c(n) = \sum_{n=0}^{+\infty} f(n)
         \end{displaymath}
     \end{thm}
 
     \begin{proof}
         Commençons par montrer le résultat dans le cas où $f$ est positive.
-        Dans ce cas, la suite de fonctions suivante $\left(f_n\right)_{n\in\mathbb{N}}$ est croissante et converge simplement vers $f$ :
+        Dans ce cas, la suite de fonctions suivante $\left(f_n\right)_{n\in\N}$ est croissante et converge simplement vers $f$ :
         \begin{displaymath}
-            \forall n \in \mathbb{N}, \forall k \in \mathbb{N}, f_n(k) :=
+            \forall n \in \N, \forall k \in \N, f_n(k) :=
         \left\{
             \begin{array}{cl}
                 f(k) & \textnormal{si } k \leq n\\
@@ -55,21 +55,21 @@
 
         Notons que l'on peut réecrire cette suite sous la forme :
         \begin{displaymath}
-            \forall n \in \mathbb{N}, \forall k \in \mathbb{N}, f_n(k) = \sum_{i=0}^n f(i) \mathds{1}_{i}(k)
+            \forall n \in \N, \forall k \in \N, f_n(k) = \sum_{i=0}^n f(i) \mathds{1}_{i}(k)
         \end{displaymath}
 
-        Et remarquons que, d'après la relation mesure-intégrale, pour $A \subset \mathbb{N}$ :
+        Et remarquons que, d'après la relation mesure-intégrale, pour $A \subset \N$ :
         \begin{displaymath}
-            \int_\mathbb{N} \mathds{1}_{A}(k) \text{d} c(k) = c(A)
+            \int_\N \mathds{1}_{A}(k) \text{d} c(k) = c(A)
         \end{displaymath}
 
-        Nous pouvons alors écrire que, pour tout $n \in \mathbb{N}$ :
+        Nous pouvons alors écrire que, pour tout $n \in \N$ :
         \begin{displaymath}
             {
         \everymath={\displaystyle}
         \begin{array}{rcl}
-            \int_\mathbb{N} f_n(k)\text{d}c(k) & = & \int_\mathbb{N} \sum_{i=0}^n f(i) \mathds{1}_{\{i\}}(k) \text{d}c(k)\\
-                                               & = & \sum_{i=0}^n f(i) \int_\mathbb{N} \mathds{1}_{\{i\}}(k) \text{d}c(k)\\
+            \int_\N f_n(k)\text{d}c(k) & = & \int_\N \sum_{i=0}^n f(i) \mathds{1}_{\{i\}}(k) \text{d}c(k)\\
+                                               & = & \sum_{i=0}^n f(i) \int_\N \mathds{1}_{\{i\}}(k) \text{d}c(k)\\
                                                & = & \sum_{i=0}^n f(i) c(\{i\})\\
                                                & = & \sum_{i=0}^n f(i)
         \end{array}
@@ -79,7 +79,7 @@
         Or, $f_n$ est une suite croissante de fonctions mesurables positives.
         On peut donc appliquer l'hypothèse de convergence monotone :
         \begin{displaymath}
-            \int_\mathbb{N} f_n(k)\text{d}c(k) \xrightarrow[n \to + \infty]{} \int_\mathbb{N} f(k)\text{d}c(k)
+            \int_\N f_n(k)\text{d}c(k) \xrightarrow[n \to + \infty]{} \int_\N f(k)\text{d}c(k)
         \end{displaymath}
 
         De plus, la théorie des séries nous fournit (quitte à ce que la série vaille $+\infty$) :
@@ -89,7 +89,7 @@
 
         Ainsi, par unicité de la limite, si $f$ est positive :
         \begin{displaymath}
-            \int_\mathbb{N} f(k)\text{d}c(k) = \sum_{i=0}^{+\infty} f(i)
+            \int_\N f(k)\text{d}c(k) = \sum_{i=0}^{+\infty} f(i)
         \end{displaymath}
 
         Supposons désormais que $f$ soit signée.
@@ -105,11 +105,11 @@
             {
         \everymath={\displaystyle}
         \begin{array}{rcl}
-            \int_\mathbb{N} f(n) \text{d} c(n) \in \mathbb{R} & \text{ssi} & f \text{ est intégrable } \\
+            \int_\N f(n) \text{d} c(n) \in \R & \text{ssi} & f \text{ est intégrable } \\
                                                               & \text{ssi} & \|f\| \text{ est intégrable} \\
-                                                              & \text{ssi} & \int_\mathbb{N} \|f(n)\| \text{d} c(n) < + \infty \\
+                                                              & \text{ssi} & \int_\N \|f(n)\| \text{d} c(n) < + \infty \\
                                                               & \text{ssi} & \sum_{n=0}^{+ \infty} \|f(n)\| < + \infty \\
-                                                              & \text{ssi} & \sum_{n=0}^{+ \infty} f(n) \in \mathbb{R}
+                                                              & \text{ssi} & \sum_{n=0}^{+ \infty} f(n) \in \R
         \end{array}
         }
         \end{displaymath}
@@ -118,7 +118,7 @@
     \begin{defi}
         On dit que la série $\sum f(n)$ \textbf{converge} lorsque l'intégrale de la fonction $f$ existe.
 
-        On dit que la série $\sum f(n)$ \textbf{converge absolument}, ou que la famille $\left(f(n)\right)_{n \in \mathbb{N}}$ est \textbf{sommable}, lorsque $f$ est intégrable, \textit{ie} lorsque $\sum_{n=0}^{+ \infty} \left|f(n)\right| < + \infty$
+        On dit que la série $\sum f(n)$ \textbf{converge absolument}, ou que la famille $\left(f(n)\right)_{n \in \N}$ est \textbf{sommable}, lorsque $f$ est intégrable, \textit{ie} lorsque $\sum_{n=0}^{+ \infty} \left|f(n)\right| < + \infty$
     \end{defi}
 
     Nous avons vu tout au long de cette section que l'intégrale de Lebesgue est intrinsèquement liée à la théorie des séries.
@@ -128,11 +128,11 @@
     \section{Que deviennent les propriétés de l'intégrale dans ce cas particulier ?}
 
     \begin{thm}[\textbf{de convergence dominée}]
-      Soit $\left(f_n\right)_{n \in \mathbb{N}}$ une suite de fonctions de $\mathbb{N}$ dans $\mathbb{R}$, qui converge simplement vers une fonction $f$.
+      Soit $\left(f_n\right)_{n \in \N}$ une suite de fonctions de $\N$ dans $\R$, qui converge simplement vers une fonction $f$.
 
-      Supposons qu'il existe $g:\mathbb{N} \longrightarrow \mathbb{R}$, telle que $\sum g(n)$ converge absolument, et qui \textbf{domine} les $f_n$ :
+      Supposons qu'il existe $g:\N \longrightarrow \R$, telle que $\sum g(n)$ converge absolument, et qui \textbf{domine} les $f_n$ :
       \begin{displaymath}
-          \forall n \in \mathbb{N}, \forall x \in E, \left|f_n(x)\right| \leq g(x)
+          \forall n \in \N, \forall x \in E, \left|f_n(x)\right| \leq g(x)
       \end{displaymath}
 
       Alors les $f_n$ et $f$ sont $\mu$-intégrables, et :

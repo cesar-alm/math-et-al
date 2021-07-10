@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  9 JUL 2021 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  10 JUL 2021 14:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -329,12 +329,47 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip55
 \dth@everypar=\toks28
 )
-\c@thm=\count288
-\c@prop=\count289
-\c@cor=\count290
-\c@defi=\count291
-\c@exemple=\count292
-\c@rem=\count293
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count288
+\calc@Bcount=\count289
+\calc@Adimen=\dimen161
+\calc@Bdimen=\dimen162
+\calc@Askip=\skip56
+\calc@Bskip=\skip57
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count290
+\calc@Cskip=\skip58
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count291
+\l_MT_multwidth_dim=\dimen163
+\origjot=\skip59
+\l_MT_shortvdotswithinadjustabove_dim=\dimen164
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen165
+\l_MT_above_intertext_sep=\dimen166
+\l_MT_below_intertext_sep=\dimen167
+\l_MT_above_shortintertext_sep=\dimen168
+\l_MT_below_shortintertext_sep=\dimen169
+\xmathstrut@box=\box52
+\xmathstrut@dim=\dimen170
+)
+\c@thm=\count292
+\c@prop=\count293
+\c@cor=\count294
+\c@defi=\count295
+\c@exemple=\count296
+\c@rem=\count297
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/subfiles/subfiles.sty
 Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
@@ -342,7 +377,7 @@ Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ))
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 40
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 48
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -350,34 +385,34 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count294
-\l__pdf_internal_box=\box52
+\l__color_backend_stack_int=\count298
+\l__pdf_internal_box=\box53
 )
 (./integ-proba.aux)
 \openout1 = `integ-proba.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Info: Redefining \degres on input line 40.
-LaTeX Info: Redefining \dots on input line 40.
-LaTeX Info: Redefining \up on input line 40.
-Package hyperref Info: Link coloring OFF on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Info: Redefining \degres on input line 48.
+LaTeX Info: Redefining \dots on input line 48.
+LaTeX Info: Redefining \up on input line 48.
+Package hyperref Info: Link coloring OFF on input line 48.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -389,52 +424,96 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count295
+\c@section@level=\count299
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
  (./integ-proba.out) (./integ-proba.out)
 \@outlinefile=\write3
 \openout3 = `integ-proba.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-9.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+
+(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count300
+\scratchdimen=\dimen171
+\scratchbox=\box54
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen172
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks30
+)))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
+7.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-9.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+7.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-49.
+57.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-49.
+57.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 49.
+(Font)              <12> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 49.
+(Font)              <8> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 49.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
+(Font)              <6> on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -522,18 +601,18 @@ e 125.
 Chapitre 5.
 [25
 
-] [26]) (./chapitres/probas_va.tex [27]
+] [26] [27]) (./chapitres/probas_va.tex [28]
 Chapitre 6.
-[28
+[29
 
-] [29]
+] [30]
 Overfull \hbox (7.66528pt too wide) in paragraph at lines 119--121
 []\T1/lmr/m/n/10 Considérons main-te-nant l'es-pace pro-ba-bi-lisé $\OT1/lmr/m/
 n/10 
 [] := \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
  []
 
-[30] [31] [32]) (./chapitres/probas_conv.tex [33]
+[31] [32] [33]) (./chapitres/probas_conv.tex [34]
 Chapitre 7.
 
 Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
@@ -541,27 +620,27 @@ Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
 i-sés $[][]$ ; 
  []
 
-[34
+[35
 
 ]
 
-LaTeX Warning: Reference `thm:tcl' on page 35 undefined on input line 54.
+LaTeX Warning: Reference `thm:tcl' on page 36 undefined on input line 54.
 
 
-LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 35 undefined on input
+LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 36 undefined on input
  line 89.
-
-[35]
-
-LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 36 undefined on input 
-line 136.
 
 [36]
 
 LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 37 undefined on input 
+line 136.
+
+[37]
+
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 38 undefined on input 
 line 179.
 
-) [37] (./integ-proba.aux)
+) [38] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -569,17 +648,17 @@ Package rerunfilecheck Info: File `integ-proba.out' has not changed.
 (rerunfilecheck)             Checksum: B9BDA6FD77CC082FF4635CCF55DDADB6;10736.
  ) 
 Here is how much of TeX's memory you used:
- 10659 strings out of 478557
- 155462 string characters out of 5850911
- 477397 words of memory out of 5000000
- 28151 multiletter control sequences out of 15000+600000
+ 12011 strings out of 478557
+ 176764 string characters out of 5850911
+ 503079 words of memory out of 5000000
+ 29461 multiletter control sequences out of 15000+600000
  495215 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,19n,66p,492b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,19n,72p,492b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
-21/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-dist/
-fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
+21/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-d
+ist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
 dvips/lm/lm-mathex.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/d
 oublestroke/dsrom10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
 lm/lmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.
@@ -599,10 +678,10 @@ m/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm7.pfb>
-Output written on integ-proba.pdf (38 pages, 393872 bytes).
+Output written on integ-proba.pdf (39 pages, 396189 bytes).
 PDF statistics:
- 745 PDF objects out of 1000 (max. 8388607)
- 656 compressed objects within 7 object streams
- 240 named destinations out of 1000 (max. 500000)
+ 752 PDF objects out of 1000 (max. 8388607)
+ 662 compressed objects within 7 object streams
+ 242 named destinations out of 1000 (max. 500000)
  345 words of extra memory for PDF output out of 10000 (max. 10000000)
 

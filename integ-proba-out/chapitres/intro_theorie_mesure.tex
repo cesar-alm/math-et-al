@@ -11,8 +11,8 @@
 
   Se posent alors les questions suivantes :
   \begin{itemize}
-    \itemb dans $\mathbb{R}$, comment mesurer n'importe-quel ensemble ?
-    \itemb plus généralement, comment mesurer dans $\mathbb{R}^n$ ?
+    \itemb dans $\R$, comment mesurer n'importe-quel ensemble ?
+    \itemb plus généralement, comment mesurer dans $\R^n$ ?
     \itemb mais est-il possible de \textit{tout} mesurer ?
     Ou faut-il se restreindre à une catégorie d'ensembles \textit{mesurables} ?
   \end{itemize}
@@ -32,27 +32,27 @@
   Ces considérations étant faites, on définit alors une tribu comme suit :
 
   \begin{defi}
-    Une \textbf{tribu} (ou $\sigma\textbf{-algèbre}$) $\mathcal{A}$ d'un ensemble $E$ est une collection d'ensembles $\mathcal{A} \subset \mathcal{P}(E)$ vérifiant les hypothèses suivantes :
+    Une \textbf{tribu} (ou $\sigma\textbf{-algèbre}$) $\A$ d'un ensemble $E$ est une collection d'ensembles $\A \subset \mathcal{P}(E)$ vérifiant les hypothèses suivantes :
     \begin{enumerate}
-      \item $\varnothing \in \mathcal{A}$
-      \item $\mathcal{A}$ est stable par passage au complémentaire
-      \item $\mathcal{A}$ est stable par union dénombrable
+      \item $\varnothing \in \A$
+      \item $\A$ est stable par passage au complémentaire
+      \item $\A$ est stable par union dénombrable
     \end{enumerate}
   \end{defi}
 
   \begin{defi}
     \label{defi:espmes}
-    Un \textbf{espace mesurable} $\left(E, \mathcal{A}\right)$ est un ensemble $E$ muni d'une tribu $\mathcal{A}$.
+    Un \textbf{espace mesurable} $\left(E, \A\right)$ est un ensemble $E$ muni d'une tribu $\A$.
   \end{defi}
 
   \begin{defi}
     \label{defi:ensmes}
-    Soit $\left(E, \mathcal{A}\right)$ un espace mesurable.
-    Un ensemble $X\in \mathcal{A}$ est dit $\mathcal{A}$-\textbf{mesurable}.
+    Soit $\left(E, \A\right)$ un espace mesurable.
+    Un ensemble $X\in \A$ est dit $\A$-\textbf{mesurable}.
   \end{defi}
 
   \begin{rem}
-    Si le contexte est clair (\textit{ie} il n'y a qu'une seule tribu), on pourra omettre $\mathcal{A}$ et parler simplement d'ensemble mesurable
+    Si le contexte est clair (\textit{ie} il n'y a qu'une seule tribu), on pourra omettre $\A$ et parler simplement d'ensemble mesurable
   \end{rem}
 
   \begin{rem}
@@ -69,19 +69,19 @@
     \label{defi:Borel}
     Soit $E$ un espace topologique.
     La \textbf{tribu de Borel} (ou plus simplement, les \textbf{boréliens}) est la tribu engendrée par les ouverts de $E$ (ou de manière équivalente, par les fermés de $E$).
-    Elle est notée $\mathcal{B}(E)$.
+    Elle est notée $\B(E)$.
   \end{defi}
 
   \begin{exemple}
     \label{exemple:boreliens_et_topologie_discrete}
-    Considérons $\mathbb{N}$ muni de sa topologie usuelle, la topologie discrète.
-    Par définition, dans la topologie discrète, l'ensemble des ouverts $T$ est $\mathcal{P}(\mathbb{N})$.
+    Considérons $\N$ muni de sa topologie usuelle, la topologie discrète.
+    Par définition, dans la topologie discrète, l'ensemble des ouverts $T$ est $\mathcal{P}(\N)$.
 
-    Or, une tribu est par définition une partie de $\mathcal{P}(\mathbb{N})$.
-    Ainsi, $\mathcal{P}(\mathbb{N}) = T \subset \mathcal{B}(\mathbb{N}) \subset \mathcal{P}(\mathbb{N})$.
-    Par double inclusion, \textbf{les boréliens de} $\mathbb{N}$ \textbf{sont exactement les parties de} $\mathbb{N}$ :
+    Or, une tribu est par définition une partie de $\mathcal{P}(\N)$.
+    Ainsi, $\mathcal{P}(\N) = T \subset \B(\N) \subset \mathcal{P}(\N)$.
+    Par double inclusion, \textbf{les boréliens de} $\N$ \textbf{sont exactement les parties de} $\N$ :
     \begin{displaymath}
-      \mathcal{B}(\mathbb{N}) = \mathcal{P}(\mathbb{N})
+      \B(\N) = \mathcal{P}(\N)
     \end{displaymath}
 
     On peut généraliser ce résultat à tout espace topologique muni de la topologie discrète.
@@ -90,21 +90,21 @@
   \end{exemple}
 
   \begin{defi}
-    Soit $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}\right)$ deux espaces mesurables.
-    On appelle \textbf{tribu produit de} $\mathcal{A}$ \textbf{et} $\mathcal{B}$ la tribu sur $E \times F$ engendrée par :
+    Soit $\left(E, \A\right)$ et $\left(F, \B\right)$ deux espaces mesurables.
+    On appelle \textbf{tribu produit de} $\A$ \textbf{et} $\B$ la tribu sur $E \times F$ engendrée par :
     \begin{displaymath}
-      \left\{A \times B, \left(A, B\right) \in \mathcal{A} \times \mathcal{B}\right\}
+      \left\{A \times B, \left(A, B\right) \in \A \times \B\right\}
     \end{displaymath}
-    On la note $\mathcal{A} \otimes \mathcal{B}$.
+    On la note $\A \otimes \B$.
 
-    On appelle \textbf{espace produit} des espaces mesurables $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}\right)$ l'espace mesurable $\left(E \times F, \mathcal{A} \otimes \mathcal{B}\right)$.
+    On appelle \textbf{espace produit} des espaces mesurables $\left(E, \A\right)$ et $\left(F, \B\right)$ l'espace mesurable $\left(E \times F, \A \otimes \B\right)$.
   \end{defi}
 
   \begin{exemple}
-    On a $\mathcal{B}(\mathbb{R}^n) \otimes \mathcal{B}(\mathbb{R}^m) = \mathcal{B}(\mathbb{R}^{m+n})$.
+    On a $\B(\R^n) \otimes \B(\R^m) = \B(\R^{m+n})$.
 
     Notons cependant que ce résultat n'est pas vrai en général.
-    En effet, nous verrons dans la suite de ce chapitre la tribu de Lebesgue $\mathcal{L}(\mathbb{R}^n)$ : le résultat est faux pour cette tribu.
+    En effet, nous verrons dans la suite de ce chapitre la tribu de Lebesgue $\mathcal{L}(\R^n)$ : le résultat est faux pour cette tribu.
   \end{exemple}
 
   \section{Définition de la mesure}
@@ -116,7 +116,7 @@
   Cela nous amène à définir une mesure ainsi :
 
   \begin{defi}
-    Une \textbf{mesure} $\mu$ sur un espace mesurable $(E, \mathcal{A})$ est une application $\mu : \mathcal{A} \longrightarrow \mathbb{R}_+ \cup \{ +\infty \}$ telle que :
+    Une \textbf{mesure} $\mu$ sur un espace mesurable $(E, \A)$ est une application $\mu : \A \longrightarrow \R_+ \cup \{ +\infty \}$ telle que :
     \begin{enumerate}
       \item $\mu(\varnothing) = 0$
       \item Pour une famille au plus dénombrable d'ensembles mesurables $\left(A_i\right)_{i \in I}$,
@@ -136,14 +136,14 @@
   \end{rem}
 
   \begin{defi}
-    Un \textbf{espace mesuré} $\left(E, \mathcal{A}, \mu\right)$ est un espace mesurable $\left(E, \mathcal{A}\right)$ muni d'une mesure $\mu$.
+    Un \textbf{espace mesuré} $\left(E, \A, \mu\right)$ est un espace mesurable $\left(E, \A\right)$ muni d'une mesure $\mu$.
   \end{defi}
 
   \begin{defi}
-    Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré.
+    Soit $\left(E, \A, \mu\right)$ un espace mesuré.
     Un ensemble $X \subset E$ est dit $\mu$\textbf{-négligeable} si :
     \begin{displaymath}
-      \exists Y \in \mathcal{A},
+      \exists Y \in \A,
     \left\{
       \begin{array}{c}
         \mu(Y)=0\\
@@ -168,19 +168,19 @@
   \end{rem}
 
   \begin{defi}
-    Soit $\left(E, \mathcal{A}, \mu\right)$ un espace mesuré.
-    On dit que $\mu$ est une mesure $\sigma$\textbf{-finie} lorsqu'il existe une collections dénombrables d'ensembles mesurables $\left(X_n\right)_{n \in \mathbb{N}}$, tels que :
+    Soit $\left(E, \A, \mu\right)$ un espace mesuré.
+    On dit que $\mu$ est une mesure $\sigma$\textbf{-finie} lorsqu'il existe une collections dénombrables d'ensembles mesurables $\left(X_n\right)_{n \in \N}$, tels que :
     \begin{itemize}
-      \itemb $\displaystyle \bigcup_{n \in \mathbb{N}} X_n = E$ (on dit que les $X_n$ recouvrent $E$) ;
-      \itemb $\forall n \in \mathbb{N}, \mu(X_n) < + \infty$ (on dit que les $X_n$ sont de mesure finie).
+      \itemb $\displaystyle \bigcup_{n \in \N} X_n = E$ (on dit que les $X_n$ recouvrent $E$) ;
+      \itemb $\forall n \in \N, \mu(X_n) < + \infty$ (on dit que les $X_n$ sont de mesure finie).
     \end{itemize}
   \end{defi}
 
   \begin{defi}
-    Soit $\left(E, \mathcal{A}, \mu_1\right)$ et $\left(F, \mathcal{B}, \mu_2\right)$ deux espaces mesurés.
-    Une \textbf{mesure produit} $\mu_1 \otimes \mu_2$ sur l'espace produit $\left(E \times F, \mathcal{A} \otimes \mathcal{B}\right)$ est une mesure cet espace produit vérifiant :
+    Soit $\left(E, \A, \mu_1\right)$ et $\left(F, \B, \mu_2\right)$ deux espaces mesurés.
+    Une \textbf{mesure produit} $\mu_1 \otimes \mu_2$ sur l'espace produit $\left(E \times F, \A \otimes \B\right)$ est une mesure cet espace produit vérifiant :
     \begin{displaymath}
-      \forall \left(A, B\right) \in \left(\mathcal{A}, \mathcal{B}\right), (\mu_1 \otimes \mu_2)(A \times B) = \mu_1(A)\mu_2(B)
+      \forall \left(A, B\right) \in \left(\A, \B\right), (\mu_1 \otimes \mu_2)(A \times B) = \mu_1(A)\mu_2(B)
     \end{displaymath}
 
     Une telle mesure existe toujours.
@@ -193,13 +193,13 @@
   Il existe trois mesures importantes à connaître.
 
   \begin{defi}
-    La \textbf{mesure de Lebesgue} $\lambda$ est l'unique mesure sur $\mathbb{R}^n$ qui prolonge la notion de volume.
+    La \textbf{mesure de Lebesgue} $\lambda$ est l'unique mesure sur $\R^n$ qui prolonge la notion de volume.
     Habituellement, sa tribu de définition est la \textbf{tribu de Lebesgue} ou la \textbf{tribu de Borel}.
   \end{defi}
 
   \begin{rem}
     En définissant la mesure de Lebesgue sur la tribu de Borel, elle ne serait en fait pas complète (voir~\ref{rem:completion}).
-    La tribu de Lebesgue (notée $\mathcal{L}(\mathbb{R}^n)$) est alors définie comme étant la plus petite tribu de $\mathbb{R}^n$ permettant à cette mesure d'être complète.
+    La tribu de Lebesgue (notée $\mathcal{L}(\R^n)$) est alors définie comme étant la plus petite tribu de $\R^n$ permettant à cette mesure d'être complète.
 
     On ne retiendra pas plus de détails sur la tribu de Lebesgue, mais il est bon de retenir qu'\textbf{un élément Borel-mesurable est Lebesgue-mesurable} (la réciproque est fausse).
   \end{rem}
@@ -215,20 +215,20 @@
     Par ailleurs, cette mesure sera centrale dans le chapitre~\ref{ch:int_lebesgue} concernant les intégrales.
   \end{rem}
 
-  \begin{exemple}[$\mathbb{Q}$ est $\lambda$-négligeable]
+  \begin{exemple}[$\Q$ est $\lambda$-négligeable]
     \label{ex:ratneg}
 
   \end{exemple}
 
   \begin{defi}
-    Soit $\left(E,\mathcal{A}\right)$ un espace mesurable.
+    Soit $\left(E,\A\right)$ un espace mesurable.
     La \textbf{mesure de comptage} $c$ est définie sur cette espace comme suit :
 
     \begin{displaymath}
       c :
     \left\{
     \begin{array}{ccc}
-      \mathcal{A} & \longrightarrow & \mathbb{R}_+\cup\left\{+\infty\right\}\\
+      \A & \longrightarrow & \R_+\cup\left\{+\infty\right\}\\
       A &                                   \longmapsto    &
         \left\{
         \begin{array}{rcl}
@@ -247,19 +247,19 @@
   \end{rem}
 
   \begin{rem}
-    Bien que cette mesure soit définie pour un espace mesurable quelconque, elle sera particulièrement utile dans $\left(\mathbb{N},\mathcal{P}\left(\mathbb{N}\right)\right)$ (notamment pour le chapitre~\ref{ch:series} concernant les séries).
+    Bien que cette mesure soit définie pour un espace mesurable quelconque, elle sera particulièrement utile dans $\left(\N,\mathcal{P}\left(\N\right)\right)$ (notamment pour le chapitre~\ref{ch:series} concernant les séries).
   \end{rem}
 
 
   \begin{defi}
-    Soit $\left(E,\mathcal{A}\right)$ un espace mesurable.
+    Soit $\left(E,\A\right)$ un espace mesurable.
     La \textbf{mesure de Dirac en $x \in E$} $\delta_x$ est définie comme suit :
 
     \begin{displaymath}
       \delta_x :
     \left\{
     \begin{array}{ccc}
-      \mathcal{A} & \longrightarrow & \mathbb{R}_+\\
+      \A & \longrightarrow & \R_+\\
       A &                                   \longmapsto    &
         \left\{
         \begin{array}{rcl}
@@ -275,7 +275,7 @@
   \begin{rem}
     La mesure de Dirac et la fonction indicatrice sont reliées de la manière suivante :
     \begin{displaymath}
-      \forall A \in \mathcal{A}, \forall x \in E, \delta_x(A)=\mathds{1}_A(x)
+      \forall A \in \A, \forall x \in E, \delta_x(A)=\mathds{1}_A(x)
     \end{displaymath}
   \end{rem}
 
@@ -284,10 +284,10 @@
   Lorsque deux espaces mesurables sont définis, il peut être utile de définir une classe de fonctions qui font bon ménage avec les tribus des espaces mis en jeu.
 
   \begin{defi}
-    Soit $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}\right)$ deux espaces mesurables.
-    Une \textbf{fonction } $\mathcal{A}$/$\mathcal{B}$\textbf{-mesurable} est une fonction $f : E \longrightarrow F$ telle que :
+    Soit $\left(E, \A\right)$ et $\left(F, \B\right)$ deux espaces mesurables.
+    Une \textbf{fonction } $\A$/$\B$\textbf{-mesurable} est une fonction $f : E \longrightarrow F$ telle que :
     \begin{displaymath}
-      \forall Y \in \mathcal{B}, f^{-1}(Y) \in \mathcal{A}
+      \forall Y \in \B, f^{-1}(Y) \in \A
     \end{displaymath}
   \end{defi}
 
@@ -299,9 +299,9 @@
     \label{rem:simplification_notation_fonctions_mesurables}
     Cette notation est lourde, et c'est pourquoi elle est souvent simplifiée.
     \begin{itemize}
-    \itemb dans le cas où $\mathcal{B}=\mathcal{B}\left(F\right)$ (la tribu d'arrivée est celle des boréliens), on pourra simplifier la notation et dire simplement que :
+    \itemb dans le cas où $\B=\B\left(F\right)$ (la tribu d'arrivée est celle des boréliens), on pourra simplifier la notation et dire simplement que :
     \begin{displaymath}
-      f \text{ est } \mathcal{A}\text{-mesurable}
+      f \text{ est } \A\text{-mesurable}
     \end{displaymath}
     \itemb si, de plus, la tribu de l'espace de départ n'est pas ambigüe, on pourra alors simplement écrire que :
     \begin{displaymath}
@@ -319,7 +319,7 @@
 
   \begin{prop}
     \label{prop:lienensfctmes}
-    Soit $\left(E, \mathcal{A}\right)$ un espace mesurable.
+    Soit $\left(E, \A\right)$ un espace mesurable.
     Soit $A\subset E$.
     Alors $A$ est mesurable ssi $\mathds{1}_A$ est mesurable.
   \end{prop}
@@ -327,8 +327,8 @@
   \begin{rem}
     On remarquera que l'on a bien utilisé le formalisme de la remarque précédente :
     \begin{itemize}
-      \itemb la tribu de l'espace d'arrivée est la tribu borélienne de $\mathbb{R}$.
-      \itemb la tribu de l'espace de départ est $\mathcal{A}$, non-ambigüe.
+      \itemb la tribu de l'espace d'arrivée est la tribu borélienne de $\R$.
+      \itemb la tribu de l'espace de départ est $\A$, non-ambigüe.
     \end{itemize}
   \end{rem}
 
@@ -339,8 +339,8 @@
 
   \begin{prop}
     \label{prop:simp}
-    Soit $\left(E, \mathcal{A}\right)$ et $\left(F, \mathcal{B}(F)\right)$ deux espaces mesurables.
-    $f$ est $\mathcal{A}$-mesurable ssi pour tout ouvert $U$ de $F$, $f^{-1}(U) \in \mathcal{A}$.
+    Soit $\left(E, \A\right)$ et $\left(F, \B(F)\right)$ deux espaces mesurables.
+    $f$ est $\A$-mesurable ssi pour tout ouvert $U$ de $F$, $f^{-1}(U) \in \A$.
   \end{prop}
 
   \begin{rem}
@@ -351,23 +351,23 @@
 
   \begin{prop}
     \label{prop:compmes}
-    Soit $\left(E,\mathcal{A}\right)$, $\left(F,\mathcal{B}\right)$ et $\left(G,\mathcal{C}\right)$ trois espaces mesurables,
-    $f : E \longrightarrow F$ une fonction $\mathcal{A}$/$\mathcal{B}$-mesurable et $g : F \longrightarrow G$ une fonction $\mathcal{B}$/$\mathcal{C}$-mesurable.
-    Alors $g \circ f : E \longrightarrow G$ est une fonction $\mathcal{A}$/$\mathcal{C}$-mesurable
+    Soit $\left(E,\A\right)$, $\left(F,\B\right)$ et $\left(G,\mathcal{C}\right)$ trois espaces mesurables,
+    $f : E \longrightarrow F$ une fonction $\A$/$\B$-mesurable et $g : F \longrightarrow G$ une fonction $\B$/$\mathcal{C}$-mesurable.
+    Alors $g \circ f : E \longrightarrow G$ est une fonction $\A$/$\mathcal{C}$-mesurable
   \end{prop}
 
   Voici un résultat concernant les limites de fonctions mesurables :
 
   \begin{prop}
     \label{prop:limite_simple_mesurables}
-    Soit $\left( E, \mathcal{A}, \mu_1 \right)$ et $\left( F, \mathcal{B}, \mu_2 \right)$ deux espaces mesurés et $\left( f_n \right)$ une suite de fonctions mesurables de $E$ dans $F$ qui converge simplement vers $f$.
+    Soit $\left( E, \A, \mu_1 \right)$ et $\left( F, \B, \mu_2 \right)$ deux espaces mesurés et $\left( f_n \right)$ une suite de fonctions mesurables de $E$ dans $F$ qui converge simplement vers $f$.
     Alors $f$ est mesurable.
   \end{prop}
 
   Enfin, voici une dernière définition qui sera utile dans le chapitre concernant les probabilités :
 
   \begin{defi}
-    Une fonction $f:E\longrightarrow F$ est dite \textbf{borélienne} lorsqu'elle est $\mathcal{B}(E)$/$\mathcal{B}(F)$-mesurable.
+    Une fonction $f:E\longrightarrow F$ est dite \textbf{borélienne} lorsqu'elle est $\B(E)$/$\B(F)$-mesurable.
   \end{defi}
 
   \begin{prop}
@@ -397,7 +397,7 @@
     Soit $f$ une fonction étagée.
     Alors :
     \begin{displaymath}
-      \exists N \in \mathbb{N}, \exists \left(A_i\right)_{i \in [\![1,N]\!]} \subset \mathbb{R}^N, \exists \left(y_i\right)_{i \in [\![1,N]\!]} \in \mathbb{R}^N, f = \sum_{i=1}^{N}y_i\mathds{1}_{A_i}
+      \exists N \in \N, \exists \left(A_i\right)_{i \in [\![1,N]\!]} \subset \R^N, \exists \left(y_i\right)_{i \in [\![1,N]\!]} \in \R^N, f = \sum_{i=1}^{N}y_i\mathds{1}_{A_i}
     \end{displaymath}
   \end{prop}
 
@@ -413,9 +413,9 @@
   \end{thm}
 
   \begin{rem}
-    Ici, la croissance d'une suite de fonctions $\left(f_k\right)_{k\in \mathbb{N}}$ est à comprendre dans le sens suivant :
+    Ici, la croissance d'une suite de fonctions $\left(f_k\right)_{k\in \N}$ est à comprendre dans le sens suivant :
     \begin{displaymath}
-      \forall k \in \mathbb{N}, \forall x \in E, f_k(x) \leq f_{k+1}(x)
+      \forall k \in \N, \forall x \in E, f_k(x) \leq f_{k+1}(x)
     \end{displaymath}
   \end{rem}
 
@@ -427,9 +427,9 @@
   \end{cor}
 
   \begin{rem}
-    Ici, l'absolue croissance d'une suite de fonctions $\left(f_k\right)_{k\in \mathbb{N}}$ est à comprendre dans le sens suivant :
+    Ici, l'absolue croissance d'une suite de fonctions $\left(f_k\right)_{k\in \N}$ est à comprendre dans le sens suivant :
     \begin{displaymath}
-      \forall k \in \mathbb{N}, \forall x \in E, \left|f_k(x)\right| \leq \left|f_{k+1}(x)\right|
+      \forall k \in \N, \forall x \in E, \left|f_k(x)\right| \leq \left|f_{k+1}(x)\right|
     \end{displaymath}
   \end{rem}
 
