@@ -33,12 +33,12 @@
 \contentsline {chapter}{\numberline {6}Variables aléatoires}{29}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Définitions}{29}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Loi d'une variable aléatoire}{30}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Moments d'une variable aléatoire réelle ou discrète}{31}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Formule de transfert}{33}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Moments d'un vecteur aléatoire}{34}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Convergence des suites de variables aléatoires}{35}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Les différents modes de convergence}{35}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}La convergence en loi}{35}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}La convergence en probabilité}{36}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}La convergence en norme $\mathcal {L}^r$}{37}{subsection.7.1.3}%
-\contentsline {subsection}{\numberline {7.1.4}La convergence presque-sûre}{37}{subsection.7.1.4}%
+\contentsline {section}{\numberline {6.3}Moments d'une variable aléatoire réelle ou discrète}{32}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Formule de transfert}{34}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Moments d'un vecteur aléatoire}{36}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Convergence des suites de variables aléatoires}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Les différents modes de convergence}{37}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}La convergence en loi}{37}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}La convergence en probabilité}{38}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}La convergence en norme $\mathcal {L}^r$}{39}{subsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.1.4}La convergence presque-sûre}{39}{subsection.7.1.4}%

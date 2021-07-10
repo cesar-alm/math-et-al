@@ -97,10 +97,65 @@
     \end{defi}
     % todo parler de mesure image quelque part d'autre
 
+    \begin{rem}
+        Ces notations étant lourdes, on préfèrera en introduire de nouvelles, plus simples à interpréter.
+        Attention : elles n'ont pas de sens en elles-mêmes, mais ont l'avantage de bien faire comprendre la notion sous-jacente.
+        \begin{itemize}
+            \itemb Si $F \in \B(E)$, on notera :
+            \begin{displaymath}
+                \begin{array}{rcl}
+                    \Pb(X \in F) := \Pb \circ X^{-1}(F) = \Pb(X^{-1}(F)) = \Pb_X(F)
+                \end{array}
+            \end{displaymath}
+            \itemb Si $F = \left\{ e \right\}$, alors notera plutôt :
+            \begin{displaymath}
+                \begin{array}{rcl}
+                    \Pb(X = e) := \Pb \circ X^{-1}(\left\{ e \right\}) = \Pb(X^{-1}(\left\{ e \right\})) = \Pb_X(\left\{ e \right\})
+                \end{array}
+            \end{displaymath}
+            \itemb Si $E=\R$, et que $F = [x,y]$, alors on notera plutôt :
+            \begin{displaymath}
+                \begin{array}{rcl}
+                    \Pb(x \leq X \leq y) := \Pb \circ X^{-1}([x,y]) = \Pb(X^{-1}([x,y])) = \Pb_X([x,y])
+                \end{array}
+            \end{displaymath}
+            \itemb etc\ldots
+        \end{itemize}
+    \end{rem}
+
     \begin{defi}
         Soit $\Q$ une loi de probabilité sur $\left(E, \B(E) \right)$.
         On dit que $X$ \textbf{suit la loi} $\Q$ lorsque $\Pb_X = \Q$.
     \end{defi}
+
+    \begin{rem}
+        Conformément à la remarque~\ref{rem:densite}, et en utilisant le théorème~\ref{thm:cns_densite}, \textbf{si $\Q$ est une loi sur $\R$ qui admet une densité $f$, pour prouver que $X$ suit la loi $\Q$, il suffit de vérifier que $X$ est bien à valeurs dans $\R$, puis de montrer que $\forall x \in \R, \Pb(X \leq x) = \int_{-\infty}^x f(t) \textnormal{d}t$.}
+        En effet,
+        \begin{displaymath}
+            \begin{array}{rcl}
+                \Pb(X \leq x) & = & \Pb(X \in ]-\infty, x]) \\
+                           & = & \Pb(X^{-1}(]-\infty, x])) \\
+                           & = & \Pb_X(]-\infty, x]) \\
+                           & = & \int_{-\infty}^x f(t) \textnormal{d}t
+            \end{array}
+        \end{displaymath}
+        Evidemment, cette condition est aussi une condition nécessaire.
+
+        Dans ce cas, \textbf{on dit que $X$ est une variable aléatoire réelle à densité} (\textit{stricto sensu}, on devrait dire que la loi de $X$ est à densité, mais cet abus de language est toléré).
+    \end{rem}
+
+    \begin{rem}
+        Conformément à la remarque~\ref{rem:discretes}, \textbf{si $\Q$ est une loi discrète sur $E$, pour prouver que $X$ suit la loi $\Q$, il suffit de vérifier que $X$ est bien à valeurs dans $E$ , puis de montrer que $\forall e \in E, \Pb(X = e) = \Q(\left\{ e \right\})$.}
+        En effet,
+        \begin{displaymath}
+            \begin{array}{rcl}
+                \Pb(X = e) & = & \Pb(X \in \left\{ e \right\}) \\
+                           & = & \Pb(X^{-1}(\left\{ e \right\})) \\
+                           & = & \Pb_X(\left\{ e \right\})
+            \end{array}
+        \end{displaymath}
+        Evidemment, cette condition est aussi une condition nécessaire.
+    \end{rem}
 
     \begin{rem}
         Attention, ce n'est pas parce que deux variables aléatoires ont la même loi qu'elles sont égales !
@@ -148,7 +203,7 @@
         On rappelle que l'intégrale de Lebesgue est absolue.
         Ainsi, cette définition et les assertions suivantes sont équivalentes :
         \begin{itemize}
-            \itemb $\omega \mapsto \left|X(\omega)\right|^r$ est intégrable.
+            \itemb $\omega \mapsto \left|X(\omega)\right|^r$ est $\Pb$-intégrable.
             \itemb $\displaystyle \int_\Omega\left|X(\omega)\right|^r\text{d}\Pb(\omega) < +\infty$
         \end{itemize}
     \end{rem}
@@ -157,12 +212,41 @@
         Soit $r\in\N$.
         Lorsque $X$ admet un moment d'ordre $r$, on définit son \textbf{moment d'ordre } $r$ comme
         \begin{displaymath}
-          m_r := \int_\Omega X^r(\omega)\text{d}\Pb(\omega)
+          m_r \coloneqq \int_\Omega X^r(\omega)\text{d}\Pb(\omega)
         \end{displaymath}
     \end{defi}
 
     \begin{rem}
         On vérifie aisément, par la relation mesure-intégrale, que toute variable aléatoire admet un moment d'ordre 0, et que celui-ci vaut toujours 1.
+    \end{rem}
+
+    \begin{rem}
+        \label{rem:esperances_particulieres}
+        Voici deux cas particuliers pour vérifier si $X$ admet un moment d'ordre $r$, et pour l'expression du moment le cas échéant :
+        \begin{itemize}
+            \itemb \textbf{si $X$ est une variable aléatoire réelle de densité $f$, alors $X$ admet un moment d'ordre $r$ ssi}
+            \begin{displaymath}
+                \int_\R \left|x\right|^r f(x) \textnormal{d}x < + \infty
+            \end{displaymath}
+            Si c'est le cas, alors :
+            \begin{displaymath}
+                \mathbb{E}(X) = \int_\R x^r f(x) \textnormal{d}x
+            \end{displaymath}
+            La démonstrtion est immédiate à l'aide du théorème~\ref{thm:avantage_densite}.
+            \itemb \textbf{si $X$ est une variable aléatoire discrète, alors $X$ admet un moment d'ordre $r$ ssi}
+            \begin{displaymath}
+                \sum_{k=0}^{+\infty} \left|k\right|^r \Pb(X=k) < + \infty
+            \end{displaymath}
+            Si c'est le cas, alors :
+            \begin{displaymath}
+                \mathbb{E}(X) = \sum_{k=0}^{+\infty} k^r \Pb(X=k)
+            \end{displaymath}
+            En effet, dans le cas discret, $\Pb_X = fc$, où $f(k) = \Pb_X(\left\{ k \right\}) = \Pb(X = k)$ (cf.\ théorème~\ref{thm:avantage_discret}).
+            Puis le théorème~\ref{thm:avantage_densite} fournit l'équivalence et l'égalité.
+            Enfin, le théorème~\ref{thm:lien_series} fournit l'expression sous forme de somme.
+
+            Remarquons que tout a été donné ici dans le cas de $\N$, mais tout s'énonce de même dans les autres cas.
+        \end{itemize}
     \end{rem}
 
     \begin{defi}
@@ -254,16 +338,13 @@
         \itemb une variable aléatoire quelconque $X:\Omega \longrightarrow E$.
     \end{itemize}
 
-    \begin{thm}
+    \begin{thm}[\textbf{Formule de transfert}]
         Soit $g:E \longrightarrow \R$ (resp. $g:E \longrightarrow \N$) une fonction borélienne.
         Par la proposition~\ref{prop:composition_var_bor}, $g \circ X$ est encore une variable aléatoire ;
-        c'est d'ailleurs une variable aléatoire réelle (resp.
-        une variable aléatoire discrète).
+        c'est d'ailleurs une variable aléatoire réelle (resp. une variable aléatoire discrète).
         On sait donc donner un sens à son espérance.
 
-        La variable aléatoire réelle (resp.
-        discrète) $g \circ X$ sur $\left(\Omega, \A, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire réelle (resp.
-        discrète) $g$ sur $\left(E, \B(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
+        La variable aléatoire réelle (resp. discrète) $g \circ X$ sur $\left(\Omega, \A, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire réelle (resp. discrète) $g$ sur $\left(E, \B(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
 
         Si c'est le cas, alors on a la \textbf{formule de transfert} :
         \begin{displaymath}
@@ -309,6 +390,20 @@
             \mathbb{E}(X^2) = \int_\mathbb{R} x\textnormal{d}\mathbb{P}_{X^2}(x)
         \end{displaymath}
     \end{exemple}
+
+    \begin{rem}
+        Voici deux cas particuliers pour la formule de transfert (cf.\ remarque~\ref{rem:esperances_particulieres}):
+        \begin{itemize}
+            \itemb si $X$ est une variable aléatoire réelle de densité $f$, alors la formule de transfert (lorsqu'elle s'applique) donne l'égalité suivante :
+            \begin{displaymath}
+                \mathbb{E}(g \circ X) = \int_E g(x)f(x)\textnormal{d}x
+            \end{displaymath}
+            \itemb si $X$ est une variable aléatoire discrète, alors la formule de transfert (lorsqu'elle s'applique) donne l'égalité suivante (donnée ici dans le cas de $\N$, mais qui s'énonce de même dans les autres cas):
+            \begin{displaymath}
+                \mathbb{E}(g \circ X) = \sum_{k=0}^{+\infty} g(k) \Pb(X = k)
+            \end{displaymath}
+        \end{itemize}
+    \end{rem}
 
     \section{Moments d'un vecteur aléatoire}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  10 JUL 2021 14:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  10 JUL 2021 15:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -562,19 +562,19 @@ Chapitre 2.
 
 ] [13] [14] [15] [16] [17]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 372.
+(Font)              <14.4> on input line 373.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 372.
+(hyperref)                removing `math shift' on input line 373.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 372.
+(hyperref)                removing `superscript' on input line 373.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 372.
+(hyperref)                removing `math shift' on input line 373.
 
 [18]) (./chapitres/integrale_avec_mesure_lebesgue.tex [19]
 Chapitre 3.
@@ -585,7 +585,7 @@ Chapitre 4.
 [21
 
 ] [22]
-Overfull \hbox (7.04147pt too wide) in paragraph at lines 121--122
+Overfull \hbox (7.04147pt too wide) in paragraph at lines 122--123
 []\T1/lmr/m/n/10 On dit que la sé-rie $[] \OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (\O
 ML/lmm/m/it/10 n\OT1/lmr/m/n/10 )$ \T1/lmr/bx/n/10 converge ab-so-lu-ment\T1/lm
 r/m/n/10 , ou que la fa-mille $[][]$
@@ -593,7 +593,7 @@ r/m/n/10 , ou que la fa-mille $[][]$
 
 
 LaTeX Warning: Reference `chap:def_integrale' on page 23 undefined on input lin
-e 125.
+e 126.
 
 ) [23] [24
 
@@ -606,13 +606,13 @@ Chapitre 6.
 [29
 
 ] [30]
-Overfull \hbox (7.66528pt too wide) in paragraph at lines 119--121
+Overfull \hbox (7.66528pt too wide) in paragraph at lines 174--176
 []\T1/lmr/m/n/10 Considérons main-te-nant l'es-pace pro-ba-bi-lisé $\OT1/lmr/m/
 n/10 
 [] := \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
  []
 
-[31] [32] [33]) (./chapitres/probas_conv.tex [34]
+[31] [32] [33] [34] [35]) (./chapitres/probas_conv.tex [36]
 Chapitre 7.
 
 Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
@@ -620,27 +620,27 @@ Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
 i-sés $[][]$ ; 
  []
 
-[35
+[37
 
 ]
 
-LaTeX Warning: Reference `thm:tcl' on page 36 undefined on input line 54.
+LaTeX Warning: Reference `thm:tcl' on page 38 undefined on input line 54.
 
 
-LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 36 undefined on input
+LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 38 undefined on input
  line 89.
 
-[36]
+[38]
 
-LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 37 undefined on input 
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 39 undefined on input 
 line 136.
 
-[37]
+[39]
 
-LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 38 undefined on input 
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 40 undefined on input 
 line 179.
 
-) [38] (./integ-proba.aux)
+) [40] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -648,13 +648,13 @@ Package rerunfilecheck Info: File `integ-proba.out' has not changed.
 (rerunfilecheck)             Checksum: B9BDA6FD77CC082FF4635CCF55DDADB6;10736.
  ) 
 Here is how much of TeX's memory you used:
- 12011 strings out of 478557
- 176764 string characters out of 5850911
- 503079 words of memory out of 5000000
- 29461 multiletter control sequences out of 15000+600000
+ 12025 strings out of 478557
+ 176959 string characters out of 5850911
+ 503340 words of memory out of 5000000
+ 29468 multiletter control sequences out of 15000+600000
  495215 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,19n,72p,492b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,19n,72p,492b,646s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 21/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-d
@@ -678,10 +678,10 @@ m/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm7.pfb>
-Output written on integ-proba.pdf (39 pages, 396189 bytes).
+Output written on integ-proba.pdf (41 pages, 402077 bytes).
 PDF statistics:
- 752 PDF objects out of 1000 (max. 8388607)
- 662 compressed objects within 7 object streams
- 242 named destinations out of 1000 (max. 500000)
+ 774 PDF objects out of 1000 (max. 8388607)
+ 682 compressed objects within 7 object streams
+ 249 named destinations out of 1000 (max. 500000)
  345 words of extra memory for PDF output out of 10000 (max. 10000000)
 
