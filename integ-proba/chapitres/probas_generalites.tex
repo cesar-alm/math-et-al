@@ -85,7 +85,7 @@
     \section{Deux cas particuliers de mesures de probabilités}
     \label{sec:probas_mes_particulieres}
 
-    Il existe un cas particulier où les mesures de probabilité sont simples à exprimer : celui où elles sont définies par une intégrale (cf.\ section~\ref{sec:mes_defi_int}.
+    Il existe un cas particulier où les mesures de probabilité sont simples à exprimer : celui où elles sont définies par une intégrale (cf.\ section~\ref{sec:mes_defi_int}).
     Il permet de grandement simplifier les calculs.
 
     Ce cas particulier se décline en deux, selon si la mesure considérée est celle de Lebesgue ou celle de comptage.
@@ -94,17 +94,37 @@
     \begin{defi}
         On se place sur $\mathbb{R}$ (resp. $\mathbb{R}^n$) muni de la tribu borélienne et de la mesure de Lebesgue $\lambda$.
         Soit $f$ une fonction positive et intégrable d'intégrale 1.
-        Soit $\mathbb{P}:=f \lambda$.
+        Soit $\mathbb{P}\coloneqq f \lambda$.
         Alors $\mathbb{P}$ est une mesure de probabilité, et on dit alors que $\mathbb{P}$ admet une \textbf{densité}.
     \end{defi}
 
     \begin{rem}
-        Notons que la réciproque est fausse : il existe des mesures sur $\mathbb{R}$ (resp. $\mathbb{R}^n$)qui n'admettent pas de densité.
+        Notons que la réciproque est fausse : il existe des mesures sur $\mathbb{R}$ (resp. $\mathbb{R}^n$) qui n'admettent pas de densité.
+
         Par ailleurs, si une mesure de probabilité admet une densité, elle en admet une infinité.
-        En effet, si une fonction $f$ convient, alors une autre fonction $g$ qui égale à $f$ presque partout convient également. %todo why
+        En effet, si une fonction $f$ convient, alors une autre fonction $g$ qui égale à $f$ presque partout convient également : il y a \textbf{unicité de la densité de probabilité à égalité presque-partout près}. %todo why
+
+        Enfin, en pratique, pour montrer qu'une mesure de probabilité $\mathbb{P}$ est égale à une autre mesure de probabilité $\mathbb{Q}$ de densité $f$, il suffira de montrer que $\mathbb{P}$ admet elle aussi $f$ pour densité (la condition nécessaire et suffisante étant donnée par le fait que $\mathbb{P}$ admette pour densité une fonction $g$ égale $\lambda$-presque-partout à $f$).
     \end{rem}
 
+    Voici justement un théorème qui donne une condition nécessaire et suffisante simple pour qu'une mesure de probabilité admette une certaine fonction de densité.
+    C'est celle qui est utilisée en pratique (plus simple que de passer par la définition).
+
+    \begin{thm}
+        On se place sur $\mathbb{R}$ (resp. $\mathbb{R}^n$) muni de la tribu borélienne et de la mesure de Lebesgue $\lambda$.
+        Soit $f$ une fonction positive et intégrable d'intégrale 1.
+        Une mesure de probabilité $\mathbb{P}$ sur $\mathbb{R}$ admet $f$ comme densité ssi
+        \begin{displaymath}
+            \forall x \in \mathbb{R}, \mathbb{P}(]-\infty, x]) = \int_{- \infty}^x f(t)\textnormal{d}t
+        \end{displaymath}
+        et resp. une mesure de probabilité $\mathbb{P}$ sur $\mathbb{R}^n$ admet $f$ comme densité ssi
+        \begin{displaymath}
+            \forall (x_1,\ldots,x_n) \in \mathbb{R}^n, \mathbb{P}(]-\infty, x_1], \ldots, ]-\infty, x_n]) = \int_{- \infty}^{x_1} \dots \int_{- \infty}^{x_n} f(t) \textnormal{d}t
+        \end{displaymath}
+    \end{thm}
+
     \begin{prop}[\textbf{Propriétés de la fonction de répartition d'une mesure admettant une densité}]
+        \label{prop:continuite_fdrep_densite}
         Soit $\mathbb{P}$ une mesure de probabilité sur $\mathbb{R}$ muni de la tribu borélienne admettant une densité $f$.
         Alors la fonction de répartition $F_\mathbb{P}$ de $\mathbb{P}$ est \textbf{continue}, \textit{ie} $\forall x \in \mathbb{R}, \mathbb{P}(\left\{ x \right\}) = 0$.
         De plus, $F_\mathbb{P}$ est dérivable en tout point $x$ où $f$ est continue, et le cas échéant $F'_\mathbb{P}(x) = f(x)$.
@@ -112,7 +132,7 @@
 
     \begin{prop}[\textbf{Une condition suffisante pour admettre une densité (à l'aide de la fonction de répartition)}]
         Soit $\mathbb{P}$ une mesure de probabilité sur $\mathbb{R}$ muni de la tribu borélienne.
-        Si $F_\mathbb{P}$ est dérivable, alors $\mathbb{P}$ admet une densité, donnée par $F'$.
+        Si $F_\mathbb{P}$ est dérivable, alors $\mathbb{P}$ admet une densité, donnée par $F'_\mathbb{P}$.
     \end{prop}
 
     % TODO examples
@@ -134,10 +154,16 @@
     \end{thm}
 
     \begin{rem}
-        Ce résultat nous prouve que \textbf{les mesures de probabilité discrètes sont caractérisées par leurs valeurs élémentaires)} (\textit{ie} sur les singletons).
+        Ce résultat nous prouve d'une \textbf{mesure de probabilité discrète est caractérisée par ses probabilités élémentaires} (\textit{ie} par ses valeurs sur les singletons).
+        En particulier, deux mesures de probabilités discrètes sont égales si et seulement si :
+        \begin{itemize}
+            \itemb ce sont des mesures sur le même espace discret ;
+            \itemb elles sont égales sur les probabilités élémentaires.
+        \end{itemize}
+        C'est la caractérisation que l'on utilisera en pratique pour vérifier que deux lois sont égales.
 
-        Notons cependant que ce résultat est faux dans le cas général.
-        Par exemple, dans le cas des mesures à densité, nous verrons que toutes les valeurs élémentaires sont nulles : il n'y a donc pas unicité.
+        Notons cependant que tout ceci est faux dans le cas général.
+        Par exemple, dans le cas des mesures à densité, toutes les probabilités élémentaires sont nulles (cf.\ proposition~\ref{prop:continuite_fdrep_densite} ): il n'est donc pas possible de caractériser les lois à densité de cette manière.
     \end{rem}
 
     % TODO examples
