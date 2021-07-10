@@ -140,6 +140,8 @@
             \end{array}
         \end{displaymath}
         Evidemment, cette condition est aussi une condition nécessaire.
+
+        Dans ce cas, \textbf{on dit que $X$ est une variable aléatoire réelle à densité} (\textit{stricto sensu}, on devrait dire que la loi de $X$ est à densité, mais cet abus de language est toléré).
     \end{rem}
 
     \begin{rem}
@@ -201,7 +203,7 @@
         On rappelle que l'intégrale de Lebesgue est absolue.
         Ainsi, cette définition et les assertions suivantes sont équivalentes :
         \begin{itemize}
-            \itemb $\omega \mapsto \left|X(\omega)\right|^r$ est intégrable.
+            \itemb $\omega \mapsto \left|X(\omega)\right|^r$ est $\Pb$-intégrable.
             \itemb $\displaystyle \int_\Omega\left|X(\omega)\right|^r\text{d}\Pb(\omega) < +\infty$
         \end{itemize}
     \end{rem}
@@ -216,6 +218,35 @@
 
     \begin{rem}
         On vérifie aisément, par la relation mesure-intégrale, que toute variable aléatoire admet un moment d'ordre 0, et que celui-ci vaut toujours 1.
+    \end{rem}
+
+    \begin{rem}
+        \label{rem:esperances_particulieres}
+        Voici deux cas particuliers pour vérifier si $X$ admet un moment d'ordre $r$, et pour l'expression du moment le cas échéant :
+        \begin{itemize}
+            \itemb \textbf{si $X$ est une variable aléatoire réelle de densité $f$, alors $X$ admet un moment d'ordre $r$ ssi}
+            \begin{displaymath}
+                \int_\R \left|x\right|^r f(x) \textnormal{d}x < + \infty
+            \end{displaymath}
+            Si c'est le cas, alors :
+            \begin{displaymath}
+                \mathbb{E}(X) = \int_\R x^r f(x) \textnormal{d}x
+            \end{displaymath}
+            La démonstrtion est immédiate à l'aide du théorème~\ref{thm:avantage_densite}.
+            \itemb \textbf{si $X$ est une variable aléatoire discrète, alors $X$ admet un moment d'ordre $r$ ssi}
+            \begin{displaymath}
+                \sum_{k=0}^{+\infty} \left|k\right|^r \Pb(X=k) < + \infty
+            \end{displaymath}
+            Si c'est le cas, alors :
+            \begin{displaymath}
+                \mathbb{E}(X) = \sum_{k=0}^{+\infty} k^r \Pb(X=k)
+            \end{displaymath}
+            En effet, dans le cas discret, $\Pb_X = fc$, où $f(k) = \Pb_X(\left\{ k \right\}) = \Pb(X = k)$ (cf.\ théorème~\ref{thm:avantage_discret}).
+            Puis le théorème~\ref{thm:avantage_densite} fournit l'équivalence et l'égalité.
+            Enfin, le théorème~\ref{thm:lien_series} fournit l'expression sous forme de somme.
+
+            Remarquons que tout a été donné ici dans le cas de $\N$, mais tout s'énonce de même dans les autres cas.
+        \end{itemize}
     \end{rem}
 
     \begin{defi}
@@ -307,16 +338,13 @@
         \itemb une variable aléatoire quelconque $X:\Omega \longrightarrow E$.
     \end{itemize}
 
-    \begin{thm}
+    \begin{thm}[\textbf{Formule de transfert}]
         Soit $g:E \longrightarrow \R$ (resp. $g:E \longrightarrow \N$) une fonction borélienne.
         Par la proposition~\ref{prop:composition_var_bor}, $g \circ X$ est encore une variable aléatoire ;
-        c'est d'ailleurs une variable aléatoire réelle (resp.
-        une variable aléatoire discrète).
+        c'est d'ailleurs une variable aléatoire réelle (resp. une variable aléatoire discrète).
         On sait donc donner un sens à son espérance.
 
-        La variable aléatoire réelle (resp.
-        discrète) $g \circ X$ sur $\left(\Omega, \A, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire réelle (resp.
-        discrète) $g$ sur $\left(E, \B(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
+        La variable aléatoire réelle (resp. discrète) $g \circ X$ sur $\left(\Omega, \A, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire réelle (resp. discrète) $g$ sur $\left(E, \B(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
 
         Si c'est le cas, alors on a la \textbf{formule de transfert} :
         \begin{displaymath}
@@ -362,6 +390,20 @@
             \mathbb{E}(X^2) = \int_\mathbb{R} x\textnormal{d}\mathbb{P}_{X^2}(x)
         \end{displaymath}
     \end{exemple}
+
+    \begin{rem}
+        Voici deux cas particuliers pour la formule de transfert (cf.\ remarque~\ref{rem:esperances_particulieres}):
+        \begin{itemize}
+            \itemb si $X$ est une variable aléatoire réelle de densité $f$, alors la formule de transfert (lorsqu'elle s'applique) donne l'égalité suivante :
+            \begin{displaymath}
+                \mathbb{E}(g \circ X) = \int_E g(x)f(x)\textnormal{d}x
+            \end{displaymath}
+            \itemb si $X$ est une variable aléatoire discrète, alors la formule de transfert (lorsqu'elle s'applique) donne l'égalité suivante (donnée ici dans le cas de $\N$, mais qui s'énonce de même dans les autres cas):
+            \begin{displaymath}
+                \mathbb{E}(g \circ X) = \sum_{k=0}^{+\infty} g(k) \Pb(X = k)
+            \end{displaymath}
+        \end{itemize}
+    \end{rem}
 
     \section{Moments d'un vecteur aléatoire}
 
