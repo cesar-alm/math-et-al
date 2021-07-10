@@ -97,10 +97,63 @@
     \end{defi}
     % todo parler de mesure image quelque part d'autre
 
+    \begin{rem}
+        Ces notations étant lourdes, on préfèrera en introduire de nouvelles, plus simples à interpréter.
+        Attention : elles n'ont pas de sens en elles-mêmes, mais ont l'avantage de bien faire comprendre la notion sous-jacente.
+        \begin{itemize}
+            \itemb Si $F \in \B(E)$, on notera :
+            \begin{displaymath}
+                \begin{array}{rcl}
+                    \Pb(X \in F) := \Pb \circ X^{-1}(F) = \Pb(X^{-1}(F)) = \Pb_X(F)
+                \end{array}
+            \end{displaymath}
+            \itemb Si $F = \left\{ e \right\}$, alors notera plutôt :
+            \begin{displaymath}
+                \begin{array}{rcl}
+                    \Pb(X = e) := \Pb \circ X^{-1}(\left\{ e \right\}) = \Pb(X^{-1}(\left\{ e \right\})) = \Pb_X(\left\{ e \right\})
+                \end{array}
+            \end{displaymath}
+            \itemb Si $E=\R$, et que $F = [x,y]$, alors on notera plutôt :
+            \begin{displaymath}
+                \begin{array}{rcl}
+                    \Pb(x \leq X \leq y) := \Pb \circ X^{-1}([x,y]) = \Pb(X^{-1}([x,y])) = \Pb_X([x,y])
+                \end{array}
+            \end{displaymath}
+            \itemb etc\ldots
+        \end{itemize}
+    \end{rem}
+
     \begin{defi}
         Soit $\Q$ une loi de probabilité sur $\left(E, \B(E) \right)$.
         On dit que $X$ \textbf{suit la loi} $\Q$ lorsque $\Pb_X = \Q$.
     \end{defi}
+
+    \begin{rem}
+        Conformément à la remarque~\ref{rem:densite}, et en utilisant le théorème~\ref{thm:cns_densite}, \textbf{si $\Q$ est une loi sur $\R$ qui admet une densité $f$, pour prouver que $X$ suit la loi $\Q$, il suffit de vérifier que $X$ est bien à valeurs dans $\R$, puis de montrer que $\forall x \in \R, \Pb(X \leq x) = \int_{-\infty}^x f(t) \textnormal{d}t$.}
+        En effet,
+        \begin{displaymath}
+            \begin{array}{rcl}
+                \Pb(X \leq x) & = & \Pb(X \in ]-\infty, x]) \\
+                           & = & \Pb(X^{-1}(]-\infty, x])) \\
+                           & = & \Pb_X(]-\infty, x]) \\
+                           & = & \int_{-\infty}^x f(t) \textnormal{d}t
+            \end{array}
+        \end{displaymath}
+        Evidemment, cette condition est aussi une condition nécessaire.
+    \end{rem}
+
+    \begin{rem}
+        Conformément à la remarque~\ref{rem:discretes}, \textbf{si $\Q$ est une loi discrète sur $E$, pour prouver que $X$ suit la loi $\Q$, il suffit de vérifier que $X$ est bien à valeurs dans $E$ , puis de montrer que $\forall e \in E, \Pb(X = e) = \Q(\left\{ e \right\})$.}
+        En effet,
+        \begin{displaymath}
+            \begin{array}{rcl}
+                \Pb(X = e) & = & \Pb(X \in \left\{ e \right\}) \\
+                           & = & \Pb(X^{-1}(\left\{ e \right\})) \\
+                           & = & \Pb_X(\left\{ e \right\})
+            \end{array}
+        \end{displaymath}
+        Evidemment, cette condition est aussi une condition nécessaire.
+    \end{rem}
 
     \begin{rem}
         Attention, ce n'est pas parce que deux variables aléatoires ont la même loi qu'elles sont égales !
@@ -157,7 +210,7 @@
         Soit $r\in\N$.
         Lorsque $X$ admet un moment d'ordre $r$, on définit son \textbf{moment d'ordre } $r$ comme
         \begin{displaymath}
-          m_r := \int_\Omega X^r(\omega)\text{d}\Pb(\omega)
+          m_r \coloneqq \int_\Omega X^r(\omega)\text{d}\Pb(\omega)
         \end{displaymath}
     \end{defi}
 

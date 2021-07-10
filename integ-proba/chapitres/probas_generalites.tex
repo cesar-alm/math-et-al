@@ -99,6 +99,7 @@
     \end{defi}
 
     \begin{rem}
+        \label{rem:densite}
         Notons que la réciproque est fausse : il existe des mesures sur $\R$ (resp. $\R^n$) qui n'admettent pas de densité.
 
         Par ailleurs, si une mesure de probabilité admet une densité, elle en admet une infinité.
@@ -110,7 +111,8 @@
     Voici justement un théorème qui donne une condition nécessaire et suffisante simple pour qu'une mesure de probabilité admette une certaine fonction de densité.
     C'est celle qui est utilisée en pratique (plus simple que de passer par la définition).
 
-    \begin{thm}
+    \begin{thm}[\textbf{Condition nécessaire et suffisante pour admettre une densité}]
+        \label{thm:cns_densite}
         On se place sur $\R$ (resp. $\R^n$) muni de la tribu borélienne et de la mesure de Lebesgue $\lambda$.
         Soit $f$ une fonction positive et intégrable d'intégrale 1.
         Une mesure de probabilité $\Pb$ sur $\R$ admet $f$ comme densité ssi
@@ -154,6 +156,7 @@
     \end{thm}
 
     \begin{rem}
+        \label{rem:discretes}
         Ce résultat nous prouve d'une \textbf{mesure de probabilité discrète est caractérisée par ses probabilités élémentaires} (\textit{ie} par ses valeurs sur les singletons).
         En particulier, deux mesures de probabilités discrètes sont égales si et seulement si :
         \begin{itemize}
