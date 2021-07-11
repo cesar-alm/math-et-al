@@ -123,6 +123,10 @@
         \end{itemize}
     \end{rem}
 
+    \begin{rem}
+        La fonction de répartition de la loi de $X$ sera abusivement appelée fonction de répartition de $X$, et ne sera pas notée $F_{\Pb_X}$ mais plus simplement $F_X$.
+    \end{rem}
+
     \begin{defi}
         Soit $\Q$ une loi de probabilité sur $\left(E, \B(E) \right)$.
         On dit que $X$ \textbf{suit la loi} $\Q$ lorsque $\Pb_X = \Q$.
@@ -188,7 +192,7 @@
     Dans toute cette section, on se donne
     \begin{itemize}
         \itemb un espace probabilisé $\left(\Omega, \A, \Pb\right)$ ;
-        \itemb une variable aléatoire réelle ou discrète.
+        \itemb une variable aléatoire réelle ou discrète $X$.
     \end{itemize}
 
     On ne pourra pas donner de sens à ces notions dans le cas général d'une variable aléatoire quelconque.
@@ -329,6 +333,29 @@
         \end{itemize}
     \end{rem}
 
+    \begin{defi}
+        Soit $X$ et $Y$ deux variables aléatoires réelles (ou discrètes) de $\mathcal{L}^2\left( \Omega, \A, \Pb \right)$.
+        La variable aléatoire $\left( X - \esp(X) \right)\left( Y - \esp(Y) \right)$ admet une espérance et on appelle \textbf{covariance de $X$ et $Y$} le réel :
+        \begin{displaymath}
+            \text{Cov}(X, Y) \coloneqq \esp \left( \left( X - \esp(X) \right)\left( Y - \esp(Y) \right) \right) = \esp\left(XY\right) - \esp\left(X\right)\esp\left( Y \right)
+        \end{displaymath}
+    \end{defi}
+
+    \begin{rem}
+        Remarquons que $\text{Cov}\left( X,X \right) = \var\left( X \right)$.
+    \end{rem}
+
+    \begin{defi}
+        Soit $X$ et $Y$ deux variables aléatoires réelles (ou discrètes) de $\mathcal{L}^2\left( \Omega, \A, \Pb \right)$.
+        On dit que $X$ et $Y$ sont \textbf{non-corrélées} lorsque $\text{Cov}\left( X, Y \right) = 0$.
+    \end{defi}
+
+    \begin{prop}
+        Soit $X$ et $Y$ deux variables aléatoires réelles (ou discrètes).
+        Si $X$ et $Y$ sont indépendantes, alors elles sont non-corrélées.
+        La réciproque est fausse.
+    \end{prop}
+
     \section{Formule de transfert}
 
     Dans toute cette section, on se donne
@@ -344,7 +371,7 @@
         c'est d'ailleurs une variable aléatoire réelle (resp. une variable aléatoire discrète).
         On sait donc donner un sens à son espérance.
 
-        La variable aléatoire réelle (resp. discrète) $g \circ X$ sur $\left(\Omega, \A, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire réelle (resp. discrète) $g$ sur $\left(E, \B(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
+        La variable aléatoire réelle (resp.\ discrète) $g \circ X$ sur $\left(\Omega, \A, \mathbb{P}\right)$ admet une espérance (\textit{ie} $\omega \mapsto (g \circ X)(\omega)$ est $\mathbb{P}$-intégrable) ssi la variable aléatoire réelle (resp. discrète) $g$ sur $\left(E, \B(E), \mathbb{P}_X\right)$ admet une espérance (\textit{ie} $x \mapsto g(x)$ est $\mathbb{P}_X$-intégrable).
 
         Si c'est le cas, alors on a la \textbf{formule de transfert} :
         \begin{displaymath}
