@@ -344,6 +344,7 @@
     \end{exemple}
 
     \begin{rem}
+        \label{rem:important_moments}
         Voici deux conséquences importantes de la formule de transfert :
         \begin{itemize}
             \itemb \textbf{si $X$ est une variable aléatoire réelle de densité $f$, alors $g \circ X$ admet une espérance ssi}
@@ -397,7 +398,7 @@
         On dit que $X$ \textbf{admet une variance} lorsqu'elle admet un moment d'ordre 2 (\textit{ie} lorsque $\omega \mapsto X^2\left(\omega\right)$ est $\Pb$-intégrable).
         Sa \textbf{variance} est alors définie comme :
         \begin{displaymath}
-            \var(X):=\esp\left(\left(X - \esp\left(X\right)\right)^2\right)=\esp\left(X^2\right) - \esp\left(X\right)^2
+            \var(X)\coloneqq\esp\left(\left(X - \esp\left(X\right)\right)^2\right)=\esp\left(X^2\right) - \esp\left(X\right)^2
         \end{displaymath}
 
         On note $\mathcal{L}^2\left(\Omega, \A, \Pb\right)$ l'ensemble des variables aléatoires qui admettent une variance (\textit{ie} l'ensemble des variables aléatoires qui sont de carré $\Pb$-intégrables).
@@ -416,7 +417,24 @@
         \end{itemize}
     \end{rem}
 
-    % todo cas particulier réel et discret
+    \begin{rem}
+        Dans le cas quelconque, on peut exprimer la variance ainsi (à l'aide de la formule de transfert) :
+        \begin{displaymath}
+            \var(X) = \int_{\R} (x - \esp(X))^2 \text{d}\Pb_X (x) = \int_{\R} x^2 \text{d}\Pb_X (x) - \left( \esp(X) \right)^2
+        \end{displaymath}
+
+        Cependant, il existe deux cas particuliers où elle s'exprime plus simplement :
+        \begin{itemize}
+            \itemb dans le cas où $X$ est à densité, la remarque~\ref{rem:important_moments} simplifie l'expression en :
+            \begin{displaymath}
+                \var(X) = \int_{\R} (x - \esp(X))^2 f(x) \text{d}x = \int_{\R} x^2 f(x) \text{d} x - \left( \esp(X) \right)^2
+            \end{displaymath}
+            \itemb dans le cas où $X$ est discrète, la même remarque la simplifie en :
+            \begin{displaymath}
+                \var(X) = \sum_{k=0}^{+\infty} (k - \esp(X))^2 \Pb(X=k) = \sum_{k=0}^{+\infty} k^2 \Pb(X=k) - \left( \esp(X) \right)^2
+            \end{displaymath}
+        \end{itemize}
+    \end{rem}
 
     \begin{defi}
         Soit $X$ et $Y$ deux variables aléatoires réelles (ou discrètes) de $\mathcal{L}^2\left( \Omega, \A, \Pb \right)$.
