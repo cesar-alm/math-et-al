@@ -463,8 +463,37 @@
 
     \section{Moments d'un vecteur aléatoire}
 
+    Dans toute cette section, on se donne
+    \begin{itemize}
+        \itemb un espace probabilisé $\left(\Omega, \A, \Pb\right)$ ;
+        \itemb un vecteur aléatoire $X = \left( X_i \right)_{i \in \N}$.
+    \end{itemize}
 
+    On ne peut pas directement adapter les définitions précédentes pour les vecteurs aléatoires, et il est nécessaire de mettre en place de nouvelles définitions.
+    On ne généralisera que les moments d'ordre 1 et 2.
 
+    \begin{defi}
+        On dit que \textbf{$X$ admet un vecteur espérance} lorsque pour tout $i \in [\![1,n]\!]$, $X_i$ admet une espérance.
+        Si c'est le cas, alors le \textbf{vecteur espérance de $X$ existe et est défini comme :}
+       \begin{displaymath}
+           \esp(X) \coloneqq \left( \esp(X_i) \right)_{i \in [\![1,n]\!]}
+       \end{displaymath}
+    \end{defi}
 
+    \begin{defi}
+        On dit que \textbf{$X$ admet une matrice de covariance} lorsque pour tout $i \in [\![1, n]\!]$, $X_i$ admet une variance.
+        Si c'est le cas, alors la \textbf{matrice de covariance de $X$ existe et est définie comme :}
+        \begin{displaymath}
+            \var(X) \coloneqq \left( \text{Cov}(X_i, X_j) \right)_{\left( i,j \right) \in [\![1, n]\!]^2}
+        \end{displaymath}
+    \end{defi}
+
+    \begin{rem}
+        Notons que sur la diagonale, nous retrouvons $\left( \var (X_i) \right)_{i \in [\![1,n]\!]}$.
+    \end{rem}
+
+    \begin{prop}
+        La matrice de covariance de $X$ est une \textbf{matrice symétrique positive}.
+    \end{prop}
 
 \end{document}
