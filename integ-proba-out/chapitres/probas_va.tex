@@ -166,7 +166,7 @@
         Voici un contre-exemple.
         Il utilise cependant des notions qui n'ont pas encore été abordées à ce stade.
 
-        Considérons l'espace probabilisé $\Omega := \{\text{beau temps}, \text{mauvais temps}\}$ muni de l'ensemble de ses parties, et de la mesure de probabilité $\Pb$ uniforme.
+        Considérons l'espace probabilisé $\Omega \coloneqq \{\text{beau temps}, \text{mauvais temps}\}$ muni de l'ensemble de ses parties, et de la mesure de probabilité $\Pb$ uniforme.
         On a donc :
         \begin{displaymath}
             \Pb(\{\text{beau temps}\}) = \Pb(\{\text{mauvais temps}\}) = \frac{1}{2}
@@ -175,7 +175,7 @@
 
         $X$ suit alors la loi uniforme sur l'espace $\{0,1\}$.
 
-        Considérons maintenant l'espace probabilisé $\Omega' := \{\text{temps chaud}, \text{temps froid}\}$ muni de l'ensemble de ses parties, et de la mesure de probabilité $\Pb'$ uniforme.
+        Considérons maintenant l'espace probabilisé $\Omega' \coloneqq \{\text{temps chaud}, \text{temps froid}\}$ muni de l'ensemble de ses parties, et de la mesure de probabilité $\Pb'$ uniforme.
         On a donc :
         \begin{displaymath}
             \Pb(\{\text{temps chaud}\}) = \Pb(\{\text{temps froid}\}) = \frac{1}{2}
@@ -186,6 +186,56 @@
 
         Nous avons donc explicité deux variables aléatoires qui ont même loi, mais qui ne sont pas égales (elles n'ont pas le même espace de départ).
     \end{rem}
+
+    \subsection{Loi jointe et lois marginales}
+    Dans toute cette sous-section, on se donne
+    \begin{itemize}
+        \itemb un espace probabilisé $\left( \Omega, \A, \Pb \right)$ ;
+        \itemb $n$ variables aléatoires réelles ou discrètes $\left( X_i \right)_{i \in [\![1, n]\!]}$, que l'on peut voir comme un vecteur aléatoire $X$ à $n$ composantes.
+    \end{itemize}
+
+    \begin{defi}
+        La \textbf{loi jointe} des $n$ variables aléatoires $\left( X_i \right)_{i \in [\![1, n]\!]}$ est la loi du vecteur aléatoire $X$.
+        La loi d'une variable aléatoire $X_{i_0}$ est la $i_0$e \textbf{loi marginale de $X$}.
+    \end{defi}
+
+    \begin{rem}
+        On pourrait évidemment introduire la notion de loi jointe et de loi marginale dans le cas de variables aléatoires quelconques.
+        Cependant, en pratique ce n'est que très peu utilisé et cela ne permet de pas de se rapprocher de la notion de vecteur aléatoire (puisque ses composantes doivent être des variables aléatoires réelles ou discrètes).
+    \end{rem}
+
+    \begin{rem}
+        \textbf{La connaissance de la loi jointe permet de connaître toutes les lois marginales}.
+        En effet, il suffit d'écrire :
+        \begin{displaymath}
+            \begin{array}{rcl}
+                \forall A \in \B(\R), \Pb_{X_{i_0}}(A) & = & \Pb(X_{i_0}^{-1}(A)) \\
+                                                   & = & \Pb(X_1^{-1}(\R) \cap \ldots \cap X_{i_0}^{-1}(A) \cap \ldots \cap X_n^{-1}(\R)) \\
+                                                   & = & \Pb(X^{-1}(\R \times \ldots \times A \times \ldots \times \R) \\
+                                                   & = & \Pb_X(\R \times \ldots \times A \times \ldots \times \R)
+            \end{array}
+        \end{displaymath}
+
+        Cependant, \textbf{la réciproque est fausse !}
+        En effet, la connaissance des lois marginales ne donne aucune information sur la \textit{relation} qu'ont les variables aléatoires entre elles.
+        Il est donc impensable de pouvoir connaître la loi du vecteur aléatoire résultant.
+    \end{rem}
+
+    \begin{prop}
+        Supposons que $X$ soit un vecteur aléatoire à densité $f$.
+        Alors les lois marginales sont à densité (\textit{ie} les $\left( X_i \right)_{i \in [\![1, n]\!]}$ sont des variables aléatoires à densité), de densité $\left(f_i\right)_{i \in [\![1, n]\!]}$, et pour tout i $\in [\![1, n]\!]$ :
+        \begin{displaymath}
+            \forall x_i \in \R, f_i(x_i) = \int_{\mathbb{R}} \cdots \int_{\mathbb{R}} f(x_1, \ldots, x_n) \textnormal{d} (x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n)
+        \end{displaymath}
+    \end{prop}
+
+    \begin{rem}
+        Attention, même si toutes les lois marginales sont à densité (\textit{ie} toutes les variables aléatoires $\left( X_i \right)_{i \in [\![1, n]\!]}$ sont à densité), la loi jointe peut ne pas admettre de densité.
+        A nouveau, cela est un exemple que la connaissance des lois marginales ne suffit pas pour connaître la loi jointe.
+        % todo example
+    \end{rem}
+
+    \section{Variables aléatoires indépendantes}
 
     \section{Moments d'une variable aléatoire réelle ou discrète}
 
@@ -356,6 +406,7 @@
                 \esp(g \circ X) = \int_\R g(x) f(x) \textnormal{d}x \left(= \int_\R g(x) \textnormal{d} \Pb_X(x) \right)
             \end{displaymath}
             La démonstration est immédiate à l'aide du théorème~\ref{thm:avantage_densite} et de la formule de transfert.
+            Si $X$ était un vecteur aléatoire de densité $f$, le résultat est le même (remplacer $\R$ par $\R^n$).
             \itemb \textbf{si $X$ est une variable aléatoire discrète, alors $g \circ X$ admet une espérance ssi}
             \begin{displaymath}
                 \sum_{k=0}^{+\infty} \left|g(k)\right| \Pb(X=k) \left(= \int_\R \left|g(x)\right| \textnormal{d} \Pb_X(x) \right) < + \infty

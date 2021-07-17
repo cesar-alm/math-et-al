@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  15 JUL 2021 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  17 JUL 2021 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -560,23 +560,23 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 Chapitre 2.
 [12
 
-] [13] [14] [15] [16] [17]
+] [13] [14] [15] [16] [17] [18]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 373.
+(Font)              <14.4> on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 373.
+(hyperref)                removing `math shift' on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 373.
+(hyperref)                removing `superscript' on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 373.
+(hyperref)                removing `math shift' on input line 381.
 
-[18]) (./chapitres/integrale_avec_mesure_lebesgue.tex [19]
+) (./chapitres/integrale_avec_mesure_lebesgue.tex [19]
 Chapitre 3.
 ) (./chapitres/series.tex [20
 
@@ -606,13 +606,13 @@ Chapitre 6.
 [29
 
 ] [30]
-Overfull \hbox (7.66528pt too wide) in paragraph at lines 178--180
+Overfull \hbox (6.99864pt too wide) in paragraph at lines 178--180
 []\T1/lmr/m/n/10 Considérons main-te-nant l'es-pace pro-ba-bi-lisé $\OT1/lmr/m/
 n/10 
-[] := \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
+[] [][]= \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
  []
 
-[31] [32] [33] [34] [35] [36]) (./chapitres/probas_conv.tex [37]
+[31] [32] [33] [34] [35] [36] [37]) (./chapitres/probas_conv.tex [38]
 Chapitre 7.
 
 Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
@@ -620,41 +620,41 @@ Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
 i-sés $[][]$ ; 
  []
 
-[38
+[39
 
 ]
 
-LaTeX Warning: Reference `thm:tcl' on page 39 undefined on input line 54.
+LaTeX Warning: Reference `thm:tcl' on page 40 undefined on input line 54.
 
 
-LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 39 undefined on input
+LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 40 undefined on input
  line 89.
-
-[39]
-
-LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 40 undefined on input 
-line 136.
 
 [40]
 
 LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 41 undefined on input 
+line 136.
+
+[41]
+
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 42 undefined on input 
 line 179.
 
-) [41] (./integ-proba.aux)
+) [42] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: 2056AE8351A83A363C8F18E4D3351BF9;10921.
+(rerunfilecheck)             Checksum: 021D384BFE3CC28054E8CC1094887EFF;11377.
  ) 
 Here is how much of TeX's memory you used:
- 12039 strings out of 478557
- 177097 string characters out of 5850911
- 503355 words of memory out of 5000000
- 29471 multiletter control sequences out of 15000+600000
+ 12049 strings out of 478557
+ 177209 string characters out of 5850911
+ 503358 words of memory out of 5000000
+ 29473 multiletter control sequences out of 15000+600000
  495215 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,19n,72p,492b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,19n,72p,492b,636s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 21/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-d
@@ -678,10 +678,10 @@ m/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm7.pfb>
-Output written on integ-proba.pdf (42 pages, 408309 bytes).
+Output written on integ-proba.pdf (43 pages, 413201 bytes).
 PDF statistics:
- 796 PDF objects out of 1000 (max. 8388607)
- 702 compressed objects within 8 object streams
- 260 named destinations out of 1000 (max. 500000)
- 353 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 817 PDF objects out of 1000 (max. 8388607)
+ 722 compressed objects within 8 object streams
+ 268 named destinations out of 1000 (max. 500000)
+ 369 words of extra memory for PDF output out of 10000 (max. 10000000)
 
