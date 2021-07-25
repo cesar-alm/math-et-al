@@ -45,12 +45,12 @@
     \end{rem}
 
     \begin{defi}
-        Plus généralement, soit $\left( A_i \right)_{i \in [\![1,n]\!]}$ $n$ évènements.
-        Les $\left( A_i \right)_{i \in [\![1,n]\!]}$ sont dits \textbf{mutuellement indépendants} (ou tout simplement, indépendants) si pour toute partie $I \subset [\![1,n]\!]$,
+        Plus généralement, soit $I$ un ensemble quelconque et $\left( A_i \right)_{i \in I} \subset \A^I$.
+        Les $\left( A_i \right)_{i \in I}$ sont dits \textbf{mutuellement indépendants} (ou tout simplement, indépendants) si pour toute partie finie $J \subset I$,
         \begin{displaymath}
-            \Pb\left( \bigcap_{i \in I} A_i\right) = \prod_{i \in I} \Pb\left( A_i \right)
+            \Pb\left( \bigcap_{i \in J} A_i\right) = \prod_{i \in J} \Pb\left( A_i \right)
         \end{displaymath}
-        Les $\left( A_i \right)_{i \in [\![1,n]\!]}$ sont dits \textbf{deux à deux indépendants} si pour tous $\left( i,j \right) \in [\![1,n]\!]^2$ tels que $i \neq j$,
+        Les $\left( A_i \right)_{i \in I}$ sont dits \textbf{deux à deux indépendants} si pour tous $\left( i,j \right) \in I^2$ tels que $i \neq j$,
         \begin{displaymath}
             \Pb\left( A_i \cap A_j \right) = \Pb\left( A_i \right) \Pb \left( A_j \right)
         \end{displaymath}
@@ -60,6 +60,30 @@
         La mutuelle indépendance implique l'indépendance deux à deux.
     \end{prop}
 
+    \begin{prop}[\textbf{Convervation de l'indépendance par passage au complémentaire}]
+        Soit $A$ et $B$ deux évènements indépendants.
+        Alors les couples d'évènements suivants sont toujours indépendants :
+        \begin{itemize}
+            \itemb $\bar{A}$ et $B$ ;
+            \itemb $A$ et $\bar{B}$ ;
+            \itemb $\bar{A}$ et $\bar{B}$.
+        \end{itemize}
+        Plus généralement, si $I$ est un ensemble quelconque et les $\left( A_i \right)_{i \in I} \subset \A^I$ des évènements mutuellement indépendants (resp.\ deux à deux indépendants), alors pour tout $J \subset I$, les évènements de la famille d'évènements suivante :
+        \begin{displaymath}
+            \left( A'_i \right)_{i \in I} :
+            \left\{
+            \begin{array}{rcl}
+                I & \longrightarrow & \A \\
+                i & \longmapsto     & \left\{ \begin{array}{rl}
+                                                  \bar{A_i} & \textnormal{si } i \in J \\
+                                                  A_i       & \textnormal{sinon}
+                                                \end{array} \right.
+            \end{array}
+            \right.
+        \end{displaymath}
+        sont encore mutuellement indépendants (resp.\ deux à deux indépendants).
+    \end{prop}
+
     \begin{defi}
         Soit $\left( A,B \right) \in \A^2$, tels que $\Pb\left( B \right) > 0$.
         Alors la \textbf{probabilité conditionnelle de $A$ sachant $B$}, notée $\Pb\left( A | B \right)$ ou $\Pb_B\left( A \right)$ existe et vaut :
@@ -67,6 +91,21 @@
             \Pb\left( A | B \right) = \Pb_B\left( A \right) \coloneqq \frac{\Pb\left( A \cap B \right)}{\Pb\left( B \right)}
         \end{displaymath}
     \end{defi}
+
+    \begin{prop}
+        Soit $B \subset \A$ tel que $\Pb(B) > 0$.
+        Alors la fonction :
+        \begin{displaymath}
+            \Pb(\cdot | B) :
+            \left\{
+            \begin{array}{rcl}
+                \A & \longrightarrow & [0,1] \\
+                A  & \longmapsto     & \Pb(A | B)
+            \end{array}
+            \right.
+        \end{displaymath}
+        est une nouvelle loi de probabilité sur l'espace probabilisable $\left( \Omega, \A \right)$.
+    \end{prop}
 
     \begin{prop}
         Soit $\left( A,B \right) \in \A^2$, tels que $\Pb\left( B \right) > 0$.
@@ -88,28 +127,24 @@
     La \textbf{formule des probabilités totales} permet de connaître un évènement à l'aide de son conditionnement sur des évènements formant une partition de l'univers :
 
     \begin{thm}[\textbf{Formule des probabilités totales}]
-        Soit $A \in \A$ et $\left( B_i \right)_{i \in [\![1,n]\!]} \subset \A^n$ une partition de $\Omega$.
-        Supposons que pour tout $i \in [\![1,n]\!]$, $\Pb(B_i) > 0$.
+        Soit $A \in \A$ et $\left( B_i \right)_{i \in I} \subset \A^I$ une partition de $\Omega$ au plus dénombrable.
+        Supposons que pour tout $i \in I$, $\Pb(B_i) > 0$.
         Alors :
         \begin{displaymath}
-            \Pb(A) = \Pb\left(\cup_{i = 1}^n \left(A \cap B_i \right)\right) = \sum_{i = 1}^n \Pb(A | B_i) \Pb(B_i)
+            \Pb(A) = \Pb\left(\bigcup_{i \in I} \left(A \cap B_i \right)\right) = \sum_{i \in I} \Pb(A | B_i) \Pb(B_i)
         \end{displaymath}
     \end{thm}
 
     Enfin, cette généralisation de la formule de Bayes s'obtient en combinant la formule de Bayes et la formule des probabilités totales :
 
     \begin{thm}[\textbf{Formule de Bayes généralisée}]
-        Soit $A \in \A$ et $\left( B_i \right)_{i \in [\![1,n]\!]} \subset \A^n$ une partition de $\Omega$.
-        Supposons que $\Pb(A) > 0$ et que pour tout $i \in [\![1,n]\!]$, $\Pb(B_i) > 0$.
+        Soit $A \in \A$ et $\left( B_i \right)_{i \in I} \subset \A^I$ une partition de $\Omega$ au plus dénombrable.
+        Supposons que $\Pb(A) > 0$ et que pour tout $i \in I$, $\Pb(B_i) > 0$.
         Alors :
         \begin{displaymath}
-            \forall i \in [\![1,n]\!], \Pb(B_i | A) = \Pb(A | B_i) \cdot \frac{\Pb(B_i)}{\sum_{i = 1}^n \Pb(A | B_i) \Pb(B_i)}
+            \forall i \in I, \Pb(B_i | A) = \Pb(A | B_i) \cdot \frac{\Pb(B_i)}{\sum_{i \in I} \Pb(A | B_i) \Pb(B_i)}
         \end{displaymath}
     \end{thm}
-
-    \begin{rem}
-        Plus généralement, ces deux dernières formules sont encore valables si la partition est au plus dénombrable.
-    \end{rem}
 
     \section{Fonction de répartition}
 
