@@ -21,6 +21,96 @@
         On appelle \textbf{espace probabilisé} un espace probabilisable muni d'une mesure de probabilité.
     \end{defi}
 
+    \begin{defi}
+        Soit $\left( \Omega, \A \right)$ un espace probabilisable.
+        Un élément $\omega \in \Omega$ s'appelle une \textbf{issue}.
+        $\Omega$ s'appelle \textbf{l'univers} (l'ensemble des issues possibles).
+        Un élément $A \in \A$ un \textbf{évènement} (un ensemble d'issues).
+    \end{defi}
+
+    \section{Indépendance et conditionnement}
+
+    Dans toute cette section, on se donne un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
+
+    \begin{defi}
+        Soit $\left( A,B \right) \in \A^2$.
+        On dit que $A$ et $B$ sont des \textbf{évènements indépendants} lorsque :
+        \begin{displaymath}
+            \Pb\left( A \cap B \right) = \Pb\left( A \right) \Pb \left( B \right)
+        \end{displaymath}
+    \end{defi}
+
+    \begin{rem}
+        Attention, l'indépendance de deux évènements dépend de la mesure de probabilité choisie !
+    \end{rem}
+
+    \begin{defi}
+        Plus généralement, soit $\left( A_i \right)_{i \in [\![1,n]\!]}$ $n$ évènements.
+        Les $\left( A_i \right)_{i \in [\![1,n]\!]}$ sont dits \textbf{mutuellement indépendants} (ou tout simplement, indépendants) si pour toute partie $I \subset [\![1,n]\!]$,
+        \begin{displaymath}
+            \Pb\left( \bigcap_{i \in I} A_i\right) = \prod_{i \in I} \Pb\left( A_i \right)
+        \end{displaymath}
+        Les $\left( A_i \right)_{i \in [\![1,n]\!]}$ sont dits \textbf{deux à deux indépendants} si pour tous $\left( i,j \right) \in [\![1,n]\!]^2$ tels que $i \neq j$,
+        \begin{displaymath}
+            \Pb\left( A_i \cap A_j \right) = \Pb\left( A_i \right) \Pb \left( A_j \right)
+        \end{displaymath}
+    \end{defi}
+
+    \begin{prop}
+        La mutuelle indépendance implique l'indépendance deux à deux.
+    \end{prop}
+
+    \begin{defi}
+        Soit $\left( A,B \right) \in \A^2$, tels que $\Pb\left( B \right) > 0$.
+        Alors la \textbf{probabilité conditionnelle de $A$ sachant $B$}, notée $\Pb\left( A | B \right)$ ou $\Pb_B\left( A \right)$ existe et vaut :
+        \begin{displaymath}
+            \Pb\left( A | B \right) = \Pb_B\left( A \right) \coloneqq \frac{\Pb\left( A \cap B \right)}{\Pb\left( B \right)}
+        \end{displaymath}
+    \end{defi}
+
+    \begin{prop}
+        Soit $\left( A,B \right) \in \A^2$, tels que $\Pb\left( B \right) > 0$.
+        Si $A$ et $B$ sont indépendants, alors $\Pb\left( A | B \right) = \Pb(A)$.
+    \end{prop}
+
+    \subsection{Trois formules utiles}
+
+    La \textbf{formule de Bayes} permet d'intervertir le conditionnement :
+
+    \begin{thm}[\textbf{Formule de Bayes}]
+        Soit $\left( A,B \right) \in \A^2$, tels que $\Pb\left( A \right) > 0$ et $\Pb\left( B \right) > 0$.
+        On a :
+        \begin{displaymath}
+            \Pb \left( B | A \right) = \Pb\left( A | B \right) \cdot \frac{\Pb(B)}{\Pb(A)}
+        \end{displaymath}
+    \end{thm}
+
+    La \textbf{formule des probabilités totales} permet de connaître un évènement à l'aide de son conditionnement sur des évènements formant une partition de l'univers :
+
+    \begin{thm}[\textbf{Formule des probabilités totales}]
+        Soit $A \in \A$ et $\left( B_i \right)_{i \in [\![1,n]\!]} \subset \A^n$ une partition de $\Omega$.
+        Supposons que pour tout $i \in [\![1,n]\!]$, $\Pb(B_i) > 0$.
+        Alors :
+        \begin{displaymath}
+            \Pb(A) = \Pb\left(\cup_{i = 1}^n \left(A \cap B_i \right)\right) = \sum_{i = 1}^n \Pb(A | B_i) \Pb(B_i)
+        \end{displaymath}
+    \end{thm}
+
+    Enfin, cette généralisation de la formule de Bayes s'obtient en combinant la formule de Bayes et la formule des probabilités totales :
+
+    \begin{thm}[\textbf{Formule de Bayes généralisée}]
+        Soit $A \in \A$ et $\left( B_i \right)_{i \in [\![1,n]\!]} \subset \A^n$ une partition de $\Omega$.
+        Supposons que $\Pb(A) > 0$ et que pour tout $i \in [\![1,n]\!]$, $\Pb(B_i) > 0$.
+        Alors :
+        \begin{displaymath}
+            \forall i \in [\![1,n]\!], \Pb(B_i | A) = \Pb(A | B_i) \cdot \frac{\Pb(B_i)}{\sum_{i = 1}^n \Pb(A | B_i) \Pb(B_i)}
+        \end{displaymath}
+    \end{thm}
+
+    \begin{rem}
+        Plus généralement, ces deux dernières formules sont encore valables si la partition est au plus dénombrable.
+    \end{rem}
+
     \section{Fonction de répartition}
 
     La fonction de répartition est une notion qui ne concerne que les mesures de probabilités sur $\R$.
