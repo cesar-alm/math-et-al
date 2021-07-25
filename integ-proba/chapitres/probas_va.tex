@@ -237,6 +237,17 @@
 
     \section{Variables aléatoires indépendantes}
 
+    Dans toute cette section, on se donne un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
+
+    \begin{defi}
+        Soit $X$ et $Y$ deux variables aléatoires quelconques à valeurs dans $E$.
+        $X$ et $Y$ sont dites \textbf{indépendantes} lorsque l'une des deux conditions équivalentes est remplie :
+        \begin{itemize}
+            \itemb la loi jointe de $X$ et $Y$ $\Pb_{(X,Y)}$ vérifie $\Pb_{(X,Y)} = \Pb_X \otimes \Pb_Y$ ;
+            \itemb pour tout $(A,B) \in \B(E)^2$, $\left\{ X \in A \right\}$ et $\left\{ Y \in B \right\}$ sont deux évènements indépendants.
+        \end{itemize}
+    \end{defi}
+
     \section{Moments d'une variable aléatoire réelle ou discrète}
 
     Dans toute cette section, on se donne
