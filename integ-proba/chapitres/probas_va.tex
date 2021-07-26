@@ -103,21 +103,27 @@
         \begin{itemize}
             \itemb Si $F \in \B(E)$, on notera :
             \begin{displaymath}
-                \begin{array}{rcl}
-                    \Pb(X \in F) := \Pb \circ X^{-1}(F) = \Pb(X^{-1}(F)) = \Pb_X(F)
-                \end{array}
+                    \left\{ X \in F \right\} \coloneqq X^{-1}(F) = \left\{ \omega \in \Omega | X(\omega) \in F \right\} \in \A
+            \end{displaymath}
+            d'où :
+            \begin{displaymath}
+                \Pb(X \in F) = \Pb \circ X^{-1}(F) = \Pb(X^{-1}(F)) = \Pb_X(F)
             \end{displaymath}
             \itemb Si $F = \left\{ e \right\}$, alors notera plutôt :
             \begin{displaymath}
-                \begin{array}{rcl}
-                    \Pb(X = e) := \Pb \circ X^{-1}(\left\{ e \right\}) = \Pb(X^{-1}(\left\{ e \right\})) = \Pb_X(\left\{ e \right\})
-                \end{array}
+                \left\{ X = e \right\} \coloneqq X^{-1}(\left\{ e \right\}) = \left\{ \omega \in \Omega | X(\omega) = e \right\} \in \A
+            \end{displaymath}
+            d'où :
+            \begin{displaymath}
+                \Pb(X = e) = \Pb \circ X^{-1}(\left\{ e \right\}) = \Pb(X^{-1}(\left\{ e \right\})) = \Pb_X(\left\{ e \right\})
             \end{displaymath}
             \itemb Si $E=\R$, et que $F = [x,y]$, alors on notera plutôt :
             \begin{displaymath}
-                \begin{array}{rcl}
-                    \Pb(x \leq X \leq y) := \Pb \circ X^{-1}([x,y]) = \Pb(X^{-1}([x,y])) = \Pb_X([x,y])
-                \end{array}
+                \left\{ x \leq X \leq y \right\} \coloneqq X^{-1}([x,y]) = \left\{ \omega \in \Omega | X(\omega) \in [x,y] \right\} \in \A
+            \end{displaymath}
+            d'où :
+            \begin{displaymath}
+                \Pb(x \leq X \leq y) = \Pb \circ X^{-1}([x,y]) = \Pb(X^{-1}([x,y])) = \Pb_X([x,y])
             \end{displaymath}
             \itemb etc\ldots
         \end{itemize}
@@ -273,11 +279,11 @@
     Dans toute cette section, on se donne un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
 
     \begin{defi}
-        Soit $X$ et $Y$ deux variables aléatoires quelconques à valeurs dans $E$.
+        Soit $X$ et $Y$ deux variables aléatoires quelconques à valeurs dans $E$ et $F$ respectivement.
         $X$ et $Y$ sont dites \textbf{indépendantes} lorsque l'une des deux conditions équivalentes est remplie :
         \begin{itemize}
             \itemb la loi jointe de $X$ et $Y$ $\Pb_{(X,Y)}$ vérifie $\Pb_{(X,Y)} = \Pb_X \otimes \Pb_Y$ ;
-            \itemb pour tout $(A,B) \in \B(E)^2$, $\left\{ X \in A \right\}$ et $\left\{ Y \in B \right\}$ sont deux évènements indépendants.
+            \itemb pour tout $(A,B) \in \B(E) \times \B(F)$, $\left\{ X \in A \right\}$ et $\left\{ Y \in B \right\}$ sont deux évènements indépendants.
         \end{itemize}
     \end{defi}
 
