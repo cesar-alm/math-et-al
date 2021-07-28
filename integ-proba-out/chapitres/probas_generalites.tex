@@ -21,6 +21,131 @@
         On appelle \textbf{espace probabilisé} un espace probabilisable muni d'une mesure de probabilité.
     \end{defi}
 
+    \begin{defi}
+        Soit $\left( \Omega, \A \right)$ un espace probabilisable.
+        Un élément $\omega \in \Omega$ s'appelle une \textbf{issue}.
+        $\Omega$ s'appelle \textbf{l'univers} (l'ensemble des issues possibles).
+        Un élément $A \in \A$ un \textbf{évènement} (un ensemble d'issues).
+    \end{defi}
+
+    \section{Indépendance et conditionnement}
+
+    Dans toute cette section, on se donne un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
+
+    \begin{defi}
+        Soit $\left( A,B \right) \in \A^2$.
+        On dit que $A$ et $B$ sont des \textbf{évènements indépendants} lorsque :
+        \begin{displaymath}
+            \Pb\left( A \cap B \right) = \Pb\left( A \right) \Pb \left( B \right)
+        \end{displaymath}
+    \end{defi}
+
+    \begin{rem}
+        Attention, l'indépendance de deux évènements dépend de la mesure de probabilité choisie !
+    \end{rem}
+
+    \begin{defi}
+        Plus généralement, soit $I$ un ensemble quelconque et $\left( A_i \right)_{i \in I} \subset \A^I$.
+        Les $\left( A_i \right)_{i \in I}$ sont dits \textbf{mutuellement indépendants} (ou tout simplement, indépendants) si pour toute partie finie $J \subset I$,
+        \begin{displaymath}
+            \Pb\left( \bigcap_{i \in J} A_i\right) = \prod_{i \in J} \Pb\left( A_i \right)
+        \end{displaymath}
+        Les $\left( A_i \right)_{i \in I}$ sont dits \textbf{deux à deux indépendants} si pour tous $\left( i,j \right) \in I^2$ tels que $i \neq j$,
+        \begin{displaymath}
+            \Pb\left( A_i \cap A_j \right) = \Pb\left( A_i \right) \Pb \left( A_j \right)
+        \end{displaymath}
+    \end{defi}
+
+    \begin{prop}
+        La mutuelle indépendance implique l'indépendance deux à deux.
+    \end{prop}
+
+    \begin{prop}[\textbf{Convervation de l'indépendance par passage au complémentaire}]
+        Soit $A$ et $B$ deux évènements indépendants.
+        Alors les couples d'évènements suivants sont toujours indépendants :
+        \begin{itemize}
+            \itemb $\bar{A}$ et $B$ ;
+            \itemb $A$ et $\bar{B}$ ;
+            \itemb $\bar{A}$ et $\bar{B}$.
+        \end{itemize}
+        Plus généralement, si $I$ est un ensemble quelconque et les $\left( A_i \right)_{i \in I} \subset \A^I$ des évènements mutuellement indépendants (resp.\ deux à deux indépendants), alors pour tout $J \subset I$, les évènements de la famille d'évènements suivante :
+        \begin{displaymath}
+            \left( A'_i \right)_{i \in I} :
+            \left\{
+            \begin{array}{rcl}
+                I & \longrightarrow & \A \\
+                i & \longmapsto     & \left\{ \begin{array}{rl}
+                                                  \bar{A_i} & \textnormal{si } i \in J \\
+                                                  A_i       & \textnormal{sinon}
+                                                \end{array} \right.
+            \end{array}
+            \right.
+        \end{displaymath}
+        sont encore mutuellement indépendants (resp.\ deux à deux indépendants).
+    \end{prop}
+
+    \begin{defi}
+        Soit $\left( A,B \right) \in \A^2$, tels que $\Pb\left( B \right) > 0$.
+        Alors la \textbf{probabilité conditionnelle de $A$ sachant $B$}, notée $\Pb\left( A | B \right)$ ou $\Pb_B\left( A \right)$ existe et vaut :
+        \begin{displaymath}
+            \Pb\left( A | B \right) = \Pb_B\left( A \right) \coloneqq \frac{\Pb\left( A \cap B \right)}{\Pb\left( B \right)}
+        \end{displaymath}
+    \end{defi}
+
+    \begin{prop}
+        Soit $B \subset \A$ tel que $\Pb(B) > 0$.
+        Alors la fonction :
+        \begin{displaymath}
+            \Pb(\cdot | B) :
+            \left\{
+            \begin{array}{rcl}
+                \A & \longrightarrow & [0,1] \\
+                A  & \longmapsto     & \Pb(A | B)
+            \end{array}
+            \right.
+        \end{displaymath}
+        est une nouvelle loi de probabilité sur l'espace probabilisable $\left( \Omega, \A \right)$.
+    \end{prop}
+
+    \begin{prop}
+        Soit $\left( A,B \right) \in \A^2$, tels que $\Pb\left( B \right) > 0$.
+        Alors $A$ et $B$ sont indépendants ssi $\Pb\left( A | B \right) = \Pb(A)$.
+    \end{prop}
+
+    \subsection{Trois formules utiles}
+
+    La \textbf{formule de Bayes} permet d'intervertir le conditionnement :
+
+    \begin{thm}[\textbf{Formule de Bayes}]
+        Soit $\left( A,B \right) \in \A^2$, tels que $\Pb\left( A \right) > 0$ et $\Pb\left( B \right) > 0$.
+        On a :
+        \begin{displaymath}
+            \Pb \left( B | A \right) = \Pb\left( A | B \right) \cdot \frac{\Pb(B)}{\Pb(A)}
+        \end{displaymath}
+    \end{thm}
+
+    La \textbf{formule des probabilités totales} permet de connaître un évènement à l'aide de son conditionnement sur des évènements formant une partition de l'univers :
+
+    \begin{thm}[\textbf{Formule des probabilités totales}]
+        Soit $A \in \A$ et $\left( B_i \right)_{i \in I} \subset \A^I$ une partition de $\Omega$ au plus dénombrable.
+        Supposons que pour tout $i \in I$, $\Pb(B_i) > 0$.
+        Alors :
+        \begin{displaymath}
+            \Pb(A) = \Pb\left(\bigcup_{i \in I} \left(A \cap B_i \right)\right) = \sum_{i \in I} \Pb(A | B_i) \Pb(B_i)
+        \end{displaymath}
+    \end{thm}
+
+    Enfin, cette généralisation de la formule de Bayes s'obtient en combinant la formule de Bayes et la formule des probabilités totales :
+
+    \begin{thm}[\textbf{Formule de Bayes généralisée}]
+        Soit $A \in \A$ et $\left( B_i \right)_{i \in I} \subset \A^I$ une partition de $\Omega$ au plus dénombrable.
+        Supposons que $\Pb(A) > 0$ et que pour tout $i \in I$, $\Pb(B_i) > 0$.
+        Alors :
+        \begin{displaymath}
+            \forall i \in I, \Pb(B_i | A) = \Pb(A | B_i) \cdot \frac{\Pb(B_i)}{\sum_{i \in I} \Pb(A | B_i) \Pb(B_i)}
+        \end{displaymath}
+    \end{thm}
+
     \section{Fonction de répartition}
 
     La fonction de répartition est une notion qui ne concerne que les mesures de probabilités sur $\R$.

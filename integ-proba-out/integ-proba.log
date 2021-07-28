@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  17 JUL 2021 16:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  28 JUL 2021 20:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -532,7 +532,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...Fonction de rÃ©partition}{25}{section.5.2}
+l.29 ...dance et conditionnement}{25}{section.5.2}
                                                   % [1
 
 ])
@@ -599,20 +599,58 @@ e 126.
 
 ] (./chapitres/probas_generalites.tex
 Chapitre 5.
+
+Overfull \hbox (5.22455pt too wide) in paragraph at lines 48--50
+[]\T1/lmr/bx/n/10 Définition 5.2.2. \T1/lmr/m/n/10 Plus gé-né-ra-le-ment, soit 
+$\OML/lmm/m/it/10 I$ \T1/lmr/m/n/10 un en-semble quel-conque et $[][] \OMS/lmsy
+/m/n/10 ^^Z
+ []
+
 [25
 
-] [26] [27]) (./chapitres/probas_va.tex [28]
-Chapitre 6.
-[29
+]
+Overfull \hbox (3.48805pt too wide) in paragraph at lines 64--66
+\T1/lmr/bx/n/10 com-plé-men-taire\T1/lmr/m/n/10 )\T1/lmr/bx/n/10 . \T1/lmr/m/it
+/10 Soit $\OML/lmm/m/it/10 A$ \T1/lmr/m/it/10 et $\OML/lmm/m/it/10 B$ \T1/lmr/m
+/it/10 deux évè-ne-ments in-dé-pen-dants. Alors les couples
+ []
 
-] [30]
-Overfull \hbox (6.99864pt too wide) in paragraph at lines 178--180
+[26]
+Overfull \hbox (8.6008pt too wide) in paragraph at lines 130--133
+[]\T1/lmr/bx/n/10 Théorème 5.2.2 \T1/lmr/m/n/10 (\T1/lmr/bx/n/10 Formule des pr
+o-ba-bi-li-tés to-tales\T1/lmr/m/n/10 )\T1/lmr/bx/n/10 . \T1/lmr/m/it/10 Soit $
+\OML/lmm/m/it/10 A \OMS/lmsy/m/n/10 2 A$ \T1/lmr/m/it/10 et $[][] \OMS/lmsy/m/n
+/10 ^^Z
+ []
+
+[27] [28] [29]) (./chapitres/probas_va.tex [30]
+Chapitre 6.
+[31
+
+] [32] [33]
+Overfull \hbox (6.99864pt too wide) in paragraph at lines 184--186
 []\T1/lmr/m/n/10 Considérons main-te-nant l'es-pace pro-ba-bi-lisé $\OT1/lmr/m/
 n/10 
 [] [][]= \OMS/lmsy/m/n/10 f[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m/n/10 g$
  []
 
-[31] [32] [33] [34] [35] [36] [37]) (./chapitres/probas_conv.tex [38]
+
+Overfull \hbox (21.77557pt too wide) detected at line 228
+[]
+ []
+
+[34]
+Overfull \hbox (13.76376pt too wide) detected at line 274
+\OMS/lmsy/m/n/10 8\OML/lmm/m/it/10 i \OMS/lmsy/m/n/10 2 \OT1/lmr/m/n/10 [ [1\OM
+L/lmm/m/it/10 ; n\OT1/lmr/m/n/10 ] ]\OML/lmm/m/it/10 ; \OMS/lmsy/m/n/10 8\OML/l
+mm/m/it/10 k[] \OMS/lmsy/m/n/10 2 \U/msb/m/n/10 N\OML/lmm/m/it/10 ; \U/msb/m/n/
+10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 X[] \OT1/lmr/m/n/10 = \OML/lmm/m/it/10 k[
+]\OT1/lmr/m/n/10 ) = [] \U/msb/m/n/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 X[] \O
+T1/lmr/m/n/10 = \OML/lmm/m/it/10 k[]; [] ; X[] \OT1/lmr/m/n/10 = \OML/lmm/m/it/
+10 k[]\OT1/lmr/m/n/10 )
+ []
+
+[35] [36] [37] [38] [39] [40] [41]) (./chapitres/probas_conv.tex [42]
 Chapitre 7.
 
 Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
@@ -620,41 +658,41 @@ Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
 i-sés $[][]$ ; 
  []
 
-[39
+[43
 
 ]
 
-LaTeX Warning: Reference `thm:tcl' on page 40 undefined on input line 54.
+LaTeX Warning: Reference `thm:tcl' on page 44 undefined on input line 54.
 
 
-LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 40 undefined on input
+LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 44 undefined on input
  line 89.
 
-[40]
+[44]
 
-LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 41 undefined on input 
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 45 undefined on input 
 line 136.
 
-[41]
+[45]
 
-LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 42 undefined on input 
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 46 undefined on input 
 line 179.
 
-) [42] (./integ-proba.aux)
+) [46] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `integ-proba.out' has not changed.
-(rerunfilecheck)             Checksum: 021D384BFE3CC28054E8CC1094887EFF;11377.
+(rerunfilecheck)             Checksum: 2FE0D1B490C46B3FFE054BBBE3104650;12085.
  ) 
 Here is how much of TeX's memory you used:
- 12049 strings out of 478557
- 177209 string characters out of 5850911
- 503358 words of memory out of 5000000
- 29473 multiletter control sequences out of 15000+600000
+ 12086 strings out of 478557
+ 177680 string characters out of 5850911
+ 503480 words of memory out of 5000000
+ 29481 multiletter control sequences out of 15000+600000
  495215 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,19n,72p,492b,636s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,19n,72p,492b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 21/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-d
@@ -678,10 +716,10 @@ m/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm7.pfb>
-Output written on integ-proba.pdf (43 pages, 413201 bytes).
+Output written on integ-proba.pdf (47 pages, 429117 bytes).
 PDF statistics:
- 817 PDF objects out of 1000 (max. 8388607)
- 722 compressed objects within 8 object streams
- 268 named destinations out of 1000 (max. 500000)
- 369 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 884 PDF objects out of 1000 (max. 8388607)
+ 785 compressed objects within 8 object streams
+ 297 named destinations out of 1000 (max. 500000)
+ 401 words of extra memory for PDF output out of 10000 (max. 10000000)
 

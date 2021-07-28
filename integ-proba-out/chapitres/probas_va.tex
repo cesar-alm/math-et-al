@@ -103,21 +103,27 @@
         \begin{itemize}
             \itemb Si $F \in \B(E)$, on notera :
             \begin{displaymath}
-                \begin{array}{rcl}
-                    \Pb(X \in F) := \Pb \circ X^{-1}(F) = \Pb(X^{-1}(F)) = \Pb_X(F)
-                \end{array}
+                    \left\{ X \in F \right\} \coloneqq X^{-1}(F) = \left\{ \omega \in \Omega | X(\omega) \in F \right\} \in \A
+            \end{displaymath}
+            d'où :
+            \begin{displaymath}
+                \Pb(X \in F) = \Pb \circ X^{-1}(F) = \Pb(X^{-1}(F)) = \Pb_X(F)
             \end{displaymath}
             \itemb Si $F = \left\{ e \right\}$, alors notera plutôt :
             \begin{displaymath}
-                \begin{array}{rcl}
-                    \Pb(X = e) := \Pb \circ X^{-1}(\left\{ e \right\}) = \Pb(X^{-1}(\left\{ e \right\})) = \Pb_X(\left\{ e \right\})
-                \end{array}
+                \left\{ X = e \right\} \coloneqq X^{-1}(\left\{ e \right\}) = \left\{ \omega \in \Omega | X(\omega) = e \right\} \in \A
+            \end{displaymath}
+            d'où :
+            \begin{displaymath}
+                \Pb(X = e) = \Pb \circ X^{-1}(\left\{ e \right\}) = \Pb(X^{-1}(\left\{ e \right\})) = \Pb_X(\left\{ e \right\})
             \end{displaymath}
             \itemb Si $E=\R$, et que $F = [x,y]$, alors on notera plutôt :
             \begin{displaymath}
-                \begin{array}{rcl}
-                    \Pb(x \leq X \leq y) := \Pb \circ X^{-1}([x,y]) = \Pb(X^{-1}([x,y])) = \Pb_X([x,y])
-                \end{array}
+                \left\{ x \leq X \leq y \right\} \coloneqq X^{-1}([x,y]) = \left\{ \omega \in \Omega | X(\omega) \in [x,y] \right\} \in \A
+            \end{displaymath}
+            d'où :
+            \begin{displaymath}
+                \Pb(x \leq X \leq y) = \Pb \circ X^{-1}([x,y]) = \Pb(X^{-1}([x,y])) = \Pb_X([x,y])
             \end{displaymath}
             \itemb etc\ldots
         \end{itemize}
@@ -188,42 +194,66 @@
     \end{rem}
 
     \subsection{Loi jointe et lois marginales}
+    % changer la formulation de cette sous-section
     Dans toute cette sous-section, on se donne
     \begin{itemize}
         \itemb un espace probabilisé $\left( \Omega, \A, \Pb \right)$ ;
-        \itemb $n$ variables aléatoires réelles ou discrètes $\left( X_i \right)_{i \in [\![1, n]\!]}$, que l'on peut voir comme un vecteur aléatoire $X$ à $n$ composantes.
+        \itemb $n$ variables aléatoires quelconques $\left( X_i \right)_{i \in [\![1, n]\!]}$ à valeurs dans $\left( E_i \right)_{i \in [\![1, n]\!]}$.
     \end{itemize}
+
+    Commençons par une définition très générale :
+
+    \begin{defi}
+        \label{defi:loi_jointe}
+        La \textbf{loi jointe} des $n$ variables aléatoires $\left( X_i \right)_{i \in [\![1, n]\!]}$ est la loi de la variable aléatoire $\left( X_1, \ldots, X_n \right)$ à valeurs dans $\left(E_1, \ldots, E_n\right)$.
+        La loi d'une variable aléatoire $X_{i_0}$ est la $i_0$e \textbf{loi marginale de $X$}.
+    \end{defi}
+
+    \begin{prop}
+        \label{prop:connaissance_jointe}
+        La connaissance de la loi jointe permet de connaître la loi marginale.
+        La réciproque est fausse.
+    \end{prop}
+
+    \begin{proof}
+        En effet, si l'on souhaite connaître la $i_0$e loi marginale, il suffit d'écrire :
+        \begin{displaymath}
+            \begin{array}{rcl}
+                \forall A \in \B(E_{i_0}), \Pb_{X_{i_0}}(A) & = & \Pb(X_{i_0}^{-1}(A)) \\
+                                                   & = & \Pb(X_1^{-1}(E_1) \cap \ldots \cap X_{i_0}^{-1}(A) \cap \ldots \cap X_n^{-1}(E_n)) \\
+                                                   & = & \Pb((X_1, \ldots, X_{i_0}, \ldots, X_n)^{-1}(E_1 \times \ldots \times A \times \ldots \times E_n)) \\
+                                                   & = & \Pb_{(X_1, \ldots, X_{i_0}, \ldots, X_n)}(E_1 \times \ldots \times A \times \ldots \times E_n) \\
+                                                   & = & \int_{E_1} \ldots \int_{E_{i_0 - 1}} \int_A \int_{E_{i_0 + 1}} \ldots \int_{E_n} \textnormal{d} \Pb_{\left( X_1, \ldots, X_n \right)}(x_1, \ldots, x_n)
+            \end{array}
+        \end{displaymath}
+
+        Cependant, \textbf{la réciproque est fausse !}
+        En effet, la connaissance des lois marginales ne donne aucune information sur la \textit{relation} qu'ont les variables aléatoires entre elles.
+        Intuitivement, il est donc impensable de pouvoir connaître la loi du vecteur aléatoire résultant.
+        % todo contrexemple
+    \end{proof}
+
+    En pratique cependant, on n'emploie les lois jointes et marginales uniquement lorsque l'on traite avec des variables aléatoires réelles ou discrètes.
+    Dans la suite de cette section, on se donne donc $n$ variables aléatoires réelles ou discrètes $\left( X_i \right)_{i \in [\![1, n]\!]}$, que l'on peut voir comme un vecteur aléatoire $X$ à $n$ composantes.
+    Remarquons que voir ces variables comme un vecteur aléatoire n'était pas possible jusqu'à maintenant, puisqu'elles n'étaient pas forcément à valeurs réelles.
+
+    Ceci étant dit, on énonce de nouveau la définition~\ref{defi:loi_jointe} dans ce cas particulier :
 
     \begin{defi}
         La \textbf{loi jointe} des $n$ variables aléatoires $\left( X_i \right)_{i \in [\![1, n]\!]}$ est la loi du vecteur aléatoire $X$.
         La loi d'une variable aléatoire $X_{i_0}$ est la $i_0$e \textbf{loi marginale de $X$}.
     \end{defi}
 
-    \begin{rem}
-        On pourrait évidemment introduire la notion de loi jointe et de loi marginale dans le cas de variables aléatoires quelconques.
-        Cependant, en pratique ce n'est que très peu utilisé et cela ne permet de pas de se rapprocher de la notion de vecteur aléatoire (puisque ses composantes doivent être des variables aléatoires réelles ou discrètes).
-    \end{rem}
-
-    \begin{rem}
-        \textbf{La connaissance de la loi jointe permet de connaître toutes les lois marginales}.
-        En effet, il suffit d'écrire :
-        \begin{displaymath}
-            \begin{array}{rcl}
-                \forall A \in \B(\R), \Pb_{X_{i_0}}(A) & = & \Pb(X_{i_0}^{-1}(A)) \\
-                                                   & = & \Pb(X_1^{-1}(\R) \cap \ldots \cap X_{i_0}^{-1}(A) \cap \ldots \cap X_n^{-1}(\R)) \\
-                                                   & = & \Pb(X^{-1}(\R \times \ldots \times A \times \ldots \times \R) \\
-                                                   & = & \Pb_X(\R \times \ldots \times A \times \ldots \times \R)
-            \end{array}
-        \end{displaymath}
-
-        Cependant, \textbf{la réciproque est fausse !}
-        En effet, la connaissance des lois marginales ne donne aucune information sur la \textit{relation} qu'ont les variables aléatoires entre elles.
-        Il est donc impensable de pouvoir connaître la loi du vecteur aléatoire résultant.
-    \end{rem}
+    Maintenant, énonçons de nouveau la proposition~\ref{prop:connaissance_jointe} dans les deux cas particuliers suivants :
+    \begin{itemize}
+        \itemb $X$ est une variable aléatoire réelle à densité (proposition~\ref{prop:connaissance_jointe_densite});
+        \itemb $X$ est une variable aléatoire discrète sur $\N^n$ (proposition~\ref{prop:connaissance_jointe_discrete}).
+    \end{itemize}
 
     \begin{prop}
+        \label{prop:connaissance_jointe_densite}
         Supposons que $X$ soit un vecteur aléatoire à densité $f$.
-        Alors les lois marginales sont à densité (\textit{ie} les $\left( X_i \right)_{i \in [\![1, n]\!]}$ sont des variables aléatoires à densité), de densité $\left(f_i\right)_{i \in [\![1, n]\!]}$, et pour tout i $\in [\![1, n]\!]$ :
+        Alors les lois marginales sont à densité (\textit{ie} les $\left( X_i \right)_{i \in [\![1, n]\!]}$ sont des variables aléatoires à densité), de densité $\left(f_i\right)_{i \in [\![1, n]\!]}$, vérifiant pour tout $i \in [\![1, n]\!]$ :
         \begin{displaymath}
             \forall x_i \in \R, f_i(x_i) = \int_{\mathbb{R}} \cdots \int_{\mathbb{R}} f(x_1, \ldots, x_n) \textnormal{d} (x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n)
         \end{displaymath}
@@ -235,7 +265,80 @@
         % todo example
     \end{rem}
 
+    \begin{prop}
+        \label{prop:connaissance_jointe_discrete}
+        Supposons que $X$ soit une variable aléatoire discrète sur $\N^n$ (\textit{ie} que toutes les $X_1, \ldots, X_n$ soient toutes des variables aléatoires discrètes sur $\N$).
+        Alors la connaissance de la loi jointe permet de connaître les lois marginales de la manière suivante :
+        \begin{displaymath}
+            \forall i \in [\![1, n]\!], \forall k_i \in \N, \Pb(X_i = k_i) = \sum_{k_1, \ldots, k_{i-1}, k_{i+1}, \ldots, k_n \in \N^{n-1}} \Pb(X_1 = k_1, \ldots, X_n = k_n)
+        \end{displaymath}
+    \end{prop}
+
     \section{Variables aléatoires indépendantes}
+
+    Dans toute cette section, on se donne un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
+
+    \subsection{Définitions}
+
+    Commençons par une définition générale, valable pour n'importe-quel couple de variables aléatoires :
+
+    \begin{defi}
+        Soit $X$ et $Y$ deux variables aléatoires quelconques à valeurs dans $E$ et $F$ respectivement.
+        $X$ et $Y$ sont dites \textbf{indépendantes} lorsque l'une des deux conditions équivalentes suivantes est remplie :
+        \begin{itemize}
+            \itemb la loi jointe de $X$ et $Y$ $\Pb_{(X,Y)}$ vérifie $\Pb_{(X,Y)} = \Pb_X \otimes \Pb_Y$ ;
+            \itemb pour tout $(A,B) \in \B(E) \times \B(F)$, $\left\{ X \in A \right\}$ et $\left\{ Y \in B \right\}$ sont deux évènements indépendants.
+        \end{itemize}
+    \end{defi}
+
+    Généralisons maintenant en énonçant la définition pour $n$ variables aléatoires quelconques :
+
+    \begin{defi}
+        Soit $\left( X_n \right)_{n \in [\![1,n]\!]}$ $n$ variables aléatoires quelconques, à valeurs dans $\left( E_1, \ldots, E_n \right)$.
+        Les $\left( X_n \right)_{n \in [\![1,n]\!]}$ sont dites \textbf{mutuellement indépendantes} (ou simplement indépendantes), lorsque l'une des deux conditions équivalentes suivantes est remplie :
+        \begin{itemize}
+            \itemb la loi jointe des $\left( X_n \right)_{n \in [\![1,n]\!]}$ $\Pb_{(X_1, \ldots, X_n)}$ vérifie $\Pb_{(X_1, \ldots, X_n)} = \bigotimes_{i=1}^n \Pb_{X_i}$ ;
+            \itemb pour tout $(A_1, \ldots, A_n) \in \prod_{i = 1}^n \B(E_i)$, $\left\{ X_1 \in A_1 \right\}, \ldots, \left\{ X_n \in A_n \right\}$ sont $n$ évènements indépendants.
+        \end{itemize}
+        Elles sont dites \textbf{deux à deux indépendantes} lorsque pour tous $\left\{ i,j \right\} \in [\![1,n]\!]^2$ tels que $i \neq j$, $X_i$ et $X_j$ sont deux variables aléatoires indépendantes.
+    \end{defi}
+
+    \begin{rem}
+        On vérifie sans peine que la deuxième condition est équivalente à :
+        \begin{displaymath}
+            \forall (A_1, \ldots, A_n) \in \prod_{i = 1}^n \B(E_i), \Pb(X_1 \in A_1, \ldots X_n \in A_n) = \prod_{i = 1}^n \Pb(X_i \in A_i)
+        \end{displaymath}
+        \textbf{En pratique, pour vérifier l'indépendance de $n$ variables aléatoires, on utilisera cette caractérisation facile}.
+        Son défaut est de ne pas faire le parallèle avec l'indépendance des évènements (puisqu'on rappelle que pour vérifier l'indépendance d'un ensemble d'évènements, il faut vérifier l'égalité pour tout sous-ensemble fini de ces évènements).
+    \end{rem}
+
+    Enfin, énonçons la définition pour une famille quelconque de variables aléatoires quelconques (en particulier valable pour les suites de variables aléatoires):
+    \begin{defi}
+        Soit $I$ un ensemble quelconque.
+        Soit $\left( X_i \right)_{i \in I}$ des variables aléatoires quelconques, à valeurs dans $\left( E_i\right)_{i \in I}$.
+        Les $\left( X_i \right)_{i \in I}$ sont dites \textbf{mutuellement indépendantes} (ou simplement indépendantes), lorsque pour toute sous-partie finie $J \subset I$, les $\left( X_i \right)_{i \in J}$ sont mutuellement indépendantes.
+
+        Elles sont dites \textbf{deux à deux indépendantes} lorsque pour tous $\left\{ i,j \right\} \in I^2$ tels que $i \neq j$, $X_i$ et $X_j$ sont deux variables aléatoires indépendantes.
+    \end{defi}
+
+    \begin{prop}
+        La mutuelle indépendance implique l'indépendance deux à deux.
+        La réciproque est fausse.
+    \end{prop}
+
+    \subsection{Deux résultats importants}
+
+    \begin{thm}[\textbf{Transfert d'indépendance}]
+        Soit $I$ un ensemble quelconque.
+        Soit $\left( X_i \right)_{i \in I}$ des variables aléatoires quelconques, à valeurs dans $\left( E_i\right)_{i \in I}$.
+        Supposons que les $\left( X_i \right)_{i \in I}$ soient mutuellement indépendantes (resp. deux à deux indépendantes).
+        Soit $\left( \phi_i \right)_{i \in I}$ des fonctions de $E_i$ dans des ensembles $F_i$, $\B(E_i)/\B(F_i)$-mesurables.
+        Alors les variables aléatoires $\left( \phi_i \circ X_i \right)_{i \in I}$, à valeurs dans $F_i$, sont encore mutuellement indépendantes (resp. deux à deux indépendantes).
+    \end{thm}
+
+    \begin{thm}[\textbf{Lemme des coalitions}]
+        %todo
+    \end{thm}
 
     \section{Moments d'une variable aléatoire réelle ou discrète}
 
@@ -441,6 +544,10 @@
                 \esp(X) = \sum_{k=0}^{+\infty} k^r \Pb(X=k)
             \end{displaymath}
         \end{itemize}
+    \end{rem}
+
+    \begin{rem}
+        La formule de transfert ne doit pas être confondue avec le transfert d'indépendance !
     \end{rem}
 
     \subsection{Variance et covariance}
