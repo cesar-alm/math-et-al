@@ -278,14 +278,67 @@
 
     Dans toute cette section, on se donne un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
 
+    \subsection{Définitions}
+
+    Commençons par une définition générale, valable pour n'importe-quel couple de variables aléatoires :
+
     \begin{defi}
         Soit $X$ et $Y$ deux variables aléatoires quelconques à valeurs dans $E$ et $F$ respectivement.
-        $X$ et $Y$ sont dites \textbf{indépendantes} lorsque l'une des deux conditions équivalentes est remplie :
+        $X$ et $Y$ sont dites \textbf{indépendantes} lorsque l'une des deux conditions équivalentes suivantes est remplie :
         \begin{itemize}
             \itemb la loi jointe de $X$ et $Y$ $\Pb_{(X,Y)}$ vérifie $\Pb_{(X,Y)} = \Pb_X \otimes \Pb_Y$ ;
             \itemb pour tout $(A,B) \in \B(E) \times \B(F)$, $\left\{ X \in A \right\}$ et $\left\{ Y \in B \right\}$ sont deux évènements indépendants.
         \end{itemize}
     \end{defi}
+
+    Généralisons maintenant en énonçant la définition pour $n$ variables aléatoires quelconques :
+
+    \begin{defi}
+        Soit $\left( X_n \right)_{n \in [\![1,n]\!]}$ $n$ variables aléatoires quelconques, à valeurs dans $\left( E_1, \ldots, E_n \right)$.
+        Les $\left( X_n \right)_{n \in [\![1,n]\!]}$ sont dites \textbf{mutuellement indépendantes} (ou simplement indépendantes), lorsque l'une des deux conditions équivalentes suivantes est remplie :
+        \begin{itemize}
+            \itemb la loi jointe des $\left( X_n \right)_{n \in [\![1,n]\!]}$ $\Pb_{(X_1, \ldots, X_n)}$ vérifie $\Pb_{(X_1, \ldots, X_n)} = \bigotimes_{i=1}^n \Pb_{X_i}$ ;
+            \itemb pour tout $(A_1, \ldots, A_n) \in \prod_{i = 1}^n \B(E_i)$, $\left\{ X_1 \in A_1 \right\}, \ldots, \left\{ X_n \in A_n \right\}$ sont $n$ évènements indépendants.
+        \end{itemize}
+        Elles sont dites \textbf{deux à deux indépendantes} lorsque pour tous $\left\{ i,j \right\} \in [\![1,n]\!]^2$ tels que $i \neq j$, $X_i$ et $X_j$ sont deux variables aléatoires indépendantes.
+    \end{defi}
+
+    \begin{rem}
+        On vérifie sans peine que la deuxième condition est équivalente à :
+        \begin{displaymath}
+            \forall (A_1, \ldots, A_n) \in \prod_{i = 1}^n \B(E_i), \Pb(X_1 \in A_1, \ldots X_n \in A_n) = \prod_{i = 1}^n \Pb(X_i \in A_i)
+        \end{displaymath}
+        \textbf{En pratique, pour vérifier l'indépendance de $n$ variables aléatoires, on utilisera cette caractérisation facile}.
+        Son défaut est de ne pas faire le parallèle avec l'indépendance des évènements (puisqu'on rappelle que pour vérifier l'indépendance d'un ensemble d'évènements, il faut vérifier l'égalité pour tout sous-ensemble fini de ces évènements).
+    \end{rem}
+
+    Enfin, énonçons la définition pour une famille quelconque de variables aléatoires quelconques (en particulier valable pour les suites de variables aléatoires):
+    \begin{defi}
+        Soit $I$ un ensemble quelconque.
+        Soit $\left( X_i \right)_{i \in I}$ des variables aléatoires quelconques, à valeurs dans $\left( E_i\right)_{i \in I}$.
+        Les $\left( X_i \right)_{i \in I}$ sont dites \textbf{mutuellement indépendantes} (ou simplement indépendantes), lorsque pour toute sous-partie finie $J \subset I$, les $\left( X_i \right)_{i \in J}$ sont mutuellement indépendantes.
+
+        Elles sont dites \textbf{deux à deux indépendantes} lorsque pour tous $\left\{ i,j \right\} \in I^2$ tels que $i \neq j$, $X_i$ et $X_j$ sont deux variables aléatoires indépendantes.
+    \end{defi}
+
+    \begin{prop}
+        La mutuelle indépendance implique l'indépendance deux à deux.
+        La réciproque est fausse.
+    \end{prop}
+
+    \subsection{Deux résultats importants}
+
+    \begin{thm}[\textbf{Transfert d'indépendance}]
+        Soit $I$ un ensemble quelconque.
+        Soit $\left( X_i \right)_{i \in I}$ des variables aléatoires quelconques, à valeurs dans $\left( E_i\right)_{i \in I}$.
+        Supposons que les $\left( X_i \right)_{i \in I}$ soient mutuellement indépendantes (resp. deux à deux indépendantes).
+        Soit $\left( \phi_i \right)_{i \in I}$ des fonctions de $E_i$ dans des ensembles $F_i$, $\B(E_i)/\B(F_i)$-mesurables.
+        Alors les variables aléatoires $\left( \phi_i \circ X_i \right)_{i \in I}$, à valeurs dans $F_i$, sont encore mutuellement indépendantes (resp. deux à deux indépendantes).
+    \end{thm}
+
+    \begin{thm}[\textbf{Lemme des coalitions}]
+        %todo
+    \end{thm}
 
     \section{Moments d'une variable aléatoire réelle ou discrète}
 
@@ -491,6 +544,10 @@
                 \esp(X) = \sum_{k=0}^{+\infty} k^r \Pb(X=k)
             \end{displaymath}
         \end{itemize}
+    \end{rem}
+
+    \begin{rem}
+        La formule de transfert ne doit pas être confondue avec le transfert d'indépendance !
     \end{rem}
 
     \subsection{Variance et covariance}
