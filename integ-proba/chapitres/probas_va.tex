@@ -326,6 +326,8 @@
         La réciproque est fausse.
     \end{prop}
 
+    % densité ??
+
     \subsection{Deux résultats importants}
 
     \begin{thm}[\textbf{Transfert d'indépendance}]
@@ -550,6 +552,27 @@
         La formule de transfert ne doit pas être confondue avec le transfert d'indépendance !
     \end{rem}
 
+    \subsection{Indépendance et espérance}
+
+    Cette sous-section vise uniquement à donner un résultat important concernant l'espérance de variables aléatoires, lorsqu'il y a indépendance :
+
+    \begin{thm}
+        \label{thm:independance_esperance}
+        Soit $\left( \Omega, \A, \Pb \right)$ un espace probabilisé et $X$ et $Y$ deux variables aléatoires quelconques sur cet espace, à valeurs dans deux espaces topologiques $E$ et $F$ respectivement.
+        Soit $g:E \times F \rightarrow \R$ une fonction borélienne, telle que $g \circ \left( X, Y \right)$ admette une espérance.
+        Alors :
+        \begin{displaymath}
+            \esp(g \circ (X,Y)) = \int_E \left( \int_F g(x,y) \textnormal(d) \Pb_Y(y)\right) \textnormal{d} \Pb_X(x)
+        \end{displaymath}
+    \end{thm}
+
+    \begin{rem}
+        Si $g$ est la multiplication, alors on a immédiatement :
+        \begin{displaymath}
+            \esp(XY) = \esp(X)\esp(Y)
+        \end{displaymath}
+    \end{rem}
+
     \subsection{Variance et covariance}
 
     \begin{defi}
@@ -631,6 +654,7 @@
     On ne généralisera que les moments d'ordre 1 et 2.
 
     \begin{defi}
+        \label{def:vecteur_esperance}
         On dit que \textbf{$X$ admet un vecteur espérance} lorsque pour tout $i \in [\![1,n]\!]$, $X_i$ admet une espérance.
         Si c'est le cas, alors le \textbf{vecteur espérance de $X$ existe et est défini comme :}
        \begin{displaymath}
@@ -653,5 +677,193 @@
     \begin{prop}
         La matrice de covariance de $X$ est une \textbf{matrice symétrique positive}.
     \end{prop}
+
+    \section{Conditionnement par une variable aléatoire}
+
+    Les lois conditionnelles permettent de répondre à deux problématiques :
+    \begin{itemize}
+        \itemb On sait conditionner par un évènement de probabilité non-nulle (cf.\ section~\ref{sec:indep_cond}).
+        Cependant, on ne sait pas conditionner par un évènement de probabilité nulle de la forme $\left\{ X = x \right\}$.
+        Les lois conditionnelles permettront de donner un sens à une telle notion.
+        \itemb Lorsque deux variables aléatoires réelles $X$ et $Y$ sont indépendantes, $\Pb_{(X,Y)} = \Pb_X \otimes \Pb_Y$ donc par le théorème de Fubini, on peut calculer les espérances de fonctions de $X$ et $Y$ très facilement en séparant les variables.
+        Lorsqu'elles ne sont pas indépendantes, on énoncera un théorème de Fubini dit \og conditionnel \fg, qui permettra de faire une transformation similaire.
+    \end{itemize}
+
+    De plus, comme on mettra en place de nouvelles lois de probabilité (conditionnelles), on pourra également définir de nouvelles espérances (conditionnelles).
+
+    \subsection{Lois conditionnelles}
+
+    Dans toute cette section, on se donne :
+    \begin{itemize}
+        \itemb un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
+    \end{itemize}
+
+    Enonçons le théorème d'existence des lois conditionnelles dans le cas de variables aléatoires réelles :
+
+    \begin{thm}[\textbf{Existence des lois conditionnelles pour des variables aléatoires réelles}]
+        Soit $X$ et $Y$ deux variables aléatoires réelles.
+        Alors il existe une famille de lois de probabilité sur $\left( \R, \B(\R) \right)$, notée $\left( \Pb_{X | Y = y} \right)_{y \in \R}$, telle que :
+        \begin{displaymath}
+            \forall \left( A, B \right) \in \B(\R)^2, \Pb_{\left( X,Y \right)}(A \times B) = \int_B \Pb_{X | Y = y}(A) \textnormal{d}\Pb_Y(y)
+        \end{displaymath}
+
+        $\Pb_{X | Y = y}$ s'appelle la \textbf{loi conditionnelle de $X$ sachant $Y = y$}.
+    \end{thm}
+
+    Enonçons-le maintenant de même pour des vecteurs aléatoires :
+
+    \begin{thm}[\textbf{Existence des lois conditionnelles pour des vecteurs aléatoires}]
+        Soit $X$ et $Y$ deux vecteurs aléatoires à valeurs dans $\R^m$ et $\R^n$.
+        Alors il existe une famille de lois de probabilité sur $\left( \R^m, \B(\R^m) \right)$, notée $\left( \Pb_{X | Y = y} \right)_{y \in \R^n}$, telle que :
+        \begin{displaymath}
+            \forall \left( A, B \right) \in \B(\R^m) \times \B(\R^n), \Pb_{\left( X,Y \right)}(A \times B) = \int_B \Pb_{X | Y = y}(A) \textnormal{d}\Pb_Y(y)
+        \end{displaymath}
+
+        $\Pb_{X | Y = y}$ s'appelle la \textbf{loi conditionnelle de $X$ sachant $Y = y$}.
+    \end{thm}
+
+    \begin{rem}
+        Attention, cette notation n'a \textit{a priori} rien à voir avec la théorie des probabilités conditionnées par un évènement.
+        En effet, si $\left\{ Y = y \right\}$ est de probabilité nulle, la définition habituelle ne peut pas s'appliquer (puisque l'on doit diviser par 0).
+        C'est d'autant plus embêtant lorsque l'on remarque que si $Y$ admet une densité, alors $\left\{ Y = y \right\}$ est de probabilité nulle pour tout $y$ \ldots.
+
+        Cependant, si $\left\{ Y = y \right\}$ n'est pas de probabilité nulle, alors on a effectivement (mais c'est un \og coup de chance \fg) :
+        \begin{displaymath}
+            \forall A \in \B(\R), \Pb_{X | Y = y}(A) = \dfrac{\Pb(X \in A, Y = y )}{\Pb(Y = y)}
+        \end{displaymath}
+    \end{rem}
+
+    Ces nouvelles lois conditionnelles vont nous permettre d'énoncer un théorème qui ressemble fortement à celui de Fubini.
+
+    \begin{thm}[\textbf{Théorème de Fubini conditionnel}]
+        Soit $X$ et $Y$ deux variables aléatoires réelles, et $g : \R \times \R \rightarrow \R$ une fonction borélienne, telle que la variable aléatoire réelle $g \circ (X,Y)$ admette une espérance.
+        Alors :
+        \begin{displaymath}
+            \esp(g \circ (X,Y)) = \int_{\R} \int_{\R} g(x,y) \textnormal{d} \Pb_{X,Y} (x,y) = \int_{\R} \left( \int_\R g(x,y) \textnormal{d}\Pb_{X | Y=y} (x) \right) \textnormal{d} \Pb_Y (y)
+        \end{displaymath}
+    \end{thm}
+
+    Enonçons-le maintenant de même pour des vecteurs aléatoires :
+
+    \begin{thm}[\textbf{Théorème de Fubini conditionnel}]
+        Soit $X$ et $Y$ deux vecteurs aléatoires à valeurs dans $\R^m$ et $\R^n$, et $g : \R^m \times \R^n \rightarrow \R$ une fonction borélienne, telle que la variable aléatoire réelle $g \circ (X,Y)$ admette une espérance.
+        Alors :
+        \begin{displaymath}
+            \esp(g \circ (X,Y)) = \int_{\R^m} \int_{\R^n} g(x,y) \textnormal{d} \Pb_{X,Y} (x,y) = \int_{\R^n} \left( \int_{\R^m} g(x,y) \textnormal{d}\Pb_{X | Y=y} (x) \right) \textnormal{d} \Pb_Y (y)
+        \end{displaymath}
+    \end{thm}
+
+    \begin{rem}
+        Ainsi, dans le cas où $X$ et $Y$ ne sont pas indépendantes, ce théorème permettra de faire facilement les calculs.
+        Si elles le sont, alors par définition de l'indépendance de deux variables aléatoires, le théorème de Fubini \og original \fg{} s'applique directement (voir le théorème \ref{thm:independance_esperance}).
+    \end{rem}
+
+    \subsection{Espérance conditionnelle}
+
+    Cette nouvelle section n'a \textit{a priori} rien à voir avec la section précédente.
+    En réalité, les notions développées ci-dessus rejoignent celles ci-dessous en fin de section.
+
+    Dans toute cette section, on se donne :
+    \begin{itemize}
+        \itemb un espace probabilisé $\left( \Omega, \A, \Pb \right)$ ;
+        \itemb une variable aléatoire réelle $X$ ;
+        \itemb une sous-tribu $\B$ de $\A$.
+    \end{itemize}
+
+    Comme fonction $\A$-mesurable, $X$ n'est pas nécessairement $\B$-mesurable.
+    Cependant, il est commode \og d'approximer \fg{} $X$ à l'aide d'une fonction $B$-mesurable : c'est l'objet de la proposition suivante, qui effectue cette \og approximation \fg{} en utilisant un critère basé sur l'espérance.
+
+    \begin{prop}
+        Il existe une fonction $\tilde{X}$ $\B$-mesurable telle que pour tout $B \in \B$ :
+        \begin{displaymath}
+            \esp\left( \mathds{1}_B X \right) = \esp\left( \mathds{1}_B \tilde{X} \right)
+        \end{displaymath}
+
+        Cette fonction est unique à égalité $\Pb$-presque-partout près (\textit{ie} deux fonctions qui vérifient cette propriété diffèrent au plus sur un ensemble négligeable).
+    \end{prop}
+
+    \begin{rem}
+        La fonction $\tilde{X}$ est donc une variable aléatoire réelle sur l'espace probabilité $\left( \Omega, \B, \Pb \right)$ (et évidemment, \textit{a fortiori} une variable aléatoire sur $\left( \Omega, \A, \Pb \right)$).
+    \end{rem}
+
+    La variable aléatoire $\tilde{X}$ est justement ce que l'on appelle \og espérance conditionnelle \fg.
+    La définition suivante synthétise donc la proposition précédente :
+
+    \begin{defi}
+        \textbf{L'espérance de $X$ conditionnée par $\B$ $\esp(X | \B)$} est une variable aléatoire sur $\left( \Omega, \B, \Pb \right)$ telle que :
+        \begin{displaymath}
+            \forall B \in \B, \esp\left( \mathds{1}_B X \right) = \esp\left( \mathds{1}_B \esp(X | \B) \right)
+        \end{displaymath}
+
+        Elle existe toujours, et est unique à égalité $\Pb$-presque-partout près.
+    \end{defi}
+
+    \begin{rem}
+        Attention, \textbf{l'espérance d'une variable aléatoire réelle conditionnée par une tribu est une nouvelle variable aléatoire !}
+    \end{rem}
+
+    Désormais, on peut introduire la notion d'espérance conditionnelle conditionnée par une variable aléatoire.
+    On utilise pour cela la notion de tribu engendrée par une variable aléatoire (cf.\ définition~\ref{def:tribu_engendree})
+
+    \begin{defi}
+        Soit $Y$ une variable aléatoire quelconque.
+        \textbf{L'espérance de $X$ conditionnée par la variable aléatoire $Y$ $\esp(X | Y)$} est une variable aléatoire sur $\left( \Omega, \sigma(Y), \Pb \right)$, définie par :
+        \begin{displaymath}
+            \esp(X | Y) \coloneqq \esp(X | \sigma(Y))
+        \end{displaymath}
+    \end{defi}
+
+    \begin{rem}
+        $X$ doit être une variable aléatoire \textbf{réelle}, puisque l'on souhaite calculer son espérance.
+        Cependant, $Y$ peut être quelconque (on ne fait que conditionner par celle-ci).
+    \end{rem}
+
+    \begin{prop}
+        Soit $Y$ une variable aléatoire quelconque, à valeurs dans un espace topologique $E$.
+        Il existe $\psi : E \rightarrow \R$ borélienne, telle que $\esp(X | Y) = \psi(Y)$ : la nouvelle variable aléatoire $\esp(X | Y)$ est une fonction de $Y$.
+    \end{prop}
+
+    \begin{rem}[\textbf{Généralisation aux vecteurs aléatoires}]
+        L'espérance conditionnée par une sous-tribu et l'espérance conditionnée par une variable aléatoire peuvent se généraliser si $X$ n'est plus une variable aléatoire réelle mais un vecteur aléatoire.
+        Il suffit simplement de faire de même que pour la définition~\ref{def:vecteur_esperance}.
+    \end{rem}
+
+    Faisons maintenant le lien avec la section précédente.
+    \textit{A priori}, les lois conditionnelles n'ont rien à voir avec les espérances conditionnelles.
+    Cependant, comme les nouvelles lois conditionnelles sont bien des lois de probabilité, on peut définir une nouvelle espérance en les utilisant :
+
+    \begin{defi}
+        Soit $X$ et $Y$ deux variables aléatoires réelles (resp.\ deux vecteurs aléatoires à valeurs dans $\R^m$ et $\R^n$ respectivement) et $y \in \R$ (resp.\ $y \in \R^n$).
+        \textbf{L'espérance conditionnelle de $X$ sachant $Y = y$} existe toujours et est la quantité réelle (resp.\ vectorielle):
+        \begin{displaymath}
+            \esp(X | Y = y) \coloneqq \int_{\R} x \textnormal{d} \Pb_{X | Y=y}(x)
+        \end{displaymath}
+    \end{defi}
+
+    \begin{rem}
+        Pour définir cette espérance conditionnelle, il ne suffit pas que $X$ soit une variable aléatoire réelle (ou un vecteur aléatoire).
+        Il est en effet nécessaire que $Y$ soit également une variable aléatoire réelle (ou un vecteur aléatoire), car le théorème d'existence des lois conditionnelles n'a été énoncé que dans ce cas.
+    \end{rem}
+
+    \begin{rem}
+        Attention à ne pas confondre l'espérance conditionnelle de $X$ sachant $Y = y$ et l'espérance conditionnelle de $X$ sachant $Y$.
+        La première est une quantité réelle (ou vectorielle), alors que la deuxième est une variable aléatoire réelle (ou un vecteur aléatoire).
+
+        On peut cependant faire le lien entre les deux, et c'est l'objet de ce qui suit.
+    \end{rem}
+
+    \begin{thm}
+        Soit $X$ et $Y$ deux variables aléatoires réelles (resp.\ deux vecteurs aléatoires).
+        Une espérance de $X$ conditionnée par $Y$ est donnée par :
+        \begin{displaymath}
+            \omega \longmapsto \esp(X | Y = Y(\omega))
+        \end{displaymath}
+        qui est donc une nouvelle variable aléatoire.
+
+        Autrement dit, si $N \subset \Omega$ est négligeable, on a :
+        \begin{displaymath}
+            \forall \omega \in \Omega \setminus N, \esp(X | Y)(\omega) = \esp(X | Y = Y(\omega))
+        \end{displaymath}
+    \end{thm}
 
 \end{document}
