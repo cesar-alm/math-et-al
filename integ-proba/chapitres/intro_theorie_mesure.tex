@@ -107,6 +107,11 @@
     En effet, nous verrons dans la suite de ce chapitre la tribu de Lebesgue $\mathcal{L}(\R^n)$ : le résultat est faux pour cette tribu.
   \end{exemple}
 
+  \begin{defi}
+    Soit $\left(E, \A\right)$ un espace mesurable.
+    Une tribu $\B$ sur $E$ est une \textbf{sous-tribu de $\A$} lorsque $\B \subset \A$.
+  \end{defi}
+
   \section{Définition de la mesure}
 
   Abordons désormais la notion de mesure.
@@ -381,6 +386,17 @@
   \end{rem}
 
   %TODO : exemples de fonctions mesurables
+
+  \begin{defi}
+    \label{def:tribu_engendree}
+    Soit $\left( E, \A \right)$ un espace mesurable et $f$ une fonction $\A$-mesurable à valeurs dans $F$.
+    La \textbf{tribu engendrée par $f$} est une tribu sur $E$, définie par :
+    \begin{displaymath}
+      \left\{ f^{-1}(B) | B \in \B(F) \right\}
+    \end{displaymath}
+
+    C'est une sous-tribu de $\A$.
+  \end{defi}
 
   \section{Approximation des fonctions mesurables}
 
