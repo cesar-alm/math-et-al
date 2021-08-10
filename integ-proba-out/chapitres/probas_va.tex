@@ -723,6 +723,7 @@
     \end{thm}
 
     \begin{rem}
+        \label{rem:warning_cond}
         Attention, cette notation n'a \textit{a priori} rien à voir avec la théorie des probabilités conditionnées par un évènement.
         En effet, si $\left\{ Y = y \right\}$ est de probabilité nulle, la définition habituelle ne peut pas s'appliquer (puisque l'on doit diviser par 0).
         C'est d'autant plus embêtant lorsque l'on remarque que si $Y$ admet une densité, alors $\left\{ Y = y \right\}$ est de probabilité nulle pour tout $y$ \ldots.
@@ -757,6 +758,13 @@
         Ainsi, dans le cas où $X$ et $Y$ ne sont pas indépendantes, ce théorème permettra de faire facilement les calculs.
         Si elles le sont, alors par définition de l'indépendance de deux variables aléatoires, le théorème de Fubini \og original \fg{} s'applique directement (voir le théorème \ref{thm:independance_esperance}).
     \end{rem}
+
+    Par ailleurs, voici une nouvelle caractérisation d'indépendance pour deux variables aléatoires réelles (ou deux vecteurs aléatoires) :
+
+    \begin{thm}(\textbf{Caractérisation de l'indépendance de deux variables aléatoires à l'aide des lois conditionnelles})
+        Soit $X$ et $Y$ deux variables aléatoires réelles (ou deux vecteurs aléatoires à valeurs dans $\R^m$ et $\R^n$).
+        $X$ et $Y$ sont indépendantes ssi les $\Pb_{X | Y = y}$ sont indépendantes de $y$ ssi $\Pb_{X | Y = y} = \Pb_X$.
+    \end{thm}
 
     \subsection{Espérance conditionnelle}
 
@@ -865,5 +873,64 @@
             \forall \omega \in \Omega \setminus N, \esp(X | Y)(\omega) = \esp(X | Y = Y(\omega))
         \end{displaymath}
     \end{thm}
+
+    \subsection{Lois et espérance conditionnelles dans deux cas particuliers}
+
+    Maintenant que nous avons établi la théorie qui encadre les lois conditionnelles et les espérances conditionnelles, nous l'énonçons dans deux cas particuliers.
+    Pour cela, on se donne un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
+
+    Enonçons le résultat dans le cas où le couple $\left( X, Y \right)$ admet une densité.
+
+    \begin{thm}
+        Soit $X$ et $Y$ deux variables aléatoires (resp.\ deux vecteurs aléatoires à valeurs dans $\R^m$ et $\R^n$).
+        Supposons que la loi jointe $\left( X, Y \right)$ admette une densité $f_{\left( X, Y \right)}: \R^2 \rightarrow \R$ (resp.\ $f_{\left( X, Y \right)}: \R^{m+n} \rightarrow \R$).
+
+        Soit $y \in \R$ (resp.\ $y \in \R^n$) tel que $f_Y(y) > 0$.
+
+        Alors la loi conditionnelle sur $\left( \R, \B(R) \right)$ (resp.\ sur $\left( \R^m, \B(R^m) \right)$) $\Pb_{X | Y = y}$, qui existe toujours, admet une densité, notée $f_{X | Y=y} : \R \rightarrow \R$ (resp.\ $f_{X | Y=y} : \R^m \rightarrow \R$) qui vérifie pour tout $x \in \R$ (resp.\ pour tout $x \in \R^m$) :
+        \begin{displaymath}
+            f_{X | Y = y}(x) = \dfrac{f_{\left( X, Y \right)}(x,y)}{f_Y(y)}
+        \end{displaymath}
+    \end{thm}
+
+    Maintenant, énonçons-le dans le cas où $Y$ est une variable aléatoire discrète.
+    Il s'agit simplement d'un énoncé plus général de la remarque~\ref{rem:warning_cond} : il y a coïncidence entre la loi conditionnelle et la probabilité conditionnée par un évènement.
+    Comme d'habitude, on se place sans perte de généralité dans le cas où $Y$ est à valeurs dans $\N$.
+
+    \begin{thm}
+        Soit $X$ une variable aléatoire réelle (resp.\ un vecteur aléatoire à valeurs dans $\R^m$), et $Y$ une variable aléatoire discrète.
+
+        Soit $y \in \N$ tel que $\Pb(Y = y) > 0$.
+
+        Alors la loi conditionnelle sur $\left( \R, \B(R) \right)$ (resp.\ sur $\left( \R^m, \B(R^m) \right)$) $\Pb_{X | Y = y}$, qui existe toujours, vérifie, pour tout $A \in \B(\R)$ (resp.\ pour tout $A \in \B(\R^m)$) :
+        \begin{displaymath}
+            \Pb_{X | Y = y}(A) = \Pb(X \in A | Y = y)
+        \end{displaymath}
+    \end{thm}
+
+    \subsection{Deux théorèmes importants}
+
+    On se donne un espace probabilisé $\left( \Omega, \A, \Pb \right)$.
+
+    Un premier théorème important est le pendant de la \textbf{formule des probabilités totales}, mais pour les lois conditionnelles.
+
+    \begin{thm}[\textbf{Formule du balayage conditionnel}]
+        Soit $X$ et $Y$ deux variables aléatoires réelles (resp.\ deux vecteurs aléatoires à valeurs dans $\R^m$ et $\R^n$).
+        Pour tout $A \in \B(\R)$ (resp.\ pour tout $A \in \B(\R^m)$), on a :
+        \begin{displaymath}
+            \Pb_X(A) = \int_{\R} \Pb_{X | Y = y} (A) \textnormal{d} \Pb_Y(y)
+        \end{displaymath}
+        et resp.\ :
+        \begin{displaymath}
+            \Pb_X(A) = \int_{\R^n} \Pb_{X | Y = y} (A) \textnormal{d} \Pb_Y(y)
+        \end{displaymath}
+    \end{thm}
+
+    \begin{rem}
+        Si $Y$ est discrète, d'après les résultats de la section précédente, on retrouve la formule des probabilités totales (les $\left\{ Y = y \right\}_{y \in \N}$ partitionnent $\Omega$) :
+        \begin{displaymath}
+            \Pb_X(A) = \sum_{y = 0}^{+ \infty} \Pb(X \in A | Y = y) \Pb(Y = y)
+        \end{displaymath}
+    \end{rem}
 
 \end{document}
