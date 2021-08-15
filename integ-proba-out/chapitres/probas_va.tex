@@ -884,6 +884,18 @@
         \end{displaymath}
     \end{thm}
 
+    Enfin, remarquons que l'espérance conditionnelle vérifie également la formule de transfert :
+
+    \begin{thm}
+        Soit $X$ et $Y$ deux vecteurs aléatoires, à valeurs dans $\R^m$ et $\R^n$.
+        Soit $\phi:\R^m \rightarrow \R$ borélienne.
+        Soit $y \in \R^n$.
+        Alors :
+        \begin{displaymath}
+            \esp( \phi(X) | Y = y) = \int_{\R^m} \phi(x) \textnormal{d}\Pb_{X | Y = y}(x)
+        \end{displaymath}
+    \end{thm}
+
     \subsection{Lois et espérance conditionnelles dans deux cas particuliers}
 
     Maintenant que nous avons établi la théorie qui encadre les lois conditionnelles et les espérances conditionnelles, nous l'énonçons dans deux cas particuliers.

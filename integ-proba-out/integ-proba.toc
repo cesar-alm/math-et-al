@@ -47,11 +47,11 @@
 \contentsline {section}{\numberline {6.6}Conditionnement par une variable aléatoire}{43}{section.6.6}%
 \contentsline {subsection}{\numberline {6.6.1}Lois conditionnelles}{43}{subsection.6.6.1}%
 \contentsline {subsection}{\numberline {6.6.2}Espérance conditionnelle}{45}{subsection.6.6.2}%
-\contentsline {subsection}{\numberline {6.6.3}Lois et espérance conditionnelles dans deux cas particuliers}{46}{subsection.6.6.3}%
+\contentsline {subsection}{\numberline {6.6.3}Lois et espérance conditionnelles dans deux cas particuliers}{47}{subsection.6.6.3}%
 \contentsline {subsection}{\numberline {6.6.4}Deux théorèmes importants}{47}{subsection.6.6.4}%
-\contentsline {chapter}{\numberline {7}Convergence des suites de variables aléatoires}{48}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Les différents modes de convergence}{48}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}La convergence en loi}{48}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}La convergence en probabilité}{49}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}La convergence en norme $\mathcal {L}^r$}{50}{subsection.7.1.3}%
-\contentsline {subsection}{\numberline {7.1.4}La convergence presque-sûre}{50}{subsection.7.1.4}%
+\contentsline {chapter}{\numberline {7}Convergence des suites de variables aléatoires}{49}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Les différents modes de convergence}{49}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}La convergence en loi}{49}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}La convergence en probabilité}{50}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}La convergence en norme $\mathcal {L}^r$}{51}{subsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.1.4}La convergence presque-sûre}{51}{subsection.7.1.4}%

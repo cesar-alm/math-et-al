@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.8.1)  15 AUG 2021 13:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.8.1)  15 AUG 2021 13:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -677,7 +677,7 @@ Overfull \hbox (6.23373pt too wide) in paragraph at lines 845--847
 -pé-rance condi-
  []
 
-[45] [46]) (./chapitres/probas_conv.tex [47]
+[45] [46] [47]) (./chapitres/probas_conv.tex [48]
 Chapitre 7.
 
 Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
@@ -685,27 +685,27 @@ Overfull \hbox (15.59627pt too wide) in paragraph at lines 33--34
 i-sés $[][]$ ; 
  []
 
-[48
+[49
 
 ]
 
-LaTeX Warning: Reference `thm:tcl' on page 49 undefined on input line 54.
+LaTeX Warning: Reference `thm:tcl' on page 50 undefined on input line 54.
 
 
-LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 49 undefined on input
+LaTeX Warning: Reference `thm:loi_faible_gds_nbs' on page 50 undefined on input
  line 89.
-
-[49]
-
-LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 50 undefined on input 
-line 136.
 
 [50]
 
 LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 51 undefined on input 
+line 136.
+
+[51]
+
+LaTeX Warning: Reference `thm:loi_forte_gds_nbs' on page 52 undefined on input 
 line 179.
 
-) [51] (./integ-proba.aux)
+) [52] (./integ-proba.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -713,8 +713,8 @@ Package rerunfilecheck Info: File `integ-proba.out' has not changed.
 (rerunfilecheck)             Checksum: D91592044D05392F7E0EA8C27801A8FD;13502.
  ) 
 Here is how much of TeX's memory you used:
- 12282 strings out of 478542
- 183139 string characters out of 5850402
+ 12284 strings out of 478542
+ 183156 string characters out of 5850402
  502880 words of memory out of 5000000
  29651 multiletter control sequences out of 15000+600000
  495215 words of font info for 90 fonts, out of 8000000 for 9000
@@ -743,10 +743,10 @@ m/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm7.pfb>
-Output written on integ-proba.pdf (52 pages, 452455 bytes).
+Output written on integ-proba.pdf (53 pages, 453155 bytes).
 PDF statistics:
- 976 PDF objects out of 1000 (max. 8388607)
- 871 compressed objects within 9 object streams
- 336 named destinations out of 1000 (max. 500000)
+ 982 PDF objects out of 1000 (max. 8388607)
+ 876 compressed objects within 9 object streams
+ 338 named destinations out of 1000 (max. 500000)
  449 words of extra memory for PDF output out of 10000 (max. 10000000)
 
