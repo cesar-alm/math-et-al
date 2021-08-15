@@ -759,6 +759,16 @@
         Si elles le sont, alors par définition de l'indépendance de deux variables aléatoires, le théorème de Fubini \og original \fg{} s'applique directement (voir le théorème \ref{thm:independance_esperance}).
     \end{rem}
 
+    Enonçons maintenant un résultat que l'on attend intuitivement pour les lois conditionnelles : que se passe-t-il lorsque l'on cherche la loi conditionnelle d'une variable aléatoire, variable dépendant explicitement de celle par laquelle on conditionne ?
+
+    \begin{thm}
+        Soit $X$ et $Y$ deux vecteurs aléatoires à valeurs dans $\R^m$ et $\R^n$, et $g : \R^m \times \R^n \rightarrow \R$ une fonction borélienne.
+        Alors pour tout $y \in \R^n$ :
+        \begin{displaymath}
+            \forall A \in \B(\R), \Pb_{g(X, Y) | Y = y}(A) = \Pb_{g(X, y) | Y = y}(A)
+        \end{displaymath}
+    \end{thm}
+
     Par ailleurs, voici une nouvelle caractérisation d'indépendance pour deux variables aléatoires réelles (ou deux vecteurs aléatoires) :
 
     \begin{thm}(\textbf{Caractérisation de l'indépendance de deux variables aléatoires à l'aide des lois conditionnelles})

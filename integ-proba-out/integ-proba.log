@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.8.1)  10 AUG 2021 15:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.8.1)  15 AUG 2021 13:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -671,7 +671,7 @@ g\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 )[]\U/msb/m/n/10 P[]\OT1
  []
 
 [44]
-Overfull \hbox (6.23373pt too wide) in paragraph at lines 835--837
+Overfull \hbox (6.23373pt too wide) in paragraph at lines 845--847
 []\T1/lmr/m/it/10 Remarque \T1/lmr/m/n/10 6.6.6 (\T1/lmr/bx/n/10 Généralisation
  aux vec-teurs aléa-toires\T1/lmr/m/n/10 )\T1/lmr/m/it/10 . \T1/lmr/m/n/10 L'es
 -pé-rance condi-
@@ -713,8 +713,8 @@ Package rerunfilecheck Info: File `integ-proba.out' has not changed.
 (rerunfilecheck)             Checksum: D91592044D05392F7E0EA8C27801A8FD;13502.
  ) 
 Here is how much of TeX's memory you used:
- 12281 strings out of 478542
- 183129 string characters out of 5850402
+ 12282 strings out of 478542
+ 183139 string characters out of 5850402
  502880 words of memory out of 5000000
  29651 multiletter control sequences out of 15000+600000
  495215 words of font info for 90 fonts, out of 8000000 for 9000
@@ -743,10 +743,10 @@ m/lmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm7.pfb>
-Output written on integ-proba.pdf (52 pages, 451638 bytes).
+Output written on integ-proba.pdf (52 pages, 452455 bytes).
 PDF statistics:
- 975 PDF objects out of 1000 (max. 8388607)
- 870 compressed objects within 9 object streams
- 335 named destinations out of 1000 (max. 500000)
+ 976 PDF objects out of 1000 (max. 8388607)
+ 871 compressed objects within 9 object streams
+ 336 named destinations out of 1000 (max. 500000)
  449 words of extra memory for PDF output out of 10000 (max. 10000000)
 
